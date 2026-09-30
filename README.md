@@ -2,19 +2,20 @@
 
 CSS themes for [kinu](https://github.com/developit/kinu).
 
-Browse all themes in [preview portal](https://kinu-styles.pages.dev).
+Browse all themes in the [preview portal](https://anh-ld.github.io/kinu-styles/).
 
 ## Install
 
 ```bash
-bun add kinu kinu-styles
+echo '@anh-ld:registry=https://npm.pkg.github.com' >> .npmrc
+npm install @anh-ld/kinu-styles
 ```
 
 ## Usage
 
 ```js
 import 'kinu/style.css';
-import 'kinu-styles/millennial-beige.css';
+import '@anh-ld/kinu-styles/millennial-beige.css';
 ```
 
 - Light = default.

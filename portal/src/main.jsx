@@ -149,7 +149,7 @@ function SpecPanel({ slug }) {
 }
 
 function AdoptionBlock({ slug }) {
-  const code = `import 'kinu/style.css';\nimport 'kinu-styles/${slug}.css';`;
+  const code = `import 'kinu/style.css';\nimport '@anh-ld/kinu-styles/${slug}.css';`;
   const [copied, setCopied] = useState(false);
   const copy = async () => {
     try {

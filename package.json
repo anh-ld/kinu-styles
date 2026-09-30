@@ -1,8 +1,11 @@
 {
-  "name": "kinu-styles",
+  "name": "@anh-ld/kinu-styles",
   "version": "0.1.0",
   "description": "CSS themes for kinu.",
   "type": "module",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "files": [
     "lib"
   ],
