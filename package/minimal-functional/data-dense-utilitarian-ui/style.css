@@ -1,10 +1,6 @@
-/* kinu-styles: data-dense-utilitarian-ui — Data-Dense Utilitarian UI
-   Design rules: compact spacing, dense tables, aligned numerals, visible gridlines, restrained palette, utilitarian controls, mono for values
-   Source trend: https://trends.daisyui.com/trend/data-dense-utilitarian-ui/ */
-
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
-/* Light — cool white, blue-gray and gray surfaces, subdued analytical blue. */
+/* Light: cool white, blue-gray + gray surfaces, subdued analytical blue. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.125rem;
 }
 
-/* Auto dark — cool dark grays, lighter analytical blue. */
+/* Auto dark: cool dark grays, lighter analytical blue. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.125rem;
 }
 
-/* Typography — condensed-feel sans for labels, mono for values. */
+/* Typography: condensed-feel sans for labels, mono for values. */
 :root:root {
   font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
 }

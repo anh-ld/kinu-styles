@@ -1,10 +1,6 @@
-/* kinu-styles: swiss-style — Swiss Style
-   Design rules: strict modular grid, generous whitespace, grotesque sans-serif, asymmetry, objective hierarchy, flush-left type, one signal accent
-   Source trend: https://trends.daisyui.com/trend/swiss-style/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-/* Light — white, black and gray with signal red applied as information. */
+/* Light: white, black + gray; signal red = information. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0;
 }
 
-/* Auto dark — black field, white ink, brighter signal red. */
+/* Auto dark: black field, white ink, brighter signal red. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0;
 }
 
-/* Typography — grotesque sans on a strict scale, flush left, objective hierarchy. */
+/* Typography: grotesque sans on strict scale, flush left, objective hierarchy. */
 :root:root {
   font-family: Inter, 'Helvetica Neue', Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
 }
@@ -117,7 +113,7 @@
 }
 
 /* surface: actions */
-/* sharp rectangles, no shadows, color does the signaling. */
+/* sharp rectangles, no shadows, color signals. */
 [k=button] {
   border-radius: 0;
   font-weight: 600;

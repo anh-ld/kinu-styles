@@ -1,10 +1,6 @@
-/* kinu-styles: utopian-scholastic — Utopian Scholastic
-   Design rules: encyclopedic cabinet-of-curiosities layout, warm paper / sky blue / leaf green / sunny yellow / mineral red, specimen frames and ruled labels, classical book serif + clean labeling sans
-   Source trend: https://trends.daisyui.com/trend/utopian-scholastic/ */
-
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
-/* Light — warm paper, sky-blue primary, leaf-green secondary, mineral-red accent. */
+/* Light: warm paper, sky-blue primary, leaf-green secondary, mineral-red accent. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.5rem;
 }
 
-/* Auto dark — scholarly ink field, sunny sky and leaf accents. */
+/* Auto dark: scholarly ink field, sunny sky + leaf accents. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.5rem;
 }
 
-/* Typography — classical book serif for reading, clean labeling sans for controls. */
+/* Typography: classical book serif for reading, clean labeling sans for controls. */
 :root:root {
   font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
 }

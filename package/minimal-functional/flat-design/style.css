@@ -1,10 +1,6 @@
-/* kinu-styles: flat-design — Flat Design
-   Design rules: two-dimensional solid color blocks, simple geometry, clean icons, no gradients, little or no shadow, high legibility
-   Source trend: https://trends.daisyui.com/trend/flat-design/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 
-/* Light — white canvas, solid flat teal, clearly separated violet secondary. */
+/* Light: white canvas, solid flat teal, clearly separated violet secondary. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.5rem;
 }
 
-/* Auto dark — deep slate, lightened flat hues. */
+/* Auto dark: deep slate, lightened flat hues. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.5rem;
 }
 
-/* Typography — sturdy sans with clear bold weights. */
+/* Typography: sturdy sans, clear bold weights. */
 :root:root {
   font-family: Montserrat, ui-sans-serif, system-ui, sans-serif;
 }
@@ -113,7 +109,7 @@
 }
 
 /* surface: actions */
-/* solid fills, hover is a color change, never elevation. */
+/* solid fills, hover = color change, never elevation. */
 [k=button] {
   border-radius: var(--k-radius);
   transition: background-color 150ms ease;
@@ -224,7 +220,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — crisp, no glow. */
+/* Focus ring: crisp, no glow. */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

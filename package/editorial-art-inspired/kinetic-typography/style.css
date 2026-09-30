@@ -1,10 +1,6 @@
-/* kinu-styles: kinetic-typography — Kinetic Typography
-   Design rules: animated letterforms, variable font axes, rhythmic timing, limited high-contrast palette where primary = active word and secondary = rhythm accent
-   Source trend: https://trends.daisyui.com/trend/kinetic-typography/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,400;0,700;0,900;1,700&family=Recursive:wght@400;500;700&display=swap');
 
-/* Light — still high-contrast field, electric active-word signal. */
+/* Light: still high-contrast field, electric active-word signal. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0rem;
 }
 
-/* Auto dark — deep stage, neon active word. */
+/* Auto dark: deep stage, neon active word. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0rem;
 }
 
-/* Typography — variable-font display for weight/slant drama, stable reading body. */
+/* Typography: variable-font display for weight/slant drama, stable reading body. */
 :root:root {
   font-family: 'Recursive', ui-sans-serif, system-ui, sans-serif;
 }

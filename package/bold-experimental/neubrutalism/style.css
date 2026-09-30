@@ -1,10 +1,6 @@
-/* kinu-styles: neubrutalism — Neubrutalism
-   Design rules: dark heavy outlines, zero-blur offset shadows, clashing flat colors, oversized grotesque type, geometric blocks, playful exposed structure
-   Source trend: https://trends.daisyui.com/trend/neubrutalism/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;700&display=swap');
 
-/* Light — off-white, near-black heavy outlines, yellow primary, blue secondary, coral accent. */
+/* Light: off-white, near-black heavy outlines, yellow primary, blue secondary, coral accent. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Auto dark — near-black base with light heavy outlines, accents stay fluorescent. */
+/* Auto dark: near-black base, light heavy outlines, fluorescent accents. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Typography — unusual heavy grotesque display, calm grotesk body. */
+/* Typography: unusual heavy grotesque display, calm grotesk body. */
 :root:root {
   font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
 }
@@ -228,7 +224,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — hard offset */
+/* Focus ring: hard offset */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

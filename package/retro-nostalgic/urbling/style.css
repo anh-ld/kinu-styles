@@ -1,10 +1,6 @@
-/* kinu-styles: urbling — UrBling
-   Design rules: urban grunge: orange, rust, deep red, sepia, warning yellow on asphalt black; stencil/street display type; heraldic shields, flames, torn edges, hard corners, grit
-   Source trend: https://trends.daisyui.com/trend/urbling/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Oswald:wght@400;500;600&display=swap');
 
-/* Light — a dark-dominant trend: asphalt-concrete surfaces, sepia highlights, orange and deep-red signals. */
+/* Light: dark-dominant trend, asphalt-concrete surfaces, sepia highlights, orange + deep-red signals. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: dark;
@@ -37,7 +33,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Auto dark — deeper asphalt black, grittier. */
+/* Auto dark: deeper asphalt black, grittier. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Typography — stencil/street display, condensed sans for long copy. */
+/* Typography: stencil/street display, condensed sans for long copy. */
 :root:root {
   font-family: Oswald, 'Arial Narrow', ui-sans-serif, system-ui, sans-serif;
 }
@@ -134,7 +130,7 @@
 }
 
 /* surface: data display */
-/* Stencil blocks and weathered panels. */
+/* Stencil blocks + weathered panels. */
 [k=card] {
   border: 1px solid hsl(var(--k-border));
   border-radius: var(--k-radius);

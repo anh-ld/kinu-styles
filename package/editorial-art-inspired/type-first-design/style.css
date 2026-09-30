@@ -1,10 +1,6 @@
-/* kinu-styles: type-first-design — Type-First Design
-   Design rules: oversized headlines as the layout, extreme scale contrast, stark high-contrast fields, one dominant signal color, quiet reading face
-   Source trend: https://trends.daisyui.com/trend/type-first-design/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap');
 
-/* Light — stark white field, near-black ink, one hot signal. */
+/* Light: stark white field, near-black ink, one hot signal. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0rem;
 }
 
-/* Auto dark — near-black field, white ink, hotter signal. */
+/* Auto dark: near-black field, white ink, hotter signal. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0rem;
 }
 
-/* Typography — monumental expressive display, quiet reading body. */
+/* Typography: monumental expressive display, quiet reading body. */
 :root:root {
   font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
 }

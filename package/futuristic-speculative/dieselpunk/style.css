@@ -1,11 +1,7 @@
-/* kinu-styles: dieselpunk — Dieselpunk
-   Design rules: interwar and mid-century industrial machinery — riveted metal, military stencils, propaganda graphics, soot; soot black, steel gray, khaki, rust, faded cream, warning red; hard edges, armored panels, no soft radius
-   Source trend: https://trends.daisyui.com/trend/dieselpunk/ */
-
-/* Fonts — the @import MUST stay the first rule (R6, KTD4). */
+/* Fonts: @import MUST stay first rule (R6, KTD4). */
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Oswald:wght@400;500;600&display=swap');
 
-/* Light — faded cream and steel gray, rust primary, khaki hardware. */
+/* Light: faded cream + steel gray, rust primary, khaki hardware. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -38,7 +34,7 @@
   --k-radius: 0rem;
 }
 
-/* Auto dark — soot black, warning red primary, khaki and worn steel. */
+/* Auto dark: soot black, warning red primary, khaki + worn steel. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -104,7 +100,7 @@
   --k-radius: 0rem;
 }
 
-/* Typography — military stencil display, condensed industrial body. */
+/* Typography: military stencil display, condensed industrial body. */
 :root:root {
   font-family: Oswald, 'Arial Narrow', ui-sans-serif, system-ui, sans-serif;
 }
@@ -247,7 +243,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — squared, industrial. */
+/* Focus ring: squared, industrial. */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

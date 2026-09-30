@@ -1,10 +1,6 @@
-/* kinu-styles: dark-academia — Dark Academia
-   Design rules: old-style serif type, parchment tones, dark walnut, forest / burgundy / tarnished brass / ink, library-desk layout, small caps and italics for scholarly hierarchy
-   Source trend: https://trends.daisyui.com/trend/dark-academia/ */
-
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IM+Fell+English:ital@0;1&display=swap');
 
-/* Light — aged parchment, forest primary, tarnished brass secondary, burgundy accent. */
+/* Light: aged parchment, forest primary, tarnished brass secondary, burgundy accent. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.5rem;
 }
 
-/* Auto dark — dark walnut night-study, parchment text, glowing forest and brass. */
+/* Auto dark: dark walnut night-study, parchment text, glowing forest + brass. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.5rem;
 }
 
-/* Typography — old-style serif throughout; display face reserved for chapter openings. */
+/* Typography: old-style serif throughout; display face reserved for chapter openings. */
 :root:root {
   font-family: 'EB Garamond', Georgia, serif;
   line-height: 1.7;

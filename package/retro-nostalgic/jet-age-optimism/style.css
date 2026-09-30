@@ -1,10 +1,6 @@
-/* kinu-styles: jet-age-optimism — Jet Age Optimism
-   Design rules: atomic-age optimism: turquoise, coral red, sunny yellow, space navy, white, chrome; Googie display type; boomerang curves, starbursts, chrome-edged panels
-   Source trend: https://trends.daisyui.com/trend/jet-age-optimism/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
-/* Light — clear white sky, turquoise primary, coral red secondary, sunny yellow accents, space-navy text. */
+/* Light: clear white sky, turquoise primary, coral red secondary, sunny yellow accents, space-navy text. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 1rem;
 }
 
-/* Auto dark — space-age night: space navy sky, chrome panel cards, glowing turquoise and coral. */
+/* Auto dark: space-age night, space navy sky, chrome panel cards, glowing turquoise + coral. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 1rem;
 }
 
-/* Typography — Googie-inspired display, clean sans body. */
+/* Typography: Googie-inspired display, clean sans body. */
 :root:root {
   font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 }

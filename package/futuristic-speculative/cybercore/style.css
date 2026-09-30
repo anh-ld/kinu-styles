@@ -1,11 +1,7 @@
-/* kinu-styles: cybercore — Cybercore
-   Design rules: 2020s nostalgia remix of late-90s/early-00s digital culture — saturated cobalt and electric blue, chrome silver, deep violet, harsh white, pastel pink; legacy window frames, orbital rings, translucent discs, retro-anime edits
-   Source trend: https://trends.daisyui.com/trend/cybercore/ */
-
-/* Fonts — the @import MUST stay the first rule (R6, KTD4). */
+/* Fonts: @import MUST stay first rule (R6, KTD4). */
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Oxanium:wght@600;700&display=swap');
 
-/* Light — canonical cybercore: harsh white and ice gray, electric cobalt, pastel pink. */
+/* Light: cybercore, harsh white + ice gray, electric cobalt, pastel pink. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -38,7 +34,7 @@
   --k-radius: 1rem;
 }
 
-/* Auto dark — deep violet night mode, electric blue glow. */
+/* Auto dark: deep violet night mode, electric blue glow. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -104,7 +100,7 @@
   --k-radius: 1rem;
 }
 
-/* Typography — narrow techno heads, pixel accent labels, clean sans body. */
+/* Typography: narrow techno heads, pixel accent labels, clean sans body. */
 :root:root {
   font-family: 'Oxanium', ui-sans-serif, system-ui, sans-serif;
 }
@@ -230,7 +226,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — electric cobalt. */
+/* Focus ring: electric cobalt. */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

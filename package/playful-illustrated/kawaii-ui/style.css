@@ -1,10 +1,6 @@
-/* kinu-styles: kawaii-ui — Kawaii UI
-   Design rules: pastel base + candy accents, dark cocoa outlines, rounded pills, chunky soft shapes, thick clean borders, squashy hard-offset shadows, rounded display lettering
-   Source trend: https://trends.daisyui.com/trend/kawaii-ui/ */
-
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@500;600&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap');
 
-/* Light — cream base, pale-blush cards, cocoa outlines, candy-pink primary, mint secondary. */
+/* Light: cream base, pale-blush cards, cocoa outlines, candy-pink primary, mint secondary. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 1.25rem;
 }
 
-/* Auto dark — cocoa night: deep warm browns, pastel accents kept bright. */
+/* Auto dark: cocoa night, deep warm browns, pastel accents bright. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 1.25rem;
 }
 
-/* Typography — chunky rounded display, simple rounded body face. */
+/* Typography: chunky rounded display, simple rounded body face. */
 :root:root {
   font-family: 'M PLUS Rounded 1c', ui-sans-serif, system-ui, sans-serif;
 }
@@ -232,7 +228,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — candy halo */
+/* Focus ring: candy halo */
 [k]:focus-visible {
   outline: 3px solid hsl(var(--k-ring));
   outline-offset: 3px;

@@ -1,10 +1,6 @@
-/* kinu-styles: terminal-cli-ui — Terminal / CLI UI
-   Design rules: monospace typography, command prompts, blinking cursor, phosphor glow, text logs, rectangular panes, one-pixel borders
-   Source trend: https://trends.daisyui.com/trend/terminal-cli-ui/ */
-
 @import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
 
-/* Light — paper phosphor: pale green wash, ink text, green and cyan signals. */
+/* Light: paper phosphor, pale green wash, ink text, green + cyan signals. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0;
 }
 
-/* Auto dark — the canonical console: near-black, phosphor green, ANSI accents. */
+/* Auto dark: console, near-black, phosphor green, ANSI accents. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0;
 }
 
-/* Typography — one legible monospace family; VT323 for banners. */
+/* Typography: one legible monospace family; VT323 for banners. */
 :root:root {
   font-family: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
@@ -239,7 +235,7 @@
   border-radius: 0;
 }
 
-/* Focus ring — phosphor glow. */
+/* Focus ring: phosphor glow. */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

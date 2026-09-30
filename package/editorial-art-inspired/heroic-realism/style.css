@@ -1,10 +1,6 @@
-/* kinu-styles: heroic-realism — Heroic Realism
-   Design rules: monumental low-angle compositions, banner red / cobalt with warm gold, cream and earth neutrals, heavy condensed capitals or forceful slab, declarative slogans
-   Source trend: https://trends.daisyui.com/trend/heroic-realism/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto+Slab:wght@400;500;700&display=swap');
 
-/* Light — cream field, banner-red primary, warm-gold secondary. */
+/* Light: cream field, banner-red primary, warm-gold secondary. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0rem;
 }
 
-/* Auto dark — earth-shadow field, radiant banner red and gold. */
+/* Auto dark: earth-shadow field, radiant banner red + gold. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0rem;
 }
 
-/* Typography — heavy condensed capitals for statements, forceful slab for reading. */
+/* Typography: heavy condensed capitals for statements, forceful slab for reading. */
 :root:root {
   font-family: 'Roboto Slab', Georgia, serif;
 }

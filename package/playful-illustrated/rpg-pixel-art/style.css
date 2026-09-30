@@ -1,10 +1,6 @@
-/* kinu-styles: rpg-pixel-art — RPG Pixel Art
-   Design rules: dark-dominant menu panels, top-down tile-map vibe, ornate double-framed dialogue boxes, gold + party-red accents, bitmap type with compact caps, inset slots and health-bar readability
-   Source trend: https://trends.daisyui.com/trend/rpg-pixel-art/ */
-
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=IBM+Plex+Mono:wght@400;600&display=swap');
 
-/* Light — daytime-overworld panels: sky base, parchment cards, party-red primary, spell-teal secondary. */
+/* Light: daytime-overworld panels, sky base, parchment cards, party-red primary, spell-teal secondary. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Auto dark — canonical RPG menu-panel night: deep indigo panels, parchment text, gold + party-red accents. */
+/* Auto dark: RPG menu-panel night, deep indigo panels, parchment text, gold + party-red accents. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Typography — legible pixel/JPN bitmap display, mono body; dialogue gets generous line height. */
+/* Typography: legible pixel/JPN bitmap display, mono body; dialogue gets generous line height. */
 :root:root {
   font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 16px;
@@ -237,7 +233,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — gold command highlight */
+/* Focus ring: gold command highlight */
 [k]:focus-visible {
   outline: 3px solid hsl(var(--k-ring));
   outline-offset: 2px;

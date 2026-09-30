@@ -1,10 +1,6 @@
-/* kinu-styles: synthwave-outrun — Synthwave / Outrun
-   Design rules: dark midnight horizons, electric magenta + cyan neon, chrome highlights, glow shadows, italic techno display type
-   Source trend: https://trends.daisyui.com/trend/synthwave-outrun/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Share+Tech+Mono&display=swap');
 
-/* Light — a washed sunset take: pale violet base, deeper neon accents. */
+/* Light: washed sunset take, pale violet base, deeper neon accents. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.5rem;
 }
 
-/* Auto dark — midnight navy, neon magenta and cyan. */
+/* Auto dark: midnight navy, neon magenta + cyan. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.5rem;
 }
 
-/* Typography — italic techno display, mono-flavored body. */
+/* Typography: italic techno display, mono-flavored body. */
 :root:root {
   font-family: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
@@ -216,7 +212,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — neon */
+/* Focus ring: neon */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

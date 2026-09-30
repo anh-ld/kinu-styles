@@ -1,10 +1,6 @@
-/* kinu-styles: dorfic — DORFic
-   Design rules: white industrial wayfinding: sun-bleached white, orange primary, restrained cool blue, machine gray, silver; condensed uppercase technical type, wide tracking, large numerals; sharp corners, parallel bands, thin rules
-   Source trend: https://trends.daisyui.com/trend/dorfic/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&display=swap');
 
-/* Light — white cityscape daylight: white fields, orange routes, cool blue machines. */
+/* Light: white cityscape daylight, white fields, orange routes, cool blue machines. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Auto dark — industrial night: machine gray-black, orange route lines. */
+/* Auto dark: industrial night, machine gray-black, orange route lines. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Typography — condensed geometric display with wide tracking, clean sans body. */
+/* Typography: condensed geometric display, wide tracking, clean sans body. */
 :root:root {
   font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
 }
@@ -135,7 +131,7 @@
 }
 
 /* surface: data display */
-/* Numbered modules with thin industrial rules. */
+/* Numbered modules, thin industrial rules. */
 [k=card] {
   border: 1px solid hsl(var(--k-border));
   border-radius: var(--k-radius);

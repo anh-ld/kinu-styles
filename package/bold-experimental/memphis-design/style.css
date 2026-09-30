@@ -1,10 +1,6 @@
-/* kinu-styles: memphis-design — Memphis Design
-   Design rules: squiggles, dots and terrazzo, bright geometric shapes, clashing patterns, black accents, playful asymmetry
-   Source trend: https://trends.daisyui.com/trend/memphis-design/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:wght@400;500;600&display=swap');
 
-/* Light — warm white, cobalt primary, yellow secondary, pink accent, black outlines. */
+/* Light: warm white, cobalt primary, yellow secondary, pink accent, black outlines. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 1rem;
 }
 
-/* Auto dark — indigo night with bright cobalt, yellow, pink. */
+/* Auto dark: indigo night, bright cobalt, yellow, pink. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 1rem;
 }
 
-/* Typography — chunky Bungee display, calm Poppins body. */
+/* Typography: chunky Bungee display, calm Poppins body. */
 :root:root {
   font-family: Poppins, ui-sans-serif, system-ui, sans-serif;
 }
@@ -224,7 +220,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — geometric offset */
+/* Focus ring: geometric offset */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

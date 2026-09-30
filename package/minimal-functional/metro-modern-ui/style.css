@@ -1,10 +1,6 @@
-/* kinu-styles: metro-modern-ui — Metro / Modern UI
-   Design rules: typography-led hierarchy, flat tiles, edge-to-edge content, strict alignment, minimal chrome, zero radius, directional motion
-   Source trend: https://trends.daisyui.com/trend/metro-modern-ui/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200;300;400;600&display=swap');
 
-/* Light — crisp white, light gray, charcoal; cobalt primary, magenta secondary. */
+/* Light: crisp white, light gray, charcoal; cobalt primary, magenta secondary. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0;
 }
 
-/* Auto dark — tightly stepped charcoals, bold system hues. */
+/* Auto dark: tightly stepped charcoals, bold system hues. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0;
 }
 
-/* Typography — light open sans at dramatic sizes, flush left, type as graphic. */
+/* Typography: light open sans at dramatic sizes, flush left, type as graphic. */
 :root:root {
   font-family: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif;
 }

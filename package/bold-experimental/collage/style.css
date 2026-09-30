@@ -1,10 +1,6 @@
-/* kinu-styles: collage — Collage
-   Design rules: cutout photography, torn edges, overlapping fragments, mixed media, scale contrast, paper tones unified by ink overlays
-   Source trend: https://trends.daisyui.com/trend/collage/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cutive+Mono&display=swap');
 
-/* Light — clean paper field, ink-blue primary, burnt-orange photo accent. */
+/* Light: clean paper field, ink-blue primary, burnt-orange photo accent. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Auto dark — aged paper and ink: deep warm-brown shadows, paper-light text. */
+/* Auto dark: aged paper + ink, deep warm-brown shadows, paper-light text. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Typography — cutout headline slabs, found-typewriter body. */
+/* Typography: cutout headline slabs, found-typewriter body. */
 :root:root {
   font-family: 'Cutive Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
@@ -219,7 +215,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — pasted-paper offset */
+/* Focus ring: pasted-paper offset */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

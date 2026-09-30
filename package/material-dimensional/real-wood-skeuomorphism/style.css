@@ -1,10 +1,6 @@
-/* kinu-styles: real-wood-skeuomorphism — Real-Wood Skeuomorphism
-   Design rules: interfaces built from realistic timber, rich stained walnut primary, brass fittings, carved and routed controls, grain-aligned planks, varnished highlights, sturdy engraved serif lettering
-   Source trend: https://trends.daisyui.com/trend/real-wood-skeuomorphism/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600&display=swap');
 
-/* Light — pale raw-wood base, mid-tone grain, walnut-stained controls. */
+/* Light: pale raw-wood base, mid-tone grain, walnut-stained controls. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.75rem;
 }
 
-/* Auto dark — deep finished wood night: near-black timber, glowing varnish. */
+/* Auto dark: deep finished wood night, near-black timber, glowing varnish. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.75rem;
 }
 
-/* Typography — sturdy engraved serif, compact and highly legible. */
+/* Typography: sturdy engraved serif, compact + highly legible. */
 :root:root {
   font-family: Bitter, Georgia, serif;
 }
@@ -242,7 +238,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — routed groove. */
+/* Focus ring: routed groove. */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

@@ -15,8 +15,7 @@ const CATEGORY_LABELS = {
   'futuristic-speculative': 'Futuristic & speculative',
 };
 
-// themes.json is generated from the package/ tree: slug + category from the
-// paths, the display name from each spec's H1.
+// themes.json: generated from package/ tree; slug + category from paths, name from spec H1.
 const themes = {};
 for (const [slug, t] of Object.entries(THEMES)) {
   const nameMatch = t.spec.match(/^# (.+)$/m);
@@ -210,9 +209,7 @@ const SYNC_ICON = (
   </svg>
 );
 
-// Open overlays by toggling the dialog's native show()/close(). The trigger
-// carries an inline anchor-name so kinu's anchor-positioned dialog CSS works
-// (native commandfor is unreliable: Chrome only implements show-modal).
+// Toggle native dialog show()/close(); trigger anchor-name feeds kinu anchor-position CSS; commandfor unreliable, Chrome show-modal only.
 function OverlayDemo({ wrapper, content, id, trigger, children }) {
   const dialogRef = useRef(null);
   const toggle = () => {
@@ -261,8 +258,7 @@ function CarouselDemo() {
     const el = carouselRef.current;
     el.scrollBy({ left: dir * el.clientWidth, behavior: 'smooth' });
   };
-  // Buttons live in the wrapper, not the scroller: Chrome scrolls absolute
-  // children of a scroll container along with its content.
+  // Nav buttons in wrapper, not scroller: Chrome scrolls absolute children with content.
   return (
     <div class="carousel-demo">
       <div k="carousel" ref={carouselRef}>
@@ -1048,9 +1044,7 @@ function App() {
     const fromHash = location.hash.slice(1);
     return slugs.includes(fromHash) ? fromHash : 'millennial-beige';
   });
-  // Explicit two-sided scheme: setting data-color-scheme="light" is the only
-  // way to force light — merely removing the attribute lets the theme's
-  // @media (prefers-color-scheme: dark) auto block take over on dark OSes.
+  // Two-sided scheme: data-color-scheme="light" forces light; removing it lets theme @media (prefers-color-scheme: dark) take over on dark OSes.
   const [scheme, setScheme] = useState(() =>
     matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
   );
@@ -1065,7 +1059,7 @@ function App() {
     return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
 
-  // Applied before paint so the first frame is themed, not kinu's default.
+  // Applied pre-paint: first frame themed, not kinu default.
   useLayoutEffect(() => {
     const text = THEMES[slug]?.css;
     if (!text) return;

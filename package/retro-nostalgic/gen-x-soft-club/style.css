@@ -1,10 +1,6 @@
-/* kinu-styles: gen-x-soft-club — Gen-X Soft Club
-   Design rules: late-90s urban futurism: desaturated blue, seafoam, olive, beige, concrete gray; neo-grotesque wayfinding type; flat clean rectangles, cool color washes, no gloss
-   Source trend: https://trends.daisyui.com/trend/gen-x-soft-club/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap');
 
-/* Light — cool transit-platform daylight: beige concrete, desaturated blue primary, olive secondary. */
+/* Light: cool transit-platform daylight, beige concrete, desaturated blue primary, olive secondary. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.5rem;
 }
 
-/* Auto dark — night transit: concrete gray-black, quiet blue glow, muted olive. */
+/* Auto dark: night transit, concrete gray-black, quiet blue glow, muted olive. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.5rem;
 }
 
-/* Typography — measured neo-grotesque, wayfinding alignment. */
+/* Typography: measured neo-grotesque, wayfinding alignment. */
 :root:root {
   font-family: Archivo, ui-sans-serif, system-ui, sans-serif;
 }

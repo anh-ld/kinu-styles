@@ -1,10 +1,6 @@
-/* kinu-styles: y2k — Y2K
-   Design rules: turn-of-millennium chrome: glossy white, ice blue, bubblegum pink, lavender, lime, silver; techno display type; bubbles, capsules, translucent beveled windows, lens flares
-   Source trend: https://trends.daisyui.com/trend/y2k/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
-/* Light — glossy chrome daylight: white shells, pale ice surfaces, bubblegum and lavender accents. */
+/* Light: glossy chrome daylight, white shells, pale ice surfaces, bubblegum + lavender accents. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 1.5rem;
 }
 
-/* Auto dark — midnight chrome: deep violet-navy, ice text, glowing bubblegum and lavender. */
+/* Auto dark: midnight chrome, deep violet-navy, ice text, glowing bubblegum + lavender. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 1.5rem;
 }
 
-/* Typography — techno display, crisp sans body. */
+/* Typography: techno display, crisp sans body. */
 :root:root {
   font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
@@ -130,7 +126,7 @@
 }
 
 /* surface: data display */
-/* Chrome capsules with glossy highlights. */
+/* Chrome capsules, glossy highlights. */
 [k=card] {
   border: 1px solid hsl(var(--k-border));
   border-radius: var(--k-radius);

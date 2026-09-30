@@ -1,10 +1,6 @@
-/* kinu-styles: aqua-ui — Aqua UI
-   Design rules: Mac OS X Aqua gel controls, candy blue + graphite + pearl, glossy specular highlights, glassy wells and capsules, white vertical gradients, saturated traffic-light accents
-   Source trend: https://trends.daisyui.com/trend/aqua-ui/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
-/* Light — pearl window chrome on pale aqua, candy-blue gel controls. */
+/* Light: pearl window chrome on pale aqua, candy-blue gel controls. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 1rem;
 }
 
-/* Auto dark — graphite Aqua: dark chrome, glowing candy controls. */
+/* Auto dark: graphite Aqua, dark chrome, glowing candy controls. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 1rem;
 }
 
-/* Typography — friendly round sans, crisp anti-aliased labels. */
+/* Typography: friendly round sans, crisp anti-aliased labels. */
 :root:root {
   font-family: 'Varela Round', ui-sans-serif, system-ui, sans-serif;
 }
@@ -229,7 +225,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — glossy halo. */
+/* Focus ring: glossy halo. */
 [k]:focus-visible {
   outline: 3px solid hsl(var(--k-ring));
   outline-offset: 2px;

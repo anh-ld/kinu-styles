@@ -1,10 +1,6 @@
-/* kinu-styles: cottagecore — Cottagecore
-   Design rules: warm cream palette, sage and dusty rose primaries, butter yellow and faded blue secondaries, gentle literary serif, handmade textures, rounded domestic motifs
-   Source trend: https://trends.daisyui.com/trend/cottagecore/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@400;600&display=swap');
 
-/* Light — warm cream surfaces, dusty rose primary, butter yellow secondary, sage accents. */
+/* Light: warm cream surfaces, dusty rose primary, butter yellow secondary, sage accents. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 1rem;
 }
 
-/* Auto dark — night kitchen: soil browns, lamp-lit cream text. */
+/* Auto dark: night kitchen, soil browns, lamp-lit cream text. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 1rem;
 }
 
-/* Typography — gentle literary serif (Lora) for reading, restrained handwriting (Caveat) for notes and labels. */
+/* Typography: gentle literary serif (Lora) for reading, restrained handwriting (Caveat) for notes + labels. */
 :root:root {
   font-family: Lora, Georgia, serif;
 }

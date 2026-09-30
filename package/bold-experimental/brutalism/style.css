@@ -1,10 +1,6 @@
-/* kinu-styles: brutalism — Brutalism
-   Design rules: raw typography, exposed structure, sharp edges, stark contrast, default-like controls, unpolished layouts, harsh utility accent
-   Source trend: https://trends.daisyui.com/trend/brutalism/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap');
 
-/* Light — white field, black structure, harsh utility-blue primary. */
+/* Light: white field, black structure, harsh utility-blue primary. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0rem;
 }
 
-/* Auto dark — raw inversion: signal black, bone text, utility blue. */
+/* Auto dark: raw inversion, signal black, bone text, utility blue. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0rem;
 }
 
-/* Typography — blunt mono body, raw black uppercase slabs. */
+/* Typography: blunt mono body, raw black uppercase slabs. */
 :root:root {
   font-family: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
@@ -223,7 +219,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — raw, no decoration */
+/* Focus ring: raw, no decoration */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

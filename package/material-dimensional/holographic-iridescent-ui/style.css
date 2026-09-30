@@ -1,10 +1,6 @@
-/* kinu-styles: holographic-iridescent-ui — Holographic / Iridescent UI
-   Design rules: spectral angle-shifting cyan-violet-rose-lime washes on pearl or charcoal foundations, pearlescent foil surfaces, diffraction highlights, wide futuristic display type, restrained use
-   Source trend: https://trends.daisyui.com/trend/holographic-iridescent-ui/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@400;500&display=swap');
 
-/* Light — pearl-gray editorial base, spectral foil on focal surfaces. */
+/* Light: pearl-gray editorial base, spectral foil on focal surfaces. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.75rem;
 }
 
-/* Auto dark — charcoal foundation, brighter spectral moments. */
+/* Auto dark: charcoal foundation, brighter spectral moments. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.75rem;
 }
 
-/* Typography — wide futuristic display, neutral sans body. */
+/* Typography: wide futuristic display, neutral sans body. */
 :root:root {
   font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
 }
@@ -242,7 +238,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — prismatic halo. */
+/* Focus ring: prismatic halo. */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

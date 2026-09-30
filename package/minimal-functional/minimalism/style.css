@@ -1,10 +1,6 @@
-/* kinu-styles: minimalism — Minimalism
-   Design rules: deliberate reduction — dominant negative space, very few elements, neutral palette, single restrained accent, one focal point, plain typography, minimal ornament
-   Source trend: https://trends.daisyui.com/trend/minimalism/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Light — pure white field, ink black, one ochre accent for focus only. */
+/* Light: pure white field, ink black, one ochre accent for focus only. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.125rem;
 }
 
-/* Auto dark — near-black field, white ink, quieter ochre accent. */
+/* Auto dark: near-black field, white ink, quieter ochre accent. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.125rem;
 }
 
-/* Typography — one neutral family, sparse scale, generous line spacing. */
+/* Typography: one neutral family, sparse scale, generous line spacing. */
 :root:root {
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
 }

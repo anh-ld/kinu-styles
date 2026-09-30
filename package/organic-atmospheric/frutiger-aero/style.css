@@ -1,10 +1,6 @@
-/* kinu-styles: frutiger-aero — Frutiger Aero
-   Design rules: glossy blue-and-green, vivid sky blue primary, grass green and aqua secondary, glassy gradients, bubbles and water, gel-like rounded panels, optimistic technology
-   Source trend: https://trends.daisyui.com/trend/frutiger-aero/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600&display=swap');
 
-/* Light — bright sky and aqua: white glass surfaces, vivid sky blue primary, grass green secondary. */
+/* Light: bright sky + aqua, white glass surfaces, vivid sky blue primary, grass green secondary. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 1.5rem;
 }
 
-/* Auto dark — deep aqua night with glowing sky highlights. */
+/* Auto dark: deep aqua night, glowing sky highlights. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 1.5rem;
 }
 
-/* Typography — clear rounded humanist sans: Varela Round display, Nunito Sans body. */
+/* Typography: clear rounded humanist sans, Varela Round display, Nunito Sans body. */
 :root:root {
   font-family: 'Nunito Sans', ui-sans-serif, system-ui, sans-serif;
 }
@@ -224,7 +220,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — glossy sky blue */
+/* Focus ring: glossy sky blue */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

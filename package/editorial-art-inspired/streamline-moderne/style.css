@@ -1,10 +1,6 @@
-/* kinu-styles: streamline-moderne — Streamline Moderne
-   Design rules: aerodynamic curves, horizontal speed bands, chrome accents, ocean-liner forms, cream / navy / sea green / signal red, rounded corners, streamlined condensed sans
-   Source trend: https://trends.daisyui.com/trend/streamline-moderne/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Righteous&display=swap');
 
-/* Light — cream deck, navy primary, signal-red secondary, sea-green accent. */
+/* Light: cream deck, navy primary, signal-red secondary, sea-green accent. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 1rem;
 }
 
-/* Auto dark — deep navy vessel, chrome and signal accents. */
+/* Auto dark: deep navy vessel, chrome + signal accents. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 1rem;
 }
 
-/* Typography — streamlined condensed sans with broad horizontal spacing. */
+/* Typography: streamlined condensed sans, broad horizontal spacing. */
 :root:root {
   font-family: 'Barlow Condensed', ui-sans-serif, system-ui, sans-serif;
   letter-spacing: 0.02em;

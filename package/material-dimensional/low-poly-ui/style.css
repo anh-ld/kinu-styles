@@ -1,10 +1,6 @@
-/* kinu-styles: low-poly-ui — Low-Poly UI
-   Design rules: faceted flat-shaded geometry, angular silhouettes, sharp planar changes, limited palette of light/mid/shadow faces, crisp hard lighting, angular geometric display type
-   Source trend: https://trends.daisyui.com/trend/low-poly-ui/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@500;600;700&display=swap');
 
-/* Light — pale sky face, chamfered cards with hard facet shading. */
+/* Light: pale sky face, chamfered cards, hard facet shading. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Auto dark — deep indigo facet, luminous highlight faces. */
+/* Auto dark: deep indigo facet, luminous highlight faces. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Typography — angular geometric display for headings, plain sans body. */
+/* Typography: angular geometric display for headings, plain sans body. */
 :root:root {
   font-family: ui-sans-serif, system-ui, sans-serif;
 }
@@ -242,7 +238,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — sharp square edge. */
+/* Focus ring: sharp square edge. */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

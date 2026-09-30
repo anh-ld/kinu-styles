@@ -1,10 +1,6 @@
-/* kinu-styles: vectordelia-frutiger-metro — Vectordelia (Frutiger Metro)
-   Design rules: exuberant flat vectors: vivid lime, orange, cyan, magenta, violet on white; groovy rounded display type; sweeping curves, floral flourishes, layered ribbons, no realistic depth
-   Source trend: https://trends.daisyui.com/trend/vectordelia-frutiger-metro/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&display=swap');
 
-/* Light — vivid vector daylight: white fields, cyan swooshes, magenta and lime flourishes. */
+/* Light: vivid vector daylight, white fields, cyan swooshes, magenta + lime flourishes. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 1rem;
 }
 
-/* Auto dark — midnight metro: deep violet, neon cyan and magenta. */
+/* Auto dark: midnight metro, deep violet, neon cyan + magenta. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 1rem;
 }
 
-/* Typography — groovy rounded display, dependable sans body. */
+/* Typography: groovy rounded display, dependable sans body. */
 :root:root {
   font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
@@ -114,7 +110,7 @@
 }
 
 /* surface: actions */
-/* Rounded vector buttons with a ribbon of accent color. */
+/* Rounded vector buttons, ribbon of accent color. */
 [k=button] {
   border-radius: var(--k-radius);
   transition: box-shadow 200ms ease, background-color 200ms ease;

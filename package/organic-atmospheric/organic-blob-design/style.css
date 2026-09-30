@@ -1,10 +1,6 @@
-/* kinu-styles: organic-blob-design — Organic / Blob Design
-   Design rules: fluid silhouettes, asymmetric curves, soft blobs, rounded containers, freeform compositions, playful motion, botanical-fruit-mineral soft pairings, large radii
-   Source trend: https://trends.daisyui.com/trend/organic-blob-design/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Quicksand:wght@400;500;600&display=swap');
 
-/* Light — warm cream surfaces, botanical leaf primary, soft mineral secondary. */
+/* Light: warm cream surfaces, botanical leaf primary, soft mineral secondary. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 1.5rem;
 }
 
-/* Auto dark — botanical night, brighter leaf and aqua minerals. */
+/* Auto dark: botanical night, brighter leaf + aqua minerals. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 1.5rem;
 }
 
-/* Typography — soft display serif (Fraunces) for headings, warm rounded sans (Quicksand) for body. */
+/* Typography: soft display serif (Fraunces) for headings, warm rounded sans (Quicksand) for body. */
 :root:root {
   font-family: Quicksand, ui-sans-serif, system-ui, sans-serif;
 }
@@ -211,7 +207,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — soft blob glow */
+/* Focus ring: soft blob glow */
 [k]:focus-visible {
   outline: 3px solid hsl(var(--k-ring) / 0.5);
   outline-offset: 2px;

@@ -1,10 +1,6 @@
-/* kinu-styles: 2k1 — 2K1
-   Design rules: post-Y2K toughness: blunt red, denim blue, khaki, brown, dirty white, black with restrained silver; extra-bold condensed display; red title bars, varsity numerals, ticket stubs
-   Source trend: https://trends.daisyui.com/trend/2k1/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
-/* Light — DVD-cover daylight: dirty white, blunt red title bars, denim blue, nicotine beige. */
+/* Light: DVD-cover daylight, dirty white, blunt red title bars, denim blue, nicotine beige. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.5rem;
 }
 
-/* Auto dark — music-TV bumper: black stage, blunt red slams, denim chrome. */
+/* Auto dark: music-TV bumper, black stage, blunt red slams, denim chrome. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.5rem;
 }
 
-/* Typography — extra-bold condensed for slams, plain sans for supporting copy. */
+/* Typography: extra-bold condensed for slams, plain sans for supporting copy. */
 :root:root {
   font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
@@ -131,7 +127,7 @@
 }
 
 /* surface: data display */
-/* Blunt rectangular captions and title bars. */
+/* Blunt rectangular captions + title bars. */
 [k=card] {
   border: 1px solid hsl(var(--k-border));
   border-radius: var(--k-radius);

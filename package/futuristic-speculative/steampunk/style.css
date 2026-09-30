@@ -1,11 +1,7 @@
-/* kinu-styles: steampunk — Steampunk
-   Design rules: hyper-skeuomorphic Victorian machine aesthetic — brass, copper, iron, dark wood, oxblood leather, yellowed parchment; thick bevels, embossed trim, inset wells, hard cast shadows, riveted plates and arched frames
-   Source trend: https://trends.daisyui.com/trend/steampunk/ */
-
-/* Fonts — the @import MUST stay the first rule (R6, KTD4). */
+/* Fonts: @import MUST stay first rule (R6, KTD4). */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=IM+Fell+English&family=Special+Elite&display=swap');
 
-/* Light — yellowed parchment, brass and dark wood, verdigris accents. */
+/* Light: yellowed parchment, brass + dark wood, verdigris accents. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -38,7 +34,7 @@
   --k-radius: 0.5rem;
 }
 
-/* Auto dark — smoky brown, soot black, copper and lamp-light cream. */
+/* Auto dark: smoky brown, soot black, copper + lamp-light cream. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -104,7 +100,7 @@
   --k-radius: 0.5rem;
 }
 
-/* Typography — engraved Victorian capitals, sturdy book serif body, typewriter labels. */
+/* Typography: engraved Victorian capitals, sturdy book serif body, typewriter labels. */
 :root:root {
   font-family: 'IM Fell English', Georgia, 'Times New Roman', serif;
 }
@@ -240,7 +236,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — polished brass. */
+/* Focus ring: polished brass. */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

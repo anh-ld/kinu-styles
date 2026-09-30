@@ -1,10 +1,6 @@
-/* kinu-styles: american-kitsch — American Kitsch
-   Design rules: 1950s painted advertising: warm cream, cherry red, turquoise, butter yellow, mint, navy; exuberant slab display + condensed sans; scalloped labels, price bursts, printed frames
-   Source trend: https://trends.daisyui.com/trend/american-kitsch/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Barlow+Condensed:wght@400;500;600;700&display=swap');
 
-/* Light — sunlit diner: warm cream paper, navy ink text, cherry red and turquoise accents. */
+/* Light: sunlit diner, warm cream paper, navy ink text, cherry red + turquoise accents. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 1rem;
 }
 
-/* Auto dark — neon diner at night: space-navy walls, cream signs, glowing cherry and turquoise. */
+/* Auto dark: neon diner at night, space-navy walls, cream signs, glowing cherry + turquoise. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 1rem;
 }
 
-/* Typography — exuberant slab for headlines, condensed sans for selling copy. */
+/* Typography: exuberant slab for headlines, condensed sans for selling copy. */
 :root:root {
   font-family: 'Barlow Condensed', ui-sans-serif, system-ui, sans-serif;
 }

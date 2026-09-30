@@ -1,10 +1,6 @@
-/* kinu-styles: mid-century-modern — Mid-Century Modern
-   Design rules: warm muted palette (mustard, olive, burnt orange, teal, walnut, warm cream), simple geometry, clean modular layouts, friendly humanist sans + restrained slab, optimistic postwar simplicity
-   Source trend: https://trends.daisyui.com/trend/mid-century-modern/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Franklin:wght@400;500;600&display=swap');
 
-/* Light — warm cream, burnt-orange primary, olive secondary, teal accent. */
+/* Light: warm cream, burnt-orange primary, olive secondary, teal accent. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.5rem;
 }
 
-/* Auto dark — walnut dusk, glowing burnt orange and mustard. */
+/* Auto dark: walnut dusk, glowing burnt orange + mustard. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.5rem;
 }
 
-/* Typography — confident humanist sans body, restrained slab headings. */
+/* Typography: confident humanist sans body, restrained slab headings. */
 :root:root {
   font-family: 'Libre Franklin', ui-sans-serif, system-ui, sans-serif;
 }

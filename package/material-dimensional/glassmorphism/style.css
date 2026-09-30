@@ -1,10 +1,6 @@
-/* kinu-styles: glassmorphism — Glassmorphism
-   Design rules: frosted translucent panels over a rich backdrop, background blur, thin luminous borders, layered front-to-back depth, translucent fills, luminous cyan/violet accents
-   Source trend: https://trends.daisyui.com/trend/glassmorphism/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap');
 
-/* Light — pearl-blue backdrop, white frosted panes with luminous edges. */
+/* Light: pearl-blue backdrop, white frosted panes, luminous edges. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 1rem;
 }
 
-/* Auto dark — deep charcoal backdrop, dark frosted panes, luminous edges. */
+/* Auto dark: deep charcoal backdrop, dark frosted panes, luminous edges. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 1rem;
 }
 
-/* Typography — clean geometric sans, firm weights, fully opaque text. */
+/* Typography: clean geometric sans, firm weights, fully opaque text. */
 :root:root {
   font-family: Sora, ui-sans-serif, system-ui, sans-serif;
 }
@@ -249,7 +245,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — luminous halo. */
+/* Focus ring: luminous halo. */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

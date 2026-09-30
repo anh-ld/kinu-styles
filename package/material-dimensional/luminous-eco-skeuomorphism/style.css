@@ -1,10 +1,6 @@
-/* kinu-styles: luminous-eco-skeuomorphism — Luminous Eco-Skeuomorphism
-   Design rules: dark low-luminance console, luminous eco-green primary with inner glows and radiant edges, illuminated controls, soft bloom halos, recessed tracks, beveled frames, compact tech sans
-   Source trend: https://trends.daisyui.com/trend/luminous-eco-skeuomorphism/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap');
 
-/* Light — daylight eco console: pale sage base, glowing green and teal controls. */
+/* Light: daylight eco console, pale sage base, glowing green + teal controls. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.875rem;
 }
 
-/* Auto dark — the canonical glowing console: deep blue-gray, powered controls. */
+/* Auto dark: glowing console, deep blue-gray, powered controls. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.875rem;
 }
 
-/* Typography — compact tech sans, restrained sizing, neutral body. */
+/* Typography: compact tech sans, restrained sizing, neutral body. */
 :root:root {
   font-family: ui-sans-serif, system-ui, sans-serif;
 }
@@ -242,7 +238,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — power-on halo. */
+/* Focus ring: power-on halo. */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

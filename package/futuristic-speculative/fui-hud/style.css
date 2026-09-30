@@ -1,11 +1,7 @@
-/* kinu-styles: fui-hud — FUI / HUD
-   Design rules: telemetry readouts, targeting reticles, technical grids, translucent overlays; translucent phosphor green and amber readouts over deep blue-black, red reserved for lock and failure states; angular clipped panels and thin technical linework
-   Source trend: https://trends.daisyui.com/trend/fui-hud/ */
-
-/* Fonts — the @import MUST stay the first rule (R6, KTD4). */
+/* Fonts: @import MUST stay first rule (R6, KTD4). */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Share+Tech+Mono&display=swap');
 
-/* Light — daylight ops console: pale cool gray, phosphor green, amber readouts. */
+/* Light: daylight ops console, pale cool gray, phosphor green, amber readouts. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -38,7 +34,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Auto dark — deep blue-black cockpit, phosphor green + amber telemetry. */
+/* Auto dark: deep blue-black cockpit, phosphor green + amber telemetry. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -104,7 +100,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Typography — condensed uppercase technical headings, monospaced data body. */
+/* Typography: condensed uppercase technical headings, monospaced data body. */
 :root:root {
   font-family: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
@@ -248,12 +244,12 @@
   border-radius: var(--k-radius);
 }
 
-/* Clip-paths release on focus so the targeting ring stays visible. */
+/* Clip-paths release on focus so targeting ring stays visible. */
 [k=button]:focus-visible, [k=chip-button]:focus-visible, [k=tab]:focus-visible {
   clip-path: none;
 }
 
-/* Focus ring — HUD targeting glow. */
+/* Focus ring: HUD targeting glow. */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

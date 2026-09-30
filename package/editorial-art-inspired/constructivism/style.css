@@ -1,10 +1,6 @@
-/* kinu-styles: constructivism — Constructivism
-   Design rules: dynamic diagonals, red-black palette with aged cream, photomontage, bold condensed uppercase type, geometric wedges, propaganda energy
-   Source trend: https://trends.daisyui.com/trend/constructivism/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Russo+One&display=swap');
 
-/* Light — aged cream field, banner-red primary, ink-black secondary. */
+/* Light: aged cream field, banner-red primary, ink-black secondary. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0rem;
 }
 
-/* Auto dark — ink field, roaring banner red. */
+/* Auto dark: ink field, roaring banner red. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0rem;
 }
 
-/* Typography — bold condensed uppercase display, compact supporting text. */
+/* Typography: bold condensed uppercase display, compact supporting text. */
 :root:root {
   font-family: 'Oswald', ui-sans-serif, system-ui, sans-serif;
 }

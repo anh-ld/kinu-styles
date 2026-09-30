@@ -1,10 +1,6 @@
-/* kinu-styles: scandinavian-modern — Scandinavian Modern
-   Design rules: functional simplicity, light palettes, warm natural materials, clean lines, fine dividers, friendly humanist type, quiet accent colors
-   Source trend: https://trends.daisyui.com/trend/scandinavian-modern/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600&family=Lora:wght@500;600&display=swap');
 
-/* Light — high natural light: white, oatmeal and pale wood-gray; muted blue, clay. */
+/* Light: high natural light, white, oatmeal + pale wood-gray; muted blue, clay. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.5rem;
 }
 
-/* Auto dark — warm deep neutral, wood-dark surfaces, softened accents. */
+/* Auto dark: warm deep neutral, wood-dark surfaces, softened accents. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.5rem;
 }
 
-/* Typography — friendly humanist sans, restrained serif accent on headings. */
+/* Typography: friendly humanist sans, restrained serif accent on headings. */
 :root:root {
   font-family: Karla, ui-sans-serif, system-ui, sans-serif;
 }

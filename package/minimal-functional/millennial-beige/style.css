@@ -1,10 +1,6 @@
-/* kinu-styles: millennial-beige — Millennial Beige
-   Design rules: calm layered warm neutrals (cream, tan, sand, taupe, greige), serif display + quiet sans body, thin warm borders, shallow tonal elevation, restrained empty space
-   Source trend: https://trends.daisyui.com/trend/millennial-beige/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap');
 
-/* Light — warm cream surfaces, espresso text, muted clay primary. */
+/* Light: warm cream surfaces, espresso text, muted clay primary. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.75rem;
 }
 
-/* Auto dark — warm espresso surfaces, cream text. */
+/* Auto dark: warm espresso surfaces, cream text. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.75rem;
 }
 
-/* Typography — refined serif display, quiet sans body. */
+/* Typography: refined serif display, quiet sans body. */
 :root:root {
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
 }

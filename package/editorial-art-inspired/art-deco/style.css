@@ -1,10 +1,6 @@
-/* kinu-styles: art-deco — Art Deco
-   Design rules: stepped geometry, fan motifs, black / deep jewel tones with ivory and controlled gold / brass, symmetrical axial composition, geometric display capitals with generous tracking
-   Source trend: https://trends.daisyui.com/trend/art-deco/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Josefin+Sans:wght@300;400;600&display=swap');
 
-/* Light — ivory field, brushed gold primary, emerald jewel secondary. */
+/* Light: ivory field, brushed gold primary, emerald jewel secondary. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.125rem;
 }
 
-/* Auto dark — ink black with jewel tones, glowing gold. */
+/* Auto dark: ink black, jewel tones, glowing gold. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.125rem;
 }
 
-/* Typography — geometric display capitals with generous tracking, restrained sans details. */
+/* Typography: geometric display capitals, generous tracking, restrained sans details. */
 :root:root {
   font-family: 'Josefin Sans', ui-sans-serif, system-ui, sans-serif;
 }

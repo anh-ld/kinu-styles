@@ -1,11 +1,7 @@
-/* kinu-styles: cassette-futurism — Cassette Futurism
-   Design rules: late-70s/80s imagined futures — chunky tape-deck controls, CRT displays, industrial panels, physical switches; charcoal, military olive, beige plastic, worn metal; amber or green phosphor readouts with small red warning indicators
-   Source trend: https://trends.daisyui.com/trend/cassette-futurism/ */
-
-/* Fonts — the @import MUST stay the first rule (R6, KTD4). */
+/* Fonts: @import MUST stay first rule (R6, KTD4). */
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Share+Tech+Mono&family=VT323&display=swap');
 
-/* Light — beige plastic housing, worn metal, amber phosphor primary. */
+/* Light: beige plastic housing, worn metal, amber phosphor primary. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -38,7 +34,7 @@
   --k-radius: 0.375rem;
 }
 
-/* Auto dark — charcoal console, amber CRT readouts, olive hardware. */
+/* Auto dark: charcoal console, amber CRT readouts, olive hardware. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -104,7 +100,7 @@
   --k-radius: 0.375rem;
 }
 
-/* Typography — phosphor display heads, condensed industrial labels, mono body. */
+/* Typography: phosphor display heads, condensed industrial labels, mono body. */
 :root:root {
   font-family: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
@@ -242,7 +238,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — phosphor glow. */
+/* Focus ring: phosphor glow. */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

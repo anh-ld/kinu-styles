@@ -1,4 +1,4 @@
-/* Portal shell — 3 panes, each scrolls independently. */
+/* Portal shell: 3 panes, each scrolls independently. */
 * {
   box-sizing: border-box;
 }
@@ -45,7 +45,7 @@ body {
   flex-shrink: 0;
 }
 
-/* Left — style list. */
+/* Left: style list. */
 .switcher {
   grid-row: 2;
   grid-column: 1;
@@ -83,7 +83,7 @@ body {
   color: hsl(var(--k-primary-foreground));
 }
 
-/* Center — per-component preview. */
+/* Center: per-component preview. */
 .content {
   grid-row: 2;
   grid-column: 2;
@@ -308,7 +308,7 @@ body {
   margin: 8px 0;
 }
 
-/* Demo view — sample dashboard built from kinu components. */
+/* Demo view: sample dashboard from kinu components. */
 .demo-dashboard {
   display: flex;
   flex-direction: column;
@@ -444,7 +444,7 @@ body {
   }
 }
 
-/* Right — adoption + spec. */
+/* Right: adoption + spec. */
 .spec-sidebar {
   grid-row: 2;
   grid-column: 3;

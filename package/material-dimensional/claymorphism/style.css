@@ -1,10 +1,6 @@
-/* kinu-styles: claymorphism — Claymorphism
-   Design rules: inflated clay-like components, pastel palette, oversized radii, soft 3D shading with chunky toy-like bottom shadows, bright peach primary, playful rounded display type
-   Source trend: https://trends.daisyui.com/trend/claymorphism/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap');
 
-/* Light — creamy tinted base, bright peach clay, lilac companion. */
+/* Light: creamy tinted base, bright peach clay, lilac companion. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 1.5rem;
 }
 
-/* Auto dark — deep plum, brighter clay pops. */
+/* Auto dark: deep plum, brighter clay pops. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 1.5rem;
 }
 
-/* Typography — rounded heavy display, friendly sans body. */
+/* Typography: rounded heavy display, friendly sans body. */
 :root:root {
   font-family: Nunito, ui-sans-serif, system-ui, sans-serif;
 }
@@ -233,7 +229,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — chunky rounded outline. */
+/* Focus ring: chunky rounded outline. */
 [k]:focus-visible {
   outline: 3px solid hsl(var(--k-ring));
   outline-offset: 2px;

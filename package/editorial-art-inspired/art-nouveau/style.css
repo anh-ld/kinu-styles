@@ -1,10 +1,6 @@
-/* kinu-styles: art-nouveau — Art Nouveau
-   Design rules: flowing botanical lines, whiplash curves, ornamental frames, cream / sage / muted teal / plum / dusty rose / antique gold, elegant serif with generous leading
-   Source trend: https://trends.daisyui.com/trend/art-nouveau/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Marcellus&display=swap');
 
-/* Light — cream field, muted teal primary, sage secondary, antique gold accent. */
+/* Light: cream field, muted teal primary, sage secondary, antique gold accent. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 1rem;
 }
 
-/* Auto dark — deep botanical green, antique gold and dusty rose. */
+/* Auto dark: deep botanical green, antique gold + dusty rose. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 1rem;
 }
 
-/* Typography — ornamental display lettering, elegant serif with generous leading. */
+/* Typography: ornamental display lettering, elegant serif, generous leading. */
 :root:root {
   font-family: 'Cormorant Infant', Georgia, serif;
   line-height: 1.7;

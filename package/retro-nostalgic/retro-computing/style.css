@@ -1,10 +1,6 @@
-/* kinu-styles: retro-computing — Retro Computing
-   Design rules: vintage OS desktop: navy primary, muted teal secondary on monitor beige/putty panels; bitmap mono type; pixel chrome, inset panels, hard-edged buttons, CRT phosphor accent
-   Source trend: https://trends.daisyui.com/trend/retro-computing/ */
-
 @import url('https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
-/* Light — beige-and-navy workstation: monitor beige desk, navy chrome, teal accents, phosphor highlights. */
+/* Light: beige-and-navy workstation, monitor beige desk, navy chrome, teal accents, phosphor highlights. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Auto dark — phosphor black: CRT void, green phosphor text, navy panels. */
+/* Auto dark: phosphor black, CRT void, green phosphor text, navy panels. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Typography — bitmap display, mono body. */
+/* Typography: bitmap display, mono body. */
 :root:root {
   font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
@@ -114,7 +110,7 @@
 }
 
 /* surface: actions */
-/* Hard-edged buttons with pixel bevels. */
+/* Hard-edged buttons, pixel bevels. */
 [k=button] {
   border-radius: 0;
   border: 1px solid hsl(var(--k-border));
@@ -137,7 +133,7 @@
 }
 
 /* surface: data display */
-/* Inset panels with pixel chrome. */
+/* Inset panels, pixel chrome. */
 [k=card] {
   border: 1px solid hsl(var(--k-border));
   border-radius: 0;
@@ -227,7 +223,7 @@
   border-radius: 0;
 }
 
-/* Focus ring — hard pixel outline. */
+/* Focus ring: hard pixel outline. */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

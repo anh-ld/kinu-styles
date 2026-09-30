@@ -1,10 +1,6 @@
-/* kinu-styles: monochrome-ui — Monochrome UI
-   Design rules: one neutral family, tonal hierarchy, strong contrast, texture via tone and rule, shape-led composition, no hue jumps
-   Source trend: https://trends.daisyui.com/trend/monochrome-ui/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap');
 
-/* Light — white field, ink blocks, tonal grays; hierarchy by tone and weight. */
+/* Light: white field, ink blocks, tonal grays; hierarchy by tone + weight. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.125rem;
 }
 
-/* Auto dark — black field, white ink, tonal grays. */
+/* Auto dark: black field, white ink, tonal grays. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.125rem;
 }
 
-/* Typography — one flexible family, hierarchy by size, width and weight. */
+/* Typography: one flexible family, hierarchy by size, width + weight. */
 :root:root {
   font-family: Archivo, ui-sans-serif, system-ui, sans-serif;
 }

@@ -1,10 +1,6 @@
-/* kinu-styles: pc-98 — PC-98
-   Design rules: NEC 16-color pixel: sharp red + blue on cream/navy indexed panels; Japanese bitmap type; one-pixel rules, dithered shadow fields, zero radius, dialogue-window frames
-   Source trend: https://trends.daisyui.com/trend/pc-98/ */
-
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
-/* Light — cream-panel VN scene: cream windows, sharp red dialogue highlight, blue accents, gray rules. */
+/* Light: cream-panel VN scene, cream windows, sharp red dialogue highlight, blue accents, gray rules. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0;
 }
 
-/* Auto dark — late-night VN: navy-black scene, cream dialogue box, red highlight. */
+/* Auto dark: late-night VN, navy-black scene, cream dialogue box, red highlight. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0;
 }
 
-/* Typography — Japanese-capable pixel font, mono fallback. */
+/* Typography: Japanese-capable pixel font, mono fallback. */
 :root:root {
   font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
@@ -137,7 +133,7 @@
 }
 
 /* surface: data display */
-/* Sharp pixel frames with dithered shadow fields. */
+/* Sharp pixel frames, dithered shadow fields. */
 [k=card] {
   border: 1px solid hsl(var(--k-border));
   border-radius: 0;
@@ -225,7 +221,7 @@
   border-radius: 0;
 }
 
-/* Focus ring — hard pixel outline. */
+/* Focus ring: hard pixel outline. */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

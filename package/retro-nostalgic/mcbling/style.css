@@ -1,10 +1,6 @@
-/* kinu-styles: mcbling — McBling
-   Design rules: celebrity glam: hot pink, gold, silver, jewel tones on deep plum-black; ornate script display; rhinestone sparkle, hearts, gem badges, glossy highlights
-   Source trend: https://trends.daisyui.com/trend/mcbling/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
 
-/* Light — a dark-dominant trend: plum-black surfaces, champagne text, hot pink and gold sparkle. */
+/* Light: dark-dominant trend, plum-black surfaces, champagne text, hot pink + gold sparkle. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: dark;
@@ -37,7 +33,7 @@
   --k-radius: 1.25rem;
 }
 
-/* Auto dark — blacker nightclub depth, hotter pink. */
+/* Auto dark: blacker nightclub depth, hotter pink. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 1.25rem;
 }
 
-/* Typography — ornate script for names and statements, bold sans for promotions. */
+/* Typography: ornate script for names + statements, bold sans for promotions. */
 :root:root {
   font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
@@ -114,7 +110,7 @@
 }
 
 /* surface: actions */
-/* Glossy gem buttons with sparkle halo. */
+/* Glossy gem buttons, sparkle halo. */
 [k=button] {
   border-radius: calc(var(--k-radius) * 0.7);
   transition: box-shadow 200ms ease, background-color 200ms ease;
@@ -131,7 +127,7 @@
 }
 
 /* surface: data display */
-/* Glamour-photo frames with sparkle borders. */
+/* Glamour-photo frames, sparkle borders. */
 [k=card] {
   border: 1px solid hsl(var(--k-border));
   border-radius: var(--k-radius);
@@ -219,7 +215,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — rhinestone twinkle. */
+/* Focus ring: rhinestone twinkle. */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

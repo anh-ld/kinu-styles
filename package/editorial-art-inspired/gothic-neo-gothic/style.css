@@ -1,10 +1,6 @@
-/* kinu-styles: gothic-neo-gothic — Gothic / Neo-Gothic
-   Design rules: pointed forms, blackletter or dramatic serif display, dark contrast, black / midnight blue / oxblood / parchment with cold metallic and stained-glass jewel accents, cathedral vertical rhythm
-   Source trend: https://trends.daisyui.com/trend/gothic-neo-gothic/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=UnifrakturCook:wght@700&display=swap');
 
-/* Light — parchment field, oxblood primary, midnight-blue secondary, jewel accents. */
+/* Light: parchment field, oxblood primary, midnight-blue secondary, jewel accents. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.125rem;
 }
 
-/* Auto dark — cathedral black / midnight, glowing oxblood and cold silver. */
+/* Auto dark: cathedral black / midnight, glowing oxblood + cold silver. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.125rem;
 }
 
-/* Typography — blackletter only for short display, readable old-style serif for reading. */
+/* Typography: blackletter only for short display, readable old-style serif for reading. */
 :root:root {
   font-family: 'Crimson Pro', Georgia, serif;
   line-height: 1.65;

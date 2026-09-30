@@ -1,11 +1,7 @@
-/* kinu-styles: cyberpunk — Cyberpunk
-   Design rules: dense dark interfaces, dirty blue-gray base, neon cyan/magenta/acid-green signals, glitch accents, scanlines, clipped panels and angular brackets, terminal typography
-   Source trend: https://trends.daisyui.com/trend/cyberpunk/ */
-
-/* Fonts — the @import MUST stay the first rule (R6, KTD4). */
+/* Fonts: @import MUST stay first rule (R6, KTD4). */
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Share+Tech+Mono&display=swap');
 
-/* Light — daytime sector: pale blue-gray, hard cyan and magenta signals. */
+/* Light: daytime sector, pale blue-gray, hard cyan + magenta signals. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -38,7 +34,7 @@
   --k-radius: 0rem;
 }
 
-/* Auto dark — dirty blue-gray to black, neon cyan primary, magenta secondary. */
+/* Auto dark: dirty blue-gray to black, neon cyan primary, magenta secondary. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -104,7 +100,7 @@
   --k-radius: 0rem;
 }
 
-/* Typography — condensed technical heads, monospace data body. */
+/* Typography: condensed technical heads, monospace data body. */
 :root:root {
   font-family: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
@@ -251,12 +247,12 @@
   border-radius: var(--k-radius);
 }
 
-/* Clip-paths release on focus so the neon ring stays visible. */
+/* Clip-paths release on focus so neon ring stays visible. */
 [k=button]:focus-visible, [k=chip-button]:focus-visible, [k=tab]:focus-visible {
   clip-path: none;
 }
 
-/* Focus ring — hard neon signal. */
+/* Focus ring: hard neon signal. */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

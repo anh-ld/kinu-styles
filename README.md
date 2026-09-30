@@ -1,10 +1,8 @@
 # kinu-styles
 
-CSS themes for [kinu](https://kinu.sh) — one per [daisyUI design trend](https://trends.daisyui.com/).
+CSS themes for [kinu](https://github.com/developit/kinu).
 
-Import theme after kinu stylesheet → whole app takes on the trend: tokens, components, typography, light + dark. Zero component changes.
-
-Browse all themes in the [preview portal](https://kinu-styles.pages.dev).
+Browse all themes in [preview portal](https://kinu-styles.pages.dev).
 
 ## Install
 
@@ -26,7 +24,7 @@ import 'kinu-styles/millennial-beige.css';
 
 ## Caveat
 
-- Theme fonts load via Google Fonts `@import` — bundler must hoist it to the top of the merged CSS (Vite, esbuild, Tailwind do). No hoist → falls back to system font stacks, still renders.
+- Theme fonts load via Google Fonts `@import`: bundler must hoist it to the top of the merged CSS (Vite, esbuild, Tailwind do). No hoist → falls back to system font stacks, still renders.
 - Modern browsers only: CSS custom properties, `:where()`, `prefers-color-scheme`.
 
 ## Credits

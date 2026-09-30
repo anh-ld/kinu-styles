@@ -1,10 +1,6 @@
-/* kinu-styles: web-1-0-webcore — Web 1.0 / Webcore
-   Design rules: browser-default 1995: classic browser blue, visited purple, white, light gray, silver; Times/Georgia serif; beveled buttons, 1px table borders, framed boxes
-   Source trend: https://trends.daisyui.com/trend/web-1-0-webcore/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap');
 
-/* Light — browser-safe daylight: white ground, classic blue links, gray frames. */
+/* Light: browser-safe daylight, white ground, classic blue links, gray frames. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Auto dark — late-night webring: near-black ground, same classic blue and purple links. */
+/* Auto dark: late-night webring, near-black ground, same classic blue + purple links. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Typography — browser-default Times/Georgia serif everywhere. */
+/* Typography: browser-default Times/Georgia serif everywhere. */
 :root:root {
   font-family: Tinos, Georgia, 'Times New Roman', Times, serif;
 }

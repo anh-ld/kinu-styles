@@ -1,10 +1,6 @@
-/* kinu-styles: seapunk — Seapunk
-   Design rules: turquoise and aqua, seafoam, cobalt and purple, chrome highlights, tropical gradients, bubble and wave forms, marine glow, playful digital display type
-   Source trend: https://trends.daisyui.com/trend/seapunk/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600&display=swap');
 
-/* Light — pale seafoam and aqua, turquoise primary, purple secondary, cobalt accents. */
+/* Light: pale seafoam + aqua, turquoise primary, purple secondary, cobalt accents. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 1.25rem;
 }
 
-/* Auto dark — deep abyss: dark teal, glowing turquoise, chrome and cobalt highlights. */
+/* Auto dark: deep abyss, dark teal, glowing turquoise, chrome + cobalt highlights. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 1.25rem;
 }
 
-/* Typography — playful rounded digital display (Righteous) for headings, simple sans body. */
+/* Typography: playful rounded digital display (Righteous) for headings, simple sans body. */
 :root:root {
   font-family: 'Nunito Sans', ui-sans-serif, system-ui, sans-serif;
 }
@@ -218,7 +214,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — glowing marine turquoise */
+/* Focus ring: glowing marine turquoise */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

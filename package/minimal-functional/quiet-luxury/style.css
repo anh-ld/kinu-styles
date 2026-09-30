@@ -1,10 +1,6 @@
-/* kinu-styles: quiet-luxury — Quiet Luxury
-   Design rules: restrained palettes, refined serif display + neo-grotesque body, generous space, hairline borders, subtle insets, meticulous premium detail
-   Source trend: https://trends.daisyui.com/trend/quiet-luxury/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap');
 
-/* Light — warm ivory, stone and taupe; deep brown primary, muted brass accent. */
+/* Light: warm ivory, stone + taupe; deep brown primary, muted brass accent. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.125rem;
 }
 
-/* Auto dark — deep espresso, ivory text, bronze highlights. */
+/* Auto dark: deep espresso, ivory text, bronze highlights. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.125rem;
 }
 
-/* Typography — refined serif display, immaculate neo-grotesque body. */
+/* Typography: refined serif display, immaculate neo-grotesque body. */
 :root:root {
   font-family: Manrope, ui-sans-serif, system-ui, sans-serif;
 }
@@ -132,7 +128,7 @@
 }
 
 /* surface: data display */
-/* hairline borders, material and spacing carry value. */
+/* hairline borders, material + spacing carry value. */
 [k=card] {
   border: 1px solid hsl(var(--k-border));
   border-radius: var(--k-radius);

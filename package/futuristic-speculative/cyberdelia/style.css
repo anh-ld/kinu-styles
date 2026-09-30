@@ -1,11 +1,7 @@
-/* kinu-styles: cyberdelia — Cyberdelia
-   Design rules: cyberculture merges with psychedelia — acid green, ultraviolet, cyan, hot orange, black, spectral gradients; fractals, kaleidoscopic radial symmetry, liquid rings, early-3D display type, rave-era digital optimism
-   Source trend: https://trends.daisyui.com/trend/cyberdelia/ */
-
-/* Fonts — the @import MUST stay the first rule (R6, KTD4). */
+/* Fonts: @import MUST stay first rule (R6, KTD4). */
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Syne:wght@500;600;700&display=swap');
 
-/* Light — pastel acid: pale violet base, acid green primary, cyan secondary. */
+/* Light: pastel acid, pale violet base, acid green primary, cyan secondary. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -38,7 +34,7 @@
   --k-radius: 1.5rem;
 }
 
-/* Auto dark — deep indigo to black, acid green and ultraviolet signals. */
+/* Auto dark: deep indigo to black, acid green + ultraviolet signals. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -104,7 +100,7 @@
   --k-radius: 1.5rem;
 }
 
-/* Typography — bulbous early-3D display heads, crisp digital sans body. */
+/* Typography: bulbous early-3D display heads, crisp digital sans body. */
 :root:root {
   font-family: Syne, ui-sans-serif, system-ui, sans-serif;
 }
@@ -232,7 +228,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — acid signal. */
+/* Focus ring: acid signal. */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

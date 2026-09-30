@@ -1,10 +1,6 @@
-/* kinu-styles: vaporwave — Vaporwave
-   Design rules: neon pastel dream: pastel pink, lavender, cyan, peach on deep violet; retro display type; perspective grids, floating windows, glitch, classical bust mood
-   Source trend: https://trends.daisyui.com/trend/vaporwave/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap');
 
-/* Light — a dark-dominant trend: deep violet dream space, pastel pink and cyan neon, lavender mists. */
+/* Light: dark-dominant trend, deep violet dream space, pastel pink + cyan neon, lavender mists. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: dark;
@@ -37,7 +33,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Auto dark — deeper digital navy night. */
+/* Auto dark: deeper digital navy night. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.25rem;
 }
 
-/* Typography — retro display for the headline, clean sans for copy. */
+/* Typography: retro display for headline, clean sans for copy. */
 :root:root {
   font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
@@ -115,7 +111,7 @@
 }
 
 /* surface: actions */
-/* Glitch-edged buttons with a neon halo. */
+/* Glitch-edged buttons, neon halo. */
 [k=button] {
   border-radius: var(--k-radius);
   transition: box-shadow 200ms ease, background-color 200ms ease;
@@ -132,7 +128,7 @@
 }
 
 /* surface: data display */
-/* Floating desktop windows with scanline shadows. */
+/* Floating desktop windows, scanline shadows. */
 [k=card] {
   border: 1px solid hsl(var(--k-border));
   border-radius: var(--k-radius);
@@ -222,7 +218,7 @@
   border-radius: var(--k-radius);
 }
 
-/* Focus ring — neon glitch. */
+/* Focus ring: neon glitch. */
 [k]:focus-visible {
   outline: 2px solid hsl(var(--k-ring));
   outline-offset: 2px;

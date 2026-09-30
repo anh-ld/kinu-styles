@@ -1,10 +1,6 @@
-/* kinu-styles: pop-art — Pop Art
-   Design rules: bright primary inks with black outlines and white punch-outs, comic dots, repetition, oversized slogans, thick outlines, hard rectangular crops
-   Source trend: https://trends.daisyui.com/trend/pop-art/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Bangers&display=swap');
 
-/* Light — white field, print-red primary, cyan secondary, yellow accent, ink outlines. */
+/* Light: white field, print-red primary, cyan secondary, yellow accent, ink outlines. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0rem;
 }
 
-/* Auto dark — ink black field, neon primaries. */
+/* Auto dark: ink black field, neon primaries. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0rem;
 }
 
-/* Typography — oversized comic display slogans, plain compact functional face. */
+/* Typography: oversized comic display slogans, plain compact functional face. */
 :root:root {
   font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif;
 }

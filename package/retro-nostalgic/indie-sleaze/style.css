@@ -1,10 +1,6 @@
-/* kinu-styles: indie-sleaze — Indie Sleaze
-   Design rules: flash-nightlife: flash blue primary, lipstick red secondary, electric accents on black; condensed sans + typewriter accents; crooked frames, thin rules, low-fi grain, deliberately unpolished
-   Source trend: https://trends.daisyui.com/trend/indie-sleaze/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Special+Elite&display=swap');
 
-/* Light — a dark-dominant trend: near-black nightclub, dirty-white text, flash blue and lipstick red. */
+/* Light: dark-dominant trend, near-black nightclub, dirty-white text, flash blue + lipstick red. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: dark;
@@ -37,7 +33,7 @@
   --k-radius: 0;
 }
 
-/* Auto dark — deeper void, harsher flash contrast. */
+/* Auto dark: deeper void, harsher flash contrast. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0;
 }
 
-/* Typography — condensed sans for lineups, typewriter accent. */
+/* Typography: condensed sans for lineups, typewriter accent. */
 :root:root {
   font-family: Oswald, 'Arial Narrow', ui-sans-serif, system-ui, sans-serif;
 }
@@ -134,7 +130,7 @@
 }
 
 /* surface: data display */
-/* Crooked photo rectangles with thin rules. */
+/* Crooked photo rectangles, thin rules. */
 [k=card] {
   border: 1px solid hsl(var(--k-border));
   border-radius: 0;

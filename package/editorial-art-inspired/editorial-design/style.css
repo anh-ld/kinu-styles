@@ -1,10 +1,6 @@
-/* kinu-styles: editorial-design — Editorial Design
-   Design rules: magazine layout — paper & ink neutrals with one seasonal accent, display serif + disciplined sans, hairline rules, column grid, caption rails
-   Source trend: https://trends.daisyui.com/trend/editorial-design/ */
-
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
 
-/* Light — clean paper, ink text, one seasonal crimson accent. */
+/* Light: clean paper, ink text, one seasonal crimson accent. */
 :root:root:not([data-color-scheme=dark]),
 [data-color-scheme=light] {
   color-scheme: light;
@@ -37,7 +33,7 @@
   --k-radius: 0.125rem;
 }
 
-/* Auto dark — ink surfaces, paper text. */
+/* Auto dark: ink surfaces, paper text. */
 @media (prefers-color-scheme: dark) {
   :root:root:not([data-color-scheme]) {
     color-scheme: dark;
@@ -103,7 +99,7 @@
   --k-radius: 0.125rem;
 }
 
-/* Typography — newsprint serif body, dramatic display serif headlines. */
+/* Typography: newsprint serif body, dramatic display serif headlines. */
 :root:root {
   font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
 }
