@@ -60,6 +60,19 @@ function parseFrontmatter(raw) {
   return out;
 }
 
+// Parse all spec frontmatter once; sidebar swatches read the light palette.
+for (const slug of slugs) {
+  parsedSpecs[slug] = parsedSpecs[slug] || parseFrontmatter(THEMES[slug]?.spec || '');
+}
+
+const SWATCH_KEYS = ['primary', 'accent', 'background'];
+function themeSwatch(slug) {
+  const palette = parsedSpecs[slug]?.palette?.light;
+  if (!palette) return null;
+  const colors = SWATCH_KEYS.map((k) => palette[k]).filter(Boolean);
+  return colors.length ? colors : null;
+}
+
 const PALETTE_ORDER = ['background', 'foreground', 'primary', 'secondary', 'accent', 'muted', 'border'];
 
 function PaletteBlock({ label, palette, order }) {
@@ -136,11 +149,24 @@ function SpecPanel({ slug }) {
 }
 
 function AdoptionBlock({ slug }) {
+  const code = `import 'kinu/style.css';\nimport 'kinu-styles/${slug}.css';`;
+  const [copied, setCopied] = useState(false);
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(code);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {}
+  };
   return (
     <div class="adopt">
-      <h3>How to adopt</h3>
-      <pre class="code">{`import 'kinu/style.css';
-import 'kinu-styles/${slug}.css';`}</pre>
+      <div class="adopt-head">
+        <h3>How to adopt</h3>
+        <button k="button" variant="ghost" size="sm" onClick={copy} aria-label="Copy import snippet">
+          {copied ? 'Copied' : 'Copy'}
+        </button>
+      </div>
+      <pre class="code">{code}</pre>
       <p class="adopt-note">
         Order matters: kinu first, theme after. Dark mode:{' '}
         <code>data-color-scheme="dark"</code> on <code>&lt;html&gt;</code> — or{' '}
@@ -1049,6 +1075,19 @@ function App() {
     matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
   );
   const [view, setView] = useState('components');
+  const [query, setQuery] = useState('');
+
+  const q = query.trim().toLowerCase();
+  const filtered = useMemo(() => {
+    if (!q) return groupedByCategory;
+    const out = {};
+    for (const [key, list] of Object.entries(groupedByCategory)) {
+      const hit = list.filter((s) => themes[s].name.toLowerCase().includes(q) || s.includes(q));
+      if (hit.length) out[key] = hit;
+    }
+    return out;
+  }, [q]);
+  const totalHits = Object.values(filtered).reduce((n, list) => n + list.length, 0);
 
   useEffect(() => {
     const onHashChange = () => {
@@ -1058,6 +1097,10 @@ function App() {
     window.addEventListener('hashchange', onHashChange);
     return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
+
+  useEffect(() => {
+    document.title = `${themes[slug].name} · kinu-styles`;
+  }, [slug]);
 
   // Applied pre-paint: first frame themed, not kinu default.
   useLayoutEffect(() => {
@@ -1084,9 +1127,13 @@ function App() {
   return (
     <div class="app-shell">
       <header class="topbar">
-        <h1>
-          kinu-styles <span class="muted">— {themes[slug].name}</span>
-        </h1>
+        <div class="brand">
+          <h1 class="brand-name">kinu-styles</h1>
+        </div>
+        <div class="topbar-current">
+          <span class="topbar-theme">{themes[slug].name}</span>
+          <span class="topbar-cat">{CATEGORY_LABELS[themes[slug].category]}</span>
+        </div>
         <div class="topbar-actions">
           <div k="toggle-group" class="scheme-toggle" role="group" aria-label="Color scheme">
             <button k="toggle" aria-pressed={scheme === 'light'} onClick={() => setScheme('light')}>
@@ -1107,21 +1154,45 @@ function App() {
         </div>
       </header>
       <aside class="switcher">
-        {Object.entries(CATEGORY_LABELS).map(([key, label]) => (
-          <div key={key} class="category">
-            <h4>{label}</h4>
-            {groupedByCategory[key].map((s) => (
-              <button
-                key={s}
-                class={s === slug ? 'trend active' : 'trend'}
-                onClick={() => select(s)}
-                aria-pressed={s === slug}
-              >
-                {themes[s].name}
-              </button>
-            ))}
-          </div>
-        ))}
+        <div class="switcher-search">
+          <input
+            k="input"
+            size="sm"
+            placeholder="Filter trends…"
+            value={query}
+            onInput={(e) => setQuery(e.target.value)}
+            name="portal-filter"
+            aria-label="Filter themes by name"
+          />
+        </div>
+        <div class="switcher-scroll">
+          {Object.entries(filtered).map(([key, list]) => (
+            <div key={key} class="category">
+              <h4>{CATEGORY_LABELS[key]}</h4>
+              {list.map((s) => {
+                const swatch = themeSwatch(s);
+                return (
+                  <button
+                    key={s}
+                    class={s === slug ? 'trend active' : 'trend'}
+                    onClick={() => select(s)}
+                    aria-pressed={s === slug}
+                  >
+                    {swatch && (
+                      <span class="trend-swatch" aria-hidden="true">
+                        {swatch.map((c) => (
+                          <i key={c} style={{ background: `hsl(${c})` }} />
+                        ))}
+                      </span>
+                    )}
+                    <span class="trend-name">{themes[s].name}</span>
+                  </button>
+                );
+              })}
+            </div>
+          ))}
+          {!totalHits && <p class="switcher-empty">No themes match “{query}”.</p>}
+        </div>
       </aside>
       <main class="content">{view === 'demo' ? <DashboardDemo /> : <Preview />}</main>
       <aside class="spec-sidebar">
