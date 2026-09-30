@@ -1,0 +1,236 @@
+/* kinu-styles: neumorphism — Neumorphism
+   Design rules: low-contrast monochromatic base surface, soft outer light/dark dual shadows, inset pressed states, rounded controls, one restrained accent, single upper-left light source
+   Source trend: https://trends.daisyui.com/trend/neumorphism/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
+
+/* Light — pale cool-gray base; raised controls cast paired white + dark soft shadows. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 222 25% 88%;
+  --k-foreground: 226 35% 25%;
+  --k-card: 222 25% 88%;
+  --k-card-foreground: 226 35% 25%;
+  --k-popover: 222 25% 92%;
+  --k-popover-foreground: 226 35% 25%;
+  --k-sidebar: 222 25% 84%;
+  --k-primary: 222 85% 55%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 222 85% 48%;
+  --k-primary-soft: 222 60% 80%;
+  --k-secondary: 222 20% 80%;
+  --k-secondary-foreground: 226 35% 30%;
+  --k-secondary-hover: 222 20% 74%;
+  --k-muted: 222 25% 84%;
+  --k-muted-foreground: 226 20% 48%;
+  --k-accent: 222 60% 60%;
+  --k-accent-foreground: 226 40% 95%;
+  --k-destructive: 0 65% 55%;
+  --k-destructive-foreground: 0 40% 97%;
+  --k-destructive-hover: 0 65% 48%;
+  --k-border: 222 25% 82%;
+  --k-input: 222 25% 82%;
+  --k-ring: 222 85% 60%;
+  --k-info: 222 40% 92%;
+  --k-info-foreground: 222 60% 40%;
+  --k-radius: 1rem;
+}
+
+/* Auto dark — deep slate base, embossed surfaces lit from above. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 230 25% 18%;
+    --k-foreground: 228 30% 88%;
+    --k-card: 230 25% 18%;
+    --k-card-foreground: 228 30% 88%;
+    --k-popover: 230 25% 22%;
+    --k-popover-foreground: 228 30% 88%;
+    --k-sidebar: 230 25% 14%;
+    --k-primary: 222 80% 62%;
+    --k-primary-foreground: 226 40% 12%;
+    --k-primary-hover: 222 80% 55%;
+    --k-primary-soft: 222 40% 30%;
+    --k-secondary: 230 20% 28%;
+    --k-secondary-foreground: 228 30% 88%;
+    --k-secondary-hover: 230 20% 34%;
+    --k-muted: 230 25% 24%;
+    --k-muted-foreground: 228 20% 60%;
+    --k-accent: 222 60% 65%;
+    --k-accent-foreground: 226 40% 12%;
+    --k-destructive: 0 60% 55%;
+    --k-destructive-foreground: 0 40% 95%;
+    --k-destructive-hover: 0 60% 62%;
+    --k-border: 230 20% 30%;
+    --k-input: 230 20% 30%;
+    --k-ring: 222 80% 65%;
+    --k-info: 230 30% 26%;
+    --k-info-foreground: 222 70% 75%;
+  --k-radius: 1rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 230 25% 18%;
+  --k-foreground: 228 30% 88%;
+  --k-card: 230 25% 18%;
+  --k-card-foreground: 228 30% 88%;
+  --k-popover: 230 25% 22%;
+  --k-popover-foreground: 228 30% 88%;
+  --k-sidebar: 230 25% 14%;
+  --k-primary: 222 80% 62%;
+  --k-primary-foreground: 226 40% 12%;
+  --k-primary-hover: 222 80% 55%;
+  --k-primary-soft: 222 40% 30%;
+  --k-secondary: 230 20% 28%;
+  --k-secondary-foreground: 228 30% 88%;
+  --k-secondary-hover: 230 20% 34%;
+  --k-muted: 230 25% 24%;
+  --k-muted-foreground: 228 20% 60%;
+  --k-accent: 222 60% 65%;
+  --k-accent-foreground: 226 40% 12%;
+  --k-destructive: 0 60% 55%;
+  --k-destructive-foreground: 0 40% 95%;
+  --k-destructive-hover: 0 60% 62%;
+  --k-border: 230 20% 30%;
+  --k-input: 230 20% 30%;
+  --k-ring: 222 80% 65%;
+  --k-info: 230 30% 26%;
+  --k-info-foreground: 222 70% 75%;
+  --k-radius: 1rem;
+}
+
+/* Typography — rounded medium-weight sans; strong contrast against the soft relief. */
+:root:root {
+  font-family: 'Nunito Sans', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: 'Nunito Sans', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: calc(var(--k-radius) * 2);
+  box-shadow: 6px 6px 14px hsl(var(--k-foreground) / 0.18), -6px -6px 14px hsl(0 0% 100% / 0.6);
+  transition: box-shadow 150ms ease;
+}
+[k=button]:hover {
+  box-shadow: 8px 8px 18px hsl(var(--k-foreground) / 0.2), -8px -8px 18px hsl(0 0% 100% / 0.65);
+}
+[k=button]:active {
+  box-shadow: inset 5px 5px 10px hsl(var(--k-foreground) / 0.18), inset -5px -5px 10px hsl(0 0% 100% / 0.6);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=item]:hover {
+  box-shadow: inset 3px 3px 6px hsl(var(--k-foreground) / 0.14), inset -3px -3px 6px hsl(0 0% 100% / 0.5);
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  box-shadow: 4px 4px 10px hsl(var(--k-foreground) / 0.16), -4px -4px 10px hsl(0 0% 100% / 0.55);
+}
+
+/* surface: data display */
+[k=card] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  box-shadow: 8px 8px 20px hsl(var(--k-foreground) / 0.18), -8px -8px 20px hsl(0 0% 100% / 0.6);
+}
+[k=badge] {
+  border-radius: calc(var(--k-radius) * 2);
+  box-shadow: inset 2px 2px 5px hsl(var(--k-foreground) / 0.14), inset -2px -2px 5px hsl(0 0% 100% / 0.5);
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+  box-shadow: inset 3px 3px 8px hsl(var(--k-foreground) / 0.15), inset -3px -3px 8px hsl(0 0% 100% / 0.5);
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: none;
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: inset 4px 4px 10px hsl(var(--k-foreground) / 0.16), inset -4px -4px 10px hsl(0 0% 100% / 0.55);
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  outline: none;
+  box-shadow: inset 4px 4px 10px hsl(var(--k-foreground) / 0.16), inset -4px -4px 10px hsl(0 0% 100% / 0.55), 0 0 0 3px hsl(var(--k-ring) / 0.35);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border: none;
+  background: hsl(var(--k-background));
+  box-shadow: 3px 3px 7px hsl(var(--k-foreground) / 0.16), -3px -3px 7px hsl(0 0% 100% / 0.55), inset 1px 1px 2px hsl(var(--k-foreground) / 0.1);
+}
+[k=switch] {
+  border-radius: calc(var(--k-radius) * 2);
+}
+
+/* surface: feedback */
+[k=alert] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  box-shadow: 6px 6px 16px hsl(var(--k-foreground) / 0.16), -6px -6px 16px hsl(0 0% 100% / 0.55);
+}
+[k=alert][data-variant=destructive] {
+  box-shadow: 6px 6px 16px hsl(var(--k-destructive) / 0.2), -6px -6px 16px hsl(0 0% 100% / 0.5);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: inset 3px 3px 8px hsl(var(--k-foreground) / 0.15), inset -3px -3px 8px hsl(0 0% 100% / 0.5);
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-card));
+  box-shadow: 4px 4px 10px hsl(var(--k-foreground) / 0.16), -4px -4px 10px hsl(0 0% 100% / 0.55);
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  background: hsl(var(--k-sidebar));
+  box-shadow: inset -3px -3px 8px hsl(0 0% 100% / 0.5), inset 3px 3px 8px hsl(var(--k-foreground) / 0.12);
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+  box-shadow: 0 1px 0 hsl(0 0% 100% / 0.6);
+}
+[k=popover] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-popover));
+  box-shadow: 10px 10px 24px hsl(var(--k-foreground) / 0.2), -10px -10px 24px hsl(0 0% 100% / 0.6);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — soft halo, no hard offset. */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 3px;
+}

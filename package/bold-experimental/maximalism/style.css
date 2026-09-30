@@ -1,0 +1,231 @@
+/* kinu-styles: maximalism — Maximalism
+   Design rules: dense layering, clashing patterns, ornate typography, vivid palette, mixed imagery, abundant decoration around a focal hierarchy
+   Source trend: https://trends.daisyui.com/trend/maximalism/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@700&family=Bodoni+Moda:ital,wght@0,700;1,700&display=swap');
+
+/* Light — warm ground, berry primary, teal counterpoint, gold ornament. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 45 40% 93%;
+  --k-foreground: 320 35% 12%;
+  --k-card: 45 45% 96%;
+  --k-card-foreground: 320 35% 12%;
+  --k-popover: 45 45% 97%;
+  --k-popover-foreground: 320 35% 12%;
+  --k-sidebar: 45 38% 90%;
+  --k-primary: 340 70% 42%;
+  --k-primary-foreground: 45 45% 97%;
+  --k-primary-hover: 340 70% 36%;
+  --k-primary-soft: 340 60% 90%;
+  --k-secondary: 170 55% 32%;
+  --k-secondary-foreground: 45 45% 97%;
+  --k-secondary-hover: 170 55% 27%;
+  --k-muted: 40 30% 88%;
+  --k-muted-foreground: 320 18% 40%;
+  --k-accent: 45 90% 50%;
+  --k-accent-foreground: 320 40% 12%;
+  --k-destructive: 0 60% 42%;
+  --k-destructive-foreground: 45 45% 97%;
+  --k-destructive-hover: 0 60% 36%;
+  --k-border: 40 25% 80%;
+  --k-input: 40 25% 80%;
+  --k-ring: 340 70% 45%;
+  --k-info: 340 65% 92%;
+  --k-info-foreground: 340 65% 38%;
+  --k-radius: 0.75rem;
+}
+
+/* Auto dark — deep plum, lighter berry and gold accents. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 320 35% 8%;
+    --k-foreground: 45 40% 92%;
+    --k-card: 320 33% 11%;
+    --k-card-foreground: 45 40% 92%;
+    --k-popover: 320 33% 12%;
+    --k-popover-foreground: 45 40% 92%;
+    --k-sidebar: 320 38% 6%;
+    --k-primary: 340 70% 62%;
+    --k-primary-foreground: 320 40% 8%;
+    --k-primary-hover: 340 70% 68%;
+    --k-primary-soft: 340 60% 22%;
+    --k-secondary: 170 55% 45%;
+    --k-secondary-foreground: 320 40% 8%;
+    --k-secondary-hover: 170 55% 51%;
+    --k-muted: 320 25% 18%;
+    --k-muted-foreground: 330 15% 62%;
+    --k-accent: 45 90% 58%;
+    --k-accent-foreground: 320 40% 8%;
+    --k-destructive: 0 55% 48%;
+    --k-destructive-foreground: 45 40% 92%;
+    --k-destructive-hover: 0 55% 55%;
+    --k-border: 320 22% 24%;
+    --k-input: 320 22% 24%;
+    --k-ring: 340 70% 65%;
+    --k-info: 340 60% 22%;
+    --k-info-foreground: 340 70% 75%;
+  --k-radius: 0.75rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 320 35% 8%;
+  --k-foreground: 45 40% 92%;
+  --k-card: 320 33% 11%;
+  --k-card-foreground: 45 40% 92%;
+  --k-popover: 320 33% 12%;
+  --k-popover-foreground: 45 40% 92%;
+  --k-sidebar: 320 38% 6%;
+  --k-primary: 340 70% 62%;
+  --k-primary-foreground: 320 40% 8%;
+  --k-primary-hover: 340 70% 68%;
+  --k-primary-soft: 340 60% 22%;
+  --k-secondary: 170 55% 45%;
+  --k-secondary-foreground: 320 40% 8%;
+  --k-secondary-hover: 170 55% 51%;
+  --k-muted: 320 25% 18%;
+  --k-muted-foreground: 330 15% 62%;
+  --k-accent: 45 90% 58%;
+  --k-accent-foreground: 320 40% 8%;
+  --k-destructive: 0 55% 48%;
+  --k-destructive-foreground: 45 40% 92%;
+  --k-destructive-hover: 0 55% 55%;
+  --k-border: 320 22% 24%;
+  --k-input: 320 22% 24%;
+  --k-ring: 340 70% 65%;
+  --k-info: 340 60% 22%;
+  --k-info-foreground: 340 70% 75%;
+  --k-radius: 0.75rem;
+}
+
+/* Typography — Unbounded for loud display, Bodoni Moda for ornate accents, sans body. */
+:root:root {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2) {
+  font-family: Unbounded, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+:where(h3, h4) {
+  font-family: 'Bodoni Moda', Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-foreground));
+  box-shadow: 3px 3px 0 hsl(var(--k-primary-soft));
+  transition: box-shadow 150ms ease, transform 150ms ease;
+}
+[k=button]:hover {
+  box-shadow: 2px 2px 0 hsl(var(--k-primary-soft));
+  transform: translate(-1px, -1px);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 0 0 1px hsl(var(--k-border)), 5px 5px 0 hsl(var(--k-primary-soft));
+  background: hsl(var(--k-card));
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-foreground));
+  background: hsl(var(--k-accent));
+  color: hsl(var(--k-accent-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.75em;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: repeating-linear-gradient(45deg, hsl(var(--k-muted)) 0 10px, hsl(var(--k-primary-soft)) 10px 20px);
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 0 2px hsl(var(--k-ring) / 0.25);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 4px 4px 0 hsl(var(--k-primary-soft));
+  background: hsl(var(--k-card));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-primary-soft));
+  box-shadow: inset 0 -3px 0 hsl(var(--k-accent));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: repeating-linear-gradient(90deg, hsl(var(--k-border)) 0 6px, transparent 6px 12px);
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 6px 6px 0 hsl(var(--k-primary-soft));
+  background: hsl(var(--k-popover));
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — ornamented */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

@@ -1,0 +1,227 @@
+/* kinu-styles: collage — Collage
+   Design rules: cutout photography, torn edges, overlapping fragments, mixed media, scale contrast, paper tones unified by ink overlays
+   Source trend: https://trends.daisyui.com/trend/collage/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cutive+Mono&display=swap');
+
+/* Light — clean paper field, ink-blue primary, burnt-orange photo accent. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 45 35% 96%;
+  --k-foreground: 220 55% 18%;
+  --k-card: 45 40% 97%;
+  --k-card-foreground: 220 55% 18%;
+  --k-popover: 45 40% 98%;
+  --k-popover-foreground: 220 55% 18%;
+  --k-sidebar: 40 30% 92%;
+  --k-primary: 220 60% 25%;
+  --k-primary-foreground: 45 40% 96%;
+  --k-primary-hover: 220 60% 19%;
+  --k-primary-soft: 220 45% 90%;
+  --k-secondary: 18 65% 45%;
+  --k-secondary-foreground: 45 40% 96%;
+  --k-secondary-hover: 18 65% 40%;
+  --k-muted: 40 30% 89%;
+  --k-muted-foreground: 35 15% 40%;
+  --k-accent: 330 45% 42%;
+  --k-accent-foreground: 45 40% 96%;
+  --k-destructive: 0 55% 42%;
+  --k-destructive-foreground: 45 40% 96%;
+  --k-destructive-hover: 0 55% 36%;
+  --k-border: 35 22% 82%;
+  --k-input: 35 22% 82%;
+  --k-ring: 220 60% 28%;
+  --k-info: 45 40% 90%;
+  --k-info-foreground: 35 25% 38%;
+  --k-radius: 0.25rem;
+}
+
+/* Auto dark — aged paper and ink: deep warm-brown shadows, paper-light text. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 35 25% 9%;
+    --k-foreground: 45 35% 90%;
+    --k-card: 35 25% 12%;
+    --k-card-foreground: 45 35% 90%;
+    --k-popover: 35 25% 13%;
+    --k-popover-foreground: 45 35% 90%;
+    --k-sidebar: 35 28% 7%;
+    --k-primary: 220 55% 62%;
+    --k-primary-foreground: 35 30% 10%;
+    --k-primary-hover: 220 55% 68%;
+    --k-primary-soft: 220 45% 22%;
+    --k-secondary: 18 60% 55%;
+    --k-secondary-foreground: 35 30% 10%;
+    --k-secondary-hover: 18 60% 60%;
+    --k-muted: 35 20% 19%;
+    --k-muted-foreground: 40 15% 62%;
+    --k-accent: 330 50% 55%;
+    --k-accent-foreground: 35 30% 10%;
+    --k-destructive: 0 50% 48%;
+    --k-destructive-foreground: 45 35% 90%;
+    --k-destructive-hover: 0 50% 55%;
+    --k-border: 35 20% 24%;
+    --k-input: 35 20% 24%;
+    --k-ring: 220 55% 62%;
+    --k-info: 45 30% 20%;
+    --k-info-foreground: 40 20% 65%;
+  --k-radius: 0.25rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 35 25% 9%;
+  --k-foreground: 45 35% 90%;
+  --k-card: 35 25% 12%;
+  --k-card-foreground: 45 35% 90%;
+  --k-popover: 35 25% 13%;
+  --k-popover-foreground: 45 35% 90%;
+  --k-sidebar: 35 28% 7%;
+  --k-primary: 220 55% 62%;
+  --k-primary-foreground: 35 30% 10%;
+  --k-primary-hover: 220 55% 68%;
+  --k-primary-soft: 220 45% 22%;
+  --k-secondary: 18 60% 55%;
+  --k-secondary-foreground: 35 30% 10%;
+  --k-secondary-hover: 18 60% 60%;
+  --k-muted: 35 20% 19%;
+  --k-muted-foreground: 40 15% 62%;
+  --k-accent: 330 50% 55%;
+  --k-accent-foreground: 35 30% 10%;
+  --k-destructive: 0 50% 48%;
+  --k-destructive-foreground: 45 35% 90%;
+  --k-destructive-hover: 0 50% 55%;
+  --k-border: 35 20% 24%;
+  --k-input: 35 20% 24%;
+  --k-ring: 220 55% 62%;
+  --k-info: 45 30% 20%;
+  --k-info-foreground: 40 20% 65%;
+  --k-radius: 0.25rem;
+}
+
+/* Typography — cutout headline slabs, found-typewriter body. */
+:root:root {
+  font-family: 'Cutive Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+:where(h1, h2, h3, h4) {
+  font-family: 'Archivo Black', ui-sans-serif, system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-foreground));
+  box-shadow: 3px 3px 0 hsl(var(--k-border));
+  transition: box-shadow 150ms ease, transform 150ms ease;
+}
+[k=button]:hover {
+  box-shadow: 5px 5px 0 hsl(var(--k-border));
+  transform: translate(-1px, -1px);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 4px 4px 0 hsl(var(--k-border) / 0.8);
+  background: hsl(var(--k-card));
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75em;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: repeating-linear-gradient(45deg, hsl(var(--k-muted)) 0 6px, hsl(var(--k-border)) 6px 12px);
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+[k=checkbox] {
+  border-radius: 0;
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 2px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 3px 3px 0 hsl(var(--k-border));
+  background: hsl(var(--k-card));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-primary));
+  color: hsl(var(--k-primary-foreground));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 5px 5px 0 hsl(var(--k-border));
+  background: hsl(var(--k-popover));
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — pasted-paper offset */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 3px 3px 0 hsl(var(--k-ring) / 0.5);
+}

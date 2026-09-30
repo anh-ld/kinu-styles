@@ -1,0 +1,237 @@
+/* kinu-styles: pixel-art — Pixel Art
+   Design rules: indexed palette, hard stair-stepped edges, zero radius, chunky 2px borders, blocky bitmap type, hard offset pixel shadows, no anti-aliased curves
+   Source trend: https://trends.daisyui.com/trend/pixel-art/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;600&display=swap');
+
+/* Light — pale arcade panels, dark-navy ink, red protagonist primary, green status secondary. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 0 0% 95%;
+  --k-foreground: 225 35% 16%;
+  --k-card: 0 0% 92%;
+  --k-card-foreground: 225 35% 16%;
+  --k-popover: 0 0% 97%;
+  --k-popover-foreground: 225 35% 16%;
+  --k-sidebar: 225 25% 88%;
+  --k-primary: 355 65% 47%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 355 65% 40%;
+  --k-primary-soft: 355 55% 92%;
+  --k-secondary: 150 55% 45%;
+  --k-secondary-foreground: 0 0% 100%;
+  --k-secondary-hover: 150 55% 39%;
+  --k-muted: 0 0% 88%;
+  --k-muted-foreground: 225 15% 42%;
+  --k-accent: 45 95% 55%;
+  --k-accent-foreground: 45 50% 12%;
+  --k-destructive: 0 70% 48%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 70% 42%;
+  --k-border: 225 30% 30%;
+  --k-input: 225 30% 30%;
+  --k-ring: 190 90% 48%;
+  --k-info: 190 60% 88%;
+  --k-info-foreground: 190 90% 35%;
+  --k-radius: 0;
+}
+
+/* Auto dark — Sweetie-16-style dark panels: navy, plum, red, green, cyan. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 235 35% 12%;
+    --k-foreground: 200 40% 88%;
+    --k-card: 235 30% 16%;
+    --k-card-foreground: 200 40% 88%;
+    --k-popover: 235 30% 18%;
+    --k-popover-foreground: 200 40% 88%;
+    --k-sidebar: 235 40% 9%;
+    --k-primary: 355 60% 52%;
+    --k-primary-foreground: 0 0% 100%;
+    --k-primary-hover: 355 60% 60%;
+    --k-primary-soft: 355 40% 25%;
+    --k-secondary: 150 50% 48%;
+    --k-secondary-foreground: 0 0% 100%;
+    --k-secondary-hover: 150 50% 54%;
+    --k-muted: 235 25% 20%;
+    --k-muted-foreground: 220 20% 62%;
+    --k-accent: 45 90% 58%;
+    --k-accent-foreground: 45 50% 10%;
+    --k-destructive: 0 70% 55%;
+    --k-destructive-foreground: 0 0% 100%;
+    --k-destructive-hover: 0 70% 62%;
+    --k-border: 225 30% 28%;
+    --k-input: 225 30% 28%;
+    --k-ring: 190 85% 55%;
+    --k-info: 190 45% 22%;
+    --k-info-foreground: 190 90% 70%;
+  --k-radius: 0;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 235 35% 12%;
+  --k-foreground: 200 40% 88%;
+  --k-card: 235 30% 16%;
+  --k-card-foreground: 200 40% 88%;
+  --k-popover: 235 30% 18%;
+  --k-popover-foreground: 200 40% 88%;
+  --k-sidebar: 235 40% 9%;
+  --k-primary: 355 60% 52%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 355 60% 60%;
+  --k-primary-soft: 355 40% 25%;
+  --k-secondary: 150 50% 48%;
+  --k-secondary-foreground: 0 0% 100%;
+  --k-secondary-hover: 150 50% 54%;
+  --k-muted: 235 25% 20%;
+  --k-muted-foreground: 220 20% 62%;
+  --k-accent: 45 90% 58%;
+  --k-accent-foreground: 45 50% 10%;
+  --k-destructive: 0 70% 55%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 70% 62%;
+  --k-border: 225 30% 28%;
+  --k-input: 225 30% 28%;
+  --k-ring: 190 85% 55%;
+  --k-info: 190 45% 22%;
+  --k-info-foreground: 190 90% 70%;
+  --k-radius: 0;
+}
+
+/* Typography — blocky bitmap display, pixel-sans body; integer-scale sizing. */
+:root:root {
+  font-family: 'Pixelify Sans', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 16px;
+}
+:where(h1, h2, h3, h4) {
+  font-family: 'Press Start 2P', 'Pixelify Sans', monospace;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+/* surface: actions */
+[k=button] {
+  border: 2px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 3px 3px 0 hsl(var(--k-border));
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+[k=button]:hover {
+  box-shadow: 1px 1px 0 hsl(var(--k-border));
+  transform: translate(2px, 2px);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=item]:hover {
+  background: hsl(var(--k-primary-soft));
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-border));
+  font-family: 'Pixelify Sans', monospace;
+}
+
+/* surface: data display */
+[k=card] {
+  border: 2px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: 4px 4px 0 hsl(var(--k-border));
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-border));
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: repeating-linear-gradient(135deg, hsl(var(--k-muted)) 0 8px, hsl(var(--k-muted-foreground) / 0.15) 8px 16px);
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 2px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 2px 2px 0 hsl(var(--k-ring));
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+  border-radius: 0;
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 2px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: 3px 3px 0 hsl(var(--k-border) / 0.6);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-foreground));
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-accent) / 0.5);
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-card));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 2px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: 4px 4px 0 hsl(var(--k-border));
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — thick pixel outline */
+[k]:focus-visible {
+  outline: 3px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

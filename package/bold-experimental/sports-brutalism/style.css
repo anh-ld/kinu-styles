@@ -1,0 +1,238 @@
+/* kinu-styles: sports-brutalism — Sports Brutalism
+   Design rules: condensed type, oversized numerals, scoreboard grids, halftones, hard overlays, team colors on black/white with fluorescent live-state accents
+   Source trend: https://trends.daisyui.com/trend/sports-brutalism/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Condensed:wght@400;500;700&display=swap');
+
+/* Light — white field, team blue primary, green secondary, fluorescent yellow live accents. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 0 0% 100%;
+  --k-foreground: 0 0% 8%;
+  --k-card: 0 0% 98%;
+  --k-card-foreground: 0 0% 8%;
+  --k-popover: 0 0% 100%;
+  --k-popover-foreground: 0 0% 8%;
+  --k-sidebar: 0 0% 94%;
+  --k-primary: 220 90% 45%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 220 90% 38%;
+  --k-primary-soft: 220 65% 92%;
+  --k-secondary: 130 60% 40%;
+  --k-secondary-foreground: 0 0% 100%;
+  --k-secondary-hover: 130 60% 34%;
+  --k-muted: 0 0% 94%;
+  --k-muted-foreground: 0 0% 42%;
+  --k-accent: 45 100% 55%;
+  --k-accent-foreground: 0 0% 8%;
+  --k-destructive: 0 80% 48%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 80% 42%;
+  --k-border: 0 0% 88%;
+  --k-input: 0 0% 88%;
+  --k-ring: 220 90% 45%;
+  --k-info: 130 65% 94%;
+  --k-info-foreground: 130 65% 34%;
+  --k-radius: 0.25rem;
+}
+
+/* Auto dark — stepped-charcoal scoreboard, brighter team colors. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 220 15% 6%;
+    --k-foreground: 0 0% 96%;
+    --k-card: 220 13% 9%;
+    --k-card-foreground: 0 0% 96%;
+    --k-popover: 220 13% 10%;
+    --k-popover-foreground: 0 0% 96%;
+    --k-sidebar: 220 17% 4%;
+    --k-primary: 220 90% 55%;
+    --k-primary-foreground: 0 0% 10%;
+    --k-primary-hover: 220 90% 61%;
+    --k-primary-soft: 220 60% 20%;
+    --k-secondary: 130 60% 55%;
+    --k-secondary-foreground: 0 0% 10%;
+    --k-secondary-hover: 130 60% 61%;
+    --k-muted: 220 12% 16%;
+    --k-muted-foreground: 220 10% 62%;
+    --k-accent: 45 100% 60%;
+    --k-accent-foreground: 0 0% 10%;
+    --k-destructive: 0 85% 55%;
+    --k-destructive-foreground: 0 0% 10%;
+    --k-destructive-hover: 0 85% 61%;
+    --k-border: 220 12% 24%;
+    --k-input: 220 12% 24%;
+    --k-ring: 220 90% 55%;
+    --k-info: 130 60% 22%;
+    --k-info-foreground: 130 70% 70%;
+  --k-radius: 0.25rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 220 15% 6%;
+  --k-foreground: 0 0% 96%;
+  --k-card: 220 13% 9%;
+  --k-card-foreground: 0 0% 96%;
+  --k-popover: 220 13% 10%;
+  --k-popover-foreground: 0 0% 96%;
+  --k-sidebar: 220 17% 4%;
+  --k-primary: 220 90% 55%;
+  --k-primary-foreground: 0 0% 10%;
+  --k-primary-hover: 220 90% 61%;
+  --k-primary-soft: 220 60% 20%;
+  --k-secondary: 130 60% 55%;
+  --k-secondary-foreground: 0 0% 10%;
+  --k-secondary-hover: 130 60% 61%;
+  --k-muted: 220 12% 16%;
+  --k-muted-foreground: 220 10% 62%;
+  --k-accent: 45 100% 60%;
+  --k-accent-foreground: 0 0% 10%;
+  --k-destructive: 0 85% 55%;
+  --k-destructive-foreground: 0 0% 10%;
+  --k-destructive-hover: 0 85% 61%;
+  --k-border: 220 12% 24%;
+  --k-input: 220 12% 24%;
+  --k-ring: 220 90% 55%;
+  --k-info: 130 60% 22%;
+  --k-info-foreground: 130 70% 70%;
+  --k-radius: 0.25rem;
+}
+
+/* Typography — condensed heavy uppercase headlines, condensed data body. */
+:root:root {
+  font-family: 'Roboto Condensed', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Anton, 'Roboto Condensed', ui-sans-serif, system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-foreground));
+  box-shadow: 4px 4px 0 hsl(var(--k-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-family: 'Roboto Condensed', ui-sans-serif, system-ui, sans-serif;
+  transition: box-shadow 150ms ease, transform 150ms ease;
+}
+[k=button]:hover {
+  box-shadow: 6px 6px 0 hsl(var(--k-foreground));
+  transform: translate(-1px, -1px);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* surface: data display */
+[k=card] {
+  border: 2px solid hsl(var(--k-foreground));
+  border-radius: var(--k-radius);
+  box-shadow: 5px 5px 0 hsl(var(--k-foreground));
+  background: hsl(var(--k-card));
+}
+[k=badge] {
+  border-radius: 0;
+  border: 2px solid hsl(var(--k-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75em;
+  font-weight: 700;
+}
+[k=table] {
+  border-color: hsl(var(--k-foreground) / 0.6);
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: repeating-linear-gradient(90deg, hsl(var(--k-muted)) 0 14px, hsl(var(--k-muted-foreground) / 0.25) 14px 16px);
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 2px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 3px 3px 0 hsl(var(--k-ring) / 0.4);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+[k=checkbox], [k=radio] {
+  border-radius: 0;
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 2px solid hsl(var(--k-foreground));
+  border-radius: var(--k-radius);
+  border-left: 6px solid hsl(var(--k-primary));
+  box-shadow: 4px 4px 0 hsl(var(--k-foreground));
+  background: hsl(var(--k-card));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: 0;
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-foreground) / 0.6);
+}
+[k=tab] {
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-foreground) / 0.6);
+}
+[k=popover] {
+  border: 2px solid hsl(var(--k-foreground));
+  border-radius: var(--k-radius);
+  box-shadow: 5px 5px 0 hsl(var(--k-foreground));
+  background: hsl(var(--k-popover));
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — scoreboard hard offset */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 3px 3px 0 hsl(var(--k-ring));
+}

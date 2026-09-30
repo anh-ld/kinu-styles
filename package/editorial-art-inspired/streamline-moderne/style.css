@@ -1,0 +1,239 @@
+/* kinu-styles: streamline-moderne — Streamline Moderne
+   Design rules: aerodynamic curves, horizontal speed bands, chrome accents, ocean-liner forms, cream / navy / sea green / signal red, rounded corners, streamlined condensed sans
+   Source trend: https://trends.daisyui.com/trend/streamline-moderne/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Righteous&display=swap');
+
+/* Light — cream deck, navy primary, signal-red secondary, sea-green accent. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 45 35% 97%;
+  --k-foreground: 220 50% 20%;
+  --k-card: 45 35% 99%;
+  --k-card-foreground: 220 50% 20%;
+  --k-popover: 45 35% 99%;
+  --k-popover-foreground: 220 50% 20%;
+  --k-sidebar: 45 30% 92%;
+  --k-primary: 220 55% 40%;
+  --k-primary-foreground: 45 35% 98%;
+  --k-primary-hover: 220 55% 34%;
+  --k-primary-soft: 220 50% 93%;
+  --k-secondary: 5 80% 48%;
+  --k-secondary-foreground: 45 35% 98%;
+  --k-secondary-hover: 5 80% 42%;
+  --k-muted: 45 25% 90%;
+  --k-muted-foreground: 220 20% 45%;
+  --k-accent: 185 45% 40%;
+  --k-accent-foreground: 45 35% 98%;
+  --k-destructive: 0 70% 42%;
+  --k-destructive-foreground: 45 35% 98%;
+  --k-destructive-hover: 0 70% 36%;
+  --k-border: 220 20% 82%;
+  --k-input: 220 20% 82%;
+  --k-ring: 185 50% 45%;
+  --k-info: 220 45% 93%;
+  --k-info-foreground: 220 55% 40%;
+  --k-radius: 1rem;
+}
+
+/* Auto dark — deep navy vessel, chrome and signal accents. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 220 40% 8%;
+    --k-foreground: 45 30% 92%;
+    --k-card: 220 35% 10%;
+    --k-card-foreground: 45 30% 92%;
+    --k-popover: 220 35% 11%;
+    --k-popover-foreground: 45 30% 92%;
+    --k-sidebar: 220 45% 6%;
+    --k-primary: 185 50% 55%;
+    --k-primary-foreground: 220 40% 8%;
+    --k-primary-hover: 185 50% 62%;
+    --k-primary-soft: 185 40% 18%;
+    --k-secondary: 5 85% 60%;
+    --k-secondary-foreground: 220 40% 8%;
+    --k-secondary-hover: 5 85% 66%;
+    --k-muted: 220 25% 16%;
+    --k-muted-foreground: 45 20% 62%;
+    --k-accent: 220 10% 75%;
+    --k-accent-foreground: 220 40% 8%;
+    --k-destructive: 0 75% 55%;
+    --k-destructive-foreground: 220 40% 8%;
+    --k-destructive-hover: 0 75% 62%;
+    --k-border: 220 25% 22%;
+    --k-input: 220 25% 22%;
+    --k-ring: 185 55% 62%;
+    --k-info: 220 40% 20%;
+    --k-info-foreground: 220 60% 75%;
+  --k-radius: 1rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 220 40% 8%;
+  --k-foreground: 45 30% 92%;
+  --k-card: 220 35% 10%;
+  --k-card-foreground: 45 30% 92%;
+  --k-popover: 220 35% 11%;
+  --k-popover-foreground: 45 30% 92%;
+  --k-sidebar: 220 45% 6%;
+  --k-primary: 185 50% 55%;
+  --k-primary-foreground: 220 40% 8%;
+  --k-primary-hover: 185 50% 62%;
+  --k-primary-soft: 185 40% 18%;
+  --k-secondary: 5 85% 60%;
+  --k-secondary-foreground: 220 40% 8%;
+  --k-secondary-hover: 5 85% 66%;
+  --k-muted: 220 25% 16%;
+  --k-muted-foreground: 45 20% 62%;
+  --k-accent: 220 10% 75%;
+  --k-accent-foreground: 220 40% 8%;
+  --k-destructive: 0 75% 55%;
+  --k-destructive-foreground: 220 40% 8%;
+  --k-destructive-hover: 0 75% 62%;
+  --k-border: 220 25% 22%;
+  --k-input: 220 25% 22%;
+  --k-ring: 185 55% 62%;
+  --k-info: 220 40% 20%;
+  --k-info-foreground: 220 60% 75%;
+  --k-radius: 1rem;
+}
+
+/* Typography — streamlined condensed sans with broad horizontal spacing. */
+:root:root {
+  font-family: 'Barlow Condensed', ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.02em;
+}
+:where(h1, h2, h3, h4) {
+  font-family: 'Righteous', 'Barlow Condensed', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: 9999px;
+  border: 1px solid hsl(var(--k-border));
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+[k=button]:hover {
+  box-shadow: 0 0 0 1px hsl(var(--k-ring) / 0.5);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: 9999px;
+  border: 1px solid hsl(var(--k-border));
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.8125rem;
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 2px 10px hsl(var(--k-border) / 0.5);
+  border-top: 3px solid hsl(var(--k-primary));
+}
+[k=badge] {
+  border-radius: 9999px;
+  border: 1px solid hsl(var(--k-border));
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: 9999px;
+  background: hsl(var(--k-background));
+}
+[k=textarea] {
+  border-radius: var(--k-radius);
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 0 1px hsl(var(--k-ring));
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: 9999px;
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-primary));
+  color: hsl(var(--k-primary-foreground));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+  height: 2px;
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-popover));
+  box-shadow: 0 6px 24px hsl(var(--k-border) / 0.5);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

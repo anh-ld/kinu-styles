@@ -1,0 +1,261 @@
+/* kinu-styles: fui-hud — FUI / HUD
+   Design rules: telemetry readouts, targeting reticles, technical grids, translucent overlays; translucent phosphor green and amber readouts over deep blue-black, red reserved for lock and failure states; angular clipped panels and thin technical linework
+   Source trend: https://trends.daisyui.com/trend/fui-hud/ */
+
+/* Fonts — the @import MUST stay the first rule (R6, KTD4). */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Share+Tech+Mono&display=swap');
+
+/* Light — daylight ops console: pale cool gray, phosphor green, amber readouts. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 200 35% 96%;
+  --k-foreground: 160 30% 12%;
+  --k-card: 200 40% 98%;
+  --k-card-foreground: 160 30% 12%;
+  --k-popover: 200 40% 98%;
+  --k-popover-foreground: 160 30% 12%;
+  --k-sidebar: 200 25% 92%;
+  --k-primary: 150 60% 40%;
+  --k-primary-foreground: 150 40% 97%;
+  --k-primary-hover: 150 60% 34%;
+  --k-primary-soft: 150 45% 90%;
+  --k-secondary: 42 90% 55%;
+  --k-secondary-foreground: 42 60% 10%;
+  --k-secondary-hover: 42 90% 48%;
+  --k-muted: 200 20% 90%;
+  --k-muted-foreground: 200 15% 42%;
+  --k-accent: 190 80% 45%;
+  --k-accent-foreground: 190 50% 98%;
+  --k-destructive: 0 75% 50%;
+  --k-destructive-foreground: 0 40% 98%;
+  --k-destructive-hover: 0 75% 44%;
+  --k-border: 200 20% 80%;
+  --k-input: 200 20% 80%;
+  --k-ring: 150 70% 45%;
+  --k-info: 190 60% 92%;
+  --k-info-foreground: 190 80% 35%;
+  --k-radius: 0.25rem;
+}
+
+/* Auto dark — deep blue-black cockpit, phosphor green + amber telemetry. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 220 45% 4%;
+    --k-foreground: 150 30% 92%;
+    --k-card: 220 40% 7%;
+    --k-card-foreground: 150 30% 92%;
+    --k-popover: 220 40% 8%;
+    --k-popover-foreground: 150 30% 92%;
+    --k-sidebar: 220 50% 3%;
+    --k-primary: 150 70% 50%;
+    --k-primary-foreground: 150 60% 6%;
+    --k-primary-hover: 150 70% 44%;
+    --k-primary-soft: 150 40% 14%;
+    --k-secondary: 42 95% 55%;
+    --k-secondary-foreground: 42 80% 8%;
+    --k-secondary-hover: 42 95% 48%;
+    --k-muted: 220 30% 12%;
+    --k-muted-foreground: 200 20% 55%;
+    --k-accent: 190 90% 50%;
+    --k-accent-foreground: 190 60% 6%;
+    --k-destructive: 0 80% 52%;
+    --k-destructive-foreground: 0 40% 98%;
+    --k-destructive-hover: 0 80% 46%;
+    --k-border: 220 25% 18%;
+    --k-input: 220 25% 18%;
+    --k-ring: 150 80% 55%;
+    --k-info: 190 50% 15%;
+    --k-info-foreground: 190 90% 70%;
+  --k-radius: 0.25rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 220 45% 4%;
+  --k-foreground: 150 30% 92%;
+  --k-card: 220 40% 7%;
+  --k-card-foreground: 150 30% 92%;
+  --k-popover: 220 40% 8%;
+  --k-popover-foreground: 150 30% 92%;
+  --k-sidebar: 220 50% 3%;
+  --k-primary: 150 70% 50%;
+  --k-primary-foreground: 150 60% 6%;
+  --k-primary-hover: 150 70% 44%;
+  --k-primary-soft: 150 40% 14%;
+  --k-secondary: 42 95% 55%;
+  --k-secondary-foreground: 42 80% 8%;
+  --k-secondary-hover: 42 95% 48%;
+  --k-muted: 220 30% 12%;
+  --k-muted-foreground: 200 20% 55%;
+  --k-accent: 190 90% 50%;
+  --k-accent-foreground: 190 60% 6%;
+  --k-destructive: 0 80% 52%;
+  --k-destructive-foreground: 0 40% 98%;
+  --k-destructive-hover: 0 80% 46%;
+  --k-border: 220 25% 18%;
+  --k-input: 220 25% 18%;
+  --k-ring: 150 80% 55%;
+  --k-info: 190 50% 15%;
+  --k-info-foreground: 190 90% 70%;
+  --k-radius: 0.25rem;
+}
+
+/* Typography — condensed uppercase technical headings, monospaced data body. */
+:root:root {
+  font-family: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Orbitron, 'Share Tech Mono', ui-sans-serif, system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.5rem), calc(100% - 0.5rem) 100%, 0 100%);
+  font-family: 'Share Tech Mono', ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: box-shadow 200ms ease, background-color 200ms ease;
+}
+[k=button]:hover {
+  box-shadow: 0 0 12px hsl(var(--k-primary) / 0.5), inset 0 0 0 1px hsl(var(--k-primary) / 0.4);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: 0;
+  border: 1px solid hsl(var(--k-border));
+  clip-path: polygon(0.25rem 0, 100% 0, 100% calc(100% - 0.25rem), calc(100% - 0.25rem) 100%, 0 100%);
+  font-family: 'Share Tech Mono', ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  clip-path: polygon(0.75rem 0, 100% 0, 100% calc(100% - 0.75rem), calc(100% - 0.75rem) 100%, 0 100%);
+  background: hsl(var(--k-card) / 0.85);
+  backdrop-filter: blur(6px);
+  box-shadow: inset 0 0 0 1px hsl(var(--k-primary) / 0.08);
+}
+[k=badge] {
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75em;
+  border: 1px solid hsl(var(--k-border));
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: linear-gradient(90deg, hsl(var(--k-muted)) 25%, hsl(var(--k-muted-foreground) / 0.25) 50%, hsl(var(--k-muted)) 75%);
+  background-size: 200% 100%;
+  animation: k-hud-scan 1.6s linear infinite;
+}
+@keyframes k-hud-scan {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  font-family: 'Share Tech Mono', ui-monospace, monospace;
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: inset 0 0 0 1px hsl(var(--k-ring) / 0.4), 0 0 10px hsl(var(--k-ring) / 0.35);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+  border-radius: 0.125rem;
+}
+[k=checkbox]:checked, [k=radio]:checked {
+  box-shadow: 0 0 8px hsl(var(--k-primary) / 0.4);
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  border-left: 3px solid hsl(var(--k-info-foreground));
+  background: hsl(var(--k-card) / 0.9);
+}
+[k=alert][data-variant=destructive] {
+  border-left-color: hsl(var(--k-destructive));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+  font-family: 'Share Tech Mono', ui-monospace, monospace;
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  font-family: 'Share Tech Mono', ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 0 -2px 0 hsl(var(--k-primary)), 0 0 10px hsl(var(--k-primary) / 0.25);
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-popover) / 0.85);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px hsl(var(--k-background) / 0.6), 0 0 16px hsl(var(--k-primary) / 0.12);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Clip-paths release on focus so the targeting ring stays visible. */
+[k=button]:focus-visible, [k=chip-button]:focus-visible, [k=tab]:focus-visible {
+  clip-path: none;
+}
+
+/* Focus ring — HUD targeting glow. */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 0 0 10px hsl(var(--k-ring) / 0.4);
+}

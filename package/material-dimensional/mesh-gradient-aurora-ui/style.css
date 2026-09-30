@@ -1,0 +1,242 @@
+/* kinu-styles: mesh-gradient-aurora-ui — Mesh Gradient / Aurora UI
+   Design rules: atmospheric multi-point gradients, luminous color clouds, soft glow halos, blurred transitions, quiet zones behind text, violet-rose-cyan aurora wash
+   Source trend: https://trends.daisyui.com/trend/mesh-gradient-aurora-ui/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap');
+
+/* Light — pale quiet base, aurora tints on surfaces, soft luminous glows. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 265 50% 97%;
+  --k-foreground: 262 40% 25%;
+  --k-card: 0 0% 100%;
+  --k-card-foreground: 262 40% 25%;
+  --k-popover: 0 0% 100%;
+  --k-popover-foreground: 262 40% 25%;
+  --k-sidebar: 270 45% 93%;
+  --k-primary: 265 85% 55%;
+  --k-primary-foreground: 265 40% 98%;
+  --k-primary-hover: 265 85% 48%;
+  --k-primary-soft: 265 60% 92%;
+  --k-secondary: 330 85% 60%;
+  --k-secondary-foreground: 330 45% 97%;
+  --k-secondary-hover: 330 85% 53%;
+  --k-muted: 265 30% 93%;
+  --k-muted-foreground: 262 20% 48%;
+  --k-accent: 200 90% 55%;
+  --k-accent-foreground: 200 50% 96%;
+  --k-destructive: 0 75% 52%;
+  --k-destructive-foreground: 0 45% 97%;
+  --k-destructive-hover: 0 75% 45%;
+  --k-border: 265 30% 88%;
+  --k-input: 265 30% 86%;
+  --k-ring: 265 85% 62%;
+  --k-info: 265 50% 93%;
+  --k-info-foreground: 265 70% 40%;
+  --k-radius: 1rem;
+}
+
+/* Auto dark — deep charcoal sky, glowing aurora accents. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 265 35% 8%;
+    --k-foreground: 265 30% 92%;
+    --k-card: 265 32% 12%;
+    --k-card-foreground: 265 30% 92%;
+    --k-popover: 265 32% 14%;
+    --k-popover-foreground: 265 30% 92%;
+    --k-sidebar: 265 40% 6%;
+    --k-primary: 265 90% 66%;
+    --k-primary-foreground: 265 50% 10%;
+    --k-primary-hover: 265 90% 72%;
+    --k-primary-soft: 265 45% 22%;
+    --k-secondary: 330 90% 66%;
+    --k-secondary-foreground: 330 50% 10%;
+    --k-secondary-hover: 330 90% 72%;
+    --k-muted: 265 30% 18%;
+    --k-muted-foreground: 265 20% 62%;
+    --k-accent: 200 90% 60%;
+    --k-accent-foreground: 200 50% 10%;
+    --k-destructive: 0 75% 58%;
+    --k-destructive-foreground: 0 45% 96%;
+    --k-destructive-hover: 0 75% 65%;
+    --k-border: 265 28% 24%;
+    --k-input: 265 28% 24%;
+    --k-ring: 265 90% 70%;
+    --k-info: 265 40% 18%;
+    --k-info-foreground: 265 80% 78%;
+  --k-radius: 1rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 265 35% 8%;
+  --k-foreground: 265 30% 92%;
+  --k-card: 265 32% 12%;
+  --k-card-foreground: 265 30% 92%;
+  --k-popover: 265 32% 14%;
+  --k-popover-foreground: 265 30% 92%;
+  --k-sidebar: 265 40% 6%;
+  --k-primary: 265 90% 66%;
+  --k-primary-foreground: 265 50% 10%;
+  --k-primary-hover: 265 90% 72%;
+  --k-primary-soft: 265 45% 22%;
+  --k-secondary: 330 90% 66%;
+  --k-secondary-foreground: 330 50% 10%;
+  --k-secondary-hover: 330 90% 72%;
+  --k-muted: 265 30% 18%;
+  --k-muted-foreground: 265 20% 62%;
+  --k-accent: 200 90% 60%;
+  --k-accent-foreground: 200 50% 10%;
+  --k-destructive: 0 75% 58%;
+  --k-destructive-foreground: 0 45% 96%;
+  --k-destructive-hover: 0 75% 65%;
+  --k-border: 265 28% 24%;
+  --k-input: 265 28% 24%;
+  --k-ring: 265 90% 70%;
+  --k-info: 265 40% 18%;
+  --k-info-foreground: 265 80% 78%;
+  --k-radius: 1rem;
+}
+
+/* Typography — contemporary sans, large compact headlines, plain body. */
+:root:root {
+  font-family: Outfit, ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Outfit, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  background-image: linear-gradient(135deg, hsl(var(--k-primary)), hsl(var(--k-secondary)));
+  color: hsl(var(--k-primary-foreground));
+  box-shadow: 0 4px 20px hsl(var(--k-primary) / 0.35);
+  transition: box-shadow 150ms ease, transform 150ms ease;
+}
+[k=button]:hover {
+  box-shadow: 0 6px 28px hsl(var(--k-primary) / 0.5);
+  transform: translateY(-1px);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=item]:hover {
+  background: hsl(var(--k-primary-soft));
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 1px solid hsl(var(--k-border));
+  background-image: linear-gradient(135deg, hsl(var(--k-info)), hsl(var(--k-primary-soft)));
+}
+
+/* surface: data display */
+[k=card] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  background-image: radial-gradient(120% 120% at 0% 0%, hsl(var(--k-info) / 0.7), hsl(var(--k-card)) 45%);
+  box-shadow: 0 8px 30px hsl(var(--k-primary) / 0.16);
+}
+[k=badge] {
+  border-radius: calc(var(--k-radius) * 2);
+  background-image: linear-gradient(135deg, hsl(var(--k-primary)), hsl(var(--k-secondary)));
+  color: hsl(var(--k-primary-foreground));
+  box-shadow: 0 2px 12px hsl(var(--k-primary) / 0.4);
+  font-weight: 500;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+  background-image: linear-gradient(110deg, hsl(var(--k-muted)) 40%, hsl(var(--k-info)) 50%, hsl(var(--k-muted)) 60%);
+  background-size: 200% 100%;
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 0 3px hsl(var(--k-ring) / 0.25), 0 0 16px hsl(var(--k-ring) / 0.35);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+[k=switch] {
+  border-radius: calc(var(--k-radius) * 2);
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  background-image: linear-gradient(135deg, hsl(var(--k-info) / 0.6), hsl(var(--k-card)) 60%);
+  box-shadow: 0 4px 20px hsl(var(--k-primary) / 0.14);
+}
+[k=alert][data-variant=destructive] {
+  border-color: hsl(var(--k-destructive) / 0.5);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: calc(var(--k-radius) * 2);
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-primary-soft));
+  box-shadow: 0 0 14px hsl(var(--k-primary) / 0.25);
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar));
+  background-image: radial-gradient(120% 100% at 0% 0%, hsl(var(--k-info) / 0.5), hsl(var(--k-sidebar)) 50%);
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+  background-image: linear-gradient(90deg, transparent, hsl(var(--k-border)) 50%, transparent);
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-popover));
+  box-shadow: 0 8px 30px hsl(var(--k-primary) / 0.2), 0 4px 12px hsl(var(--k-foreground) / 0.08);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — aurora halo. */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 0 0 16px hsl(var(--k-ring) / 0.5);
+}

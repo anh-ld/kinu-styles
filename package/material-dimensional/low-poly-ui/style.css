@@ -1,0 +1,249 @@
+/* kinu-styles: low-poly-ui — Low-Poly UI
+   Design rules: faceted flat-shaded geometry, angular silhouettes, sharp planar changes, limited palette of light/mid/shadow faces, crisp hard lighting, angular geometric display type
+   Source trend: https://trends.daisyui.com/trend/low-poly-ui/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@500;600;700&display=swap');
+
+/* Light — pale sky face, chamfered cards with hard facet shading. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 220 25% 94%;
+  --k-foreground: 232 35% 18%;
+  --k-card: 215 25% 88%;
+  --k-card-foreground: 232 35% 18%;
+  --k-popover: 210 25% 92%;
+  --k-popover-foreground: 232 35% 18%;
+  --k-sidebar: 225 25% 90%;
+  --k-primary: 258 50% 45%;
+  --k-primary-foreground: 258 60% 96%;
+  --k-primary-hover: 258 50% 38%;
+  --k-primary-soft: 258 40% 85%;
+  --k-secondary: 22 65% 55%;
+  --k-secondary-foreground: 22 55% 96%;
+  --k-secondary-hover: 22 65% 48%;
+  --k-muted: 220 20% 86%;
+  --k-muted-foreground: 232 18% 46%;
+  --k-accent: 190 70% 42%;
+  --k-accent-foreground: 190 60% 95%;
+  --k-destructive: 0 70% 50%;
+  --k-destructive-foreground: 0 45% 97%;
+  --k-destructive-hover: 0 70% 43%;
+  --k-border: 220 15% 72%;
+  --k-input: 220 15% 74%;
+  --k-ring: 258 55% 52%;
+  --k-info: 220 30% 90%;
+  --k-info-foreground: 232 45% 38%;
+  --k-radius: 0.25rem;
+}
+
+/* Auto dark — deep indigo facet, luminous highlight faces. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 235 30% 14%;
+    --k-foreground: 230 25% 92%;
+    --k-card: 235 28% 18%;
+    --k-card-foreground: 230 25% 92%;
+    --k-popover: 235 28% 20%;
+    --k-popover-foreground: 230 25% 92%;
+    --k-sidebar: 235 35% 10%;
+    --k-primary: 258 60% 62%;
+    --k-primary-foreground: 258 55% 12%;
+    --k-primary-hover: 258 60% 68%;
+    --k-primary-soft: 258 40% 26%;
+    --k-secondary: 22 75% 60%;
+    --k-secondary-foreground: 22 55% 12%;
+    --k-secondary-hover: 22 75% 66%;
+    --k-muted: 235 25% 24%;
+    --k-muted-foreground: 232 20% 62%;
+    --k-accent: 190 70% 52%;
+    --k-accent-foreground: 190 60% 10%;
+    --k-destructive: 0 70% 56%;
+    --k-destructive-foreground: 0 45% 95%;
+    --k-destructive-hover: 0 70% 63%;
+    --k-border: 235 20% 34%;
+    --k-input: 235 20% 34%;
+    --k-ring: 258 65% 65%;
+    --k-info: 235 30% 20%;
+    --k-info-foreground: 258 75% 75%;
+  --k-radius: 0.25rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 235 30% 14%;
+  --k-foreground: 230 25% 92%;
+  --k-card: 235 28% 18%;
+  --k-card-foreground: 230 25% 92%;
+  --k-popover: 235 28% 20%;
+  --k-popover-foreground: 230 25% 92%;
+  --k-sidebar: 235 35% 10%;
+  --k-primary: 258 60% 62%;
+  --k-primary-foreground: 258 55% 12%;
+  --k-primary-hover: 258 60% 68%;
+  --k-primary-soft: 258 40% 26%;
+  --k-secondary: 22 75% 60%;
+  --k-secondary-foreground: 22 55% 12%;
+  --k-secondary-hover: 22 75% 66%;
+  --k-muted: 235 25% 24%;
+  --k-muted-foreground: 232 20% 62%;
+  --k-accent: 190 70% 52%;
+  --k-accent-foreground: 190 60% 10%;
+  --k-destructive: 0 70% 56%;
+  --k-destructive-foreground: 0 45% 95%;
+  --k-destructive-hover: 0 70% 63%;
+  --k-border: 235 20% 34%;
+  --k-input: 235 20% 34%;
+  --k-ring: 258 65% 65%;
+  --k-info: 235 30% 20%;
+  --k-info-foreground: 258 75% 75%;
+  --k-radius: 0.25rem;
+}
+
+/* Typography — angular geometric display for headings, plain sans body. */
+:root:root {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Jura, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+  box-shadow: 3px 3px 0 hsl(var(--k-border)), 5px 5px 0 hsl(var(--k-foreground) / 0.25);
+  transition: transform 80ms ease, box-shadow 80ms ease;
+}
+[k=button]:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 hsl(var(--k-border)), 2px 2px 0 hsl(var(--k-foreground) / 0.25);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=item]:hover {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 2px 2px 0 hsl(var(--k-border));
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+  box-shadow: 2px 2px 0 hsl(var(--k-border));
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  background-image: linear-gradient(135deg, hsl(var(--k-card)), hsl(var(--k-muted)) 70%);
+  box-shadow: 4px 4px 0 hsl(var(--k-border)), 6px 6px 0 hsl(var(--k-foreground) / 0.18);
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.75em;
+  font-weight: 600;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+  background-image: linear-gradient(135deg, hsl(var(--k-muted)), hsl(var(--k-card)));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  box-shadow: inset 2px 2px 0 hsl(var(--k-border) / 0.6);
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: inset 2px 2px 0 hsl(var(--k-border) / 0.5), 0 0 0 2px hsl(var(--k-ring) / 0.3);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  background-image: linear-gradient(135deg, hsl(var(--k-card)), hsl(var(--k-muted)));
+  box-shadow: 3px 3px 0 hsl(var(--k-border));
+}
+[k=alert][data-variant=destructive] {
+  border-color: hsl(var(--k-destructive) / 0.6);
+  box-shadow: 3px 3px 0 hsl(var(--k-destructive) / 0.5);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-card));
+  border-radius: var(--k-radius);
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85em;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-primary));
+  color: hsl(var(--k-primary-foreground));
+  box-shadow: 2px 2px 0 hsl(var(--k-border));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar));
+  background-image: linear-gradient(135deg, hsl(var(--k-sidebar)), hsl(var(--k-muted)));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-popover));
+  box-shadow: 4px 4px 0 hsl(var(--k-border)), 8px 8px 0 hsl(var(--k-foreground) / 0.15);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — sharp square edge. */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

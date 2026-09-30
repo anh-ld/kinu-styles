@@ -1,0 +1,247 @@
+/* kinu-styles: terminal-cli-ui — Terminal / CLI UI
+   Design rules: monospace typography, command prompts, blinking cursor, phosphor glow, text logs, rectangular panes, one-pixel borders
+   Source trend: https://trends.daisyui.com/trend/terminal-cli-ui/ */
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
+
+/* Light — paper phosphor: pale green wash, ink text, green and cyan signals. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 120 25% 97%;
+  --k-foreground: 150 30% 12%;
+  --k-card: 120 20% 98%;
+  --k-card-foreground: 150 30% 12%;
+  --k-popover: 120 20% 99%;
+  --k-popover-foreground: 150 30% 12%;
+  --k-sidebar: 120 25% 94%;
+  --k-primary: 140 70% 35%;
+  --k-primary-foreground: 120 30% 98%;
+  --k-primary-hover: 140 70% 28%;
+  --k-primary-soft: 140 55% 90%;
+  --k-secondary: 190 70% 40%;
+  --k-secondary-foreground: 190 60% 96%;
+  --k-secondary-hover: 190 70% 33%;
+  --k-muted: 120 20% 92%;
+  --k-muted-foreground: 150 15% 42%;
+  --k-accent: 45 85% 45%;
+  --k-accent-foreground: 45 90% 96%;
+  --k-destructive: 0 70% 45%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 70% 39%;
+  --k-border: 150 20% 80%;
+  --k-input: 150 20% 80%;
+  --k-ring: 140 70% 45%;
+  --k-info: 190 60% 92%;
+  --k-info-foreground: 190 80% 35%;
+  --k-radius: 0;
+}
+
+/* Auto dark — the canonical console: near-black, phosphor green, ANSI accents. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 150 40% 4%;
+    --k-foreground: 130 40% 88%;
+    --k-card: 150 35% 7%;
+    --k-card-foreground: 130 40% 88%;
+    --k-popover: 150 35% 8%;
+    --k-popover-foreground: 130 40% 88%;
+    --k-sidebar: 150 45% 3%;
+    --k-primary: 140 80% 55%;
+    --k-primary-foreground: 150 40% 6%;
+    --k-primary-hover: 140 80% 62%;
+    --k-primary-soft: 140 50% 15%;
+    --k-secondary: 190 80% 50%;
+    --k-secondary-foreground: 150 40% 6%;
+    --k-secondary-hover: 190 80% 58%;
+    --k-muted: 150 25% 12%;
+    --k-muted-foreground: 140 20% 55%;
+    --k-accent: 45 90% 60%;
+    --k-accent-foreground: 45 80% 8%;
+    --k-destructive: 0 75% 55%;
+    --k-destructive-foreground: 0 0% 100%;
+    --k-destructive-hover: 0 75% 62%;
+    --k-border: 150 30% 20%;
+    --k-input: 150 30% 20%;
+    --k-ring: 140 80% 60%;
+    --k-info: 190 45% 16%;
+    --k-info-foreground: 190 70% 70%;
+  --k-radius: 0;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 150 40% 4%;
+  --k-foreground: 130 40% 88%;
+  --k-card: 150 35% 7%;
+  --k-card-foreground: 130 40% 88%;
+  --k-popover: 150 35% 8%;
+  --k-popover-foreground: 130 40% 88%;
+  --k-sidebar: 150 45% 3%;
+  --k-primary: 140 80% 55%;
+  --k-primary-foreground: 150 40% 6%;
+  --k-primary-hover: 140 80% 62%;
+  --k-primary-soft: 140 50% 15%;
+  --k-secondary: 190 80% 50%;
+  --k-secondary-foreground: 150 40% 6%;
+  --k-secondary-hover: 190 80% 58%;
+  --k-muted: 150 25% 12%;
+  --k-muted-foreground: 140 20% 55%;
+  --k-accent: 45 90% 60%;
+  --k-accent-foreground: 45 80% 8%;
+  --k-destructive: 0 75% 55%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 75% 62%;
+  --k-border: 150 30% 20%;
+  --k-input: 150 30% 20%;
+  --k-ring: 140 80% 60%;
+  --k-info: 190 45% 16%;
+  --k-info-foreground: 190 70% 70%;
+  --k-radius: 0;
+}
+
+/* Typography — one legible monospace family; VT323 for banners. */
+:root:root {
+  font-family: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+:where(h1, h2, h3, h4) {
+  font-family: VT323, 'Share Tech Mono', ui-monospace, monospace;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* surface: actions */
+/* rectangular, bracketed, phosphor glow on hover. */
+[k=button] {
+  border-radius: 0;
+  border: 1px solid hsl(var(--k-primary));
+  transition: box-shadow 150ms ease, background-color 150ms ease;
+}
+[k=button]:hover {
+  box-shadow: 0 0 0 1px hsl(var(--k-primary)), 0 0 12px hsl(var(--k-primary) / 0.35);
+}
+[k=item] {
+  border-radius: 0;
+}
+[k=item][aria-selected=true] {
+  background: hsl(var(--k-primary-soft));
+  color: hsl(var(--k-primary));
+}
+[k=chip], [k=chip-button] {
+  border-radius: 0;
+  border: 1px solid hsl(var(--k-border));
+  font-family: 'Share Tech Mono', ui-monospace, monospace;
+}
+
+/* surface: data display */
+/* rectangular panes, text-native marks. */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: 0;
+  box-shadow: none;
+  background: hsl(var(--k-card));
+}
+[k=badge] {
+  border-radius: 0;
+  border: 1px solid hsl(var(--k-primary) / 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75em;
+}
+[k=badge]::before {
+  content: '[';
+}
+[k=badge]::after {
+  content: ']';
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+  font-variant-numeric: tabular-nums;
+}
+[k=skeleton] {
+  border-radius: 0;
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+/* caret as phosphor cursor. */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: 0;
+  background: hsl(var(--k-card));
+  caret-color: hsl(var(--k-primary));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 8px hsl(var(--k-ring) / 0.3);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+  border-radius: 0;
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: 0;
+  background: hsl(var(--k-card));
+}
+[k=alert][data-variant=destructive] {
+  border-color: hsl(var(--k-destructive) / 0.6);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: 0;
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+  border-bottom: 1px solid hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+[k=tab][aria-selected=true] {
+  box-shadow: inset 0 -2px 0 hsl(var(--k-primary));
+  color: hsl(var(--k-primary));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: 0;
+  box-shadow: 0 4px 16px hsl(var(--k-background) / 0.6);
+  background: hsl(var(--k-popover));
+}
+[k=scroll-area] {
+  border-radius: 0;
+}
+
+/* Focus ring — phosphor glow. */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 0 0 10px hsl(var(--k-ring) / 0.4);
+}

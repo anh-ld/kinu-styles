@@ -1,0 +1,216 @@
+/* kinu-styles: american-kitsch — American Kitsch
+   Design rules: 1950s painted advertising: warm cream, cherry red, turquoise, butter yellow, mint, navy; exuberant slab display + condensed sans; scalloped labels, price bursts, printed frames
+   Source trend: https://trends.daisyui.com/trend/american-kitsch/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Barlow+Condensed:wght@400;500;600;700&display=swap');
+
+/* Light — sunlit diner: warm cream paper, navy ink text, cherry red and turquoise accents. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 42 45% 96%;
+  --k-foreground: 210 30% 16%;
+  --k-card: 40 50% 94%;
+  --k-card-foreground: 210 30% 16%;
+  --k-popover: 42 45% 98%;
+  --k-popover-foreground: 210 30% 16%;
+  --k-sidebar: 38 40% 90%;
+  --k-primary: 355 70% 45%;
+  --k-primary-foreground: 42 45% 97%;
+  --k-primary-hover: 355 70% 39%;
+  --k-primary-soft: 355 60% 91%;
+  --k-secondary: 180 55% 40%;
+  --k-secondary-foreground: 42 45% 97%;
+  --k-secondary-hover: 180 55% 34%;
+  --k-muted: 40 35% 90%;
+  --k-muted-foreground: 32 20% 42%;
+  --k-accent: 48 90% 55%;
+  --k-accent-foreground: 210 30% 18%;
+  --k-destructive: 355 70% 45%;
+  --k-destructive-foreground: 42 45% 97%;
+  --k-destructive-hover: 355 70% 40%;
+  --k-border: 38 30% 82%;
+  --k-input: 38 30% 82%;
+  --k-ring: 180 55% 45%;
+  --k-info: 180 40% 92%;
+  --k-info-foreground: 180 55% 32%;
+  --k-radius: 1rem;
+}
+
+/* Auto dark — neon diner at night: space-navy walls, cream signs, glowing cherry and turquoise. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 220 35% 8%;
+    --k-foreground: 40 40% 93%;
+    --k-card: 220 30% 11%;
+    --k-card-foreground: 40 40% 93%;
+    --k-popover: 220 30% 12%;
+    --k-popover-foreground: 40 40% 93%;
+    --k-sidebar: 220 35% 6%;
+    --k-primary: 355 75% 55%;
+    --k-primary-foreground: 40 40% 96%;
+    --k-primary-hover: 355 75% 62%;
+    --k-primary-soft: 355 60% 20%;
+    --k-secondary: 180 60% 50%;
+    --k-secondary-foreground: 220 35% 10%;
+    --k-secondary-hover: 180 60% 56%;
+    --k-muted: 220 25% 18%;
+    --k-muted-foreground: 40 20% 65%;
+    --k-accent: 48 90% 60%;
+    --k-accent-foreground: 210 30% 15%;
+    --k-destructive: 355 75% 55%;
+    --k-destructive-foreground: 40 40% 96%;
+    --k-destructive-hover: 355 75% 62%;
+    --k-border: 220 25% 24%;
+    --k-input: 220 25% 24%;
+    --k-ring: 180 60% 55%;
+    --k-info: 180 40% 18%;
+    --k-info-foreground: 180 60% 70%;
+  --k-radius: 1rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 220 35% 8%;
+  --k-foreground: 40 40% 93%;
+  --k-card: 220 30% 11%;
+  --k-card-foreground: 40 40% 93%;
+  --k-popover: 220 30% 12%;
+  --k-popover-foreground: 40 40% 93%;
+  --k-sidebar: 220 35% 6%;
+  --k-primary: 355 75% 55%;
+  --k-primary-foreground: 40 40% 96%;
+  --k-primary-hover: 355 75% 62%;
+  --k-primary-soft: 355 60% 20%;
+  --k-secondary: 180 60% 50%;
+  --k-secondary-foreground: 220 35% 10%;
+  --k-secondary-hover: 180 60% 56%;
+  --k-muted: 220 25% 18%;
+  --k-muted-foreground: 40 20% 65%;
+  --k-accent: 48 90% 60%;
+  --k-accent-foreground: 210 30% 15%;
+  --k-destructive: 355 75% 55%;
+  --k-destructive-foreground: 40 40% 96%;
+  --k-destructive-hover: 355 75% 62%;
+  --k-border: 220 25% 24%;
+  --k-input: 220 25% 24%;
+  --k-ring: 180 60% 55%;
+  --k-info: 180 40% 18%;
+  --k-info-foreground: 180 60% 70%;
+  --k-radius: 1rem;
+}
+
+/* Typography — exuberant slab for headlines, condensed sans for selling copy. */
+:root:root {
+  font-family: 'Barlow Condensed', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: 'Alfa Slab One', 'Barlow Condensed', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  transition: box-shadow 200ms ease, background-color 200ms ease;
+}
+[k=button]:hover {
+  box-shadow: 0 0 0 4px hsl(var(--k-secondary) / 0.25);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: data display */
+[k=card] {
+  border: 2px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 1px 0 hsl(var(--k-border) / 0.8);
+}
+[k=badge] {
+  border-radius: calc(var(--k-radius) * 2);
+  font-family: 'Alfa Slab One', 'Barlow Condensed', sans-serif;
+  font-size: 0.8em;
+  letter-spacing: 0.04em;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 2px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 0 -3px 0 hsl(var(--k-primary));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 2px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 4px 16px hsl(var(--k-border) / 0.5);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

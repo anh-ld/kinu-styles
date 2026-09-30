@@ -1,0 +1,241 @@
+/* kinu-styles: swiss-style — Swiss Style
+   Design rules: strict modular grid, generous whitespace, grotesque sans-serif, asymmetry, objective hierarchy, flush-left type, one signal accent
+   Source trend: https://trends.daisyui.com/trend/swiss-style/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* Light — white, black and gray with signal red applied as information. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 0 0% 100%;
+  --k-foreground: 0 0% 10%;
+  --k-card: 0 0% 100%;
+  --k-card-foreground: 0 0% 10%;
+  --k-popover: 0 0% 100%;
+  --k-popover-foreground: 0 0% 10%;
+  --k-sidebar: 0 0% 97%;
+  --k-primary: 0 85% 50%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 0 85% 42%;
+  --k-primary-soft: 0 80% 94%;
+  --k-secondary: 0 0% 92%;
+  --k-secondary-foreground: 0 0% 15%;
+  --k-secondary-hover: 0 0% 85%;
+  --k-muted: 0 0% 96%;
+  --k-muted-foreground: 0 0% 45%;
+  --k-accent: 0 0% 92%;
+  --k-accent-foreground: 0 0% 15%;
+  --k-destructive: 0 80% 45%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 80% 38%;
+  --k-border: 0 0% 88%;
+  --k-input: 0 0% 88%;
+  --k-ring: 0 85% 50%;
+  --k-info: 0 0% 96%;
+  --k-info-foreground: 0 0% 45%;
+  --k-radius: 0;
+}
+
+/* Auto dark — black field, white ink, brighter signal red. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 0 0% 9%;
+    --k-foreground: 0 0% 94%;
+    --k-card: 0 0% 10%;
+    --k-card-foreground: 0 0% 94%;
+    --k-popover: 0 0% 11%;
+    --k-popover-foreground: 0 0% 94%;
+    --k-sidebar: 0 0% 7%;
+    --k-primary: 0 90% 58%;
+    --k-primary-foreground: 0 0% 100%;
+    --k-primary-hover: 0 90% 64%;
+    --k-primary-soft: 0 80% 22%;
+    --k-secondary: 0 0% 18%;
+    --k-secondary-foreground: 0 0% 92%;
+    --k-secondary-hover: 0 0% 25%;
+    --k-muted: 0 0% 16%;
+    --k-muted-foreground: 0 0% 60%;
+    --k-accent: 0 0% 22%;
+    --k-accent-foreground: 0 0% 90%;
+    --k-destructive: 0 85% 55%;
+    --k-destructive-foreground: 0 0% 100%;
+    --k-destructive-hover: 0 85% 62%;
+    --k-border: 0 0% 25%;
+    --k-input: 0 0% 25%;
+    --k-ring: 0 90% 58%;
+    --k-info: 0 0% 18%;
+    --k-info-foreground: 0 0% 65%;
+  --k-radius: 0;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 0 0% 9%;
+  --k-foreground: 0 0% 94%;
+  --k-card: 0 0% 10%;
+  --k-card-foreground: 0 0% 94%;
+  --k-popover: 0 0% 11%;
+  --k-popover-foreground: 0 0% 94%;
+  --k-sidebar: 0 0% 7%;
+  --k-primary: 0 90% 58%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 0 90% 64%;
+  --k-primary-soft: 0 80% 22%;
+  --k-secondary: 0 0% 18%;
+  --k-secondary-foreground: 0 0% 92%;
+  --k-secondary-hover: 0 0% 25%;
+  --k-muted: 0 0% 16%;
+  --k-muted-foreground: 0 0% 60%;
+  --k-accent: 0 0% 22%;
+  --k-accent-foreground: 0 0% 90%;
+  --k-destructive: 0 85% 55%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 85% 62%;
+  --k-border: 0 0% 25%;
+  --k-input: 0 0% 25%;
+  --k-ring: 0 90% 58%;
+  --k-info: 0 0% 18%;
+  --k-info-foreground: 0 0% 65%;
+  --k-radius: 0;
+}
+
+/* Typography — grotesque sans on a strict scale, flush left, objective hierarchy. */
+:root:root {
+  font-family: Inter, 'Helvetica Neue', Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+:where(h1, h2) {
+  text-transform: uppercase;
+}
+
+/* surface: actions */
+/* sharp rectangles, no shadows, color does the signaling. */
+[k=button] {
+  border-radius: 0;
+  font-weight: 600;
+  transition: background-color 150ms ease;
+  box-shadow: none;
+}
+[k=item] {
+  border-radius: 0;
+}
+[k=item][aria-selected=true] {
+  background: hsl(var(--k-primary));
+  color: hsl(var(--k-primary-foreground));
+}
+[k=chip], [k=chip-button] {
+  border-radius: 0;
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: 0;
+  box-shadow: none;
+  background: hsl(var(--k-card));
+}
+[k=badge] {
+  border-radius: 0;
+  border: 1px solid hsl(var(--k-border));
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+  font-variant-numeric: tabular-nums;
+}
+[k=skeleton] {
+  border-radius: 0;
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: 0;
+  background: hsl(var(--k-background));
+  box-shadow: none;
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: none;
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+  border-radius: 0;
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-left: 4px solid hsl(var(--k-border));
+  border-radius: 0;
+  background: hsl(var(--k-card));
+}
+[k=alert][data-variant=destructive] {
+  border-left-color: hsl(var(--k-destructive));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: 0;
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+  border-bottom: 2px solid hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8em;
+}
+[k=tab][aria-selected=true] {
+  box-shadow: inset 0 -3px 0 hsl(var(--k-primary));
+  color: hsl(var(--k-primary));
+  font-weight: 600;
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: 0;
+  box-shadow: none;
+  background: hsl(var(--k-popover));
+}
+[k=scroll-area] {
+  border-radius: 0;
+}
+
+/* Focus ring */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

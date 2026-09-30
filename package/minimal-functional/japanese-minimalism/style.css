@@ -1,0 +1,233 @@
+/* kinu-styles: japanese-minimalism — Japanese Minimalism
+   Design rules: disciplined reduction, ma spacing, calm rice-paper neutrals, ink and indigo, thin rules, exact rectangles, quiet material honesty
+   Source trend: https://trends.daisyui.com/trend/japanese-minimalism/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@500;600&display=swap');
+
+/* Light — rice paper, warm linen and pale stone; indigo primary, cedar secondary. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 45 30% 96%;
+  --k-foreground: 220 15% 20%;
+  --k-card: 45 30% 97%;
+  --k-card-foreground: 220 15% 20%;
+  --k-popover: 45 30% 98%;
+  --k-popover-foreground: 220 15% 20%;
+  --k-sidebar: 45 25% 92%;
+  --k-primary: 220 45% 35%;
+  --k-primary-foreground: 45 30% 96%;
+  --k-primary-hover: 220 45% 28%;
+  --k-primary-soft: 220 40% 90%;
+  --k-secondary: 150 20% 40%;
+  --k-secondary-foreground: 45 30% 96%;
+  --k-secondary-hover: 150 20% 33%;
+  --k-muted: 40 20% 92%;
+  --k-muted-foreground: 220 10% 42%;
+  --k-accent: 25 30% 45%;
+  --k-accent-foreground: 45 30% 96%;
+  --k-destructive: 5 45% 42%;
+  --k-destructive-foreground: 45 30% 96%;
+  --k-destructive-hover: 5 45% 36%;
+  --k-border: 45 15% 84%;
+  --k-input: 45 15% 84%;
+  --k-ring: 220 45% 45%;
+  --k-info: 220 30% 92%;
+  --k-info-foreground: 220 45% 40%;
+  --k-radius: 0.125rem;
+}
+
+/* Auto dark — deep ink and charcoal, rice-paper text, lighter indigo. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 220 20% 10%;
+    --k-foreground: 45 25% 88%;
+    --k-card: 220 18% 12%;
+    --k-card-foreground: 45 25% 88%;
+    --k-popover: 220 18% 13%;
+    --k-popover-foreground: 45 25% 88%;
+    --k-sidebar: 220 25% 8%;
+    --k-primary: 220 40% 65%;
+    --k-primary-foreground: 220 30% 10%;
+    --k-primary-hover: 220 40% 72%;
+    --k-primary-soft: 220 35% 22%;
+    --k-secondary: 150 15% 45%;
+    --k-secondary-foreground: 150 20% 90%;
+    --k-secondary-hover: 150 15% 52%;
+    --k-muted: 220 15% 18%;
+    --k-muted-foreground: 45 12% 60%;
+    --k-accent: 25 20% 40%;
+    --k-accent-foreground: 45 25% 90%;
+    --k-destructive: 5 45% 50%;
+    --k-destructive-foreground: 5 40% 95%;
+    --k-destructive-hover: 5 45% 58%;
+    --k-border: 220 15% 25%;
+    --k-input: 220 15% 25%;
+    --k-ring: 220 40% 65%;
+    --k-info: 220 30% 20%;
+    --k-info-foreground: 220 40% 75%;
+  --k-radius: 0.125rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 220 20% 10%;
+  --k-foreground: 45 25% 88%;
+  --k-card: 220 18% 12%;
+  --k-card-foreground: 45 25% 88%;
+  --k-popover: 220 18% 13%;
+  --k-popover-foreground: 45 25% 88%;
+  --k-sidebar: 220 25% 8%;
+  --k-primary: 220 40% 65%;
+  --k-primary-foreground: 220 30% 10%;
+  --k-primary-hover: 220 40% 72%;
+  --k-primary-soft: 220 35% 22%;
+  --k-secondary: 150 15% 45%;
+  --k-secondary-foreground: 150 20% 90%;
+  --k-secondary-hover: 150 15% 52%;
+  --k-muted: 220 15% 18%;
+  --k-muted-foreground: 45 12% 60%;
+  --k-accent: 25 20% 40%;
+  --k-accent-foreground: 45 25% 90%;
+  --k-destructive: 5 45% 50%;
+  --k-destructive-foreground: 5 40% 95%;
+  --k-destructive-hover: 5 45% 58%;
+  --k-border: 220 15% 25%;
+  --k-input: 220 15% 25%;
+  --k-ring: 220 40% 65%;
+  --k-info: 220 30% 20%;
+  --k-info-foreground: 220 40% 75%;
+  --k-radius: 0.125rem;
+}
+
+/* Typography — restrained Gothic body, Mincho display, careful Japanese spacing. */
+:root:root {
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* surface: actions */
+/* exact rectangles, deliberate thresholds. */
+[k=button] {
+  border-radius: var(--k-radius);
+  transition: background-color 300ms ease;
+  box-shadow: none;
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=item][aria-selected=true] {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 3px 0 0 hsl(var(--k-primary));
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: data display */
+/* thin rules, no Western card softness. */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: none;
+  background: hsl(var(--k-card));
+}
+[k=badge] {
+  border-radius: 0;
+  border: 1px solid hsl(var(--k-border));
+  font-weight: 500;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+  font-variant-numeric: tabular-nums;
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+/* thin underline fields. */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: none;
+  border-bottom: 1px solid hsl(var(--k-input));
+  border-radius: 0;
+  background: transparent;
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-bottom-color: hsl(var(--k-ring));
+  box-shadow: none;
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+  border-radius: 0;
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-left: 3px solid hsl(var(--k-border));
+  border-radius: 0;
+  background: hsl(var(--k-card));
+}
+[k=alert][data-variant=destructive] {
+  border-left-color: hsl(var(--k-destructive));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: 0;
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+  border-bottom: 1px solid hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: 0;
+}
+[k=tab][aria-selected=true] {
+  box-shadow: inset 0 -1px 0 hsl(var(--k-primary));
+  color: hsl(var(--k-primary));
+  font-weight: 500;
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: 0;
+  box-shadow: 0 8px 24px hsl(var(--k-foreground) / 0.08);
+  background: hsl(var(--k-popover));
+}
+[k=scroll-area] {
+  border-radius: 0;
+}
+
+/* Focus ring */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

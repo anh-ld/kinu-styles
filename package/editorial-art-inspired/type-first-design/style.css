@@ -1,0 +1,237 @@
+/* kinu-styles: type-first-design — Type-First Design
+   Design rules: oversized headlines as the layout, extreme scale contrast, stark high-contrast fields, one dominant signal color, quiet reading face
+   Source trend: https://trends.daisyui.com/trend/type-first-design/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap');
+
+/* Light — stark white field, near-black ink, one hot signal. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 0 0% 100%;
+  --k-foreground: 240 15% 5%;
+  --k-card: 0 0% 100%;
+  --k-card-foreground: 240 15% 5%;
+  --k-popover: 0 0% 100%;
+  --k-popover-foreground: 240 15% 5%;
+  --k-sidebar: 240 10% 97%;
+  --k-primary: 13 92% 52%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 13 92% 46%;
+  --k-primary-soft: 13 90% 94%;
+  --k-secondary: 240 15% 12%;
+  --k-secondary-foreground: 0 0% 100%;
+  --k-secondary-hover: 240 15% 8%;
+  --k-muted: 240 10% 96%;
+  --k-muted-foreground: 240 8% 42%;
+  --k-accent: 220 90% 50%;
+  --k-accent-foreground: 0 0% 100%;
+  --k-destructive: 0 80% 45%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 80% 39%;
+  --k-border: 240 12% 88%;
+  --k-input: 240 12% 88%;
+  --k-ring: 13 92% 55%;
+  --k-info: 220 80% 96%;
+  --k-info-foreground: 220 80% 40%;
+  --k-radius: 0rem;
+}
+
+/* Auto dark — near-black field, white ink, hotter signal. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 240 18% 5%;
+    --k-foreground: 0 0% 98%;
+    --k-card: 240 16% 7%;
+    --k-card-foreground: 0 0% 98%;
+    --k-popover: 240 16% 8%;
+    --k-popover-foreground: 0 0% 98%;
+    --k-sidebar: 240 20% 4%;
+    --k-primary: 15 95% 58%;
+    --k-primary-foreground: 240 20% 8%;
+    --k-primary-hover: 15 95% 64%;
+    --k-primary-soft: 15 70% 18%;
+    --k-secondary: 240 12% 22%;
+    --k-secondary-foreground: 0 0% 98%;
+    --k-secondary-hover: 240 12% 28%;
+    --k-muted: 240 12% 16%;
+    --k-muted-foreground: 240 10% 68%;
+    --k-accent: 220 90% 62%;
+    --k-accent-foreground: 240 20% 8%;
+    --k-destructive: 0 85% 52%;
+    --k-destructive-foreground: 240 20% 8%;
+    --k-destructive-hover: 0 85% 58%;
+    --k-border: 240 15% 22%;
+    --k-input: 240 15% 22%;
+    --k-ring: 15 95% 62%;
+    --k-info: 220 50% 22%;
+    --k-info-foreground: 220 80% 75%;
+  --k-radius: 0rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 240 18% 5%;
+  --k-foreground: 0 0% 98%;
+  --k-card: 240 16% 7%;
+  --k-card-foreground: 0 0% 98%;
+  --k-popover: 240 16% 8%;
+  --k-popover-foreground: 0 0% 98%;
+  --k-sidebar: 240 20% 4%;
+  --k-primary: 15 95% 58%;
+  --k-primary-foreground: 240 20% 8%;
+  --k-primary-hover: 15 95% 64%;
+  --k-primary-soft: 15 70% 18%;
+  --k-secondary: 240 12% 22%;
+  --k-secondary-foreground: 0 0% 98%;
+  --k-secondary-hover: 240 12% 28%;
+  --k-muted: 240 12% 16%;
+  --k-muted-foreground: 240 10% 68%;
+  --k-accent: 220 90% 62%;
+  --k-accent-foreground: 240 20% 8%;
+  --k-destructive: 0 85% 52%;
+  --k-destructive-foreground: 240 20% 8%;
+  --k-destructive-hover: 0 85% 58%;
+  --k-border: 240 15% 22%;
+  --k-input: 240 15% 22%;
+  --k-ring: 15 95% 62%;
+  --k-info: 220 50% 22%;
+  --k-info-foreground: 220 80% 75%;
+  --k-radius: 0rem;
+}
+
+/* Typography — monumental expressive display, quiet reading body. */
+:root:root {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2) {
+  font-family: Syne, 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+:where(h3, h4) {
+  font-family: Syne, 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  font-size: 0.8125rem;
+}
+[k=button]:hover {
+  background: hsl(var(--k-secondary));
+  color: hsl(var(--k-secondary-foreground));
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 0.75rem;
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: none;
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 0 1px hsl(var(--k-ring));
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  font-size: 0.8125rem;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-popover));
+  box-shadow: 0 8px 24px hsl(var(--k-foreground) / 0.12);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

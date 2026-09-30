@@ -1,0 +1,230 @@
+/* kinu-styles: whimsigothic — Whimsigothic
+   Design rules: midnight blue + inky violet + black, jewel accents (plum, emerald, ruby), antique gold, moonlit cream text, arched and medallion shapes, ornate playful gothic type
+   Source trend: https://trends.daisyui.com/trend/whimsigothic/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap');
+
+/* Light — moonlit cream take: pale celestial ivory, inky-violet text, plum primary, antique-gold secondary. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 45 40% 95%;
+  --k-foreground: 255 40% 20%;
+  --k-card: 45 35% 92%;
+  --k-card-foreground: 255 40% 20%;
+  --k-popover: 45 40% 97%;
+  --k-popover-foreground: 255 40% 20%;
+  --k-sidebar: 45 30% 88%;
+  --k-primary: 290 40% 42%;
+  --k-primary-foreground: 290 40% 96%;
+  --k-primary-hover: 290 40% 36%;
+  --k-primary-soft: 290 35% 90%;
+  --k-secondary: 40 70% 50%;
+  --k-secondary-foreground: 40 60% 12%;
+  --k-secondary-hover: 40 70% 44%;
+  --k-muted: 45 30% 90%;
+  --k-muted-foreground: 270 20% 45%;
+  --k-accent: 155 45% 40%;
+  --k-accent-foreground: 155 40% 95%;
+  --k-destructive: 0 55% 45%;
+  --k-destructive-foreground: 0 40% 95%;
+  --k-destructive-hover: 0 55% 39%;
+  --k-border: 270 25% 78%;
+  --k-input: 270 25% 78%;
+  --k-ring: 40 65% 55%;
+  --k-info: 290 30% 90%;
+  --k-info-foreground: 290 40% 40%;
+  --k-radius: 1rem;
+}
+
+/* Auto dark — the canonical celestial night: midnight blue, inky violet, near-black panels, gold light. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 255 45% 7%;
+    --k-foreground: 45 40% 92%;
+    --k-card: 255 35% 11%;
+    --k-card-foreground: 45 40% 92%;
+    --k-popover: 255 35% 13%;
+    --k-popover-foreground: 45 40% 92%;
+    --k-sidebar: 255 50% 5%;
+    --k-primary: 290 45% 60%;
+    --k-primary-foreground: 290 50% 8%;
+    --k-primary-hover: 290 45% 66%;
+    --k-primary-soft: 290 40% 22%;
+    --k-secondary: 42 80% 60%;
+    --k-secondary-foreground: 42 60% 10%;
+    --k-secondary-hover: 42 80% 66%;
+    --k-muted: 255 30% 18%;
+    --k-muted-foreground: 270 20% 60%;
+    --k-accent: 160 45% 55%;
+    --k-accent-foreground: 160 50% 8%;
+    --k-destructive: 0 60% 60%;
+    --k-destructive-foreground: 0 60% 10%;
+    --k-destructive-hover: 0 60% 66%;
+    --k-border: 255 30% 25%;
+    --k-input: 255 30% 25%;
+    --k-ring: 42 80% 62%;
+    --k-info: 290 40% 20%;
+    --k-info-foreground: 290 60% 75%;
+  --k-radius: 1rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 255 45% 7%;
+  --k-foreground: 45 40% 92%;
+  --k-card: 255 35% 11%;
+  --k-card-foreground: 45 40% 92%;
+  --k-popover: 255 35% 13%;
+  --k-popover-foreground: 45 40% 92%;
+  --k-sidebar: 255 50% 5%;
+  --k-primary: 290 45% 60%;
+  --k-primary-foreground: 290 50% 8%;
+  --k-primary-hover: 290 45% 66%;
+  --k-primary-soft: 290 40% 22%;
+  --k-secondary: 42 80% 60%;
+  --k-secondary-foreground: 42 60% 10%;
+  --k-secondary-hover: 42 80% 66%;
+  --k-muted: 255 30% 18%;
+  --k-muted-foreground: 270 20% 60%;
+  --k-accent: 160 45% 55%;
+  --k-accent-foreground: 160 50% 8%;
+  --k-destructive: 0 60% 60%;
+  --k-destructive-foreground: 0 60% 10%;
+  --k-destructive-hover: 0 60% 66%;
+  --k-border: 255 30% 25%;
+  --k-input: 255 30% 25%;
+  --k-ring: 42 80% 62%;
+  --k-info: 290 40% 20%;
+  --k-info-foreground: 290 60% 75%;
+  --k-radius: 1rem;
+}
+
+/* Typography — whimsical gothic display caps, refined serif body. */
+:root:root {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: 'Cinzel Decorative', 'Cormorant Garamond', serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* surface: actions */
+[k=button] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: 1.25rem 1.25rem 0.875rem 0.875rem;
+  transition: box-shadow 200ms ease, background-color 200ms ease;
+}
+[k=button]:hover {
+  box-shadow: 0 0 14px hsl(var(--k-ring) / 0.4);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=item]:hover {
+  background: hsl(var(--k-primary-soft));
+}
+[k=chip], [k=chip-button] {
+  border-radius: 999px;
+  border: 1px solid hsl(var(--k-ring) / 0.6);
+  background: hsl(var(--k-card));
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: 1.5rem 1.5rem 1rem 1rem;
+  background: hsl(var(--k-card));
+  box-shadow: 0 2px 12px hsl(var(--k-border) / 0.5), 0 0 24px hsl(var(--k-ring) / 0.06);
+}
+[k=badge] {
+  border-radius: 999px;
+  border: 1px solid hsl(var(--k-ring));
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 0.75em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 8px hsl(var(--k-ring) / 0.35);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: 1.25rem 1.25rem 1rem 1rem;
+  background: hsl(var(--k-card));
+}
+[k=tooltip] {
+  background: hsl(var(--k-primary));
+  color: hsl(var(--k-primary-foreground));
+  border-radius: 1rem 1rem 1rem 0.25rem;
+  border: 1px solid hsl(var(--k-ring) / 0.6);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: 0.75rem 0.75rem 0 0;
+  font-family: 'Cinzel Decorative', serif;
+  letter-spacing: 0.05em;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 0 -2px 0 hsl(var(--k-ring));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-card));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-ring) / 0.5);
+  border-radius: 1.25rem 1.25rem 1rem 1rem;
+  background: hsl(var(--k-background));
+  box-shadow: 0 8px 24px hsl(var(--k-border) / 0.6);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — antique gold */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

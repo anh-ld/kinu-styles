@@ -1,0 +1,226 @@
+/* kinu-styles: seapunk — Seapunk
+   Design rules: turquoise and aqua, seafoam, cobalt and purple, chrome highlights, tropical gradients, bubble and wave forms, marine glow, playful digital display type
+   Source trend: https://trends.daisyui.com/trend/seapunk/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600&display=swap');
+
+/* Light — pale seafoam and aqua, turquoise primary, purple secondary, cobalt accents. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 175 40% 96%;
+  --k-foreground: 190 50% 15%;
+  --k-card: 175 50% 98%;
+  --k-card-foreground: 190 50% 15%;
+  --k-popover: 175 50% 99%;
+  --k-popover-foreground: 190 50% 15%;
+  --k-sidebar: 175 35% 92%;
+  --k-primary: 175 80% 40%;
+  --k-primary-foreground: 175 70% 98%;
+  --k-primary-hover: 175 80% 34%;
+  --k-primary-soft: 175 70% 90%;
+  --k-secondary: 265 60% 55%;
+  --k-secondary-foreground: 265 60% 98%;
+  --k-secondary-hover: 265 60% 49%;
+  --k-muted: 175 30% 92%;
+  --k-muted-foreground: 190 25% 42%;
+  --k-accent: 200 80% 55%;
+  --k-accent-foreground: 200 70% 98%;
+  --k-destructive: 350 70% 50%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 350 70% 44%;
+  --k-border: 175 35% 84%;
+  --k-input: 175 35% 84%;
+  --k-ring: 175 85% 45%;
+  --k-info: 200 70% 92%;
+  --k-info-foreground: 200 75% 30%;
+  --k-radius: 1.25rem;
+}
+
+/* Auto dark — deep abyss: dark teal, glowing turquoise, chrome and cobalt highlights. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 190 60% 5%;
+    --k-foreground: 175 50% 92%;
+    --k-card: 190 55% 8%;
+    --k-card-foreground: 175 50% 92%;
+    --k-popover: 190 55% 9%;
+    --k-popover-foreground: 175 50% 92%;
+    --k-sidebar: 190 65% 4%;
+    --k-primary: 175 85% 55%;
+    --k-primary-foreground: 175 70% 8%;
+    --k-primary-hover: 175 85% 61%;
+    --k-primary-soft: 175 60% 18%;
+    --k-secondary: 265 65% 68%;
+    --k-secondary-foreground: 265 50% 12%;
+    --k-secondary-hover: 265 65% 74%;
+    --k-muted: 190 40% 14%;
+    --k-muted-foreground: 175 30% 60%;
+    --k-accent: 200 85% 70%;
+    --k-accent-foreground: 200 70% 10%;
+    --k-destructive: 350 70% 58%;
+    --k-destructive-foreground: 0 0% 100%;
+    --k-destructive-hover: 350 70% 64%;
+    --k-border: 190 40% 20%;
+    --k-input: 190 40% 20%;
+    --k-ring: 175 85% 65%;
+    --k-info: 200 70% 20%;
+    --k-info-foreground: 200 80% 80%;
+  --k-radius: 1.25rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 190 60% 5%;
+  --k-foreground: 175 50% 92%;
+  --k-card: 190 55% 8%;
+  --k-card-foreground: 175 50% 92%;
+  --k-popover: 190 55% 9%;
+  --k-popover-foreground: 175 50% 92%;
+  --k-sidebar: 190 65% 4%;
+  --k-primary: 175 85% 55%;
+  --k-primary-foreground: 175 70% 8%;
+  --k-primary-hover: 175 85% 61%;
+  --k-primary-soft: 175 60% 18%;
+  --k-secondary: 265 65% 68%;
+  --k-secondary-foreground: 265 50% 12%;
+  --k-secondary-hover: 265 65% 74%;
+  --k-muted: 190 40% 14%;
+  --k-muted-foreground: 175 30% 60%;
+  --k-accent: 200 85% 70%;
+  --k-accent-foreground: 200 70% 10%;
+  --k-destructive: 350 70% 58%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 350 70% 64%;
+  --k-border: 190 40% 20%;
+  --k-input: 190 40% 20%;
+  --k-ring: 175 85% 65%;
+  --k-info: 200 70% 20%;
+  --k-info-foreground: 200 80% 80%;
+  --k-radius: 1.25rem;
+}
+
+/* Typography — playful rounded digital display (Righteous) for headings, simple sans body. */
+:root:root {
+  font-family: 'Nunito Sans', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Righteous, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: calc(var(--k-radius) * 1.4);
+  transition: background-color 200ms ease, box-shadow 200ms ease;
+}
+[k=button]:hover {
+  box-shadow: 0 0 14px hsl(var(--k-primary) / 0.5);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 0 0 1px hsl(var(--k-primary) / 0.12), 0 6px 24px hsl(175 80% 50% / 0.18);
+}
+[k=badge] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 1px solid hsl(var(--k-secondary) / 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.8em;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: calc(var(--k-radius) * 2);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 10px hsl(var(--k-ring) / 0.35);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  box-shadow: 0 0 0 1px hsl(var(--k-primary) / 0.08);
+}
+[k=alert][data-variant=destructive] {
+  border-color: hsl(var(--k-destructive) / 0.45);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: calc(var(--k-radius) * 1.5);
+  box-shadow: 0 4px 14px hsl(175 80% 50% / 0.3);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: calc(var(--k-radius) * 1.5);
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-primary-soft));
+  box-shadow: inset 0 -3px 0 hsl(var(--k-primary));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 0 0 1px hsl(var(--k-primary) / 0.1), 0 10px 30px hsl(175 80% 50% / 0.25);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — glowing marine turquoise */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 0 0 12px hsl(var(--k-ring) / 0.4);
+}

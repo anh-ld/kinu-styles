@@ -1,0 +1,257 @@
+/* kinu-styles: glassmorphism — Glassmorphism
+   Design rules: frosted translucent panels over a rich backdrop, background blur, thin luminous borders, layered front-to-back depth, translucent fills, luminous cyan/violet accents
+   Source trend: https://trends.daisyui.com/trend/glassmorphism/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap');
+
+/* Light — pearl-blue backdrop, white frosted panes with luminous edges. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 222 45% 88%;
+  --k-foreground: 226 40% 22%;
+  --k-card: 0 0% 100%;
+  --k-card-foreground: 226 40% 22%;
+  --k-popover: 0 0% 100%;
+  --k-popover-foreground: 226 40% 22%;
+  --k-sidebar: 220 40% 92%;
+  --k-primary: 262 60% 55%;
+  --k-primary-foreground: 262 40% 98%;
+  --k-primary-hover: 262 60% 48%;
+  --k-primary-soft: 262 50% 92%;
+  --k-secondary: 340 60% 60%;
+  --k-secondary-foreground: 340 50% 96%;
+  --k-secondary-hover: 340 60% 53%;
+  --k-muted: 226 25% 85%;
+  --k-muted-foreground: 226 20% 45%;
+  --k-accent: 340 70% 55%;
+  --k-accent-foreground: 340 50% 96%;
+  --k-destructive: 0 70% 52%;
+  --k-destructive-foreground: 0 40% 98%;
+  --k-destructive-hover: 0 70% 45%;
+  --k-border: 220 30% 95%;
+  --k-input: 220 30% 80%;
+  --k-ring: 262 65% 65%;
+  --k-info: 220 60% 94%;
+  --k-info-foreground: 262 55% 45%;
+  --k-radius: 1rem;
+}
+
+/* Auto dark — deep charcoal backdrop, dark frosted panes, luminous edges. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 228 35% 10%;
+    --k-foreground: 220 30% 94%;
+    --k-card: 228 30% 20%;
+    --k-card-foreground: 220 30% 94%;
+    --k-popover: 228 30% 22%;
+    --k-popover-foreground: 220 30% 94%;
+    --k-sidebar: 228 40% 8%;
+    --k-primary: 262 80% 70%;
+    --k-primary-foreground: 262 50% 12%;
+    --k-primary-hover: 262 80% 76%;
+    --k-primary-soft: 262 45% 24%;
+    --k-secondary: 340 70% 70%;
+    --k-secondary-foreground: 340 50% 12%;
+    --k-secondary-hover: 340 70% 76%;
+    --k-muted: 228 25% 18%;
+    --k-muted-foreground: 226 20% 62%;
+    --k-accent: 220 80% 65%;
+    --k-accent-foreground: 226 40% 10%;
+    --k-destructive: 0 65% 55%;
+    --k-destructive-foreground: 0 40% 96%;
+    --k-destructive-hover: 0 65% 62%;
+    --k-border: 228 40% 60%;
+    --k-input: 228 20% 28%;
+    --k-ring: 262 80% 72%;
+    --k-info: 228 35% 16%;
+    --k-info-foreground: 262 75% 80%;
+  --k-radius: 1rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 228 35% 10%;
+  --k-foreground: 220 30% 94%;
+  --k-card: 228 30% 20%;
+  --k-card-foreground: 220 30% 94%;
+  --k-popover: 228 30% 22%;
+  --k-popover-foreground: 220 30% 94%;
+  --k-sidebar: 228 40% 8%;
+  --k-primary: 262 80% 70%;
+  --k-primary-foreground: 262 50% 12%;
+  --k-primary-hover: 262 80% 76%;
+  --k-primary-soft: 262 45% 24%;
+  --k-secondary: 340 70% 70%;
+  --k-secondary-foreground: 340 50% 12%;
+  --k-secondary-hover: 340 70% 76%;
+  --k-muted: 228 25% 18%;
+  --k-muted-foreground: 226 20% 62%;
+  --k-accent: 220 80% 65%;
+  --k-accent-foreground: 226 40% 10%;
+  --k-destructive: 0 65% 55%;
+  --k-destructive-foreground: 0 40% 96%;
+  --k-destructive-hover: 0 65% 62%;
+  --k-border: 228 40% 60%;
+  --k-input: 228 20% 28%;
+  --k-ring: 262 80% 72%;
+  --k-info: 228 35% 16%;
+  --k-info-foreground: 262 75% 80%;
+  --k-radius: 1rem;
+}
+
+/* Typography — clean geometric sans, firm weights, fully opaque text. */
+:root:root {
+  font-family: Sora, ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Sora, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card) / 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--k-border) / 0.5);
+  box-shadow: 0 2px 10px hsl(var(--k-foreground) / 0.08), inset 0 1px 0 hsl(0 0% 100% / 0.35);
+  transition: background-color 150ms ease, box-shadow 150ms ease;
+}
+[k=button]:hover {
+  background: hsl(var(--k-card) / 0.6);
+  box-shadow: 0 4px 16px hsl(var(--k-foreground) / 0.12), inset 0 1px 0 hsl(0 0% 100% / 0.4);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=item]:hover {
+  background: hsl(var(--k-card) / 0.35);
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  background: hsl(var(--k-card) / 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid hsl(var(--k-border) / 0.55);
+}
+
+/* surface: data display */
+[k=card] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card) / 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid hsl(var(--k-border) / 0.55);
+  box-shadow: 0 8px 24px hsl(var(--k-foreground) / 0.12), inset 0 1px 0 hsl(0 0% 100% / 0.35);
+}
+[k=badge] {
+  border-radius: calc(var(--k-radius) * 2);
+  background: hsl(var(--k-card) / 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid hsl(var(--k-border) / 0.5);
+  font-weight: 500;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted) / 0.6);
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input) / 0.6);
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card) / 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 0 3px hsl(var(--k-ring) / 0.25), 0 0 16px hsl(var(--k-ring) / 0.3);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+  background: hsl(var(--k-card) / 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border) / 0.55);
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card) / 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 4px 16px hsl(var(--k-foreground) / 0.1);
+}
+[k=alert][data-variant=destructive] {
+  border-color: hsl(var(--k-destructive) / 0.6);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-card) / 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--k-radius);
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-card) / 0.5);
+  border: 1px solid hsl(var(--k-border) / 0.5);
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.35);
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-card) / 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border) / 0.6);
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border) / 0.55);
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-popover) / 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 12px 32px hsl(var(--k-foreground) / 0.18), inset 0 1px 0 hsl(0 0% 100% / 0.4);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — luminous halo. */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 0 0 12px hsl(var(--k-ring) / 0.4);
+}

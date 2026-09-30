@@ -1,0 +1,237 @@
+/* kinu-styles: aqua-ui — Aqua UI
+   Design rules: Mac OS X Aqua gel controls, candy blue + graphite + pearl, glossy specular highlights, glassy wells and capsules, white vertical gradients, saturated traffic-light accents
+   Source trend: https://trends.daisyui.com/trend/aqua-ui/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+/* Light — pearl window chrome on pale aqua, candy-blue gel controls. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 200 50% 96%;
+  --k-foreground: 220 30% 18%;
+  --k-card: 0 0% 100%;
+  --k-card-foreground: 220 30% 18%;
+  --k-popover: 0 0% 100%;
+  --k-popover-foreground: 220 30% 18%;
+  --k-sidebar: 210 35% 90%;
+  --k-primary: 205 90% 52%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 205 85% 45%;
+  --k-primary-soft: 205 60% 90%;
+  --k-secondary: 185 75% 45%;
+  --k-secondary-foreground: 190 60% 95%;
+  --k-secondary-hover: 185 75% 38%;
+  --k-muted: 210 30% 92%;
+  --k-muted-foreground: 220 15% 45%;
+  --k-accent: 15 90% 55%;
+  --k-accent-foreground: 20 70% 97%;
+  --k-destructive: 0 85% 52%;
+  --k-destructive-foreground: 0 60% 97%;
+  --k-destructive-hover: 0 85% 45%;
+  --k-border: 210 30% 88%;
+  --k-input: 210 25% 85%;
+  --k-ring: 205 90% 55%;
+  --k-info: 200 60% 92%;
+  --k-info-foreground: 200 90% 38%;
+  --k-radius: 1rem;
+}
+
+/* Auto dark — graphite Aqua: dark chrome, glowing candy controls. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 220 30% 16%;
+    --k-foreground: 200 30% 92%;
+    --k-card: 220 30% 20%;
+    --k-card-foreground: 200 30% 92%;
+    --k-popover: 220 30% 22%;
+    --k-popover-foreground: 200 30% 92%;
+    --k-sidebar: 220 35% 12%;
+    --k-primary: 205 90% 55%;
+    --k-primary-foreground: 0 0% 100%;
+    --k-primary-hover: 205 90% 48%;
+    --k-primary-soft: 205 60% 28%;
+    --k-secondary: 185 80% 50%;
+    --k-secondary-foreground: 190 60% 95%;
+    --k-secondary-hover: 185 80% 43%;
+    --k-muted: 220 25% 26%;
+    --k-muted-foreground: 215 15% 62%;
+    --k-accent: 15 90% 58%;
+    --k-accent-foreground: 20 70% 97%;
+    --k-destructive: 0 85% 55%;
+    --k-destructive-foreground: 0 60% 97%;
+    --k-destructive-hover: 0 85% 62%;
+    --k-border: 220 20% 32%;
+    --k-input: 220 20% 34%;
+    --k-ring: 205 90% 60%;
+    --k-info: 200 50% 28%;
+    --k-info-foreground: 200 85% 70%;
+  --k-radius: 1rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 220 30% 16%;
+  --k-foreground: 200 30% 92%;
+  --k-card: 220 30% 20%;
+  --k-card-foreground: 200 30% 92%;
+  --k-popover: 220 30% 22%;
+  --k-popover-foreground: 200 30% 92%;
+  --k-sidebar: 220 35% 12%;
+  --k-primary: 205 90% 55%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 205 90% 48%;
+  --k-primary-soft: 205 60% 28%;
+  --k-secondary: 185 80% 50%;
+  --k-secondary-foreground: 190 60% 95%;
+  --k-secondary-hover: 185 80% 43%;
+  --k-muted: 220 25% 26%;
+  --k-muted-foreground: 215 15% 62%;
+  --k-accent: 15 90% 58%;
+  --k-accent-foreground: 20 70% 97%;
+  --k-destructive: 0 85% 55%;
+  --k-destructive-foreground: 0 60% 97%;
+  --k-destructive-hover: 0 85% 62%;
+  --k-border: 220 20% 32%;
+  --k-input: 220 20% 34%;
+  --k-ring: 205 90% 60%;
+  --k-info: 200 50% 28%;
+  --k-info-foreground: 200 85% 70%;
+  --k-radius: 1rem;
+}
+
+/* Typography — friendly round sans, crisp anti-aliased labels. */
+:root:root {
+  font-family: 'Varela Round', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: 'Varela Round', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 1px solid hsl(var(--k-foreground) / 0.25);
+  background-image: linear-gradient(180deg, hsl(0 0% 100% / 0.8), hsl(0 0% 100% / 0) 50%, hsl(0 0% 0% / 0.12));
+  box-shadow: inset 0 1px 1px hsl(0 0% 100% / 0.7), inset 0 -2px 4px hsl(var(--k-primary) / 0.5), 0 3px 6px hsl(var(--k-foreground) / 0.2);
+  transition: transform 100ms ease;
+}
+[k=button]:hover {
+  background-image: linear-gradient(180deg, hsl(0 0% 100% / 0.9), hsl(0 0% 100% / 0.1) 50%, hsl(0 0% 0% / 0.08));
+}
+[k=button]:active {
+  transform: scale(0.97);
+  box-shadow: inset 0 2px 6px hsl(var(--k-foreground) / 0.25);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=item]:hover {
+  background: hsl(var(--k-primary-soft) / 0.6);
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 1px solid hsl(var(--k-border));
+  background-image: linear-gradient(180deg, hsl(0 0% 100% / 0.7), hsl(0 0% 100% / 0) 55%);
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background-image: linear-gradient(180deg, hsl(0 0% 100% / 0.9), hsl(0 0% 100% / 0.4));
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.9), 0 4px 12px hsl(var(--k-foreground) / 0.12);
+}
+[k=badge] {
+  border-radius: calc(var(--k-radius) * 2);
+  background-image: linear-gradient(180deg, hsl(0 0% 100% / 0.7), hsl(0 0% 100% / 0) 60%);
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background-image: linear-gradient(180deg, hsl(var(--k-muted)), hsl(var(--k-muted) / 0.6));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: inset 0 2px 5px hsl(var(--k-foreground) / 0.12), inset 0 -1px 0 hsl(0 0% 100% / 0.8);
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: inset 0 2px 5px hsl(var(--k-foreground) / 0.1), 0 0 0 3px hsl(var(--k-ring) / 0.3);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+  background: hsl(var(--k-background));
+  box-shadow: inset 0 1px 3px hsl(var(--k-foreground) / 0.15);
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.8);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: calc(var(--k-radius) * 2);
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-primary));
+  color: hsl(var(--k-primary-foreground));
+  background-image: linear-gradient(180deg, hsl(0 0% 100% / 0.4), hsl(0 0% 100% / 0) 55%);
+  box-shadow: inset 0 1px 1px hsl(0 0% 100% / 0.6);
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+  box-shadow: 0 1px 0 hsl(0 0% 100% / 0.8);
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-popover));
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.9), 0 8px 24px hsl(var(--k-foreground) / 0.18);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — glossy halo. */
+[k]:focus-visible {
+  outline: 3px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.6);
+}

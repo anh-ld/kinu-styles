@@ -1,0 +1,222 @@
+/* kinu-styles: mid-century-modern — Mid-Century Modern
+   Design rules: warm muted palette (mustard, olive, burnt orange, teal, walnut, warm cream), simple geometry, clean modular layouts, friendly humanist sans + restrained slab, optimistic postwar simplicity
+   Source trend: https://trends.daisyui.com/trend/mid-century-modern/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Franklin:wght@400;500;600&display=swap');
+
+/* Light — warm cream, burnt-orange primary, olive secondary, teal accent. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 45 35% 97%;
+  --k-foreground: 25 30% 15%;
+  --k-card: 45 35% 99%;
+  --k-card-foreground: 25 30% 15%;
+  --k-popover: 45 35% 99%;
+  --k-popover-foreground: 25 30% 15%;
+  --k-sidebar: 40 30% 92%;
+  --k-primary: 20 70% 45%;
+  --k-primary-foreground: 45 35% 98%;
+  --k-primary-hover: 20 70% 39%;
+  --k-primary-soft: 20 65% 93%;
+  --k-secondary: 85 25% 38%;
+  --k-secondary-foreground: 45 35% 98%;
+  --k-secondary-hover: 85 25% 32%;
+  --k-muted: 40 25% 90%;
+  --k-muted-foreground: 25 20% 45%;
+  --k-accent: 175 40% 32%;
+  --k-accent-foreground: 45 35% 98%;
+  --k-destructive: 0 60% 40%;
+  --k-destructive-foreground: 45 35% 98%;
+  --k-destructive-hover: 0 60% 34%;
+  --k-border: 40 20% 82%;
+  --k-input: 40 20% 82%;
+  --k-ring: 20 65% 50%;
+  --k-info: 175 40% 92%;
+  --k-info-foreground: 175 45% 32%;
+  --k-radius: 0.5rem;
+}
+
+/* Auto dark — walnut dusk, glowing burnt orange and mustard. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 25 25% 9%;
+    --k-foreground: 45 30% 92%;
+    --k-card: 25 20% 12%;
+    --k-card-foreground: 45 30% 92%;
+    --k-popover: 25 20% 13%;
+    --k-popover-foreground: 45 30% 92%;
+    --k-sidebar: 25 30% 7%;
+    --k-primary: 20 75% 60%;
+    --k-primary-foreground: 25 25% 9%;
+    --k-primary-hover: 20 75% 66%;
+    --k-primary-soft: 20 55% 18%;
+    --k-secondary: 45 70% 55%;
+    --k-secondary-foreground: 25 25% 9%;
+    --k-secondary-hover: 45 70% 62%;
+    --k-muted: 25 18% 16%;
+    --k-muted-foreground: 40 20% 62%;
+    --k-accent: 175 45% 55%;
+    --k-accent-foreground: 25 25% 9%;
+    --k-destructive: 0 65% 52%;
+    --k-destructive-foreground: 25 25% 9%;
+    --k-destructive-hover: 0 65% 60%;
+    --k-border: 25 18% 22%;
+    --k-input: 25 18% 22%;
+    --k-ring: 20 75% 62%;
+    --k-info: 175 40% 20%;
+    --k-info-foreground: 175 45% 72%;
+  --k-radius: 0.5rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 25 25% 9%;
+  --k-foreground: 45 30% 92%;
+  --k-card: 25 20% 12%;
+  --k-card-foreground: 45 30% 92%;
+  --k-popover: 25 20% 13%;
+  --k-popover-foreground: 45 30% 92%;
+  --k-sidebar: 25 30% 7%;
+  --k-primary: 20 75% 60%;
+  --k-primary-foreground: 25 25% 9%;
+  --k-primary-hover: 20 75% 66%;
+  --k-primary-soft: 20 55% 18%;
+  --k-secondary: 45 70% 55%;
+  --k-secondary-foreground: 25 25% 9%;
+  --k-secondary-hover: 45 70% 62%;
+  --k-muted: 25 18% 16%;
+  --k-muted-foreground: 40 20% 62%;
+  --k-accent: 175 45% 55%;
+  --k-accent-foreground: 25 25% 9%;
+  --k-destructive: 0 65% 52%;
+  --k-destructive-foreground: 25 25% 9%;
+  --k-destructive-hover: 0 65% 60%;
+  --k-border: 25 18% 22%;
+  --k-input: 25 18% 22%;
+  --k-ring: 20 75% 62%;
+  --k-info: 175 40% 20%;
+  --k-info-foreground: 175 45% 72%;
+  --k-radius: 0.5rem;
+}
+
+/* Typography — confident humanist sans body, restrained slab headings. */
+:root:root {
+  font-family: 'Libre Franklin', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: 'Bitter', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  font-weight: 500;
+}
+[k=button]:hover {
+  box-shadow: 0 2px 6px hsl(var(--k-border));
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 1px solid hsl(var(--k-border));
+  font-size: 0.8125rem;
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 1px 4px hsl(var(--k-border) / 0.6);
+}
+[k=badge] {
+  border-radius: calc(var(--k-radius) * 2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 0 1px hsl(var(--k-ring));
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  font-weight: 500;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 0 -2px 0 hsl(var(--k-primary));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-popover));
+  box-shadow: 0 4px 16px hsl(var(--k-border) / 0.5);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

@@ -1,0 +1,219 @@
+/* kinu-styles: jet-age-optimism — Jet Age Optimism
+   Design rules: atomic-age optimism: turquoise, coral red, sunny yellow, space navy, white, chrome; Googie display type; boomerang curves, starbursts, chrome-edged panels
+   Source trend: https://trends.daisyui.com/trend/jet-age-optimism/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+/* Light — clear white sky, turquoise primary, coral red secondary, sunny yellow accents, space-navy text. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 0 0% 100%;
+  --k-foreground: 215 45% 18%;
+  --k-card: 0 0% 100%;
+  --k-card-foreground: 215 45% 18%;
+  --k-popover: 0 0% 100%;
+  --k-popover-foreground: 215 45% 18%;
+  --k-sidebar: 42 45% 96%;
+  --k-primary: 183 85% 40%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 183 85% 34%;
+  --k-primary-soft: 183 60% 92%;
+  --k-secondary: 4 75% 50%;
+  --k-secondary-foreground: 0 0% 100%;
+  --k-secondary-hover: 4 75% 44%;
+  --k-muted: 210 15% 93%;
+  --k-muted-foreground: 215 12% 45%;
+  --k-accent: 48 95% 55%;
+  --k-accent-foreground: 215 45% 18%;
+  --k-destructive: 4 75% 50%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 4 75% 44%;
+  --k-border: 210 18% 85%;
+  --k-input: 210 18% 85%;
+  --k-ring: 183 85% 45%;
+  --k-info: 190 60% 93%;
+  --k-info-foreground: 183 75% 32%;
+  --k-radius: 1rem;
+}
+
+/* Auto dark — space-age night: space navy sky, chrome panel cards, glowing turquoise and coral. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 218 45% 8%;
+    --k-foreground: 45 40% 94%;
+    --k-card: 218 40% 11%;
+    --k-card-foreground: 45 40% 94%;
+    --k-popover: 218 40% 12%;
+    --k-popover-foreground: 45 40% 94%;
+    --k-sidebar: 218 48% 6%;
+    --k-primary: 183 90% 55%;
+    --k-primary-foreground: 218 45% 10%;
+    --k-primary-hover: 183 90% 61%;
+    --k-primary-soft: 183 60% 20%;
+    --k-secondary: 4 85% 58%;
+    --k-secondary-foreground: 218 45% 10%;
+    --k-secondary-hover: 4 85% 64%;
+    --k-muted: 218 35% 18%;
+    --k-muted-foreground: 45 25% 65%;
+    --k-accent: 48 95% 60%;
+    --k-accent-foreground: 215 45% 15%;
+    --k-destructive: 4 85% 58%;
+    --k-destructive-foreground: 218 45% 10%;
+    --k-destructive-hover: 4 85% 64%;
+    --k-border: 218 35% 24%;
+    --k-input: 218 35% 24%;
+    --k-ring: 183 90% 60%;
+    --k-info: 190 60% 20%;
+    --k-info-foreground: 183 85% 72%;
+  --k-radius: 1rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 218 45% 8%;
+  --k-foreground: 45 40% 94%;
+  --k-card: 218 40% 11%;
+  --k-card-foreground: 45 40% 94%;
+  --k-popover: 218 40% 12%;
+  --k-popover-foreground: 45 40% 94%;
+  --k-sidebar: 218 48% 6%;
+  --k-primary: 183 90% 55%;
+  --k-primary-foreground: 218 45% 10%;
+  --k-primary-hover: 183 90% 61%;
+  --k-primary-soft: 183 60% 20%;
+  --k-secondary: 4 85% 58%;
+  --k-secondary-foreground: 218 45% 10%;
+  --k-secondary-hover: 4 85% 64%;
+  --k-muted: 218 35% 18%;
+  --k-muted-foreground: 45 25% 65%;
+  --k-accent: 48 95% 60%;
+  --k-accent-foreground: 215 45% 15%;
+  --k-destructive: 4 85% 58%;
+  --k-destructive-foreground: 218 45% 10%;
+  --k-destructive-hover: 4 85% 64%;
+  --k-border: 218 35% 24%;
+  --k-input: 218 35% 24%;
+  --k-ring: 183 90% 60%;
+  --k-info: 190 60% 20%;
+  --k-info-foreground: 183 85% 72%;
+  --k-radius: 1rem;
+}
+
+/* Typography — Googie-inspired display, clean sans body. */
+:root:root {
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Righteous, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  transition: box-shadow 200ms ease, background-color 200ms ease;
+}
+[k=button]:hover {
+  box-shadow: 0 0 0 3px hsl(var(--k-primary) / 0.25), 0 4px 12px hsl(var(--k-primary) / 0.2);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 2px 0 hsl(var(--k-border) / 0.6);
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  font-family: Righteous, ui-sans-serif, sans-serif;
+  letter-spacing: 0.05em;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 0 3px hsl(var(--k-ring) / 0.2);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=alert][data-variant=destructive] {
+  border-color: hsl(var(--k-destructive) / 0.5);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 0 -3px 0 hsl(var(--k-primary));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 6px 20px hsl(var(--k-border) / 0.5);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

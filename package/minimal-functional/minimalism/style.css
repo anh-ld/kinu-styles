@@ -1,0 +1,222 @@
+/* kinu-styles: minimalism — Minimalism
+   Design rules: deliberate reduction — dominant negative space, very few elements, neutral palette, single restrained accent, one focal point, plain typography, minimal ornament
+   Source trend: https://trends.daisyui.com/trend/minimalism/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Light — pure white field, ink black, one ochre accent for focus only. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 0 0% 100%;
+  --k-foreground: 0 0% 13%;
+  --k-card: 0 0% 100%;
+  --k-card-foreground: 0 0% 13%;
+  --k-popover: 0 0% 100%;
+  --k-popover-foreground: 0 0% 13%;
+  --k-sidebar: 0 0% 97%;
+  --k-primary: 0 0% 13%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 0 0% 30%;
+  --k-primary-soft: 0 0% 94%;
+  --k-secondary: 0 0% 95%;
+  --k-secondary-foreground: 0 0% 25%;
+  --k-secondary-hover: 0 0% 91%;
+  --k-muted: 0 0% 96%;
+  --k-muted-foreground: 0 0% 45%;
+  --k-accent: 35 50% 94%;
+  --k-accent-foreground: 35 55% 38%;
+  --k-destructive: 0 70% 45%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 70% 39%;
+  --k-border: 0 0% 88%;
+  --k-input: 0 0% 88%;
+  --k-ring: 0 0% 20%;
+  --k-info: 0 0% 96%;
+  --k-info-foreground: 0 0% 45%;
+  --k-radius: 0.125rem;
+}
+
+/* Auto dark — near-black field, white ink, quieter ochre accent. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 0 0% 8%;
+    --k-foreground: 0 0% 93%;
+    --k-card: 0 0% 10%;
+    --k-card-foreground: 0 0% 93%;
+    --k-popover: 0 0% 11%;
+    --k-popover-foreground: 0 0% 93%;
+    --k-sidebar: 0 0% 7%;
+    --k-primary: 0 0% 93%;
+    --k-primary-foreground: 0 0% 10%;
+    --k-primary-hover: 0 0% 80%;
+    --k-primary-soft: 0 0% 20%;
+    --k-secondary: 0 0% 18%;
+    --k-secondary-foreground: 0 0% 90%;
+    --k-secondary-hover: 0 0% 24%;
+    --k-muted: 0 0% 16%;
+    --k-muted-foreground: 0 0% 60%;
+    --k-accent: 35 30% 22%;
+    --k-accent-foreground: 35 55% 72%;
+    --k-destructive: 0 60% 55%;
+    --k-destructive-foreground: 0 0% 100%;
+    --k-destructive-hover: 0 60% 62%;
+    --k-border: 0 0% 24%;
+    --k-input: 0 0% 24%;
+    --k-ring: 0 0% 85%;
+    --k-info: 0 0% 16%;
+    --k-info-foreground: 0 0% 60%;
+  --k-radius: 0.125rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 0 0% 8%;
+  --k-foreground: 0 0% 93%;
+  --k-card: 0 0% 10%;
+  --k-card-foreground: 0 0% 93%;
+  --k-popover: 0 0% 11%;
+  --k-popover-foreground: 0 0% 93%;
+  --k-sidebar: 0 0% 7%;
+  --k-primary: 0 0% 93%;
+  --k-primary-foreground: 0 0% 10%;
+  --k-primary-hover: 0 0% 80%;
+  --k-primary-soft: 0 0% 20%;
+  --k-secondary: 0 0% 18%;
+  --k-secondary-foreground: 0 0% 90%;
+  --k-secondary-hover: 0 0% 24%;
+  --k-muted: 0 0% 16%;
+  --k-muted-foreground: 0 0% 60%;
+  --k-accent: 35 30% 22%;
+  --k-accent-foreground: 35 55% 72%;
+  --k-destructive: 0 60% 55%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 60% 62%;
+  --k-border: 0 0% 24%;
+  --k-input: 0 0% 24%;
+  --k-ring: 0 0% 85%;
+  --k-info: 0 0% 16%;
+  --k-info-foreground: 0 0% 60%;
+  --k-radius: 0.125rem;
+}
+
+/* Typography — one neutral family, sparse scale, generous line spacing. */
+:root:root {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  transition: background-color 150ms ease;
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=item][aria-selected=true] {
+  background: hsl(var(--k-accent));
+  color: hsl(var(--k-accent-foreground));
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+  background: transparent;
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: none;
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-secondary));
+  color: hsl(var(--k-secondary-foreground));
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+/* underline fields, nothing else. */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: none;
+  border-bottom: 1px solid hsl(var(--k-input));
+  border-radius: 0;
+  background: transparent;
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-bottom-color: hsl(var(--k-ring));
+  box-shadow: none;
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+  border-radius: var(--k-radius);
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: transparent;
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+  border-bottom: 1px solid hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: 0;
+}
+[k=tab][aria-selected=true] {
+  box-shadow: inset 0 -2px 0 hsl(var(--k-foreground));
+  font-weight: 500;
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: none;
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

@@ -1,0 +1,228 @@
+/* kinu-styles: global-village-coffeehouse — Global Village Coffeehouse
+   Design rules: earth tones, unbleached paper, terracotta and ochre, faded turquoise, coffee brown, rough borders, woodcut symbols, hand-drawn warmth, small irregular radii
+   Source trend: https://trends.daisyui.com/trend/global-village-coffeehouse/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+/* Light — unbleached paper, terracotta primary, faded turquoise secondary, ochre accents. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 40 30% 96%;
+  --k-foreground: 25 30% 15%;
+  --k-card: 40 35% 94%;
+  --k-card-foreground: 25 30% 15%;
+  --k-popover: 40 35% 97%;
+  --k-popover-foreground: 25 30% 15%;
+  --k-sidebar: 40 25% 90%;
+  --k-primary: 15 45% 42%;
+  --k-primary-foreground: 40 30% 97%;
+  --k-primary-hover: 15 45% 36%;
+  --k-primary-soft: 15 40% 89%;
+  --k-secondary: 180 30% 45%;
+  --k-secondary-foreground: 40 30% 96%;
+  --k-secondary-hover: 180 30% 39%;
+  --k-muted: 40 20% 91%;
+  --k-muted-foreground: 25 15% 42%;
+  --k-accent: 35 55% 50%;
+  --k-accent-foreground: 40 30% 96%;
+  --k-destructive: 350 35% 40%;
+  --k-destructive-foreground: 40 30% 96%;
+  --k-destructive-hover: 350 35% 34%;
+  --k-border: 30 20% 80%;
+  --k-input: 30 20% 80%;
+  --k-ring: 15 45% 55%;
+  --k-info: 180 30% 90%;
+  --k-info-foreground: 180 40% 28%;
+  --k-radius: 0.375rem;
+}
+
+/* Auto dark — coffee house at night: roasted browns, indigo-blue depth, warm paper text. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 25 25% 8%;
+    --k-foreground: 40 30% 90%;
+    --k-card: 25 25% 11%;
+    --k-card-foreground: 40 30% 90%;
+    --k-popover: 25 25% 12%;
+    --k-popover-foreground: 40 30% 90%;
+    --k-sidebar: 25 30% 6%;
+    --k-primary: 15 50% 60%;
+    --k-primary-foreground: 25 25% 10%;
+    --k-primary-hover: 15 50% 66%;
+    --k-primary-soft: 15 40% 20%;
+    --k-secondary: 180 35% 55%;
+    --k-secondary-foreground: 180 35% 10%;
+    --k-secondary-hover: 180 35% 61%;
+    --k-muted: 25 20% 15%;
+    --k-muted-foreground: 40 15% 60%;
+    --k-accent: 35 60% 62%;
+    --k-accent-foreground: 25 30% 12%;
+    --k-destructive: 350 30% 50%;
+    --k-destructive-foreground: 40 25% 92%;
+    --k-destructive-hover: 350 30% 56%;
+    --k-border: 25 18% 22%;
+    --k-input: 25 18% 22%;
+    --k-ring: 15 50% 65%;
+    --k-info: 180 30% 20%;
+    --k-info-foreground: 180 45% 72%;
+  --k-radius: 0.375rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 25 25% 8%;
+  --k-foreground: 40 30% 90%;
+  --k-card: 25 25% 11%;
+  --k-card-foreground: 40 30% 90%;
+  --k-popover: 25 25% 12%;
+  --k-popover-foreground: 40 30% 90%;
+  --k-sidebar: 25 30% 6%;
+  --k-primary: 15 50% 60%;
+  --k-primary-foreground: 25 25% 10%;
+  --k-primary-hover: 15 50% 66%;
+  --k-primary-soft: 15 40% 20%;
+  --k-secondary: 180 35% 55%;
+  --k-secondary-foreground: 180 35% 10%;
+  --k-secondary-hover: 180 35% 61%;
+  --k-muted: 25 20% 15%;
+  --k-muted-foreground: 40 15% 60%;
+  --k-accent: 35 60% 62%;
+  --k-accent-foreground: 25 30% 12%;
+  --k-destructive: 350 30% 50%;
+  --k-destructive-foreground: 40 25% 92%;
+  --k-destructive-hover: 350 30% 56%;
+  --k-border: 25 18% 22%;
+  --k-input: 25 18% 22%;
+  --k-ring: 15 50% 65%;
+  --k-info: 180 30% 20%;
+  --k-info-foreground: 180 45% 72%;
+  --k-radius: 0.375rem;
+}
+
+/* Typography — warm humanist serif (Lora) for reading, hand-lettered sketch (Cabin Sketch) for display. */
+:root:root {
+  font-family: Lora, Georgia, serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: 'Cabin Sketch', Lora, cursive;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 1px solid hsl(var(--k-border));
+  box-shadow: 0 0 0 1px hsl(var(--k-border) / 0.5);
+  transition: background-color 200ms ease;
+}
+[k=button]:hover {
+  background: hsl(var(--k-primary-soft));
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 1.05em;
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 0 0 1px hsl(var(--k-border) / 0.5), 0 1px 3px hsl(var(--k-border) / 0.3);
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+  font-family: 'Cabin Sketch', cursive;
+  font-weight: 700;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 0 2px hsl(var(--k-ring) / 0.2);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  box-shadow: 0 0 0 1px hsl(var(--k-border) / 0.4);
+}
+[k=alert][data-variant=destructive] {
+  border-color: hsl(var(--k-destructive) / 0.45);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 0 -2px 0 hsl(var(--k-ring) / 0.6);
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 0 0 1px hsl(var(--k-border) / 0.4), 0 4px 14px hsl(var(--k-border) / 0.4);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — warm clay */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

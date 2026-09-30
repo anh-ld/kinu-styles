@@ -1,0 +1,250 @@
+/* kinu-styles: cassette-futurism — Cassette Futurism
+   Design rules: late-70s/80s imagined futures — chunky tape-deck controls, CRT displays, industrial panels, physical switches; charcoal, military olive, beige plastic, worn metal; amber or green phosphor readouts with small red warning indicators
+   Source trend: https://trends.daisyui.com/trend/cassette-futurism/ */
+
+/* Fonts — the @import MUST stay the first rule (R6, KTD4). */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Share+Tech+Mono&family=VT323&display=swap');
+
+/* Light — beige plastic housing, worn metal, amber phosphor primary. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 40 25% 90%;
+  --k-foreground: 200 40% 12%;
+  --k-card: 40 30% 93%;
+  --k-card-foreground: 200 40% 12%;
+  --k-popover: 40 30% 95%;
+  --k-popover-foreground: 200 40% 12%;
+  --k-sidebar: 40 20% 86%;
+  --k-primary: 35 90% 48%;
+  --k-primary-foreground: 40 80% 10%;
+  --k-primary-hover: 35 90% 42%;
+  --k-primary-soft: 35 70% 86%;
+  --k-secondary: 90 20% 40%;
+  --k-secondary-foreground: 90 25% 92%;
+  --k-secondary-hover: 90 20% 34%;
+  --k-muted: 40 20% 85%;
+  --k-muted-foreground: 40 15% 42%;
+  --k-accent: 200 40% 45%;
+  --k-accent-foreground: 200 35% 95%;
+  --k-destructive: 0 70% 48%;
+  --k-destructive-foreground: 0 40% 98%;
+  --k-destructive-hover: 0 70% 42%;
+  --k-border: 40 20% 75%;
+  --k-input: 40 20% 75%;
+  --k-ring: 35 85% 50%;
+  --k-info: 200 50% 90%;
+  --k-info-foreground: 200 60% 35%;
+  --k-radius: 0.375rem;
+}
+
+/* Auto dark — charcoal console, amber CRT readouts, olive hardware. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 200 20% 8%;
+    --k-foreground: 45 50% 90%;
+    --k-card: 200 18% 11%;
+    --k-card-foreground: 45 50% 90%;
+    --k-popover: 200 18% 12%;
+    --k-popover-foreground: 45 50% 90%;
+    --k-sidebar: 200 22% 6%;
+    --k-primary: 40 100% 60%;
+    --k-primary-foreground: 40 80% 8%;
+    --k-primary-hover: 40 100% 54%;
+    --k-primary-soft: 40 40% 18%;
+    --k-secondary: 90 25% 30%;
+    --k-secondary-foreground: 90 20% 90%;
+    --k-secondary-hover: 90 25% 36%;
+    --k-muted: 200 15% 16%;
+    --k-muted-foreground: 40 15% 60%;
+    --k-accent: 200 40% 55%;
+    --k-accent-foreground: 200 30% 8%;
+    --k-destructive: 0 65% 48%;
+    --k-destructive-foreground: 0 40% 96%;
+    --k-destructive-hover: 0 65% 54%;
+    --k-border: 200 15% 22%;
+    --k-input: 200 15% 22%;
+    --k-ring: 40 100% 62%;
+    --k-info: 200 40% 16%;
+    --k-info-foreground: 200 60% 70%;
+  --k-radius: 0.375rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 200 20% 8%;
+  --k-foreground: 45 50% 90%;
+  --k-card: 200 18% 11%;
+  --k-card-foreground: 45 50% 90%;
+  --k-popover: 200 18% 12%;
+  --k-popover-foreground: 45 50% 90%;
+  --k-sidebar: 200 22% 6%;
+  --k-primary: 40 100% 60%;
+  --k-primary-foreground: 40 80% 8%;
+  --k-primary-hover: 40 100% 54%;
+  --k-primary-soft: 40 40% 18%;
+  --k-secondary: 90 25% 30%;
+  --k-secondary-foreground: 90 20% 90%;
+  --k-secondary-hover: 90 25% 36%;
+  --k-muted: 200 15% 16%;
+  --k-muted-foreground: 40 15% 60%;
+  --k-accent: 200 40% 55%;
+  --k-accent-foreground: 200 30% 8%;
+  --k-destructive: 0 65% 48%;
+  --k-destructive-foreground: 0 40% 96%;
+  --k-destructive-hover: 0 65% 54%;
+  --k-border: 200 15% 22%;
+  --k-input: 200 15% 22%;
+  --k-ring: 40 100% 62%;
+  --k-info: 200 40% 16%;
+  --k-info-foreground: 200 60% 70%;
+  --k-radius: 0.375rem;
+}
+
+/* Typography — phosphor display heads, condensed industrial labels, mono body. */
+:root:root {
+  font-family: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+:where(h1, h2) {
+  font-family: VT323, 'Share Tech Mono', ui-monospace, monospace;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+:where(h3, h4) {
+  font-family: 'Chakra Petch', 'Share Tech Mono', ui-sans-serif, system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.3), inset 0 -2px 0 hsl(0 0% 0% / 0.25);
+  transition: box-shadow 150ms ease, background-color 150ms ease;
+}
+[k=button]:active {
+  box-shadow: inset 0 2px 4px hsl(0 0% 0% / 0.3);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.3), inset 0 -1px 0 hsl(0 0% 0% / 0.2);
+  font-family: 'Chakra Petch', 'Share Tech Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: inset 0 0 0 1px hsl(0 0% 100% / 0.08), inset 0 2px 6px hsl(0 0% 0% / 0.15);
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: 'Chakra Petch', 'Share Tech Mono', monospace;
+  border: 1px solid hsl(var(--k-border));
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: linear-gradient(90deg, hsl(var(--k-muted)) 25%, hsl(var(--k-primary) / 0.15) 50%, hsl(var(--k-muted)) 75%);
+  background-size: 200% 100%;
+  animation: k-crt-scan 1.8s linear infinite;
+}
+@keyframes k-crt-scan {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: inset 0 2px 4px hsl(0 0% 0% / 0.15);
+  font-family: 'Share Tech Mono', ui-monospace, monospace;
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: inset 0 0 0 1px hsl(var(--k-ring) / 0.5);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+  border-radius: 0.125rem;
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  border-left: 3px solid hsl(var(--k-ring));
+  background: hsl(var(--k-card));
+}
+[k=alert][data-variant=destructive] {
+  border-left-color: hsl(var(--k-destructive));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+  font-family: 'Share Tech Mono', ui-monospace, monospace;
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  font-family: 'Chakra Petch', 'Share Tech Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 0 -2px 0 hsl(var(--k-primary));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.2), 0 6px 16px hsl(0 0% 0% / 0.25);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — phosphor glow. */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 0 0 8px hsl(var(--k-ring) / 0.45);
+}

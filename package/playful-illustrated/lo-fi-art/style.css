@@ -1,0 +1,223 @@
+/* kinu-styles: lo-fi-art — Lo-fi Art
+   Design rules: cozy anime scenes, muted night palettes (dusty indigo, mauve, soft teal), warm lamp amber light, film-grain mood, modest rectangular overlays, quiet low-density UI
+   Source trend: https://trends.daisyui.com/trend/lo-fi-art/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito+Sans:wght@400;600&display=swap');
+
+/* Light — a daytime study take: pale indigo-tinted neutrals, dusty-indigo text, warm lamp amber primary. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 250 25% 96%;
+  --k-foreground: 245 40% 22%;
+  --k-card: 250 30% 94%;
+  --k-card-foreground: 245 40% 22%;
+  --k-popover: 250 30% 97%;
+  --k-popover-foreground: 245 40% 22%;
+  --k-sidebar: 250 25% 90%;
+  --k-primary: 35 90% 52%;
+  --k-primary-foreground: 35 60% 10%;
+  --k-primary-hover: 35 90% 46%;
+  --k-primary-soft: 35 70% 90%;
+  --k-secondary: 245 40% 48%;
+  --k-secondary-foreground: 245 30% 96%;
+  --k-secondary-hover: 245 40% 42%;
+  --k-muted: 250 25% 90%;
+  --k-muted-foreground: 245 20% 45%;
+  --k-accent: 180 40% 45%;
+  --k-accent-foreground: 180 30% 95%;
+  --k-destructive: 350 65% 45%;
+  --k-destructive-foreground: 350 30% 98%;
+  --k-destructive-hover: 350 65% 39%;
+  --k-border: 250 20% 82%;
+  --k-input: 250 20% 82%;
+  --k-ring: 35 80% 55%;
+  --k-info: 180 40% 90%;
+  --k-info-foreground: 180 50% 30%;
+  --k-radius: 0.5rem;
+}
+
+/* Auto dark — the canonical lo-fi night: muted night blue, deep mauve-blue, dark indigo; amber lamp glow. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 245 35% 10%;
+    --k-foreground: 40 30% 90%;
+    --k-card: 245 30% 13%;
+    --k-card-foreground: 40 30% 90%;
+    --k-popover: 245 30% 15%;
+    --k-popover-foreground: 40 30% 90%;
+    --k-sidebar: 245 40% 8%;
+    --k-primary: 38 95% 60%;
+    --k-primary-foreground: 38 60% 10%;
+    --k-primary-hover: 38 95% 66%;
+    --k-primary-soft: 38 60% 20%;
+    --k-secondary: 185 40% 55%;
+    --k-secondary-foreground: 185 40% 10%;
+    --k-secondary-hover: 185 40% 62%;
+    --k-muted: 245 30% 17%;
+    --k-muted-foreground: 250 20% 62%;
+    --k-accent: 330 45% 65%;
+    --k-accent-foreground: 330 50% 12%;
+    --k-destructive: 350 60% 55%;
+    --k-destructive-foreground: 350 40% 10%;
+    --k-destructive-hover: 350 60% 62%;
+    --k-border: 245 25% 22%;
+    --k-input: 245 25% 22%;
+    --k-ring: 38 90% 60%;
+    --k-info: 185 40% 20%;
+    --k-info-foreground: 185 50% 75%;
+  --k-radius: 0.5rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 245 35% 10%;
+  --k-foreground: 40 30% 90%;
+  --k-card: 245 30% 13%;
+  --k-card-foreground: 40 30% 90%;
+  --k-popover: 245 30% 15%;
+  --k-popover-foreground: 40 30% 90%;
+  --k-sidebar: 245 40% 8%;
+  --k-primary: 38 95% 60%;
+  --k-primary-foreground: 38 60% 10%;
+  --k-primary-hover: 38 95% 66%;
+  --k-primary-soft: 38 60% 20%;
+  --k-secondary: 185 40% 55%;
+  --k-secondary-foreground: 185 40% 10%;
+  --k-secondary-hover: 185 40% 62%;
+  --k-muted: 245 30% 17%;
+  --k-muted-foreground: 250 20% 62%;
+  --k-accent: 330 45% 65%;
+  --k-accent-foreground: 330 50% 12%;
+  --k-destructive: 350 60% 55%;
+  --k-destructive-foreground: 350 40% 10%;
+  --k-destructive-hover: 350 60% 62%;
+  --k-border: 245 25% 22%;
+  --k-input: 245 25% 22%;
+  --k-ring: 38 90% 60%;
+  --k-info: 185 40% 20%;
+  --k-info-foreground: 185 50% 75%;
+  --k-radius: 0.5rem;
+}
+
+/* Typography — friendly rounded sans, modest hierarchy; the illustration sets the mood, not the type. */
+:root:root {
+  font-family: 'Nunito Sans', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Quicksand, 'Nunito Sans', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  transition: box-shadow 200ms ease, background-color 200ms ease;
+}
+[k=button]:hover {
+  box-shadow: 0 0 16px hsl(var(--k-primary) / 0.4);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=item]:hover {
+  background: hsl(var(--k-muted));
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 1px solid hsl(var(--k-border));
+  background: hsl(var(--k-card));
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  box-shadow: 0 1px 3px hsl(var(--k-border) / 0.6), 0 0 24px hsl(var(--k-primary) / 0.05);
+}
+[k=badge] {
+  border-radius: calc(var(--k-radius) * 2);
+  font-weight: 600;
+  font-size: 0.75em;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 8px hsl(var(--k-ring) / 0.3);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-primary-soft));
+  color: hsl(var(--k-primary-foreground));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-card));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: 0 4px 16px hsl(var(--k-border) / 0.5);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — warm lamp glow */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 0 0 8px hsl(var(--k-ring) / 0.35);
+}

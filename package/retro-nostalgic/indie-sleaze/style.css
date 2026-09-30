@@ -1,0 +1,228 @@
+/* kinu-styles: indie-sleaze — Indie Sleaze
+   Design rules: flash-nightlife: flash blue primary, lipstick red secondary, electric accents on black; condensed sans + typewriter accents; crooked frames, thin rules, low-fi grain, deliberately unpolished
+   Source trend: https://trends.daisyui.com/trend/indie-sleaze/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Special+Elite&display=swap');
+
+/* Light — a dark-dominant trend: near-black nightclub, dirty-white text, flash blue and lipstick red. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: dark;
+  --k-background: 0 0% 8%;
+  --k-foreground: 45 25% 88%;
+  --k-card: 0 0% 10%;
+  --k-card-foreground: 45 25% 88%;
+  --k-popover: 0 0% 11%;
+  --k-popover-foreground: 45 25% 88%;
+  --k-sidebar: 0 0% 6%;
+  --k-primary: 210 100% 55%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 210 100% 48%;
+  --k-primary-soft: 210 70% 22%;
+  --k-secondary: 350 85% 50%;
+  --k-secondary-foreground: 350 30% 97%;
+  --k-secondary-hover: 350 85% 44%;
+  --k-muted: 0 0% 16%;
+  --k-muted-foreground: 40 15% 55%;
+  --k-accent: 95 90% 55%;
+  --k-accent-foreground: 95 40% 10%;
+  --k-destructive: 350 85% 50%;
+  --k-destructive-foreground: 350 30% 97%;
+  --k-destructive-hover: 350 85% 44%;
+  --k-border: 0 0% 22%;
+  --k-input: 0 0% 22%;
+  --k-ring: 210 100% 60%;
+  --k-info: 210 60% 20%;
+  --k-info-foreground: 210 90% 70%;
+  --k-radius: 0;
+}
+
+/* Auto dark — deeper void, harsher flash contrast. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 0 0% 4%;
+    --k-foreground: 45 30% 92%;
+    --k-card: 0 0% 7%;
+    --k-card-foreground: 45 30% 92%;
+    --k-popover: 0 0% 8%;
+    --k-popover-foreground: 45 30% 92%;
+    --k-sidebar: 0 0% 3%;
+    --k-primary: 210 100% 62%;
+    --k-primary-foreground: 210 60% 8%;
+    --k-primary-hover: 210 100% 68%;
+    --k-primary-soft: 210 75% 20%;
+    --k-secondary: 350 90% 56%;
+    --k-secondary-foreground: 350 30% 96%;
+    --k-secondary-hover: 350 90% 62%;
+    --k-muted: 0 0% 14%;
+    --k-muted-foreground: 40 18% 60%;
+    --k-accent: 95 95% 58%;
+    --k-accent-foreground: 95 40% 8%;
+    --k-destructive: 350 90% 56%;
+    --k-destructive-foreground: 350 30% 96%;
+    --k-destructive-hover: 350 90% 62%;
+    --k-border: 0 0% 20%;
+    --k-input: 0 0% 20%;
+    --k-ring: 210 100% 64%;
+    --k-info: 210 65% 18%;
+    --k-info-foreground: 210 95% 75%;
+  --k-radius: 0;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 0 0% 4%;
+  --k-foreground: 45 30% 92%;
+  --k-card: 0 0% 7%;
+  --k-card-foreground: 45 30% 92%;
+  --k-popover: 0 0% 8%;
+  --k-popover-foreground: 45 30% 92%;
+  --k-sidebar: 0 0% 3%;
+  --k-primary: 210 100% 62%;
+  --k-primary-foreground: 210 60% 8%;
+  --k-primary-hover: 210 100% 68%;
+  --k-primary-soft: 210 75% 20%;
+  --k-secondary: 350 90% 56%;
+  --k-secondary-foreground: 350 30% 96%;
+  --k-secondary-hover: 350 90% 62%;
+  --k-muted: 0 0% 14%;
+  --k-muted-foreground: 40 18% 60%;
+  --k-accent: 95 95% 58%;
+  --k-accent-foreground: 95 40% 8%;
+  --k-destructive: 350 90% 56%;
+  --k-destructive-foreground: 350 30% 96%;
+  --k-destructive-hover: 350 90% 62%;
+  --k-border: 0 0% 20%;
+  --k-input: 0 0% 20%;
+  --k-ring: 210 100% 64%;
+  --k-info: 210 65% 18%;
+  --k-info-foreground: 210 95% 75%;
+  --k-radius: 0;
+}
+
+/* Typography — condensed sans for lineups, typewriter accent. */
+:root:root {
+  font-family: Oswald, 'Arial Narrow', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Oswald, 'Arial Narrow', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* surface: actions */
+/* Hard-edged, zero radius, flash-pressed. */
+[k=button] {
+  border-radius: 0;
+  transition: box-shadow 200ms ease, background-color 200ms ease;
+}
+[k=button]:hover {
+  box-shadow: 0 0 0 2px hsl(var(--k-primary) / 0.3);
+}
+[k=item] {
+  border-radius: 0;
+}
+[k=chip], [k=chip-button] {
+  border-radius: 0;
+  border: 1px solid hsl(var(--k-border));
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* surface: data display */
+/* Crooked photo rectangles with thin rules. */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: 0;
+  box-shadow: 3px 3px 0 hsl(var(--k-border) / 0.4);
+}
+[k=badge] {
+  border-radius: 0;
+  border: 1px solid hsl(var(--k-border));
+  font-family: 'Special Elite', ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: 0;
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+/* Minimally styled form elements. */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: 0;
+  background: hsl(var(--k-card));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: 0;
+  background: hsl(var(--k-card));
+}
+[k=alert][data-variant=destructive] {
+  border-color: hsl(var(--k-destructive) / 0.5);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: 0;
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 0 -2px 0 hsl(var(--k-primary));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: 0;
+  box-shadow: 3px 3px 0 hsl(var(--k-border) / 0.4);
+}
+[k=scroll-area] {
+  border-radius: 0;
+}
+
+/* Focus ring */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

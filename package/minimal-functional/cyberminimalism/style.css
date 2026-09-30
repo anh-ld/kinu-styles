@@ -1,0 +1,233 @@
+/* kinu-styles: cyberminimalism — Cyberminimalism
+   Design rules: black-and-white fields, oversized grotesque type, strict bento grids, sparse geometry, razor-thin rules, one icy-blue functional accent
+   Source trend: https://trends.daisyui.com/trend/cyberminimalism/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* Light — white field, cool gray structure, lone icy-blue accent. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 0 0% 100%;
+  --k-foreground: 220 15% 12%;
+  --k-card: 0 0% 100%;
+  --k-card-foreground: 220 15% 12%;
+  --k-popover: 0 0% 100%;
+  --k-popover-foreground: 220 15% 12%;
+  --k-sidebar: 0 0% 96%;
+  --k-primary: 210 80% 50%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 210 80% 44%;
+  --k-primary-soft: 210 60% 92%;
+  --k-secondary: 220 10% 88%;
+  --k-secondary-foreground: 220 15% 25%;
+  --k-secondary-hover: 220 10% 82%;
+  --k-muted: 0 0% 95%;
+  --k-muted-foreground: 220 10% 45%;
+  --k-accent: 220 15% 90%;
+  --k-accent-foreground: 220 15% 30%;
+  --k-destructive: 0 70% 50%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 70% 44%;
+  --k-border: 0 0% 88%;
+  --k-input: 0 0% 88%;
+  --k-ring: 210 80% 50%;
+  --k-info: 210 60% 94%;
+  --k-info-foreground: 210 70% 40%;
+  --k-radius: 0.125rem;
+}
+
+/* Auto dark — the canonical mood: charcoal, near-black and black, icy blue. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 220 20% 8%;
+    --k-foreground: 0 0% 96%;
+    --k-card: 220 18% 10%;
+    --k-card-foreground: 0 0% 96%;
+    --k-popover: 220 18% 11%;
+    --k-popover-foreground: 0 0% 96%;
+    --k-sidebar: 220 25% 6%;
+    --k-primary: 210 90% 60%;
+    --k-primary-foreground: 220 30% 10%;
+    --k-primary-hover: 210 90% 68%;
+    --k-primary-soft: 210 55% 22%;
+    --k-secondary: 220 12% 18%;
+    --k-secondary-foreground: 220 15% 90%;
+    --k-secondary-hover: 220 12% 24%;
+    --k-muted: 220 15% 16%;
+    --k-muted-foreground: 220 10% 60%;
+    --k-accent: 220 20% 22%;
+    --k-accent-foreground: 0 0% 92%;
+    --k-destructive: 0 70% 55%;
+    --k-destructive-foreground: 0 0% 100%;
+    --k-destructive-hover: 0 70% 62%;
+    --k-border: 220 15% 24%;
+    --k-input: 220 15% 24%;
+    --k-ring: 210 90% 60%;
+    --k-info: 210 50% 22%;
+    --k-info-foreground: 210 80% 78%;
+  --k-radius: 0.125rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 220 20% 8%;
+  --k-foreground: 0 0% 96%;
+  --k-card: 220 18% 10%;
+  --k-card-foreground: 0 0% 96%;
+  --k-popover: 220 18% 11%;
+  --k-popover-foreground: 0 0% 96%;
+  --k-sidebar: 220 25% 6%;
+  --k-primary: 210 90% 60%;
+  --k-primary-foreground: 220 30% 10%;
+  --k-primary-hover: 210 90% 68%;
+  --k-primary-soft: 210 55% 22%;
+  --k-secondary: 220 12% 18%;
+  --k-secondary-foreground: 220 15% 90%;
+  --k-secondary-hover: 220 12% 24%;
+  --k-muted: 220 15% 16%;
+  --k-muted-foreground: 220 10% 60%;
+  --k-accent: 220 20% 22%;
+  --k-accent-foreground: 0 0% 92%;
+  --k-destructive: 0 70% 55%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 70% 62%;
+  --k-border: 220 15% 24%;
+  --k-input: 220 15% 24%;
+  --k-ring: 210 90% 60%;
+  --k-info: 210 50% 22%;
+  --k-info-foreground: 210 80% 78%;
+  --k-radius: 0.125rem;
+}
+
+/* Typography — one contemporary grotesque across extreme scales, controlled tracking. */
+:root:root {
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+:where(h1, h2) {
+  letter-spacing: -0.04em;
+}
+
+/* surface: actions */
+/* sparse geometry, flat, no ornamental depth. */
+[k=button] {
+  border-radius: var(--k-radius);
+  transition: background-color 150ms ease;
+  box-shadow: none;
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=item][aria-selected=true] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+  letter-spacing: 0.04em;
+}
+
+/* surface: data display */
+/* bento tiles, razor-thin rules. */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: none;
+  background: hsl(var(--k-card));
+}
+[k=badge] {
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.7em;
+  font-weight: 600;
+  border: 1px solid hsl(var(--k-border));
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: none;
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 0 1px hsl(var(--k-ring) / 0.3);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+  border-radius: var(--k-radius);
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+  border-bottom: 1px solid hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: 0;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  font-weight: 600;
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 8px 24px hsl(var(--k-foreground) / 0.06);
+  background: hsl(var(--k-popover));
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — precise, icy. */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

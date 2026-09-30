@@ -1,0 +1,8 @@
+docs/
+.qwen/
+node_modules/
+portal/node_modules/
+dist/
+lib/
+*.tgz
+.DS_Storeportal/src/themes.json

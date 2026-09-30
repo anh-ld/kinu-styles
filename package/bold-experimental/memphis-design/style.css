@@ -1,0 +1,232 @@
+/* kinu-styles: memphis-design — Memphis Design
+   Design rules: squiggles, dots and terrazzo, bright geometric shapes, clashing patterns, black accents, playful asymmetry
+   Source trend: https://trends.daisyui.com/trend/memphis-design/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:wght@400;500;600&display=swap');
+
+/* Light — warm white, cobalt primary, yellow secondary, pink accent, black outlines. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 40 40% 97%;
+  --k-foreground: 240 45% 12%;
+  --k-card: 40 45% 98%;
+  --k-card-foreground: 240 45% 12%;
+  --k-popover: 40 45% 98%;
+  --k-popover-foreground: 240 45% 12%;
+  --k-sidebar: 40 35% 93%;
+  --k-primary: 230 90% 45%;
+  --k-primary-foreground: 40 45% 98%;
+  --k-primary-hover: 230 90% 39%;
+  --k-primary-soft: 230 60% 92%;
+  --k-secondary: 45 95% 50%;
+  --k-secondary-foreground: 240 45% 12%;
+  --k-secondary-hover: 45 95% 44%;
+  --k-muted: 45 45% 90%;
+  --k-muted-foreground: 240 15% 42%;
+  --k-accent: 320 70% 55%;
+  --k-accent-foreground: 40 45% 98%;
+  --k-destructive: 0 70% 48%;
+  --k-destructive-foreground: 40 45% 98%;
+  --k-destructive-hover: 0 70% 42%;
+  --k-border: 240 30% 86%;
+  --k-input: 240 30% 86%;
+  --k-ring: 230 90% 45%;
+  --k-info: 230 70% 93%;
+  --k-info-foreground: 230 85% 36%;
+  --k-radius: 1rem;
+}
+
+/* Auto dark — indigo night with bright cobalt, yellow, pink. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 240 35% 9%;
+    --k-foreground: 45 45% 94%;
+    --k-card: 240 32% 12%;
+    --k-card-foreground: 45 45% 94%;
+    --k-popover: 240 32% 13%;
+    --k-popover-foreground: 45 45% 94%;
+    --k-sidebar: 240 38% 7%;
+    --k-primary: 230 90% 62%;
+    --k-primary-foreground: 240 40% 10%;
+    --k-primary-hover: 230 90% 68%;
+    --k-primary-soft: 230 60% 22%;
+    --k-secondary: 45 95% 58%;
+    --k-secondary-foreground: 240 40% 10%;
+    --k-secondary-hover: 45 95% 64%;
+    --k-muted: 240 25% 19%;
+    --k-muted-foreground: 240 15% 62%;
+    --k-accent: 320 75% 65%;
+    --k-accent-foreground: 240 40% 10%;
+    --k-destructive: 0 75% 55%;
+    --k-destructive-foreground: 240 40% 10%;
+    --k-destructive-hover: 0 75% 61%;
+    --k-border: 240 25% 26%;
+    --k-input: 240 25% 26%;
+    --k-ring: 230 90% 62%;
+    --k-info: 230 70% 22%;
+    --k-info-foreground: 230 85% 75%;
+  --k-radius: 1rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 240 35% 9%;
+  --k-foreground: 45 45% 94%;
+  --k-card: 240 32% 12%;
+  --k-card-foreground: 45 45% 94%;
+  --k-popover: 240 32% 13%;
+  --k-popover-foreground: 45 45% 94%;
+  --k-sidebar: 240 38% 7%;
+  --k-primary: 230 90% 62%;
+  --k-primary-foreground: 240 40% 10%;
+  --k-primary-hover: 230 90% 68%;
+  --k-primary-soft: 230 60% 22%;
+  --k-secondary: 45 95% 58%;
+  --k-secondary-foreground: 240 40% 10%;
+  --k-secondary-hover: 45 95% 64%;
+  --k-muted: 240 25% 19%;
+  --k-muted-foreground: 240 15% 62%;
+  --k-accent: 320 75% 65%;
+  --k-accent-foreground: 240 40% 10%;
+  --k-destructive: 0 75% 55%;
+  --k-destructive-foreground: 240 40% 10%;
+  --k-destructive-hover: 0 75% 61%;
+  --k-border: 240 25% 26%;
+  --k-input: 240 25% 26%;
+  --k-ring: 230 90% 62%;
+  --k-info: 230 70% 22%;
+  --k-info-foreground: 230 85% 75%;
+  --k-radius: 1rem;
+}
+
+/* Typography — chunky Bungee display, calm Poppins body. */
+:root:root {
+  font-family: Poppins, ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Bungee, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-foreground));
+  box-shadow: 4px 4px 0 hsl(var(--k-secondary));
+  transition: box-shadow 150ms ease, transform 150ms ease;
+}
+[k=button]:hover {
+  box-shadow: 6px 6px 0 hsl(var(--k-secondary));
+  transform: translate(-1px, -1px);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 2px solid hsl(var(--k-foreground));
+  background: hsl(var(--k-card));
+}
+
+/* surface: data display */
+[k=card] {
+  border: 2px solid hsl(var(--k-foreground));
+  border-radius: var(--k-radius);
+  box-shadow: 5px 5px 0 hsl(var(--k-primary));
+  background: hsl(var(--k-card));
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-foreground));
+  background: hsl(var(--k-accent));
+  color: hsl(var(--k-accent-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75em;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: radial-gradient(circle, hsl(var(--k-secondary)) 2px, transparent 2px) 0 0 / 14px 14px, radial-gradient(circle, hsl(var(--k-accent)) 2px, transparent 2px) 7px 7px / 14px 14px, hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 2px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+[k=checkbox], [k=radio] {
+  border-radius: calc(var(--k-radius) * 0.4);
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 2px solid hsl(var(--k-foreground));
+  border-radius: var(--k-radius);
+  box-shadow: 4px 4px 0 hsl(var(--k-secondary));
+  background: hsl(var(--k-card));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-secondary));
+  color: hsl(var(--k-secondary-foreground));
+  box-shadow: 3px 3px 0 hsl(var(--k-foreground));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: repeating-linear-gradient(90deg, hsl(var(--k-border)) 0 8px, transparent 8px 16px, hsl(var(--k-secondary)) 16px 24px, transparent 24px 32px);
+}
+[k=popover] {
+  border: 2px solid hsl(var(--k-foreground));
+  border-radius: var(--k-radius);
+  box-shadow: 5px 5px 0 hsl(var(--k-primary));
+  background: hsl(var(--k-popover));
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — geometric offset */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 3px 3px 0 hsl(var(--k-ring) / 0.6);
+}

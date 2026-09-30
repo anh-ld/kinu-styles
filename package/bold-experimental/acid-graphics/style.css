@@ -1,0 +1,241 @@
+/* kinu-styles: acid-graphics — Acid Graphics
+   Design rules: fluorescent palette, warped typography, chrome accents, dense layering, liquefied shapes, rave-flyer distortion on metallic bases
+   Source trend: https://trends.daisyui.com/trend/acid-graphics/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Unbounded:wght@600;800&family=Roboto+Condensed:wght@400;500;700&display=swap');
+
+/* Light — pale metallic gray, fluorescent green primary, hot pink secondary, electric blue accent. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 0 0% 92%;
+  --k-foreground: 240 12% 10%;
+  --k-card: 0 0% 95%;
+  --k-card-foreground: 240 12% 10%;
+  --k-popover: 0 0% 96%;
+  --k-popover-foreground: 240 12% 10%;
+  --k-sidebar: 0 0% 89%;
+  --k-primary: 85 100% 42%;
+  --k-primary-foreground: 0 0% 10%;
+  --k-primary-hover: 85 100% 36%;
+  --k-primary-soft: 85 90% 88%;
+  --k-secondary: 300 95% 50%;
+  --k-secondary-foreground: 0 0% 100%;
+  --k-secondary-hover: 300 95% 44%;
+  --k-muted: 0 0% 88%;
+  --k-muted-foreground: 240 8% 45%;
+  --k-accent: 210 100% 55%;
+  --k-accent-foreground: 0 0% 100%;
+  --k-destructive: 350 90% 50%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 350 90% 44%;
+  --k-border: 0 0% 80%;
+  --k-input: 0 0% 80%;
+  --k-ring: 85 100% 42%;
+  --k-info: 210 90% 92%;
+  --k-info-foreground: 210 100% 40%;
+  --k-radius: 1rem;
+}
+
+/* Auto dark — canonical rave: near-black, charcoal steps, fluorescent yellow primary. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 240 8% 6%;
+    --k-foreground: 0 0% 92%;
+    --k-card: 240 7% 9%;
+    --k-card-foreground: 0 0% 92%;
+    --k-popover: 240 7% 10%;
+    --k-popover-foreground: 0 0% 92%;
+    --k-sidebar: 240 10% 4%;
+    --k-primary: 60 100% 55%;
+    --k-primary-foreground: 0 0% 10%;
+    --k-primary-hover: 60 100% 48%;
+    --k-primary-soft: 60 80% 20%;
+    --k-secondary: 300 95% 60%;
+    --k-secondary-foreground: 0 0% 10%;
+    --k-secondary-hover: 300 95% 54%;
+    --k-muted: 240 6% 16%;
+    --k-muted-foreground: 240 6% 62%;
+    --k-accent: 210 100% 62%;
+    --k-accent-foreground: 0 0% 10%;
+    --k-destructive: 350 90% 60%;
+    --k-destructive-foreground: 0 0% 10%;
+    --k-destructive-hover: 350 90% 54%;
+    --k-border: 240 6% 24%;
+    --k-input: 240 6% 24%;
+    --k-ring: 60 100% 55%;
+    --k-info: 210 80% 20%;
+    --k-info-foreground: 210 100% 70%;
+  --k-radius: 1rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 240 8% 6%;
+  --k-foreground: 0 0% 92%;
+  --k-card: 240 7% 9%;
+  --k-card-foreground: 0 0% 92%;
+  --k-popover: 240 7% 10%;
+  --k-popover-foreground: 0 0% 92%;
+  --k-sidebar: 240 10% 4%;
+  --k-primary: 60 100% 55%;
+  --k-primary-foreground: 0 0% 10%;
+  --k-primary-hover: 60 100% 48%;
+  --k-primary-soft: 60 80% 20%;
+  --k-secondary: 300 95% 60%;
+  --k-secondary-foreground: 0 0% 10%;
+  --k-secondary-hover: 300 95% 54%;
+  --k-muted: 240 6% 16%;
+  --k-muted-foreground: 240 6% 62%;
+  --k-accent: 210 100% 62%;
+  --k-accent-foreground: 0 0% 10%;
+  --k-destructive: 350 90% 60%;
+  --k-destructive-foreground: 0 0% 10%;
+  --k-destructive-hover: 350 90% 54%;
+  --k-border: 240 6% 24%;
+  --k-input: 240 6% 24%;
+  --k-ring: 60 100% 55%;
+  --k-info: 210 80% 20%;
+  --k-info-foreground: 210 100% 70%;
+  --k-radius: 1rem;
+}
+
+/* Typography — glitch display, chrome headline, firm condensed logistics. */
+:root:root {
+  font-family: 'Roboto Condensed', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2) {
+  font-family: 'Rubik Glitch', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  background: linear-gradient(90deg, hsl(var(--k-foreground)), hsl(var(--k-secondary)), hsl(var(--k-primary)), hsl(var(--k-foreground)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+:where(h3, h4) {
+  font-family: Unbounded, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-foreground));
+  box-shadow: 4px 4px 0 hsl(var(--k-primary));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+[k=button]:hover {
+  box-shadow: 4px 4px 0 hsl(var(--k-primary)), 0 0 14px hsl(var(--k-primary) / 0.5);
+  transform: translate(-1px, -1px);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 0 0 1px hsl(var(--k-secondary) / 0.2), 6px 6px 0 hsl(var(--k-primary-soft));
+  background: hsl(var(--k-card));
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+  background: hsl(var(--k-primary));
+  color: hsl(var(--k-primary-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75em;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: repeating-linear-gradient(90deg, hsl(var(--k-muted)) 0 10px, hsl(var(--k-secondary) / 0.3) 10px 12px);
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 10px hsl(var(--k-ring) / 0.4);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 5px 5px 0 hsl(var(--k-primary));
+  background: hsl(var(--k-card));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-secondary));
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+[k=tab][aria-selected=true] {
+  color: hsl(var(--k-primary));
+  background: hsl(var(--k-primary-soft));
+  box-shadow: inset 0 -3px 0 hsl(var(--k-primary));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: repeating-linear-gradient(90deg, hsl(var(--k-border)) 0 10px, hsl(var(--k-primary) / 0.6) 10px 12px);
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 6px 6px 0 hsl(var(--k-primary)), 0 0 18px hsl(var(--k-secondary) / 0.25);
+  background: hsl(var(--k-popover));
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — fluorescent pulse */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 0 0 12px hsl(var(--k-ring) / 0.5);
+}

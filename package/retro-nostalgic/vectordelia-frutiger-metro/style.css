@@ -1,0 +1,221 @@
+/* kinu-styles: vectordelia-frutiger-metro — Vectordelia (Frutiger Metro)
+   Design rules: exuberant flat vectors: vivid lime, orange, cyan, magenta, violet on white; groovy rounded display type; sweeping curves, floral flourishes, layered ribbons, no realistic depth
+   Source trend: https://trends.daisyui.com/trend/vectordelia-frutiger-metro/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&display=swap');
+
+/* Light — vivid vector daylight: white fields, cyan swooshes, magenta and lime flourishes. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 0 0% 100%;
+  --k-foreground: 260 30% 15%;
+  --k-card: 0 0% 100%;
+  --k-card-foreground: 260 30% 15%;
+  --k-popover: 0 0% 100%;
+  --k-popover-foreground: 260 30% 15%;
+  --k-sidebar: 220 15% 96%;
+  --k-primary: 200 95% 42%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 200 95% 36%;
+  --k-primary-soft: 200 70% 93%;
+  --k-secondary: 320 90% 55%;
+  --k-secondary-foreground: 320 40% 98%;
+  --k-secondary-hover: 320 90% 48%;
+  --k-muted: 220 15% 93%;
+  --k-muted-foreground: 220 12% 45%;
+  --k-accent: 95 90% 50%;
+  --k-accent-foreground: 95 50% 12%;
+  --k-destructive: 0 80% 50%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 80% 44%;
+  --k-border: 220 18% 86%;
+  --k-input: 220 18% 86%;
+  --k-ring: 200 95% 48%;
+  --k-info: 200 60% 93%;
+  --k-info-foreground: 200 70% 38%;
+  --k-radius: 1rem;
+}
+
+/* Auto dark — midnight metro: deep violet, neon cyan and magenta. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 260 40% 7%;
+    --k-foreground: 260 20% 94%;
+    --k-card: 260 35% 10%;
+    --k-card-foreground: 260 20% 94%;
+    --k-popover: 260 35% 11%;
+    --k-popover-foreground: 260 20% 94%;
+    --k-sidebar: 260 42% 5%;
+    --k-primary: 200 95% 55%;
+    --k-primary-foreground: 200 50% 8%;
+    --k-primary-hover: 200 95% 61%;
+    --k-primary-soft: 200 70% 22%;
+    --k-secondary: 320 95% 62%;
+    --k-secondary-foreground: 320 50% 8%;
+    --k-secondary-hover: 320 95% 68%;
+    --k-muted: 260 30% 18%;
+    --k-muted-foreground: 260 18% 62%;
+    --k-accent: 95 95% 55%;
+    --k-accent-foreground: 95 50% 10%;
+    --k-destructive: 0 85% 58%;
+    --k-destructive-foreground: 0 30% 96%;
+    --k-destructive-hover: 0 85% 64%;
+    --k-border: 260 30% 25%;
+    --k-input: 260 30% 25%;
+    --k-ring: 200 95% 60%;
+    --k-info: 200 70% 22%;
+    --k-info-foreground: 200 90% 72%;
+  --k-radius: 1rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 260 40% 7%;
+  --k-foreground: 260 20% 94%;
+  --k-card: 260 35% 10%;
+  --k-card-foreground: 260 20% 94%;
+  --k-popover: 260 35% 11%;
+  --k-popover-foreground: 260 20% 94%;
+  --k-sidebar: 260 42% 5%;
+  --k-primary: 200 95% 55%;
+  --k-primary-foreground: 200 50% 8%;
+  --k-primary-hover: 200 95% 61%;
+  --k-primary-soft: 200 70% 22%;
+  --k-secondary: 320 95% 62%;
+  --k-secondary-foreground: 320 50% 8%;
+  --k-secondary-hover: 320 95% 68%;
+  --k-muted: 260 30% 18%;
+  --k-muted-foreground: 260 18% 62%;
+  --k-accent: 95 95% 55%;
+  --k-accent-foreground: 95 50% 10%;
+  --k-destructive: 0 85% 58%;
+  --k-destructive-foreground: 0 30% 96%;
+  --k-destructive-hover: 0 85% 64%;
+  --k-border: 260 30% 25%;
+  --k-input: 260 30% 25%;
+  --k-ring: 200 95% 60%;
+  --k-info: 200 70% 22%;
+  --k-info-foreground: 200 90% 72%;
+  --k-radius: 1rem;
+}
+
+/* Typography — groovy rounded display, dependable sans body. */
+:root:root {
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Fredoka, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* surface: actions */
+/* Rounded vector buttons with a ribbon of accent color. */
+[k=button] {
+  border-radius: var(--k-radius);
+  transition: box-shadow 200ms ease, background-color 200ms ease;
+}
+[k=button]:hover {
+  box-shadow: 0 4px 0 hsl(var(--k-primary) / 0.3);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 1.5);
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: data display */
+/* Flat layered ribbons. */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 3px 0 hsl(var(--k-border) / 0.5);
+}
+[k=badge] {
+  border-radius: calc(var(--k-radius) * 1.5);
+  font-family: Fredoka, ui-sans-serif, sans-serif;
+  font-weight: 600;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 0 3px hsl(var(--k-ring) / 0.25);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=alert][data-variant=destructive] {
+  border-color: hsl(var(--k-destructive) / 0.5);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 0 -3px 0 hsl(var(--k-primary));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 6px 20px hsl(var(--k-border) / 0.5);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

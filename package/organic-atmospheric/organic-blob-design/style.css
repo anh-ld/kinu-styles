@@ -1,0 +1,218 @@
+/* kinu-styles: organic-blob-design — Organic / Blob Design
+   Design rules: fluid silhouettes, asymmetric curves, soft blobs, rounded containers, freeform compositions, playful motion, botanical-fruit-mineral soft pairings, large radii
+   Source trend: https://trends.daisyui.com/trend/organic-blob-design/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Quicksand:wght@400;500;600&display=swap');
+
+/* Light — warm cream surfaces, botanical leaf primary, soft mineral secondary. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 45 40% 97%;
+  --k-foreground: 160 25% 18%;
+  --k-card: 45 35% 98%;
+  --k-card-foreground: 160 25% 18%;
+  --k-popover: 45 35% 99%;
+  --k-popover-foreground: 160 25% 18%;
+  --k-sidebar: 40 30% 93%;
+  --k-primary: 152 55% 45%;
+  --k-primary-foreground: 152 40% 98%;
+  --k-primary-hover: 152 55% 39%;
+  --k-primary-soft: 152 50% 92%;
+  --k-secondary: 25 45% 60%;
+  --k-secondary-foreground: 25 30% 20%;
+  --k-secondary-hover: 25 45% 54%;
+  --k-muted: 40 25% 92%;
+  --k-muted-foreground: 155 15% 42%;
+  --k-accent: 170 45% 55%;
+  --k-accent-foreground: 170 40% 10%;
+  --k-destructive: 5 60% 50%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 5 60% 44%;
+  --k-border: 45 20% 84%;
+  --k-input: 45 20% 84%;
+  --k-ring: 152 55% 50%;
+  --k-info: 170 45% 92%;
+  --k-info-foreground: 170 55% 30%;
+  --k-radius: 1.5rem;
+}
+
+/* Auto dark — botanical night, brighter leaf and aqua minerals. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 160 35% 8%;
+    --k-foreground: 45 30% 92%;
+    --k-card: 160 30% 11%;
+    --k-card-foreground: 45 30% 92%;
+    --k-popover: 160 30% 12%;
+    --k-popover-foreground: 45 30% 92%;
+    --k-sidebar: 160 35% 6%;
+    --k-primary: 152 55% 55%;
+    --k-primary-foreground: 152 40% 8%;
+    --k-primary-hover: 152 55% 61%;
+    --k-primary-soft: 152 40% 18%;
+    --k-secondary: 25 45% 60%;
+    --k-secondary-foreground: 25 40% 10%;
+    --k-secondary-hover: 25 45% 66%;
+    --k-muted: 160 25% 16%;
+    --k-muted-foreground: 40 15% 62%;
+    --k-accent: 170 45% 55%;
+    --k-accent-foreground: 170 40% 8%;
+    --k-destructive: 5 60% 55%;
+    --k-destructive-foreground: 0 0% 100%;
+    --k-destructive-hover: 5 60% 62%;
+    --k-border: 160 25% 22%;
+    --k-input: 160 25% 22%;
+    --k-ring: 152 55% 60%;
+    --k-info: 170 45% 20%;
+    --k-info-foreground: 170 55% 75%;
+  --k-radius: 1.5rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 160 35% 8%;
+  --k-foreground: 45 30% 92%;
+  --k-card: 160 30% 11%;
+  --k-card-foreground: 45 30% 92%;
+  --k-popover: 160 30% 12%;
+  --k-popover-foreground: 45 30% 92%;
+  --k-sidebar: 160 35% 6%;
+  --k-primary: 152 55% 55%;
+  --k-primary-foreground: 152 40% 8%;
+  --k-primary-hover: 152 55% 61%;
+  --k-primary-soft: 152 40% 18%;
+  --k-secondary: 25 45% 60%;
+  --k-secondary-foreground: 25 40% 10%;
+  --k-secondary-hover: 25 45% 66%;
+  --k-muted: 160 25% 16%;
+  --k-muted-foreground: 40 15% 62%;
+  --k-accent: 170 45% 55%;
+  --k-accent-foreground: 170 40% 8%;
+  --k-destructive: 5 60% 55%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 5 60% 62%;
+  --k-border: 160 25% 22%;
+  --k-input: 160 25% 22%;
+  --k-ring: 152 55% 60%;
+  --k-info: 170 45% 20%;
+  --k-info-foreground: 170 55% 75%;
+  --k-radius: 1.5rem;
+}
+
+/* Typography — soft display serif (Fraunces) for headings, warm rounded sans (Quicksand) for body. */
+:root:root {
+  font-family: Quicksand, ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: calc(var(--k-radius) * 1.6);
+  transition: background-color 200ms ease, box-shadow 200ms ease;
+}
+[k=button]:hover {
+  box-shadow: 0 6px 18px hsl(var(--k-primary) / 0.25);
+}
+[k=item] {
+  border-radius: calc(var(--k-radius) * 1.2);
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 3);
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: calc(var(--k-radius) * 1.2);
+  box-shadow: 0 8px 24px hsl(var(--k-primary) / 0.12), 0 2px 6px hsl(var(--k-primary) / 0.06);
+}
+[k=badge] {
+  border-radius: calc(var(--k-radius) * 2);
+  font-weight: 600;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: calc(var(--k-radius) * 2);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: calc(var(--k-radius) * 1.2);
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 0 3px hsl(var(--k-ring) / 0.15);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+  border-radius: 0.375rem;
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: calc(var(--k-radius) * 1.2);
+  background: hsl(var(--k-card));
+}
+[k=alert][data-variant=destructive] {
+  border-color: hsl(var(--k-destructive) / 0.4);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: calc(var(--k-radius) * 2);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: calc(var(--k-radius) * 2);
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-primary-soft));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: calc(var(--k-radius) * 1.2);
+  box-shadow: 0 12px 32px hsl(var(--k-primary) / 0.15);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — soft blob glow */
+[k]:focus-visible {
+  outline: 3px solid hsl(var(--k-ring) / 0.5);
+  outline-offset: 2px;
+}

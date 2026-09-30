@@ -1,0 +1,242 @@
+/* kinu-styles: halftone-comic-book — Halftone / Comic Book
+   Design rules: black ink outlines, punchy limited print palette (red, yellow, blue, cyan), halftone dots, heavy panel frames, speech-balloon shapes, expressive comic display type
+   Source trend: https://trends.daisyui.com/trend/halftone-comic-book/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap');
+
+/* Light — white/warm-newsprint paper, black ink, punchy print-red primary, print-yellow secondary. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 40 30% 97%;
+  --k-foreground: 0 0% 8%;
+  --k-card: 0 0% 100%;
+  --k-card-foreground: 0 0% 8%;
+  --k-popover: 0 0% 100%;
+  --k-popover-foreground: 0 0% 8%;
+  --k-sidebar: 40 20% 90%;
+  --k-primary: 0 90% 45%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 0 90% 38%;
+  --k-primary-soft: 0 70% 92%;
+  --k-secondary: 45 95% 50%;
+  --k-secondary-foreground: 45 80% 15%;
+  --k-secondary-hover: 45 95% 44%;
+  --k-muted: 40 20% 93%;
+  --k-muted-foreground: 0 0% 40%;
+  --k-accent: 215 90% 50%;
+  --k-accent-foreground: 0 0% 100%;
+  --k-destructive: 0 85% 42%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 85% 36%;
+  --k-border: 0 0% 12%;
+  --k-input: 0 0% 12%;
+  --k-ring: 0 90% 45%;
+  --k-info: 215 70% 92%;
+  --k-info-foreground: 215 90% 40%;
+  --k-radius: 0.25rem;
+}
+
+/* Auto dark — midnight comic: near-black paper, newsprint text, punchy colors lifted. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 0 0% 10%;
+    --k-foreground: 45 30% 92%;
+    --k-card: 0 0% 14%;
+    --k-card-foreground: 45 30% 92%;
+    --k-popover: 0 0% 16%;
+    --k-popover-foreground: 45 30% 92%;
+    --k-sidebar: 0 0% 8%;
+    --k-primary: 0 90% 55%;
+    --k-primary-foreground: 0 0% 100%;
+    --k-primary-hover: 0 90% 62%;
+    --k-primary-soft: 0 60% 20%;
+    --k-secondary: 45 95% 55%;
+    --k-secondary-foreground: 45 80% 12%;
+    --k-secondary-hover: 45 95% 60%;
+    --k-muted: 0 0% 20%;
+    --k-muted-foreground: 0 0% 62%;
+    --k-accent: 215 90% 60%;
+    --k-accent-foreground: 0 0% 100%;
+    --k-destructive: 0 85% 50%;
+    --k-destructive-foreground: 0 0% 100%;
+    --k-destructive-hover: 0 85% 57%;
+    --k-border: 0 0% 32%;
+    --k-input: 0 0% 32%;
+    --k-ring: 0 90% 55%;
+    --k-info: 215 60% 20%;
+    --k-info-foreground: 215 90% 70%;
+  --k-radius: 0.25rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 0 0% 10%;
+  --k-foreground: 45 30% 92%;
+  --k-card: 0 0% 14%;
+  --k-card-foreground: 45 30% 92%;
+  --k-popover: 0 0% 16%;
+  --k-popover-foreground: 45 30% 92%;
+  --k-sidebar: 0 0% 8%;
+  --k-primary: 0 90% 55%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 0 90% 62%;
+  --k-primary-soft: 0 60% 20%;
+  --k-secondary: 45 95% 55%;
+  --k-secondary-foreground: 45 80% 12%;
+  --k-secondary-hover: 45 95% 60%;
+  --k-muted: 0 0% 20%;
+  --k-muted-foreground: 0 0% 62%;
+  --k-accent: 215 90% 60%;
+  --k-accent-foreground: 0 0% 100%;
+  --k-destructive: 0 85% 50%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 85% 57%;
+  --k-border: 0 0% 32%;
+  --k-input: 0 0% 32%;
+  --k-ring: 0 90% 55%;
+  --k-info: 215 60% 20%;
+  --k-info-foreground: 215 90% 70%;
+  --k-radius: 0.25rem;
+}
+
+/* Typography — Bangers impact lettering, Comic Neue for dialogue. */
+:root:root {
+  font-family: 'Comic Neue', 'Comic Sans MS', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Bangers, 'Comic Neue', 'Comic Sans MS', ui-sans-serif, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* surface: actions */
+[k=button] {
+  border: 2px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 3px 3px 0 hsl(var(--k-border));
+  font-family: Bangers, 'Comic Neue', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+[k=button]:hover {
+  box-shadow: 1px 1px 0 hsl(var(--k-border));
+  transform: translate(2px, 2px);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=item]:hover {
+  background: hsl(var(--k-secondary) / 0.4);
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-border));
+}
+
+/* surface: data display */
+[k=card] {
+  border: 2px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: 4px 4px 0 hsl(var(--k-border));
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-border));
+  font-family: Bangers, 'Comic Neue', sans-serif;
+  font-size: 0.875em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: repeating-conic-gradient(hsl(var(--k-muted)) 0% 25%, hsl(var(--k-muted-foreground) / 0.15) 0% 50%);
+  background-size: 8px 8px;
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 2px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 2px 2px 0 hsl(var(--k-ring));
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-family: 'Comic Neue', sans-serif;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 2px solid hsl(var(--k-border));
+  border-radius: 1rem 1rem 1rem 0.25rem;
+  background: hsl(var(--k-background));
+  box-shadow: 3px 3px 0 hsl(var(--k-border));
+}
+[k=alert][data-variant=destructive] {
+  border-color: hsl(var(--k-destructive));
+  box-shadow: 3px 3px 0 hsl(var(--k-destructive));
+}
+[k=tooltip] {
+  background: hsl(var(--k-secondary));
+  color: hsl(var(--k-secondary-foreground));
+  border-radius: 1rem;
+  border: 2px solid hsl(var(--k-border));
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  font-family: Bangers, 'Comic Neue', sans-serif;
+  text-transform: uppercase;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-secondary));
+  color: hsl(var(--k-secondary-foreground));
+  box-shadow: 2px 2px 0 hsl(var(--k-border));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background-image: radial-gradient(hsl(var(--k-muted-foreground) / 0.12) 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 2px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: 4px 4px 0 hsl(var(--k-border));
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — bold ink */
+[k]:focus-visible {
+  outline: 3px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

@@ -1,0 +1,240 @@
+/* kinu-styles: claymorphism — Claymorphism
+   Design rules: inflated clay-like components, pastel palette, oversized radii, soft 3D shading with chunky toy-like bottom shadows, bright peach primary, playful rounded display type
+   Source trend: https://trends.daisyui.com/trend/claymorphism/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap');
+
+/* Light — creamy tinted base, bright peach clay, lilac companion. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 40 60% 97%;
+  --k-foreground: 25 30% 20%;
+  --k-card: 40 60% 94%;
+  --k-card-foreground: 25 30% 20%;
+  --k-popover: 40 60% 96%;
+  --k-popover-foreground: 25 30% 20%;
+  --k-sidebar: 40 55% 90%;
+  --k-primary: 25 85% 62%;
+  --k-primary-foreground: 25 40% 15%;
+  --k-primary-hover: 25 85% 55%;
+  --k-primary-soft: 25 80% 90%;
+  --k-secondary: 265 55% 80%;
+  --k-secondary-foreground: 265 40% 25%;
+  --k-secondary-hover: 265 55% 73%;
+  --k-muted: 40 40% 90%;
+  --k-muted-foreground: 30 20% 45%;
+  --k-accent: 340 70% 70%;
+  --k-accent-foreground: 340 45% 22%;
+  --k-destructive: 5 70% 55%;
+  --k-destructive-foreground: 5 50% 96%;
+  --k-destructive-hover: 5 70% 48%;
+  --k-border: 35 45% 85%;
+  --k-input: 35 45% 82%;
+  --k-ring: 25 80% 60%;
+  --k-info: 200 50% 92%;
+  --k-info-foreground: 200 65% 40%;
+  --k-radius: 1.5rem;
+}
+
+/* Auto dark — deep plum, brighter clay pops. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 262 40% 13%;
+    --k-foreground: 40 45% 90%;
+    --k-card: 262 38% 17%;
+    --k-card-foreground: 40 45% 90%;
+    --k-popover: 262 38% 19%;
+    --k-popover-foreground: 40 45% 90%;
+    --k-sidebar: 262 45% 10%;
+    --k-primary: 25 90% 65%;
+    --k-primary-foreground: 25 45% 15%;
+    --k-primary-hover: 25 90% 58%;
+    --k-primary-soft: 25 50% 28%;
+    --k-secondary: 265 55% 72%;
+    --k-secondary-foreground: 265 40% 18%;
+    --k-secondary-hover: 265 55% 66%;
+    --k-muted: 262 35% 22%;
+    --k-muted-foreground: 262 15% 60%;
+    --k-accent: 340 75% 70%;
+    --k-accent-foreground: 340 45% 18%;
+    --k-destructive: 5 70% 55%;
+    --k-destructive-foreground: 5 50% 95%;
+    --k-destructive-hover: 5 70% 62%;
+    --k-border: 262 35% 28%;
+    --k-input: 262 35% 28%;
+    --k-ring: 25 90% 68%;
+    --k-info: 200 45% 24%;
+    --k-info-foreground: 200 70% 70%;
+  --k-radius: 1.5rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 262 40% 13%;
+  --k-foreground: 40 45% 90%;
+  --k-card: 262 38% 17%;
+  --k-card-foreground: 40 45% 90%;
+  --k-popover: 262 38% 19%;
+  --k-popover-foreground: 40 45% 90%;
+  --k-sidebar: 262 45% 10%;
+  --k-primary: 25 90% 65%;
+  --k-primary-foreground: 25 45% 15%;
+  --k-primary-hover: 25 90% 58%;
+  --k-primary-soft: 25 50% 28%;
+  --k-secondary: 265 55% 72%;
+  --k-secondary-foreground: 265 40% 18%;
+  --k-secondary-hover: 265 55% 66%;
+  --k-muted: 262 35% 22%;
+  --k-muted-foreground: 262 15% 60%;
+  --k-accent: 340 75% 70%;
+  --k-accent-foreground: 340 45% 18%;
+  --k-destructive: 5 70% 55%;
+  --k-destructive-foreground: 5 50% 95%;
+  --k-destructive-hover: 5 70% 62%;
+  --k-border: 262 35% 28%;
+  --k-input: 262 35% 28%;
+  --k-ring: 25 90% 68%;
+  --k-info: 200 45% 24%;
+  --k-info-foreground: 200 70% 70%;
+  --k-radius: 1.5rem;
+}
+
+/* Typography — rounded heavy display, friendly sans body. */
+:root:root {
+  font-family: Nunito, ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Fredoka, 'Nunito', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  box-shadow: 0 6px 0 hsl(var(--k-foreground) / 0.22), 0 12px 20px hsl(var(--k-foreground) / 0.14);
+  transition: transform 100ms ease, box-shadow 100ms ease;
+}
+[k=button]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 hsl(var(--k-foreground) / 0.22), 0 16px 26px hsl(var(--k-foreground) / 0.16);
+}
+[k=button]:active {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 hsl(var(--k-foreground) / 0.22), 0 6px 10px hsl(var(--k-foreground) / 0.12);
+}
+[k=item] {
+  border-radius: calc(var(--k-radius) * 0.8);
+}
+[k=item]:hover {
+  background: hsl(var(--k-primary-soft));
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  box-shadow: 0 4px 0 hsl(var(--k-foreground) / 0.16);
+}
+
+/* surface: data display */
+[k=card] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  box-shadow: 0 8px 0 hsl(var(--k-foreground) / 0.18), 0 16px 28px hsl(var(--k-foreground) / 0.12);
+}
+[k=badge] {
+  border-radius: calc(var(--k-radius) * 2);
+  font-weight: 700;
+  box-shadow: 0 3px 0 hsl(var(--k-foreground) / 0.18);
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: none;
+  border-radius: calc(var(--k-radius) * 0.8);
+  background: hsl(var(--k-card));
+  box-shadow: 0 4px 0 hsl(var(--k-foreground) / 0.14), inset 0 2px 6px hsl(var(--k-foreground) / 0.06);
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  outline: none;
+  border: 2px solid hsl(var(--k-ring));
+  box-shadow: 0 4px 0 hsl(var(--k-foreground) / 0.14), 0 0 0 3px hsl(var(--k-ring) / 0.25);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border: none;
+  background: hsl(var(--k-card));
+  box-shadow: 0 3px 0 hsl(var(--k-foreground) / 0.16);
+}
+[k=switch] {
+  border-radius: calc(var(--k-radius) * 2);
+}
+
+/* surface: feedback */
+[k=alert] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  box-shadow: 0 6px 0 hsl(var(--k-foreground) / 0.16);
+}
+[k=alert][data-variant=destructive] {
+  background: hsl(var(--k-destructive) / 0.15);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-radius: calc(var(--k-radius) * 0.8);
+  background: hsl(var(--k-card));
+  box-shadow: inset 0 3px 6px hsl(var(--k-foreground) / 0.08);
+}
+[k=tab] {
+  border-radius: calc(var(--k-radius) * 0.8);
+  font-weight: 700;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-primary));
+  color: hsl(var(--k-primary-foreground));
+  box-shadow: 0 3px 0 hsl(var(--k-foreground) / 0.2);
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  background: hsl(var(--k-sidebar));
+  border-radius: var(--k-radius);
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-popover));
+  box-shadow: 0 8px 0 hsl(var(--k-foreground) / 0.18), 0 16px 32px hsl(var(--k-foreground) / 0.14);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — chunky rounded outline. */
+[k]:focus-visible {
+  outline: 3px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

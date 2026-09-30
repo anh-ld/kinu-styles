@@ -1,0 +1,232 @@
+/* kinu-styles: pc-98 — PC-98
+   Design rules: NEC 16-color pixel: sharp red + blue on cream/navy indexed panels; Japanese bitmap type; one-pixel rules, dithered shadow fields, zero radius, dialogue-window frames
+   Source trend: https://trends.daisyui.com/trend/pc-98/ */
+
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* Light — cream-panel VN scene: cream windows, sharp red dialogue highlight, blue accents, gray rules. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 45 40% 90%;
+  --k-foreground: 240 30% 18%;
+  --k-card: 45 40% 93%;
+  --k-card-foreground: 240 30% 18%;
+  --k-popover: 45 40% 95%;
+  --k-popover-foreground: 240 30% 18%;
+  --k-sidebar: 240 25% 30%;
+  --k-primary: 0 100% 45%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 0 100% 38%;
+  --k-primary-soft: 0 80% 90%;
+  --k-secondary: 240 80% 45%;
+  --k-secondary-foreground: 0 0% 100%;
+  --k-secondary-hover: 240 80% 38%;
+  --k-muted: 240 15% 75%;
+  --k-muted-foreground: 240 15% 35%;
+  --k-accent: 185 90% 45%;
+  --k-accent-foreground: 185 70% 10%;
+  --k-destructive: 0 100% 45%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 100% 40%;
+  --k-border: 240 15% 65%;
+  --k-input: 240 15% 65%;
+  --k-ring: 0 100% 50%;
+  --k-info: 185 60% 85%;
+  --k-info-foreground: 185 70% 30%;
+  --k-radius: 0;
+}
+
+/* Auto dark — late-night VN: navy-black scene, cream dialogue box, red highlight. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 240 35% 7%;
+    --k-foreground: 45 40% 90%;
+    --k-card: 240 30% 12%;
+    --k-card-foreground: 45 40% 90%;
+    --k-popover: 240 30% 14%;
+    --k-popover-foreground: 45 40% 90%;
+    --k-sidebar: 240 40% 5%;
+    --k-primary: 0 100% 55%;
+    --k-primary-foreground: 0 0% 100%;
+    --k-primary-hover: 0 100% 61%;
+    --k-primary-soft: 0 80% 22%;
+    --k-secondary: 240 85% 60%;
+    --k-secondary-foreground: 240 50% 8%;
+    --k-secondary-hover: 240 85% 66%;
+    --k-muted: 240 25% 24%;
+    --k-muted-foreground: 240 20% 65%;
+    --k-accent: 185 90% 55%;
+    --k-accent-foreground: 185 70% 8%;
+    --k-destructive: 0 100% 55%;
+    --k-destructive-foreground: 0 0% 100%;
+    --k-destructive-hover: 0 100% 61%;
+    --k-border: 240 25% 30%;
+    --k-input: 240 25% 30%;
+    --k-ring: 0 100% 60%;
+    --k-info: 185 60% 20%;
+    --k-info-foreground: 185 80% 70%;
+  --k-radius: 0;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 240 35% 7%;
+  --k-foreground: 45 40% 90%;
+  --k-card: 240 30% 12%;
+  --k-card-foreground: 45 40% 90%;
+  --k-popover: 240 30% 14%;
+  --k-popover-foreground: 45 40% 90%;
+  --k-sidebar: 240 40% 5%;
+  --k-primary: 0 100% 55%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 0 100% 61%;
+  --k-primary-soft: 0 80% 22%;
+  --k-secondary: 240 85% 60%;
+  --k-secondary-foreground: 240 50% 8%;
+  --k-secondary-hover: 240 85% 66%;
+  --k-muted: 240 25% 24%;
+  --k-muted-foreground: 240 20% 65%;
+  --k-accent: 185 90% 55%;
+  --k-accent-foreground: 185 70% 8%;
+  --k-destructive: 0 100% 55%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 100% 61%;
+  --k-border: 240 25% 30%;
+  --k-input: 240 25% 30%;
+  --k-ring: 0 100% 60%;
+  --k-info: 185 60% 20%;
+  --k-info-foreground: 185 80% 70%;
+  --k-radius: 0;
+}
+
+/* Typography — Japanese-capable pixel font, mono fallback. */
+:root:root {
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+:where(h1, h2, h3, h4) {
+  font-family: DotGothic16, 'IBM Plex Mono', ui-monospace, monospace;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+/* surface: actions */
+/* Rectangular command windows, zero radius. */
+[k=button] {
+  border-radius: 0;
+  border: 1px solid hsl(var(--k-border));
+  box-shadow:
+    inset -1px -1px 0 hsl(var(--k-foreground) / 0.35),
+    inset 1px 1px 0 hsl(var(--k-background) / 0.8);
+}
+[k=button]:active {
+  box-shadow:
+    inset 1px 1px 0 hsl(var(--k-foreground) / 0.35),
+    inset -1px -1px 0 hsl(var(--k-background) / 0.8);
+}
+[k=item] {
+  border-radius: 0;
+}
+[k=chip], [k=chip-button] {
+  border-radius: 0;
+  border: 1px solid hsl(var(--k-border));
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+/* surface: data display */
+/* Sharp pixel frames with dithered shadow fields. */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: 0;
+  box-shadow: 4px 4px 0 hsl(var(--k-border) / 0.7);
+}
+[k=badge] {
+  border-radius: 0;
+  border: 1px solid hsl(var(--k-border));
+  font-family: DotGothic16, 'IBM Plex Mono', monospace;
+  letter-spacing: 0.05em;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+  border-collapse: collapse;
+}
+[k=skeleton] {
+  border-radius: 0;
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 2px inset hsl(var(--k-input));
+  border-radius: 0;
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: 0;
+  background: hsl(var(--k-card));
+}
+[k=alert][data-variant=destructive] {
+  border-color: hsl(var(--k-destructive) / 0.5);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: 0;
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: 0;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-primary));
+  color: hsl(var(--k-primary-foreground));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+  text-decoration: underline;
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar));
+  color: hsl(var(--k-card));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: 0;
+  box-shadow: 4px 4px 0 hsl(var(--k-border) / 0.7);
+}
+[k=scroll-area] {
+  border-radius: 0;
+}
+
+/* Focus ring — hard pixel outline. */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

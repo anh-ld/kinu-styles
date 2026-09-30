@@ -1,0 +1,230 @@
+/* kinu-styles: scrapbook-sticker-ui — Scrapbook / Sticker UI
+   Design rules: warm paper + cork neutrals, sticker clusters, washi tape, handwritten labels, die-cut sticker shapes, subtle rotation, one recurring ink/tape hue tying colorful stickers together
+   Source trend: https://trends.daisyui.com/trend/scrapbook-sticker-ui/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Nunito:wght@400;600;700&display=swap');
+
+/* Light — warm paper, notebook cream, light cork; tape-rose primary, sticker-sky secondary. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 40 33% 97%;
+  --k-foreground: 25 30% 14%;
+  --k-card: 42 45% 95%;
+  --k-card-foreground: 25 30% 14%;
+  --k-popover: 42 50% 97%;
+  --k-popover-foreground: 25 30% 14%;
+  --k-sidebar: 35 30% 90%;
+  --k-primary: 340 60% 52%;
+  --k-primary-foreground: 40 33% 98%;
+  --k-primary-hover: 340 60% 46%;
+  --k-primary-soft: 340 50% 93%;
+  --k-secondary: 200 65% 60%;
+  --k-secondary-foreground: 25 30% 12%;
+  --k-secondary-hover: 200 65% 53%;
+  --k-muted: 40 30% 91%;
+  --k-muted-foreground: 30 20% 44%;
+  --k-accent: 42 95% 60%;
+  --k-accent-foreground: 25 30% 12%;
+  --k-destructive: 0 65% 48%;
+  --k-destructive-foreground: 40 33% 98%;
+  --k-destructive-hover: 0 65% 42%;
+  --k-border: 35 25% 78%;
+  --k-input: 35 25% 78%;
+  --k-ring: 340 65% 60%;
+  --k-info: 200 55% 93%;
+  --k-info-foreground: 200 65% 38%;
+  --k-radius: 1rem;
+}
+
+/* Auto dark — kraft-paper night journal, tape-rose + sticker colors lifted for contrast. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 35 30% 12%;
+    --k-foreground: 40 35% 90%;
+    --k-card: 35 28% 16%;
+    --k-card-foreground: 40 35% 90%;
+    --k-popover: 35 28% 18%;
+    --k-popover-foreground: 40 35% 90%;
+    --k-sidebar: 35 32% 10%;
+    --k-primary: 345 65% 62%;
+    --k-primary-foreground: 345 35% 10%;
+    --k-primary-hover: 345 65% 68%;
+    --k-primary-soft: 345 45% 22%;
+    --k-secondary: 200 65% 62%;
+    --k-secondary-foreground: 200 40% 10%;
+    --k-secondary-hover: 200 65% 68%;
+    --k-muted: 35 25% 22%;
+    --k-muted-foreground: 40 20% 62%;
+    --k-accent: 42 90% 62%;
+    --k-accent-foreground: 42 50% 10%;
+    --k-destructive: 0 60% 55%;
+    --k-destructive-foreground: 0 40% 10%;
+    --k-destructive-hover: 0 60% 62%;
+    --k-border: 35 22% 30%;
+    --k-input: 35 22% 30%;
+    --k-ring: 345 60% 66%;
+    --k-info: 200 45% 22%;
+    --k-info-foreground: 200 70% 72%;
+  --k-radius: 1rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 35 30% 12%;
+  --k-foreground: 40 35% 90%;
+  --k-card: 35 28% 16%;
+  --k-card-foreground: 40 35% 90%;
+  --k-popover: 35 28% 18%;
+  --k-popover-foreground: 40 35% 90%;
+  --k-sidebar: 35 32% 10%;
+  --k-primary: 345 65% 62%;
+  --k-primary-foreground: 345 35% 10%;
+  --k-primary-hover: 345 65% 68%;
+  --k-primary-soft: 345 45% 22%;
+  --k-secondary: 200 65% 62%;
+  --k-secondary-foreground: 200 40% 10%;
+  --k-secondary-hover: 200 65% 68%;
+  --k-muted: 35 25% 22%;
+  --k-muted-foreground: 40 20% 62%;
+  --k-accent: 42 90% 62%;
+  --k-accent-foreground: 42 50% 10%;
+  --k-destructive: 0 60% 55%;
+  --k-destructive-foreground: 0 40% 10%;
+  --k-destructive-hover: 0 60% 62%;
+  --k-border: 35 22% 30%;
+  --k-input: 35 22% 30%;
+  --k-ring: 345 60% 66%;
+  --k-info: 200 45% 22%;
+  --k-info-foreground: 200 70% 72%;
+  --k-radius: 1rem;
+}
+
+/* Typography — handwritten display + readable rounded sans body. */
+:root:root {
+  font-family: Nunito, ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: 'Patrick Hand', 'Comic Sans MS', cursive;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* surface: actions */
+[k=button] {
+  border: 2px solid hsl(var(--k-foreground));
+  border-radius: var(--k-radius);
+  box-shadow: 0 2px 0 hsl(var(--k-foreground));
+  transition: transform 120ms ease;
+}
+[k=button]:hover {
+  transform: rotate(-1deg);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=item]:hover {
+  background: hsl(var(--k-primary-soft));
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 2px dashed hsl(var(--k-border));
+  font-family: 'Patrick Hand', cursive;
+}
+
+/* surface: data display */
+[k=card] {
+  border: 2px solid hsl(var(--k-foreground));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: 3px 3px 0 hsl(var(--k-foreground) / 0.9);
+}
+[k=badge] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 2px solid hsl(var(--k-foreground));
+  font-family: 'Patrick Hand', cursive;
+  font-size: 0.875em;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 2px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 2px 2px 0 hsl(var(--k-ring) / 0.5);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 2px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-foreground));
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+  border-bottom-style: dashed;
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.1em;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-accent) / 0.45);
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  border-right-style: dashed;
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 2px solid hsl(var(--k-foreground));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: 3px 3px 0 hsl(var(--k-foreground) / 0.8);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — sticker punch-out */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 3px;
+}

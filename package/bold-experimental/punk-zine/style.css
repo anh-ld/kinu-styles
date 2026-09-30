@@ -1,0 +1,238 @@
+/* kinu-styles: punk-zine — Punk / Zine
+   Design rules: photocopy grain, ransom-note type, torn paper, marker scrawls, stamps, confrontational layout, urgent red and fluorescent markers
+   Source trend: https://trends.daisyui.com/trend/punk-zine/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Special+Elite&display=swap');
+
+/* Light — dirty white, toner-black structure, urgent red primary, marker yellow-green secondary. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 45 20% 94%;
+  --k-foreground: 0 0% 8%;
+  --k-card: 45 22% 96%;
+  --k-card-foreground: 0 0% 8%;
+  --k-popover: 45 22% 97%;
+  --k-popover-foreground: 0 0% 8%;
+  --k-sidebar: 45 18% 91%;
+  --k-primary: 0 85% 45%;
+  --k-primary-foreground: 45 22% 96%;
+  --k-primary-hover: 0 85% 39%;
+  --k-primary-soft: 0 80% 90%;
+  --k-secondary: 80 95% 45%;
+  --k-secondary-foreground: 0 0% 8%;
+  --k-secondary-hover: 80 95% 40%;
+  --k-muted: 0 0% 88%;
+  --k-muted-foreground: 0 0% 38%;
+  --k-accent: 300 80% 42%;
+  --k-accent-foreground: 45 22% 96%;
+  --k-destructive: 0 85% 45%;
+  --k-destructive-foreground: 45 22% 96%;
+  --k-destructive-hover: 0 85% 39%;
+  --k-border: 0 0% 22%;
+  --k-input: 0 0% 22%;
+  --k-ring: 0 85% 45%;
+  --k-info: 80 70% 90%;
+  --k-info-foreground: 80 80% 28%;
+  --k-radius: 0.25rem;
+}
+
+/* Auto dark — black page, bone text, screaming red and marker accents. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 0 0% 6%;
+    --k-foreground: 45 20% 92%;
+    --k-card: 0 0% 9%;
+    --k-card-foreground: 45 20% 92%;
+    --k-popover: 0 0% 10%;
+    --k-popover-foreground: 45 20% 92%;
+    --k-sidebar: 0 0% 5%;
+    --k-primary: 0 90% 55%;
+    --k-primary-foreground: 0 0% 8%;
+    --k-primary-hover: 0 90% 61%;
+    --k-primary-soft: 0 80% 22%;
+    --k-secondary: 80 95% 55%;
+    --k-secondary-foreground: 0 0% 8%;
+    --k-secondary-hover: 80 95% 61%;
+    --k-muted: 0 0% 14%;
+    --k-muted-foreground: 0 0% 60%;
+    --k-accent: 300 85% 58%;
+    --k-accent-foreground: 0 0% 8%;
+    --k-destructive: 0 90% 55%;
+    --k-destructive-foreground: 0 0% 8%;
+    --k-destructive-hover: 0 90% 61%;
+    --k-border: 45 15% 80%;
+    --k-input: 45 15% 80%;
+    --k-ring: 0 90% 55%;
+    --k-info: 80 80% 20%;
+    --k-info-foreground: 80 90% 72%;
+  --k-radius: 0.25rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 0 0% 6%;
+  --k-foreground: 45 20% 92%;
+  --k-card: 0 0% 9%;
+  --k-card-foreground: 45 20% 92%;
+  --k-popover: 0 0% 10%;
+  --k-popover-foreground: 45 20% 92%;
+  --k-sidebar: 0 0% 5%;
+  --k-primary: 0 90% 55%;
+  --k-primary-foreground: 0 0% 8%;
+  --k-primary-hover: 0 90% 61%;
+  --k-primary-soft: 0 80% 22%;
+  --k-secondary: 80 95% 55%;
+  --k-secondary-foreground: 0 0% 8%;
+  --k-secondary-hover: 80 95% 61%;
+  --k-muted: 0 0% 14%;
+  --k-muted-foreground: 0 0% 60%;
+  --k-accent: 300 85% 58%;
+  --k-accent-foreground: 0 0% 8%;
+  --k-destructive: 0 90% 55%;
+  --k-destructive-foreground: 0 0% 8%;
+  --k-destructive-hover: 0 90% 61%;
+  --k-border: 45 15% 80%;
+  --k-input: 45 15% 80%;
+  --k-ring: 0 90% 55%;
+  --k-info: 80 80% 20%;
+  --k-info-foreground: 80 90% 72%;
+  --k-radius: 0.25rem;
+}
+
+/* Typography — marker slogans, typewriter logistics. */
+:root:root {
+  font-family: 'Special Elite', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+:where(h1, h2, h3, h4) {
+  font-family: 'Permanent Marker', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-foreground));
+  box-shadow: 3px 3px 0 hsl(var(--k-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: box-shadow 150ms ease, transform 150ms ease;
+}
+[k=button]:hover {
+  box-shadow: 5px 5px 0 hsl(var(--k-foreground));
+  transform: translate(-1px, -1px);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 1px dashed hsl(var(--k-foreground));
+  text-transform: uppercase;
+}
+
+/* surface: data display */
+[k=card] {
+  border: 2px solid hsl(var(--k-foreground));
+  border-radius: var(--k-radius);
+  box-shadow: 4px 4px 0 hsl(var(--k-foreground));
+  background: hsl(var(--k-card));
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-foreground));
+  background: hsl(var(--k-primary));
+  color: hsl(var(--k-primary-foreground));
+  box-shadow: 2px 2px 0 hsl(var(--k-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75em;
+}
+[k=table] {
+  border-color: hsl(var(--k-foreground) / 0.7);
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: repeating-linear-gradient(0deg, hsl(var(--k-muted)) 0 2px, hsl(var(--k-border) / 0.25) 2px 3px);
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 2px solid hsl(var(--k-foreground));
+  border-radius: var(--k-radius);
+  box-shadow: 2px 2px 0 hsl(var(--k-foreground));
+  background: hsl(var(--k-card));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+[k=checkbox], [k=radio] {
+  border-radius: 0;
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 2px dashed hsl(var(--k-foreground));
+  border-radius: var(--k-radius);
+  box-shadow: 3px 3px 0 hsl(var(--k-foreground));
+  background: hsl(var(--k-card));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-foreground));
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-foreground) / 0.7);
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-primary));
+  color: hsl(var(--k-primary-foreground));
+  box-shadow: 3px 3px 0 hsl(var(--k-foreground));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: repeating-linear-gradient(90deg, hsl(var(--k-foreground)) 0 4px, transparent 4px 8px);
+}
+[k=popover] {
+  border: 2px solid hsl(var(--k-foreground));
+  border-radius: var(--k-radius);
+  box-shadow: 4px 4px 0 hsl(var(--k-foreground));
+  background: hsl(var(--k-popover));
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — stamp impact */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 3px 3px 0 hsl(var(--k-ring));
+}

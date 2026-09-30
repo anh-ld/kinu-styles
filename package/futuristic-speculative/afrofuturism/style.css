@@ -1,0 +1,236 @@
+/* kinu-styles: afrofuturism — Afrofuturism
+   Design rules: African and diasporic cultural references with speculative technology — cosmic imagery, bold geometry, metallic gold and copper, deep indigo and royal purple, ancestral symbolism, monumental radial compositions
+   Source trend: https://trends.daisyui.com/trend/afrofuturism/ */
+
+/* Fonts — the @import MUST stay the first rule (R6, KTD4). */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Unbounded:wght@500;700&display=swap');
+
+/* Light — warm earth surfaces, royal purple primary, gold secondary. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 40 30% 96%;
+  --k-foreground: 265 40% 15%;
+  --k-card: 40 35% 98%;
+  --k-card-foreground: 265 40% 15%;
+  --k-popover: 40 35% 99%;
+  --k-popover-foreground: 265 40% 15%;
+  --k-sidebar: 35 25% 91%;
+  --k-primary: 265 65% 45%;
+  --k-primary-foreground: 265 40% 97%;
+  --k-primary-hover: 265 65% 39%;
+  --k-primary-soft: 265 55% 90%;
+  --k-secondary: 40 85% 50%;
+  --k-secondary-foreground: 40 60% 10%;
+  --k-secondary-hover: 40 85% 44%;
+  --k-muted: 40 20% 90%;
+  --k-muted-foreground: 265 15% 45%;
+  --k-accent: 25 60% 45%;
+  --k-accent-foreground: 25 45% 96%;
+  --k-destructive: 0 55% 40%;
+  --k-destructive-foreground: 0 40% 96%;
+  --k-destructive-hover: 0 55% 34%;
+  --k-border: 35 25% 80%;
+  --k-input: 35 25% 80%;
+  --k-ring: 265 70% 48%;
+  --k-info: 265 50% 92%;
+  --k-info-foreground: 265 60% 38%;
+  --k-radius: 0.75rem;
+}
+
+/* Auto dark — deep cosmic space, glowing purple and gold. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 265 45% 6%;
+    --k-foreground: 45 40% 92%;
+    --k-card: 265 40% 9%;
+    --k-card-foreground: 45 40% 92%;
+    --k-popover: 265 40% 10%;
+    --k-popover-foreground: 45 40% 92%;
+    --k-sidebar: 265 50% 4%;
+    --k-primary: 265 80% 60%;
+    --k-primary-foreground: 265 40% 12%;
+    --k-primary-hover: 265 80% 66%;
+    --k-primary-soft: 265 45% 20%;
+    --k-secondary: 45 95% 60%;
+    --k-secondary-foreground: 45 70% 8%;
+    --k-secondary-hover: 45 95% 54%;
+    --k-muted: 265 30% 15%;
+    --k-muted-foreground: 265 15% 62%;
+    --k-accent: 25 70% 55%;
+    --k-accent-foreground: 25 50% 12%;
+    --k-destructive: 0 60% 45%;
+    --k-destructive-foreground: 0 40% 94%;
+    --k-destructive-hover: 0 60% 52%;
+    --k-border: 265 25% 22%;
+    --k-input: 265 25% 22%;
+    --k-ring: 45 90% 62%;
+    --k-info: 265 40% 18%;
+    --k-info-foreground: 265 80% 75%;
+  --k-radius: 0.75rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 265 45% 6%;
+  --k-foreground: 45 40% 92%;
+  --k-card: 265 40% 9%;
+  --k-card-foreground: 45 40% 92%;
+  --k-popover: 265 40% 10%;
+  --k-popover-foreground: 45 40% 92%;
+  --k-sidebar: 265 50% 4%;
+  --k-primary: 265 80% 60%;
+  --k-primary-foreground: 265 40% 12%;
+  --k-primary-hover: 265 80% 66%;
+  --k-primary-soft: 265 45% 20%;
+  --k-secondary: 45 95% 60%;
+  --k-secondary-foreground: 45 70% 8%;
+  --k-secondary-hover: 45 95% 54%;
+  --k-muted: 265 30% 15%;
+  --k-muted-foreground: 265 15% 62%;
+  --k-accent: 25 70% 55%;
+  --k-accent-foreground: 25 50% 12%;
+  --k-destructive: 0 60% 45%;
+  --k-destructive-foreground: 0 40% 94%;
+  --k-destructive-hover: 0 60% 52%;
+  --k-border: 265 25% 22%;
+  --k-input: 265 25% 22%;
+  --k-ring: 45 90% 62%;
+  --k-info: 265 40% 18%;
+  --k-info-foreground: 265 80% 75%;
+  --k-radius: 0.75rem;
+}
+
+/* Typography — monumental cosmic display, highly readable sans body. */
+:root:root {
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Unbounded, 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-secondary) / 0.35);
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.25);
+  transition: box-shadow 200ms ease, background-color 200ms ease;
+}
+[k=button]:hover {
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.25), 0 0 0 2px hsl(var(--k-secondary) / 0.25), 0 2px 10px hsl(var(--k-secondary) / 0.3);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 1px solid hsl(var(--k-border));
+  background: hsl(var(--k-card));
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: inset 0 0 0 1px hsl(var(--k-secondary) / 0.18), 0 2px 14px hsl(var(--k-border) / 0.5);
+}
+[k=badge] {
+  border-radius: calc(var(--k-radius) * 2);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid hsl(var(--k-secondary) / 0.5);
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: linear-gradient(90deg, hsl(var(--k-muted)) 25%, hsl(var(--k-secondary) / 0.2) 50%, hsl(var(--k-muted)) 75%);
+  background-size: 200% 100%;
+  animation: k-afro-orbit 2s ease-in-out infinite;
+}
+@keyframes k-afro-orbit {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 0 1px hsl(var(--k-ring) / 0.3);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+  border-radius: 0.125rem;
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  border-left: 3px solid hsl(var(--k-secondary));
+  background: hsl(var(--k-card));
+}
+[k=alert][data-variant=destructive] {
+  border-left-color: hsl(var(--k-destructive));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-secondary) / 0.4);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 0 -2px 0 hsl(var(--k-secondary));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: inset 0 0 0 1px hsl(var(--k-secondary) / 0.15), 0 6px 20px hsl(var(--k-border) / 0.5);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — regal gold. */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px hsl(var(--k-ring) / 0.15);
+}

@@ -1,0 +1,250 @@
+/* kinu-styles: luminous-eco-skeuomorphism — Luminous Eco-Skeuomorphism
+   Design rules: dark low-luminance console, luminous eco-green primary with inner glows and radiant edges, illuminated controls, soft bloom halos, recessed tracks, beveled frames, compact tech sans
+   Source trend: https://trends.daisyui.com/trend/luminous-eco-skeuomorphism/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap');
+
+/* Light — daylight eco console: pale sage base, glowing green and teal controls. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 150 25% 92%;
+  --k-foreground: 160 35% 18%;
+  --k-card: 150 22% 96%;
+  --k-card-foreground: 160 35% 18%;
+  --k-popover: 150 22% 97%;
+  --k-popover-foreground: 160 35% 18%;
+  --k-sidebar: 155 25% 88%;
+  --k-primary: 152 70% 40%;
+  --k-primary-foreground: 152 40% 96%;
+  --k-primary-hover: 152 70% 34%;
+  --k-primary-soft: 152 55% 88%;
+  --k-secondary: 190 70% 45%;
+  --k-secondary-foreground: 190 60% 95%;
+  --k-secondary-hover: 190 70% 38%;
+  --k-muted: 150 20% 86%;
+  --k-muted-foreground: 160 20% 42%;
+  --k-accent: 45 90% 50%;
+  --k-accent-foreground: 45 60% 96%;
+  --k-destructive: 0 65% 50%;
+  --k-destructive-foreground: 0 45% 97%;
+  --k-destructive-hover: 0 65% 43%;
+  --k-border: 152 25% 78%;
+  --k-input: 152 25% 76%;
+  --k-ring: 152 75% 45%;
+  --k-info: 155 30% 90%;
+  --k-info-foreground: 152 65% 32%;
+  --k-radius: 0.875rem;
+}
+
+/* Auto dark — the canonical glowing console: deep blue-gray, powered controls. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 220 25% 8%;
+    --k-foreground: 155 30% 90%;
+    --k-card: 222 22% 12%;
+    --k-card-foreground: 155 30% 90%;
+    --k-popover: 222 22% 14%;
+    --k-popover-foreground: 155 30% 90%;
+    --k-sidebar: 220 30% 6%;
+    --k-primary: 152 80% 45%;
+    --k-primary-foreground: 152 45% 8%;
+    --k-primary-hover: 152 80% 52%;
+    --k-primary-soft: 152 45% 18%;
+    --k-secondary: 190 75% 50%;
+    --k-secondary-foreground: 190 60% 10%;
+    --k-secondary-hover: 190 75% 57%;
+    --k-muted: 220 20% 18%;
+    --k-muted-foreground: 160 20% 60%;
+    --k-accent: 45 90% 55%;
+    --k-accent-foreground: 45 60% 12%;
+    --k-destructive: 0 70% 55%;
+    --k-destructive-foreground: 0 45% 95%;
+    --k-destructive-hover: 0 70% 62%;
+    --k-border: 152 30% 24%;
+    --k-input: 152 30% 24%;
+    --k-ring: 152 80% 52%;
+    --k-info: 222 30% 16%;
+    --k-info-foreground: 152 75% 70%;
+  --k-radius: 0.875rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 220 25% 8%;
+  --k-foreground: 155 30% 90%;
+  --k-card: 222 22% 12%;
+  --k-card-foreground: 155 30% 90%;
+  --k-popover: 222 22% 14%;
+  --k-popover-foreground: 155 30% 90%;
+  --k-sidebar: 220 30% 6%;
+  --k-primary: 152 80% 45%;
+  --k-primary-foreground: 152 45% 8%;
+  --k-primary-hover: 152 80% 52%;
+  --k-primary-soft: 152 45% 18%;
+  --k-secondary: 190 75% 50%;
+  --k-secondary-foreground: 190 60% 10%;
+  --k-secondary-hover: 190 75% 57%;
+  --k-muted: 220 20% 18%;
+  --k-muted-foreground: 160 20% 60%;
+  --k-accent: 45 90% 55%;
+  --k-accent-foreground: 45 60% 12%;
+  --k-destructive: 0 70% 55%;
+  --k-destructive-foreground: 0 45% 95%;
+  --k-destructive-hover: 0 70% 62%;
+  --k-border: 152 30% 24%;
+  --k-input: 152 30% 24%;
+  --k-ring: 152 80% 52%;
+  --k-info: 222 30% 16%;
+  --k-info-foreground: 152 75% 70%;
+  --k-radius: 0.875rem;
+}
+
+/* Typography — compact tech sans, restrained sizing, neutral body. */
+:root:root {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Rajdhani, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-primary) / 0.5);
+  box-shadow: 0 0 14px hsl(var(--k-primary) / 0.45), inset 0 0 10px hsl(var(--k-primary) / 0.3), inset 0 1px 0 hsl(0 0% 100% / 0.2);
+  transition: box-shadow 150ms ease;
+}
+[k=button]:hover {
+  box-shadow: 0 0 22px hsl(var(--k-primary) / 0.6), inset 0 0 14px hsl(var(--k-primary) / 0.4);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=item]:hover {
+  background: hsl(var(--k-primary-soft) / 0.5);
+  box-shadow: inset 0 0 10px hsl(var(--k-primary) / 0.15);
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 1px solid hsl(var(--k-border));
+  box-shadow: inset 0 0 8px hsl(var(--k-primary) / 0.15);
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  background-image: linear-gradient(180deg, hsl(0 0% 100% / 0.05), hsl(0 0% 100% / 0) 45%);
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.08), 0 4px 16px hsl(0 0% 0% / 0.3);
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-primary) / 0.5);
+  box-shadow: 0 0 10px hsl(var(--k-primary) / 0.35), inset 0 0 6px hsl(var(--k-primary) / 0.2);
+  letter-spacing: 0.05em;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+  box-shadow: inset 0 0 8px hsl(var(--k-primary) / 0.1);
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: inset 0 2px 6px hsl(0 0% 0% / 0.25), inset 0 0 8px hsl(var(--k-primary) / 0.1);
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: inset 0 2px 6px hsl(0 0% 0% / 0.2), 0 0 14px hsl(var(--k-ring) / 0.4);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: inset 0 2px 4px hsl(0 0% 0% / 0.25);
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-primary) / 0.4);
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  box-shadow: 0 0 16px hsl(var(--k-primary) / 0.2), inset 0 0 10px hsl(var(--k-primary) / 0.08);
+}
+[k=alert][data-variant=destructive] {
+  border-color: hsl(var(--k-destructive) / 0.5);
+  box-shadow: 0 0 16px hsl(var(--k-destructive) / 0.3);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+  box-shadow: 0 0 12px hsl(var(--k-primary) / 0.2);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+  box-shadow: inset 0 2px 6px hsl(0 0% 0% / 0.2);
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  font-weight: 600;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-primary));
+  color: hsl(var(--k-primary-foreground));
+  box-shadow: 0 0 14px hsl(var(--k-primary) / 0.5), inset 0 1px 0 hsl(0 0% 100% / 0.25);
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar));
+  box-shadow: inset -1px 0 0 hsl(0 0% 100% / 0.05);
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+  background-image: linear-gradient(90deg, transparent, hsl(var(--k-primary) / 0.5) 50%, transparent);
+  height: 1px;
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-popover));
+  box-shadow: 0 8px 24px hsl(0 0% 0% / 0.4), 0 0 20px hsl(var(--k-primary) / 0.15);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — power-on halo. */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 0 0 16px hsl(var(--k-ring) / 0.5);
+}

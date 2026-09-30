@@ -1,0 +1,234 @@
+/* kinu-styles: retro-computing — Retro Computing
+   Design rules: vintage OS desktop: navy primary, muted teal secondary on monitor beige/putty panels; bitmap mono type; pixel chrome, inset panels, hard-edged buttons, CRT phosphor accent
+   Source trend: https://trends.daisyui.com/trend/retro-computing/ */
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* Light — beige-and-navy workstation: monitor beige desk, navy chrome, teal accents, phosphor highlights. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 45 30% 88%;
+  --k-foreground: 220 40% 18%;
+  --k-card: 45 28% 84%;
+  --k-card-foreground: 220 40% 18%;
+  --k-popover: 45 28% 86%;
+  --k-popover-foreground: 220 40% 18%;
+  --k-sidebar: 45 30% 80%;
+  --k-primary: 225 45% 28%;
+  --k-primary-foreground: 45 30% 92%;
+  --k-primary-hover: 225 45% 23%;
+  --k-primary-soft: 225 30% 80%;
+  --k-secondary: 190 35% 45%;
+  --k-secondary-foreground: 45 30% 94%;
+  --k-secondary-hover: 190 35% 39%;
+  --k-muted: 45 25% 78%;
+  --k-muted-foreground: 220 18% 38%;
+  --k-accent: 130 60% 40%;
+  --k-accent-foreground: 130 50% 8%;
+  --k-destructive: 0 60% 40%;
+  --k-destructive-foreground: 45 30% 94%;
+  --k-destructive-hover: 0 60% 35%;
+  --k-border: 45 20% 65%;
+  --k-input: 45 20% 70%;
+  --k-ring: 225 45% 35%;
+  --k-info: 190 30% 80%;
+  --k-info-foreground: 190 40% 30%;
+  --k-radius: 0.25rem;
+}
+
+/* Auto dark — phosphor black: CRT void, green phosphor text, navy panels. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 130 60% 5%;
+    --k-foreground: 130 60% 70%;
+    --k-card: 130 50% 8%;
+    --k-card-foreground: 130 60% 70%;
+    --k-popover: 130 50% 9%;
+    --k-popover-foreground: 130 60% 70%;
+    --k-sidebar: 220 45% 8%;
+    --k-primary: 225 60% 60%;
+    --k-primary-foreground: 130 50% 8%;
+    --k-primary-hover: 225 60% 66%;
+    --k-primary-soft: 225 45% 20%;
+    --k-secondary: 190 45% 55%;
+    --k-secondary-foreground: 130 50% 8%;
+    --k-secondary-hover: 190 45% 61%;
+    --k-muted: 130 40% 16%;
+    --k-muted-foreground: 130 40% 55%;
+    --k-accent: 130 90% 55%;
+    --k-accent-foreground: 130 60% 6%;
+    --k-destructive: 0 70% 50%;
+    --k-destructive-foreground: 130 50% 8%;
+    --k-destructive-hover: 0 70% 56%;
+    --k-border: 130 40% 22%;
+    --k-input: 130 40% 22%;
+    --k-ring: 130 70% 60%;
+    --k-info: 190 40% 18%;
+    --k-info-foreground: 190 50% 70%;
+  --k-radius: 0.25rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 130 60% 5%;
+  --k-foreground: 130 60% 70%;
+  --k-card: 130 50% 8%;
+  --k-card-foreground: 130 60% 70%;
+  --k-popover: 130 50% 9%;
+  --k-popover-foreground: 130 60% 70%;
+  --k-sidebar: 220 45% 8%;
+  --k-primary: 225 60% 60%;
+  --k-primary-foreground: 130 50% 8%;
+  --k-primary-hover: 225 60% 66%;
+  --k-primary-soft: 225 45% 20%;
+  --k-secondary: 190 45% 55%;
+  --k-secondary-foreground: 130 50% 8%;
+  --k-secondary-hover: 190 45% 61%;
+  --k-muted: 130 40% 16%;
+  --k-muted-foreground: 130 40% 55%;
+  --k-accent: 130 90% 55%;
+  --k-accent-foreground: 130 60% 6%;
+  --k-destructive: 0 70% 50%;
+  --k-destructive-foreground: 130 50% 8%;
+  --k-destructive-hover: 0 70% 56%;
+  --k-border: 130 40% 22%;
+  --k-input: 130 40% 22%;
+  --k-ring: 130 70% 60%;
+  --k-info: 190 40% 18%;
+  --k-info-foreground: 190 50% 70%;
+  --k-radius: 0.25rem;
+}
+
+/* Typography — bitmap display, mono body. */
+:root:root {
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+:where(h1, h2, h3, h4) {
+  font-family: VT323, 'IBM Plex Mono', ui-monospace, monospace;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* surface: actions */
+/* Hard-edged buttons with pixel bevels. */
+[k=button] {
+  border-radius: 0;
+  border: 1px solid hsl(var(--k-border));
+  box-shadow:
+    inset -1px -1px 0 hsl(var(--k-foreground) / 0.35),
+    inset 1px 1px 0 hsl(var(--k-background));
+}
+[k=button]:active {
+  box-shadow:
+    inset 1px 1px 0 hsl(var(--k-foreground) / 0.35),
+    inset -1px -1px 0 hsl(var(--k-background));
+}
+[k=item] {
+  border-radius: 0;
+}
+[k=chip], [k=chip-button] {
+  border-radius: 0;
+  border: 1px solid hsl(var(--k-border));
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+/* surface: data display */
+/* Inset panels with pixel chrome. */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: 0;
+  box-shadow:
+    inset 0 0 0 1px hsl(var(--k-background) / 0.6),
+    3px 3px 0 hsl(var(--k-border) / 0.6);
+}
+[k=badge] {
+  border-radius: 0;
+  border: 1px solid hsl(var(--k-border));
+  font-family: VT323, 'IBM Plex Mono', monospace;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+  border-collapse: collapse;
+}
+[k=skeleton] {
+  border-radius: 0;
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 2px inset hsl(var(--k-input));
+  border-radius: 0;
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: 0;
+  background: hsl(var(--k-card));
+  box-shadow: inset 1px 1px 0 hsl(var(--k-background) / 0.6);
+}
+[k=alert][data-variant=destructive] {
+  border-color: hsl(var(--k-destructive) / 0.5);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: 0;
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: 0;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 1px 1px 0 hsl(var(--k-foreground) / 0.25);
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+  text-decoration: underline;
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: 0;
+  box-shadow: 3px 3px 0 hsl(var(--k-border) / 0.6);
+}
+[k=scroll-area] {
+  border-radius: 0;
+}
+
+/* Focus ring — hard pixel outline. */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

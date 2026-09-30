@@ -1,0 +1,234 @@
+/* kinu-styles: art-deco — Art Deco
+   Design rules: stepped geometry, fan motifs, black / deep jewel tones with ivory and controlled gold / brass, symmetrical axial composition, geometric display capitals with generous tracking
+   Source trend: https://trends.daisyui.com/trend/art-deco/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Josefin+Sans:wght@300;400;600&display=swap');
+
+/* Light — ivory field, brushed gold primary, emerald jewel secondary. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 45 40% 97%;
+  --k-foreground: 240 25% 10%;
+  --k-card: 45 40% 99%;
+  --k-card-foreground: 240 25% 10%;
+  --k-popover: 45 40% 99%;
+  --k-popover-foreground: 240 25% 10%;
+  --k-sidebar: 45 35% 92%;
+  --k-primary: 45 60% 45%;
+  --k-primary-foreground: 45 40% 97%;
+  --k-primary-hover: 45 60% 39%;
+  --k-primary-soft: 45 55% 92%;
+  --k-secondary: 165 40% 30%;
+  --k-secondary-foreground: 45 40% 97%;
+  --k-secondary-hover: 165 40% 24%;
+  --k-muted: 45 25% 90%;
+  --k-muted-foreground: 240 15% 45%;
+  --k-accent: 220 45% 35%;
+  --k-accent-foreground: 45 40% 97%;
+  --k-destructive: 0 55% 40%;
+  --k-destructive-foreground: 45 40% 97%;
+  --k-destructive-hover: 0 55% 34%;
+  --k-border: 45 25% 82%;
+  --k-input: 45 25% 82%;
+  --k-ring: 45 60% 50%;
+  --k-info: 45 40% 92%;
+  --k-info-foreground: 45 60% 35%;
+  --k-radius: 0.125rem;
+}
+
+/* Auto dark — ink black with jewel tones, glowing gold. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 240 25% 7%;
+    --k-foreground: 45 35% 93%;
+    --k-card: 240 20% 9%;
+    --k-card-foreground: 45 35% 93%;
+    --k-popover: 240 20% 10%;
+    --k-popover-foreground: 45 35% 93%;
+    --k-sidebar: 240 30% 5%;
+    --k-primary: 45 70% 60%;
+    --k-primary-foreground: 240 25% 7%;
+    --k-primary-hover: 45 70% 66%;
+    --k-primary-soft: 45 45% 16%;
+    --k-secondary: 165 45% 55%;
+    --k-secondary-foreground: 240 25% 7%;
+    --k-secondary-hover: 165 45% 62%;
+    --k-muted: 240 15% 15%;
+    --k-muted-foreground: 45 20% 62%;
+    --k-accent: 220 50% 60%;
+    --k-accent-foreground: 240 25% 7%;
+    --k-destructive: 0 60% 52%;
+    --k-destructive-foreground: 240 25% 7%;
+    --k-destructive-hover: 0 60% 60%;
+    --k-border: 240 15% 22%;
+    --k-input: 240 15% 22%;
+    --k-ring: 45 70% 62%;
+    --k-info: 240 40% 18%;
+    --k-info-foreground: 45 60% 72%;
+  --k-radius: 0.125rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 240 25% 7%;
+  --k-foreground: 45 35% 93%;
+  --k-card: 240 20% 9%;
+  --k-card-foreground: 45 35% 93%;
+  --k-popover: 240 20% 10%;
+  --k-popover-foreground: 45 35% 93%;
+  --k-sidebar: 240 30% 5%;
+  --k-primary: 45 70% 60%;
+  --k-primary-foreground: 240 25% 7%;
+  --k-primary-hover: 45 70% 66%;
+  --k-primary-soft: 45 45% 16%;
+  --k-secondary: 165 45% 55%;
+  --k-secondary-foreground: 240 25% 7%;
+  --k-secondary-hover: 165 45% 62%;
+  --k-muted: 240 15% 15%;
+  --k-muted-foreground: 45 20% 62%;
+  --k-accent: 220 50% 60%;
+  --k-accent-foreground: 240 25% 7%;
+  --k-destructive: 0 60% 52%;
+  --k-destructive-foreground: 240 25% 7%;
+  --k-destructive-hover: 0 60% 60%;
+  --k-border: 240 15% 22%;
+  --k-input: 240 15% 22%;
+  --k-ring: 45 70% 62%;
+  --k-info: 240 40% 18%;
+  --k-info-foreground: 45 60% 72%;
+  --k-radius: 0.125rem;
+}
+
+/* Typography — geometric display capitals with generous tracking, restrained sans details. */
+:root:root {
+  font-family: 'Josefin Sans', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-primary));
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  font-size: 0.8125rem;
+}
+[k=button]:hover {
+  background: hsl(var(--k-primary-soft));
+  color: hsl(var(--k-primary));
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-primary) / 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 2px 0 hsl(var(--k-primary) / 0.25);
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-primary) / 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 0 1px hsl(var(--k-ring));
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  font-size: 0.8125rem;
+}
+[k=tab][aria-selected=true] {
+  box-shadow: inset 0 -2px 0 hsl(var(--k-primary));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-primary) / 0.4);
+  height: 1px;
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-popover));
+  box-shadow: 0 4px 20px hsl(var(--k-foreground) / 0.14);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

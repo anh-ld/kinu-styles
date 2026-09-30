@@ -1,0 +1,227 @@
+/* kinu-styles: mcbling — McBling
+   Design rules: celebrity glam: hot pink, gold, silver, jewel tones on deep plum-black; ornate script display; rhinestone sparkle, hearts, gem badges, glossy highlights
+   Source trend: https://trends.daisyui.com/trend/mcbling/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
+/* Light — a dark-dominant trend: plum-black surfaces, champagne text, hot pink and gold sparkle. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: dark;
+  --k-background: 330 25% 10%;
+  --k-foreground: 330 30% 93%;
+  --k-card: 330 28% 13%;
+  --k-card-foreground: 330 30% 93%;
+  --k-popover: 330 28% 14%;
+  --k-popover-foreground: 330 30% 93%;
+  --k-sidebar: 330 30% 8%;
+  --k-primary: 330 85% 55%;
+  --k-primary-foreground: 330 30% 98%;
+  --k-primary-hover: 330 85% 49%;
+  --k-primary-soft: 330 60% 22%;
+  --k-secondary: 45 90% 55%;
+  --k-secondary-foreground: 45 50% 12%;
+  --k-secondary-hover: 45 90% 48%;
+  --k-muted: 330 20% 22%;
+  --k-muted-foreground: 330 20% 65%;
+  --k-accent: 0 0% 78%;
+  --k-accent-foreground: 330 25% 12%;
+  --k-destructive: 0 80% 50%;
+  --k-destructive-foreground: 0 30% 97%;
+  --k-destructive-hover: 0 80% 44%;
+  --k-border: 330 25% 30%;
+  --k-input: 330 25% 30%;
+  --k-ring: 330 90% 60%;
+  --k-info: 45 60% 25%;
+  --k-info-foreground: 45 80% 70%;
+  --k-radius: 1.25rem;
+}
+
+/* Auto dark — blacker nightclub depth, hotter pink. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 330 30% 6%;
+    --k-foreground: 330 35% 94%;
+    --k-card: 330 28% 9%;
+    --k-card-foreground: 330 35% 94%;
+    --k-popover: 330 28% 10%;
+    --k-popover-foreground: 330 35% 94%;
+    --k-sidebar: 330 32% 4%;
+    --k-primary: 330 95% 62%;
+    --k-primary-foreground: 330 40% 10%;
+    --k-primary-hover: 330 95% 68%;
+    --k-primary-soft: 330 70% 20%;
+    --k-secondary: 45 95% 60%;
+    --k-secondary-foreground: 45 50% 10%;
+    --k-secondary-hover: 45 95% 66%;
+    --k-muted: 330 25% 18%;
+    --k-muted-foreground: 330 25% 68%;
+    --k-accent: 0 0% 85%;
+    --k-accent-foreground: 330 30% 10%;
+    --k-destructive: 0 85% 58%;
+    --k-destructive-foreground: 0 30% 97%;
+    --k-destructive-hover: 0 85% 64%;
+    --k-border: 330 28% 26%;
+    --k-input: 330 28% 26%;
+    --k-ring: 330 95% 65%;
+    --k-info: 45 60% 22%;
+    --k-info-foreground: 45 85% 75%;
+  --k-radius: 1.25rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 330 30% 6%;
+  --k-foreground: 330 35% 94%;
+  --k-card: 330 28% 9%;
+  --k-card-foreground: 330 35% 94%;
+  --k-popover: 330 28% 10%;
+  --k-popover-foreground: 330 35% 94%;
+  --k-sidebar: 330 32% 4%;
+  --k-primary: 330 95% 62%;
+  --k-primary-foreground: 330 40% 10%;
+  --k-primary-hover: 330 95% 68%;
+  --k-primary-soft: 330 70% 20%;
+  --k-secondary: 45 95% 60%;
+  --k-secondary-foreground: 45 50% 10%;
+  --k-secondary-hover: 45 95% 66%;
+  --k-muted: 330 25% 18%;
+  --k-muted-foreground: 330 25% 68%;
+  --k-accent: 0 0% 85%;
+  --k-accent-foreground: 330 30% 10%;
+  --k-destructive: 0 85% 58%;
+  --k-destructive-foreground: 0 30% 97%;
+  --k-destructive-hover: 0 85% 64%;
+  --k-border: 330 28% 26%;
+  --k-input: 330 28% 26%;
+  --k-ring: 330 95% 65%;
+  --k-info: 45 60% 22%;
+  --k-info-foreground: 45 85% 75%;
+  --k-radius: 1.25rem;
+}
+
+/* Typography — ornate script for names and statements, bold sans for promotions. */
+:root:root {
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Allura, 'Snell Roundhand', ui-serif, Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* surface: actions */
+/* Glossy gem buttons with sparkle halo. */
+[k=button] {
+  border-radius: calc(var(--k-radius) * 0.7);
+  transition: box-shadow 200ms ease, background-color 200ms ease;
+}
+[k=button]:hover {
+  box-shadow: 0 0 0 3px hsl(var(--k-ring) / 0.3), 0 0 16px hsl(var(--k-primary) / 0.35);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 1.2);
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: data display */
+/* Glamour-photo frames with sparkle borders. */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow:
+    inset 0 1px 0 hsl(var(--k-foreground) / 0.1),
+    0 4px 20px hsl(var(--k-background) / 0.6);
+}
+[k=badge] {
+  border-radius: calc(var(--k-radius) * 1.2);
+  border: 1px solid hsl(var(--k-border));
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+/* Jeweled fields. */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 0 3px hsl(var(--k-ring) / 0.2);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=alert][data-variant=destructive] {
+  border-color: hsl(var(--k-destructive) / 0.5);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: calc(var(--k-radius) * 0.7);
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 0 -3px 0 hsl(var(--k-primary));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 8px 28px hsl(var(--k-background) / 0.7), 0 0 12px hsl(var(--k-primary) / 0.15);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — rhinestone twinkle. */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 0 0 10px hsl(var(--k-ring) / 0.4);
+}

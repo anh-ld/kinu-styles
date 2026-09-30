@@ -1,0 +1,248 @@
+/* kinu-styles: steampunk — Steampunk
+   Design rules: hyper-skeuomorphic Victorian machine aesthetic — brass, copper, iron, dark wood, oxblood leather, yellowed parchment; thick bevels, embossed trim, inset wells, hard cast shadows, riveted plates and arched frames
+   Source trend: https://trends.daisyui.com/trend/steampunk/ */
+
+/* Fonts — the @import MUST stay the first rule (R6, KTD4). */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=IM+Fell+English&family=Special+Elite&display=swap');
+
+/* Light — yellowed parchment, brass and dark wood, verdigris accents. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 40 30% 93%;
+  --k-foreground: 30 30% 12%;
+  --k-card: 40 35% 96%;
+  --k-card-foreground: 30 30% 12%;
+  --k-popover: 40 35% 97%;
+  --k-popover-foreground: 30 30% 12%;
+  --k-sidebar: 35 30% 88%;
+  --k-primary: 30 60% 45%;
+  --k-primary-foreground: 40 50% 12%;
+  --k-primary-hover: 30 60% 39%;
+  --k-primary-soft: 30 55% 88%;
+  --k-secondary: 175 35% 35%;
+  --k-secondary-foreground: 175 40% 95%;
+  --k-secondary-hover: 175 35% 29%;
+  --k-muted: 40 25% 88%;
+  --k-muted-foreground: 30 20% 45%;
+  --k-accent: 15 45% 35%;
+  --k-accent-foreground: 15 45% 96%;
+  --k-destructive: 15 50% 35%;
+  --k-destructive-foreground: 15 40% 96%;
+  --k-destructive-hover: 15 50% 29%;
+  --k-border: 30 30% 72%;
+  --k-input: 30 30% 72%;
+  --k-ring: 35 55% 45%;
+  --k-info: 40 40% 90%;
+  --k-info-foreground: 35 50% 35%;
+  --k-radius: 0.5rem;
+}
+
+/* Auto dark — smoky brown, soot black, copper and lamp-light cream. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 25 20% 8%;
+    --k-foreground: 45 30% 90%;
+    --k-card: 25 18% 11%;
+    --k-card-foreground: 45 30% 90%;
+    --k-popover: 25 18% 12%;
+    --k-popover-foreground: 45 30% 90%;
+    --k-sidebar: 25 25% 6%;
+    --k-primary: 25 70% 55%;
+    --k-primary-foreground: 25 60% 10%;
+    --k-primary-hover: 25 70% 62%;
+    --k-primary-soft: 25 40% 20%;
+    --k-secondary: 175 40% 40%;
+    --k-secondary-foreground: 175 40% 10%;
+    --k-secondary-hover: 175 40% 46%;
+    --k-muted: 25 20% 15%;
+    --k-muted-foreground: 40 15% 62%;
+    --k-accent: 15 45% 45%;
+    --k-accent-foreground: 15 40% 94%;
+    --k-destructive: 15 55% 40%;
+    --k-destructive-foreground: 15 40% 94%;
+    --k-destructive-hover: 15 55% 48%;
+    --k-border: 30 20% 24%;
+    --k-input: 30 20% 24%;
+    --k-ring: 30 60% 55%;
+    --k-info: 40 30% 18%;
+    --k-info-foreground: 35 50% 68%;
+  --k-radius: 0.5rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 25 20% 8%;
+  --k-foreground: 45 30% 90%;
+  --k-card: 25 18% 11%;
+  --k-card-foreground: 45 30% 90%;
+  --k-popover: 25 18% 12%;
+  --k-popover-foreground: 45 30% 90%;
+  --k-sidebar: 25 25% 6%;
+  --k-primary: 25 70% 55%;
+  --k-primary-foreground: 25 60% 10%;
+  --k-primary-hover: 25 70% 62%;
+  --k-primary-soft: 25 40% 20%;
+  --k-secondary: 175 40% 40%;
+  --k-secondary-foreground: 175 40% 10%;
+  --k-secondary-hover: 175 40% 46%;
+  --k-muted: 25 20% 15%;
+  --k-muted-foreground: 40 15% 62%;
+  --k-accent: 15 45% 45%;
+  --k-accent-foreground: 15 40% 94%;
+  --k-destructive: 15 55% 40%;
+  --k-destructive-foreground: 15 40% 94%;
+  --k-destructive-hover: 15 55% 48%;
+  --k-border: 30 20% 24%;
+  --k-input: 30 20% 24%;
+  --k-ring: 30 60% 55%;
+  --k-info: 40 30% 18%;
+  --k-info-foreground: 35 50% 68%;
+  --k-radius: 0.5rem;
+}
+
+/* Typography — engraved Victorian capitals, sturdy book serif body, typewriter labels. */
+:root:root {
+  font-family: 'IM Fell English', Georgia, 'Times New Roman', serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Cinzel, 'IM Fell English', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  box-shadow: inset 0 1px 0 hsl(40 50% 90% / 0.35), inset 0 -2px 0 hsl(30 40% 12% / 0.35);
+  font-family: 'Special Elite', 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: box-shadow 200ms ease, background-color 200ms ease;
+}
+[k=button]:hover {
+  box-shadow: inset 0 1px 0 hsl(40 50% 90% / 0.45), inset 0 -2px 0 hsl(30 40% 12% / 0.35), 0 0 10px hsl(35 60% 45% / 0.35);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.2), inset 0 -1px 0 hsl(0 0% 0% / 0.15);
+  font-family: 'Special Elite', 'Courier New', monospace;
+  letter-spacing: 0.06em;
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: inset 0 0 0 1px hsl(0 0% 100% / 0.12), inset 0 2px 5px hsl(0 0% 0% / 0.2), 0 1px 0 hsl(0 0% 100% / 0.15);
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-family: 'Special Elite', 'Courier New', monospace;
+  border: 1px solid hsl(var(--k-border));
+  box-shadow: inset 0 0 0 1px hsl(0 0% 100% / 0.15);
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: linear-gradient(90deg, hsl(var(--k-muted)) 25%, hsl(var(--k-ring) / 0.18) 50%, hsl(var(--k-muted)) 75%);
+  background-size: 200% 100%;
+  animation: k-steam-burnish 2.2s ease-in-out infinite;
+}
+@keyframes k-steam-burnish {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: inset 0 2px 4px hsl(0 0% 0% / 0.12);
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: inset 0 0 0 1px hsl(var(--k-ring) / 0.4), 0 0 8px hsl(var(--k-ring) / 0.3);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+  border-radius: 0.125rem;
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  border-left: 3px solid hsl(var(--k-ring));
+  background: hsl(var(--k-card));
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.15);
+}
+[k=alert][data-variant=destructive] {
+  border-left-color: hsl(var(--k-destructive));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+  font-family: 'Special Elite', 'Courier New', monospace;
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  font-family: 'Special Elite', 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 0 -2px 0 hsl(var(--k-primary));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.2), 0 4px 14px hsl(0 0% 0% / 0.3);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — polished brass. */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 0 0 6px hsl(var(--k-ring) / 0.4);
+}

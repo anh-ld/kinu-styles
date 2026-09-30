@@ -1,0 +1,230 @@
+/* kinu-styles: vaporwave — Vaporwave
+   Design rules: neon pastel dream: pastel pink, lavender, cyan, peach on deep violet; retro display type; perspective grids, floating windows, glitch, classical bust mood
+   Source trend: https://trends.daisyui.com/trend/vaporwave/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap');
+
+/* Light — a dark-dominant trend: deep violet dream space, pastel pink and cyan neon, lavender mists. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: dark;
+  --k-background: 270 45% 8%;
+  --k-foreground: 300 30% 90%;
+  --k-card: 270 45% 11%;
+  --k-card-foreground: 300 30% 90%;
+  --k-popover: 270 45% 12%;
+  --k-popover-foreground: 300 30% 90%;
+  --k-sidebar: 265 50% 6%;
+  --k-primary: 325 90% 70%;
+  --k-primary-foreground: 270 50% 10%;
+  --k-primary-hover: 325 90% 64%;
+  --k-primary-soft: 325 70% 22%;
+  --k-secondary: 260 70% 75%;
+  --k-secondary-foreground: 270 50% 10%;
+  --k-secondary-hover: 260 70% 69%;
+  --k-muted: 270 35% 20%;
+  --k-muted-foreground: 280 25% 60%;
+  --k-accent: 190 95% 60%;
+  --k-accent-foreground: 200 60% 8%;
+  --k-destructive: 350 90% 55%;
+  --k-destructive-foreground: 350 30% 97%;
+  --k-destructive-hover: 350 90% 48%;
+  --k-border: 270 35% 25%;
+  --k-input: 270 35% 25%;
+  --k-ring: 325 90% 70%;
+  --k-info: 200 60% 25%;
+  --k-info-foreground: 190 90% 65%;
+  --k-radius: 0.25rem;
+}
+
+/* Auto dark — deeper digital navy night. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 265 55% 5%;
+    --k-foreground: 300 35% 92%;
+    --k-card: 265 50% 8%;
+    --k-card-foreground: 300 35% 92%;
+    --k-popover: 265 50% 9%;
+    --k-popover-foreground: 300 35% 92%;
+    --k-sidebar: 265 58% 4%;
+    --k-primary: 325 95% 75%;
+    --k-primary-foreground: 270 55% 8%;
+    --k-primary-hover: 325 95% 69%;
+    --k-primary-soft: 325 75% 20%;
+    --k-secondary: 260 75% 80%;
+    --k-secondary-foreground: 270 55% 8%;
+    --k-secondary-hover: 260 75% 74%;
+    --k-muted: 265 40% 17%;
+    --k-muted-foreground: 280 30% 64%;
+    --k-accent: 190 100% 62%;
+    --k-accent-foreground: 200 60% 7%;
+    --k-destructive: 350 95% 60%;
+    --k-destructive-foreground: 350 30% 97%;
+    --k-destructive-hover: 350 95% 53%;
+    --k-border: 265 40% 22%;
+    --k-input: 265 40% 22%;
+    --k-ring: 325 95% 75%;
+    --k-info: 200 65% 22%;
+    --k-info-foreground: 190 95% 70%;
+  --k-radius: 0.25rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 265 55% 5%;
+  --k-foreground: 300 35% 92%;
+  --k-card: 265 50% 8%;
+  --k-card-foreground: 300 35% 92%;
+  --k-popover: 265 50% 9%;
+  --k-popover-foreground: 300 35% 92%;
+  --k-sidebar: 265 58% 4%;
+  --k-primary: 325 95% 75%;
+  --k-primary-foreground: 270 55% 8%;
+  --k-primary-hover: 325 95% 69%;
+  --k-primary-soft: 325 75% 20%;
+  --k-secondary: 260 75% 80%;
+  --k-secondary-foreground: 270 55% 8%;
+  --k-secondary-hover: 260 75% 74%;
+  --k-muted: 265 40% 17%;
+  --k-muted-foreground: 280 30% 64%;
+  --k-accent: 190 100% 62%;
+  --k-accent-foreground: 200 60% 7%;
+  --k-destructive: 350 95% 60%;
+  --k-destructive-foreground: 350 30% 97%;
+  --k-destructive-hover: 350 95% 53%;
+  --k-border: 265 40% 22%;
+  --k-input: 265 40% 22%;
+  --k-ring: 325 95% 75%;
+  --k-info: 200 65% 22%;
+  --k-info-foreground: 190 95% 70%;
+  --k-radius: 0.25rem;
+}
+
+/* Typography — retro display for the headline, clean sans for copy. */
+:root:root {
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Syncopate, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* surface: actions */
+/* Glitch-edged buttons with a neon halo. */
+[k=button] {
+  border-radius: var(--k-radius);
+  transition: box-shadow 200ms ease, background-color 200ms ease;
+}
+[k=button]:hover {
+  box-shadow: 0 0 0 2px hsl(var(--k-ring) / 0.35), 0 0 16px hsl(var(--k-ring) / 0.35);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: data display */
+/* Floating desktop windows with scanline shadows. */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow:
+    0 0 0 1px hsl(var(--k-primary) / 0.12),
+    0 8px 24px hsl(var(--k-background) / 0.6);
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.72em;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 10px hsl(var(--k-ring) / 0.3);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=alert][data-variant=destructive] {
+  border-color: hsl(var(--k-destructive) / 0.5);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 0 -2px 0 hsl(var(--k-primary));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 8px 28px hsl(var(--k-background) / 0.7), 0 0 14px hsl(var(--k-ring) / 0.15);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — neon glitch. */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 0 0 12px hsl(var(--k-ring) / 0.4);
+}

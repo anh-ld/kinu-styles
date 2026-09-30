@@ -1,0 +1,244 @@
+/* kinu-styles: rpg-pixel-art — RPG Pixel Art
+   Design rules: dark-dominant menu panels, top-down tile-map vibe, ornate double-framed dialogue boxes, gold + party-red accents, bitmap type with compact caps, inset slots and health-bar readability
+   Source trend: https://trends.daisyui.com/trend/rpg-pixel-art/ */
+
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+/* Light — daytime-overworld panels: sky base, parchment cards, party-red primary, spell-teal secondary. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 210 45% 88%;
+  --k-foreground: 235 40% 18%;
+  --k-card: 45 45% 93%;
+  --k-card-foreground: 235 40% 18%;
+  --k-popover: 45 45% 95%;
+  --k-popover-foreground: 235 40% 18%;
+  --k-sidebar: 45 35% 88%;
+  --k-primary: 0 65% 50%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 0 65% 44%;
+  --k-primary-soft: 0 50% 90%;
+  --k-secondary: 175 55% 40%;
+  --k-secondary-foreground: 0 0% 100%;
+  --k-secondary-hover: 175 55% 34%;
+  --k-muted: 45 30% 88%;
+  --k-muted-foreground: 235 20% 42%;
+  --k-accent: 42 90% 50%;
+  --k-accent-foreground: 42 60% 10%;
+  --k-destructive: 0 70% 48%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 70% 42%;
+  --k-border: 235 20% 65%;
+  --k-input: 235 20% 65%;
+  --k-ring: 42 90% 55%;
+  --k-info: 175 50% 88%;
+  --k-info-foreground: 175 60% 30%;
+  --k-radius: 0.25rem;
+}
+
+/* Auto dark — canonical RPG menu-panel night: deep indigo panels, parchment text, gold + party-red accents. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 250 35% 8%;
+    --k-foreground: 45 35% 90%;
+    --k-card: 235 30% 14%;
+    --k-card-foreground: 45 35% 90%;
+    --k-popover: 235 30% 17%;
+    --k-popover-foreground: 45 35% 90%;
+    --k-sidebar: 250 40% 6%;
+    --k-primary: 0 70% 55%;
+    --k-primary-foreground: 0 0% 100%;
+    --k-primary-hover: 0 70% 62%;
+    --k-primary-soft: 0 55% 22%;
+    --k-secondary: 175 60% 50%;
+    --k-secondary-foreground: 175 55% 10%;
+    --k-secondary-hover: 175 60% 56%;
+    --k-muted: 235 25% 20%;
+    --k-muted-foreground: 235 20% 62%;
+    --k-accent: 42 95% 55%;
+    --k-accent-foreground: 42 60% 10%;
+    --k-destructive: 0 70% 55%;
+    --k-destructive-foreground: 0 0% 100%;
+    --k-destructive-hover: 0 70% 62%;
+    --k-border: 235 25% 32%;
+    --k-input: 235 25% 32%;
+    --k-ring: 42 95% 60%;
+    --k-info: 175 45% 20%;
+    --k-info-foreground: 175 60% 75%;
+  --k-radius: 0.25rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 250 35% 8%;
+  --k-foreground: 45 35% 90%;
+  --k-card: 235 30% 14%;
+  --k-card-foreground: 45 35% 90%;
+  --k-popover: 235 30% 17%;
+  --k-popover-foreground: 45 35% 90%;
+  --k-sidebar: 250 40% 6%;
+  --k-primary: 0 70% 55%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 0 70% 62%;
+  --k-primary-soft: 0 55% 22%;
+  --k-secondary: 175 60% 50%;
+  --k-secondary-foreground: 175 55% 10%;
+  --k-secondary-hover: 175 60% 56%;
+  --k-muted: 235 25% 20%;
+  --k-muted-foreground: 235 20% 62%;
+  --k-accent: 42 95% 55%;
+  --k-accent-foreground: 42 60% 10%;
+  --k-destructive: 0 70% 55%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 70% 62%;
+  --k-border: 235 25% 32%;
+  --k-input: 235 25% 32%;
+  --k-ring: 42 95% 60%;
+  --k-info: 175 45% 20%;
+  --k-info-foreground: 175 60% 75%;
+  --k-radius: 0.25rem;
+}
+
+/* Typography — legible pixel/JPN bitmap display, mono body; dialogue gets generous line height. */
+:root:root {
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 16px;
+}
+:where(h1, h2, h3, h4) {
+  font-family: 'DotGothic16', 'IBM Plex Mono', monospace;
+  font-weight: 400;
+  line-height: 1.6;
+}
+:where([k=dialog], [k=alert]) {
+  line-height: 1.6;
+}
+
+/* surface: actions */
+[k=button] {
+  border: 2px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 3px 3px 0 hsl(var(--k-border));
+  font-family: 'DotGothic16', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+[k=button]:hover {
+  box-shadow: 1px 1px 0 hsl(var(--k-border));
+  transform: translate(2px, 2px);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=item]:hover {
+  background: hsl(var(--k-primary-soft));
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-border));
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.875em;
+}
+
+/* surface: data display */
+[k=card] {
+  border: 2px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  box-shadow: inset 0 0 0 2px hsl(var(--k-background)), inset 0 0 0 4px hsl(var(--k-border));
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-border));
+  font-family: 'DotGothic16', monospace;
+  font-size: 0.75em;
+  text-transform: uppercase;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 2px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: inset 2px 2px 0 hsl(var(--k-input) / 0.5);
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: inset 2px 2px 0 hsl(var(--k-ring) / 0.5);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+  border-radius: var(--k-radius);
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 2px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  box-shadow: inset 0 0 0 2px hsl(var(--k-background)), inset 0 0 0 4px hsl(var(--k-border));
+}
+[k=alert][data-variant=destructive] {
+  border-color: hsl(var(--k-destructive));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-foreground));
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  font-family: 'DotGothic16', monospace;
+  text-transform: uppercase;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 0 -3px 0 hsl(var(--k-accent));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-card));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 2px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: 3px 3px 0 hsl(var(--k-border));
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — gold command highlight */
+[k]:focus-visible {
+  outline: 3px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

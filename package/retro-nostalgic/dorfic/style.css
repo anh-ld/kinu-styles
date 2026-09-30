@@ -1,0 +1,229 @@
+/* kinu-styles: dorfic — DORFic
+   Design rules: white industrial wayfinding: sun-bleached white, orange primary, restrained cool blue, machine gray, silver; condensed uppercase technical type, wide tracking, large numerals; sharp corners, parallel bands, thin rules
+   Source trend: https://trends.daisyui.com/trend/dorfic/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&display=swap');
+
+/* Light — white cityscape daylight: white fields, orange routes, cool blue machines. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 0 0% 100%;
+  --k-foreground: 220 15% 15%;
+  --k-card: 0 0% 100%;
+  --k-card-foreground: 220 15% 15%;
+  --k-popover: 0 0% 100%;
+  --k-popover-foreground: 220 15% 15%;
+  --k-sidebar: 0 0% 96%;
+  --k-primary: 25 95% 50%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 25 95% 44%;
+  --k-primary-soft: 25 80% 93%;
+  --k-secondary: 210 40% 45%;
+  --k-secondary-foreground: 0 0% 100%;
+  --k-secondary-hover: 210 40% 39%;
+  --k-muted: 220 12% 92%;
+  --k-muted-foreground: 220 10% 45%;
+  --k-accent: 0 85% 45%;
+  --k-accent-foreground: 0 0% 100%;
+  --k-destructive: 0 85% 45%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 85% 40%;
+  --k-border: 220 12% 85%;
+  --k-input: 220 12% 85%;
+  --k-ring: 25 95% 50%;
+  --k-info: 210 40% 92%;
+  --k-info-foreground: 210 45% 38%;
+  --k-radius: 0.25rem;
+}
+
+/* Auto dark — industrial night: machine gray-black, orange route lines. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 220 15% 9%;
+    --k-foreground: 220 12% 92%;
+    --k-card: 220 14% 12%;
+    --k-card-foreground: 220 12% 92%;
+    --k-popover: 220 14% 13%;
+    --k-popover-foreground: 220 12% 92%;
+    --k-sidebar: 220 16% 7%;
+    --k-primary: 25 95% 58%;
+    --k-primary-foreground: 220 15% 10%;
+    --k-primary-hover: 25 95% 64%;
+    --k-primary-soft: 25 70% 22%;
+    --k-secondary: 210 45% 58%;
+    --k-secondary-foreground: 220 15% 10%;
+    --k-secondary-hover: 210 45% 64%;
+    --k-muted: 220 12% 20%;
+    --k-muted-foreground: 220 10% 62%;
+    --k-accent: 0 90% 55%;
+    --k-accent-foreground: 220 15% 10%;
+    --k-destructive: 0 90% 55%;
+    --k-destructive-foreground: 220 15% 10%;
+    --k-destructive-hover: 0 90% 61%;
+    --k-border: 220 12% 26%;
+    --k-input: 220 12% 26%;
+    --k-ring: 25 95% 62%;
+    --k-info: 210 40% 22%;
+    --k-info-foreground: 210 50% 72%;
+  --k-radius: 0.25rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 220 15% 9%;
+  --k-foreground: 220 12% 92%;
+  --k-card: 220 14% 12%;
+  --k-card-foreground: 220 12% 92%;
+  --k-popover: 220 14% 13%;
+  --k-popover-foreground: 220 12% 92%;
+  --k-sidebar: 220 16% 7%;
+  --k-primary: 25 95% 58%;
+  --k-primary-foreground: 220 15% 10%;
+  --k-primary-hover: 25 95% 64%;
+  --k-primary-soft: 25 70% 22%;
+  --k-secondary: 210 45% 58%;
+  --k-secondary-foreground: 220 15% 10%;
+  --k-secondary-hover: 210 45% 64%;
+  --k-muted: 220 12% 20%;
+  --k-muted-foreground: 220 10% 62%;
+  --k-accent: 0 90% 55%;
+  --k-accent-foreground: 220 15% 10%;
+  --k-destructive: 0 90% 55%;
+  --k-destructive-foreground: 220 15% 10%;
+  --k-destructive-hover: 0 90% 61%;
+  --k-border: 220 12% 26%;
+  --k-input: 220 12% 26%;
+  --k-ring: 25 95% 62%;
+  --k-info: 210 40% 22%;
+  --k-info-foreground: 210 50% 72%;
+  --k-radius: 0.25rem;
+}
+
+/* Typography — condensed geometric display with wide tracking, clean sans body. */
+:root:root {
+  font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Rajdhani, 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* surface: actions */
+/* Crisp angular controls. */
+[k=button] {
+  border-radius: var(--k-radius);
+  transition: box-shadow 200ms ease, background-color 200ms ease;
+}
+[k=button]:hover {
+  box-shadow: inset 0 -3px 0 hsl(var(--k-primary) / 0.35);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8em;
+}
+
+/* surface: data display */
+/* Numbered modules with thin industrial rules. */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 1px 0 hsl(var(--k-border) / 0.7);
+}
+[k=badge] {
+  border-radius: 0;
+  font-family: Rajdhani, 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=alert][data-variant=destructive] {
+  border-color: hsl(var(--k-destructive) / 0.5);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+/* One unmistakable orange route. */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-primary));
+  color: hsl(var(--k-primary-foreground));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 4px 16px hsl(var(--k-border) / 0.4);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

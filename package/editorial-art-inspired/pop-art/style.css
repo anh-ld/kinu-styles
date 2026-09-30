@@ -1,0 +1,240 @@
+/* kinu-styles: pop-art — Pop Art
+   Design rules: bright primary inks with black outlines and white punch-outs, comic dots, repetition, oversized slogans, thick outlines, hard rectangular crops
+   Source trend: https://trends.daisyui.com/trend/pop-art/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Bangers&display=swap');
+
+/* Light — white field, print-red primary, cyan secondary, yellow accent, ink outlines. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 0 0% 100%;
+  --k-foreground: 0 0% 8%;
+  --k-card: 0 0% 100%;
+  --k-card-foreground: 0 0% 8%;
+  --k-popover: 0 0% 100%;
+  --k-popover-foreground: 0 0% 8%;
+  --k-sidebar: 0 0% 96%;
+  --k-primary: 0 90% 45%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 0 90% 39%;
+  --k-primary-soft: 0 90% 94%;
+  --k-secondary: 190 90% 45%;
+  --k-secondary-foreground: 0 0% 100%;
+  --k-secondary-hover: 190 90% 39%;
+  --k-muted: 0 0% 95%;
+  --k-muted-foreground: 0 0% 42%;
+  --k-accent: 50 100% 50%;
+  --k-accent-foreground: 0 0% 8%;
+  --k-destructive: 340 90% 45%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 340 90% 39%;
+  --k-border: 0 0% 10%;
+  --k-input: 0 0% 10%;
+  --k-ring: 0 90% 50%;
+  --k-info: 210 90% 95%;
+  --k-info-foreground: 210 90% 40%;
+  --k-radius: 0rem;
+}
+
+/* Auto dark — ink black field, neon primaries. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 0 0% 6%;
+    --k-foreground: 0 0% 96%;
+    --k-card: 0 0% 9%;
+    --k-card-foreground: 0 0% 96%;
+    --k-popover: 0 0% 10%;
+    --k-popover-foreground: 0 0% 96%;
+    --k-sidebar: 0 0% 4%;
+    --k-primary: 0 95% 58%;
+    --k-primary-foreground: 0 0% 6%;
+    --k-primary-hover: 0 95% 64%;
+    --k-primary-soft: 0 70% 18%;
+    --k-secondary: 190 95% 60%;
+    --k-secondary-foreground: 0 0% 6%;
+    --k-secondary-hover: 190 95% 66%;
+    --k-muted: 0 0% 15%;
+    --k-muted-foreground: 0 0% 62%;
+    --k-accent: 50 100% 60%;
+    --k-accent-foreground: 0 0% 6%;
+    --k-destructive: 340 95% 55%;
+    --k-destructive-foreground: 0 0% 6%;
+    --k-destructive-hover: 340 95% 62%;
+    --k-border: 0 0% 22%;
+    --k-input: 0 0% 22%;
+    --k-ring: 0 95% 62%;
+    --k-info: 210 60% 20%;
+    --k-info-foreground: 210 90% 78%;
+  --k-radius: 0rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 0 0% 6%;
+  --k-foreground: 0 0% 96%;
+  --k-card: 0 0% 9%;
+  --k-card-foreground: 0 0% 96%;
+  --k-popover: 0 0% 10%;
+  --k-popover-foreground: 0 0% 96%;
+  --k-sidebar: 0 0% 4%;
+  --k-primary: 0 95% 58%;
+  --k-primary-foreground: 0 0% 6%;
+  --k-primary-hover: 0 95% 64%;
+  --k-primary-soft: 0 70% 18%;
+  --k-secondary: 190 95% 60%;
+  --k-secondary-foreground: 0 0% 6%;
+  --k-secondary-hover: 190 95% 66%;
+  --k-muted: 0 0% 15%;
+  --k-muted-foreground: 0 0% 62%;
+  --k-accent: 50 100% 60%;
+  --k-accent-foreground: 0 0% 6%;
+  --k-destructive: 340 95% 55%;
+  --k-destructive-foreground: 0 0% 6%;
+  --k-destructive-hover: 340 95% 62%;
+  --k-border: 0 0% 22%;
+  --k-input: 0 0% 22%;
+  --k-ring: 0 95% 62%;
+  --k-info: 210 60% 20%;
+  --k-info-foreground: 210 90% 78%;
+  --k-radius: 0rem;
+}
+
+/* Typography — oversized comic display slogans, plain compact functional face. */
+:root:root {
+  font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: 'Bangers', 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  font-size: 0.875rem;
+  box-shadow: 4px 4px 0 hsl(var(--k-foreground));
+}
+[k=button]:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 hsl(var(--k-foreground));
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  font-size: 0.75rem;
+  box-shadow: 3px 3px 0 hsl(var(--k-foreground));
+}
+
+/* surface: data display */
+[k=card] {
+  border: 2px solid hsl(var(--k-foreground));
+  border-radius: var(--k-radius);
+  box-shadow: 4px 4px 0 hsl(var(--k-foreground));
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+[k=table] {
+  border-color: hsl(var(--k-foreground));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 2px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 3px 3px 0 hsl(var(--k-ring) / 0.5);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 2px solid hsl(var(--k-foreground));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  box-shadow: 3px 3px 0 hsl(var(--k-foreground));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-primary));
+  color: hsl(var(--k-primary-foreground));
+  box-shadow: 2px 2px 0 hsl(var(--k-foreground));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-foreground));
+  height: 2px;
+}
+[k=popover] {
+  border: 2px solid hsl(var(--k-foreground));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-popover));
+  box-shadow: 4px 4px 0 hsl(var(--k-foreground));
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring */
+[k]:focus-visible {
+  outline: 3px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

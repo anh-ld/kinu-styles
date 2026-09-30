@@ -1,0 +1,227 @@
+/* kinu-styles: dopamine-design — Dopamine Design
+   Design rules: saturated color clashes, bold patterns, playful shapes, cheerful icons, oversized rounded type, energetic layering with dark anchors
+   Source trend: https://trends.daisyui.com/trend/dopamine-design/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap');
+
+/* Light — pale cream tint, coral primary against turquoise and violet. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 45 55% 96%;
+  --k-foreground: 260 25% 16%;
+  --k-card: 45 60% 98%;
+  --k-card-foreground: 260 25% 16%;
+  --k-popover: 45 60% 98%;
+  --k-popover-foreground: 260 25% 16%;
+  --k-sidebar: 45 50% 92%;
+  --k-primary: 12 90% 55%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 12 90% 48%;
+  --k-primary-soft: 12 85% 92%;
+  --k-secondary: 195 90% 45%;
+  --k-secondary-foreground: 0 0% 100%;
+  --k-secondary-hover: 195 90% 39%;
+  --k-muted: 45 45% 90%;
+  --k-muted-foreground: 260 12% 45%;
+  --k-accent: 295 85% 55%;
+  --k-accent-foreground: 0 0% 100%;
+  --k-destructive: 350 85% 50%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 350 85% 44%;
+  --k-border: 40 35% 84%;
+  --k-input: 40 35% 84%;
+  --k-ring: 295 85% 55%;
+  --k-info: 195 80% 92%;
+  --k-info-foreground: 195 85% 36%;
+  --k-radius: 1.25rem;
+}
+
+/* Auto dark — deep violet anchor, brighter candy accents. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 265 30% 12%;
+    --k-foreground: 45 60% 94%;
+    --k-card: 265 28% 15%;
+    --k-card-foreground: 45 60% 94%;
+    --k-popover: 265 28% 16%;
+    --k-popover-foreground: 45 60% 94%;
+    --k-sidebar: 265 32% 10%;
+    --k-primary: 12 90% 62%;
+    --k-primary-foreground: 265 30% 10%;
+    --k-primary-hover: 12 90% 68%;
+    --k-primary-soft: 12 70% 24%;
+    --k-secondary: 195 90% 55%;
+    --k-secondary-foreground: 265 30% 10%;
+    --k-secondary-hover: 195 90% 61%;
+    --k-muted: 265 20% 20%;
+    --k-muted-foreground: 260 15% 62%;
+    --k-accent: 295 90% 65%;
+    --k-accent-foreground: 265 30% 10%;
+    --k-destructive: 350 85% 58%;
+    --k-destructive-foreground: 265 30% 10%;
+    --k-destructive-hover: 350 85% 64%;
+    --k-border: 265 20% 26%;
+    --k-input: 265 20% 26%;
+    --k-ring: 295 90% 65%;
+    --k-info: 195 70% 22%;
+    --k-info-foreground: 195 90% 70%;
+  --k-radius: 1.25rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 265 30% 12%;
+  --k-foreground: 45 60% 94%;
+  --k-card: 265 28% 15%;
+  --k-card-foreground: 45 60% 94%;
+  --k-popover: 265 28% 16%;
+  --k-popover-foreground: 45 60% 94%;
+  --k-sidebar: 265 32% 10%;
+  --k-primary: 12 90% 62%;
+  --k-primary-foreground: 265 30% 10%;
+  --k-primary-hover: 12 90% 68%;
+  --k-primary-soft: 12 70% 24%;
+  --k-secondary: 195 90% 55%;
+  --k-secondary-foreground: 265 30% 10%;
+  --k-secondary-hover: 195 90% 61%;
+  --k-muted: 265 20% 20%;
+  --k-muted-foreground: 260 15% 62%;
+  --k-accent: 295 90% 65%;
+  --k-accent-foreground: 265 30% 10%;
+  --k-destructive: 350 85% 58%;
+  --k-destructive-foreground: 265 30% 10%;
+  --k-destructive-hover: 350 85% 64%;
+  --k-border: 265 20% 26%;
+  --k-input: 265 20% 26%;
+  --k-ring: 295 90% 65%;
+  --k-info: 195 70% 22%;
+  --k-info-foreground: 195 90% 70%;
+  --k-radius: 1.25rem;
+}
+
+/* Typography — bold rounded display, sturdy system sans body. */
+:root:root {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Fredoka, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  border: 2px solid hsl(var(--k-foreground));
+  box-shadow: 4px 4px 0 hsl(var(--k-foreground));
+  transition: box-shadow 150ms ease, transform 150ms ease;
+}
+[k=button]:hover {
+  box-shadow: 6px 6px 0 hsl(var(--k-foreground));
+  transform: translate(-1px, -1px);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 2px solid hsl(var(--k-foreground));
+  box-shadow: 2px 2px 0 hsl(var(--k-foreground));
+}
+
+/* surface: data display */
+[k=card] {
+  border: 2px solid hsl(var(--k-foreground));
+  border-radius: var(--k-radius);
+  box-shadow: 5px 5px 0 hsl(var(--k-foreground));
+  background: hsl(var(--k-card));
+}
+[k=badge] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 2px solid hsl(var(--k-foreground));
+  font-weight: 600;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: radial-gradient(circle, hsl(var(--k-border)) 3px, transparent 3px) 0 0 / 16px 16px, hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 2px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 0 3px hsl(var(--k-ring) / 0.2);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+[k=checkbox], [k=radio] {
+  border-radius: calc(var(--k-radius) * 0.6);
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 2px solid hsl(var(--k-foreground));
+  border-radius: var(--k-radius);
+  box-shadow: 4px 4px 0 hsl(var(--k-foreground));
+  background: hsl(var(--k-card));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 2px solid hsl(var(--k-foreground));
+  border-radius: var(--k-radius);
+  box-shadow: 5px 5px 0 hsl(var(--k-foreground));
+  background: hsl(var(--k-popover));
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — playful candy offset */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 4px 4px 0 hsl(var(--k-ring) / 0.5);
+}

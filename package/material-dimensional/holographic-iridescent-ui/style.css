@@ -1,0 +1,250 @@
+/* kinu-styles: holographic-iridescent-ui — Holographic / Iridescent UI
+   Design rules: spectral angle-shifting cyan-violet-rose-lime washes on pearl or charcoal foundations, pearlescent foil surfaces, diffraction highlights, wide futuristic display type, restrained use
+   Source trend: https://trends.daisyui.com/trend/holographic-iridescent-ui/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@400;500&display=swap');
+
+/* Light — pearl-gray editorial base, spectral foil on focal surfaces. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 230 18% 95%;
+  --k-foreground: 240 25% 22%;
+  --k-card: 0 0% 100%;
+  --k-card-foreground: 240 25% 22%;
+  --k-popover: 0 0% 100%;
+  --k-popover-foreground: 240 25% 22%;
+  --k-sidebar: 230 15% 90%;
+  --k-primary: 265 80% 55%;
+  --k-primary-foreground: 265 40% 98%;
+  --k-primary-hover: 265 80% 48%;
+  --k-primary-soft: 265 50% 93%;
+  --k-secondary: 340 85% 60%;
+  --k-secondary-foreground: 340 45% 97%;
+  --k-secondary-hover: 340 85% 53%;
+  --k-muted: 230 15% 91%;
+  --k-muted-foreground: 240 15% 48%;
+  --k-accent: 90 70% 50%;
+  --k-accent-foreground: 90 60% 96%;
+  --k-destructive: 0 70% 52%;
+  --k-destructive-foreground: 0 45% 97%;
+  --k-destructive-hover: 0 70% 45%;
+  --k-border: 230 15% 86%;
+  --k-input: 230 15% 84%;
+  --k-ring: 300 70% 60%;
+  --k-info: 230 40% 94%;
+  --k-info-foreground: 265 70% 42%;
+  --k-radius: 0.75rem;
+}
+
+/* Auto dark — charcoal foundation, brighter spectral moments. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 250 22% 9%;
+    --k-foreground: 240 20% 93%;
+    --k-card: 250 20% 13%;
+    --k-card-foreground: 240 20% 93%;
+    --k-popover: 250 20% 15%;
+    --k-popover-foreground: 240 20% 93%;
+    --k-sidebar: 250 25% 7%;
+    --k-primary: 265 90% 68%;
+    --k-primary-foreground: 265 50% 10%;
+    --k-primary-hover: 265 90% 74%;
+    --k-primary-soft: 265 45% 24%;
+    --k-secondary: 340 90% 68%;
+    --k-secondary-foreground: 340 50% 10%;
+    --k-secondary-hover: 340 90% 74%;
+    --k-muted: 250 20% 18%;
+    --k-muted-foreground: 250 15% 62%;
+    --k-accent: 90 75% 55%;
+    --k-accent-foreground: 90 60% 10%;
+    --k-destructive: 0 70% 58%;
+    --k-destructive-foreground: 0 45% 96%;
+    --k-destructive-hover: 0 70% 65%;
+    --k-border: 250 18% 26%;
+    --k-input: 250 18% 26%;
+    --k-ring: 300 75% 72%;
+    --k-info: 250 30% 16%;
+    --k-info-foreground: 280 85% 80%;
+  --k-radius: 0.75rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 250 22% 9%;
+  --k-foreground: 240 20% 93%;
+  --k-card: 250 20% 13%;
+  --k-card-foreground: 240 20% 93%;
+  --k-popover: 250 20% 15%;
+  --k-popover-foreground: 240 20% 93%;
+  --k-sidebar: 250 25% 7%;
+  --k-primary: 265 90% 68%;
+  --k-primary-foreground: 265 50% 10%;
+  --k-primary-hover: 265 90% 74%;
+  --k-primary-soft: 265 45% 24%;
+  --k-secondary: 340 90% 68%;
+  --k-secondary-foreground: 340 50% 10%;
+  --k-secondary-hover: 340 90% 74%;
+  --k-muted: 250 20% 18%;
+  --k-muted-foreground: 250 15% 62%;
+  --k-accent: 90 75% 55%;
+  --k-accent-foreground: 90 60% 10%;
+  --k-destructive: 0 70% 58%;
+  --k-destructive-foreground: 0 45% 96%;
+  --k-destructive-hover: 0 70% 65%;
+  --k-border: 250 18% 26%;
+  --k-input: 250 18% 26%;
+  --k-ring: 300 75% 72%;
+  --k-info: 250 30% 16%;
+  --k-info-foreground: 280 85% 80%;
+  --k-radius: 0.75rem;
+}
+
+/* Typography — wide futuristic display, neutral sans body. */
+:root:root {
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Syncopate, 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: calc(var(--k-radius) * 2);
+  background-image: linear-gradient(120deg, hsl(var(--k-primary)), hsl(var(--k-accent)) 45%, hsl(var(--k-secondary)) 75%, hsl(var(--k-primary)));
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  color: hsl(var(--k-primary-foreground));
+  box-shadow: 0 0 16px hsl(var(--k-primary) / 0.4), inset 0 0 12px hsl(0 0% 100% / 0.25);
+  transition: background-position 300ms ease;
+}
+[k=button]:hover {
+  background-position: 100% 50%;
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=item]:hover {
+  background: hsl(var(--k-muted));
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 1px solid hsl(var(--k-border));
+  background-image: linear-gradient(120deg, hsl(var(--k-primary) / 0.25), hsl(var(--k-secondary) / 0.25));
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  box-shadow: 0 2px 6px hsl(var(--k-foreground) / 0.08);
+}
+[k=card][data-variant=hero] {
+  background-image: linear-gradient(120deg, hsl(var(--k-primary)), hsl(var(--k-secondary)) 50%, hsl(var(--k-accent)));
+  background-size: 200% 100%;
+  color: hsl(var(--k-primary-foreground));
+  box-shadow: 0 4px 24px hsl(var(--k-primary) / 0.35);
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  background-image: linear-gradient(120deg, hsl(var(--k-primary)), hsl(var(--k-secondary)));
+  color: hsl(var(--k-primary-foreground));
+  font-weight: 500;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+  background-image: linear-gradient(110deg, hsl(var(--k-primary) / 0.2), hsl(var(--k-secondary) / 0.25) 45%, hsl(var(--k-primary) / 0.2) 60%);
+  background-size: 200% 100%;
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 0 3px hsl(var(--k-ring) / 0.2), 0 0 14px hsl(var(--k-ring) / 0.3);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+[k=switch] {
+  border-radius: calc(var(--k-radius) * 2);
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  box-shadow: 0 2px 12px hsl(var(--k-primary) / 0.12);
+}
+[k=alert][data-variant=destructive] {
+  border-color: hsl(var(--k-destructive) / 0.5);
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85em;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 0 -2px 0 hsl(var(--k-primary));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+  background-image: linear-gradient(90deg, transparent, hsl(var(--k-primary) / 0.6) 50%, transparent);
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-popover));
+  box-shadow: 0 8px 24px hsl(var(--k-foreground) / 0.14);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — prismatic halo. */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 0 0 12px hsl(var(--k-ring) / 0.5);
+}

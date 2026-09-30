@@ -1,0 +1,233 @@
+/* kinu-styles: fluent-design — Fluent Design
+   Design rules: layered surfaces, adaptable components, soft depth, light, acrylic translucency, restrained motion, one system accent
+   Source trend: https://trends.daisyui.com/trend/fluent-design/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* Light — closely stepped cool white and gray, system blue, muted teal secondary. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 210 25% 98%;
+  --k-foreground: 220 30% 12%;
+  --k-card: 0 0% 100%;
+  --k-card-foreground: 220 30% 12%;
+  --k-popover: 0 0% 100%;
+  --k-popover-foreground: 220 30% 12%;
+  --k-sidebar: 220 25% 96%;
+  --k-primary: 206 100% 42%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 206 100% 37%;
+  --k-primary-soft: 206 80% 93%;
+  --k-secondary: 185 45% 90%;
+  --k-secondary-foreground: 185 45% 25%;
+  --k-secondary-hover: 185 45% 84%;
+  --k-muted: 210 20% 95%;
+  --k-muted-foreground: 220 15% 42%;
+  --k-accent: 262 40% 94%;
+  --k-accent-foreground: 262 45% 40%;
+  --k-destructive: 0 75% 45%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 75% 39%;
+  --k-border: 210 20% 88%;
+  --k-input: 210 20% 88%;
+  --k-ring: 206 100% 45%;
+  --k-info: 206 80% 94%;
+  --k-info-foreground: 206 90% 38%;
+  --k-radius: 0.375rem;
+}
+
+/* Auto dark — cool dark grays, luminous system blue. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 220 25% 10%;
+    --k-foreground: 210 25% 95%;
+    --k-card: 220 25% 13%;
+    --k-card-foreground: 210 25% 95%;
+    --k-popover: 220 25% 13%;
+    --k-popover-foreground: 210 25% 95%;
+    --k-sidebar: 220 25% 12%;
+    --k-primary: 206 90% 65%;
+    --k-primary-foreground: 220 40% 10%;
+    --k-primary-hover: 206 90% 72%;
+    --k-primary-soft: 206 50% 25%;
+    --k-secondary: 185 30% 24%;
+    --k-secondary-foreground: 185 40% 88%;
+    --k-secondary-hover: 185 30% 30%;
+    --k-muted: 220 22% 18%;
+    --k-muted-foreground: 215 18% 65%;
+    --k-accent: 262 30% 26%;
+    --k-accent-foreground: 262 45% 80%;
+    --k-destructive: 0 65% 50%;
+    --k-destructive-foreground: 0 0% 100%;
+    --k-destructive-hover: 0 65% 58%;
+    --k-border: 220 20% 25%;
+    --k-input: 220 20% 25%;
+    --k-ring: 206 90% 60%;
+    --k-info: 206 40% 24%;
+    --k-info-foreground: 206 70% 75%;
+  --k-radius: 0.375rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 220 25% 10%;
+  --k-foreground: 210 25% 95%;
+  --k-card: 220 25% 13%;
+  --k-card-foreground: 210 25% 95%;
+  --k-popover: 220 25% 13%;
+  --k-popover-foreground: 210 25% 95%;
+  --k-sidebar: 220 25% 12%;
+  --k-primary: 206 90% 65%;
+  --k-primary-foreground: 220 40% 10%;
+  --k-primary-hover: 206 90% 72%;
+  --k-primary-soft: 206 50% 25%;
+  --k-secondary: 185 30% 24%;
+  --k-secondary-foreground: 185 40% 88%;
+  --k-secondary-hover: 185 30% 30%;
+  --k-muted: 220 22% 18%;
+  --k-muted-foreground: 215 18% 65%;
+  --k-accent: 262 30% 26%;
+  --k-accent-foreground: 262 45% 80%;
+  --k-destructive: 0 65% 50%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 65% 58%;
+  --k-border: 220 20% 25%;
+  --k-input: 220 20% 25%;
+  --k-ring: 206 90% 60%;
+  --k-info: 206 40% 24%;
+  --k-info-foreground: 206 70% 75%;
+  --k-radius: 0.375rem;
+}
+
+/* Typography — Segoe-like humanist sans, compact but readable labels. */
+:root:root {
+  font-family: 'Segoe UI', Inter, ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* surface: actions */
+/* soft depth, light elevation on hover. */
+[k=button] {
+  border-radius: var(--k-radius);
+  transition: background-color 150ms ease, box-shadow 150ms ease;
+}
+[k=button]:hover {
+  box-shadow: 0 2px 8px hsl(var(--k-foreground) / 0.12);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=item][aria-selected=true] {
+  background: hsl(var(--k-accent));
+  color: hsl(var(--k-accent-foreground));
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 1px solid hsl(var(--k-border));
+  background: hsl(var(--k-background));
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 2px 8px hsl(var(--k-foreground) / 0.06);
+  background: hsl(var(--k-card));
+}
+[k=badge] {
+  border-radius: calc(var(--k-radius) * 2);
+  background: hsl(var(--k-primary-soft));
+  color: hsl(var(--k-primary));
+  font-weight: 500;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 0 3px hsl(var(--k-ring) / 0.15);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-muted));
+  border-radius: var(--k-radius);
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-card));
+  color: hsl(var(--k-primary));
+  box-shadow: 0 0 0 1px hsl(var(--k-border)), inset 0 -2px 0 hsl(var(--k-primary) / 0.6);
+  font-weight: 500;
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar) / 0.85);
+  backdrop-filter: blur(12px) saturate(1.4);
+}
+
+/* surface: layout */
+/* acrylic translucency where it floats. */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-popover) / 0.85);
+  backdrop-filter: blur(12px) saturate(1.4);
+  box-shadow: 0 8px 24px hsl(var(--k-foreground) / 0.1);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — luminous. */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

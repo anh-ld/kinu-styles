@@ -1,0 +1,231 @@
+/* kinu-styles: utopian-scholastic — Utopian Scholastic
+   Design rules: encyclopedic cabinet-of-curiosities layout, warm paper / sky blue / leaf green / sunny yellow / mineral red, specimen frames and ruled labels, classical book serif + clean labeling sans
+   Source trend: https://trends.daisyui.com/trend/utopian-scholastic/ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* Light — warm paper, sky-blue primary, leaf-green secondary, mineral-red accent. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 45 30% 96%;
+  --k-foreground: 220 25% 12%;
+  --k-card: 45 30% 99%;
+  --k-card-foreground: 220 25% 12%;
+  --k-popover: 45 30% 99%;
+  --k-popover-foreground: 220 25% 12%;
+  --k-sidebar: 45 25% 91%;
+  --k-primary: 205 80% 48%;
+  --k-primary-foreground: 45 30% 97%;
+  --k-primary-hover: 205 80% 42%;
+  --k-primary-soft: 205 70% 93%;
+  --k-secondary: 120 35% 40%;
+  --k-secondary-foreground: 45 30% 97%;
+  --k-secondary-hover: 120 35% 34%;
+  --k-muted: 45 20% 89%;
+  --k-muted-foreground: 220 15% 45%;
+  --k-accent: 10 65% 45%;
+  --k-accent-foreground: 45 30% 97%;
+  --k-destructive: 0 65% 42%;
+  --k-destructive-foreground: 45 30% 97%;
+  --k-destructive-hover: 0 65% 36%;
+  --k-border: 45 20% 80%;
+  --k-input: 45 20% 80%;
+  --k-ring: 205 80% 52%;
+  --k-info: 205 60% 94%;
+  --k-info-foreground: 205 80% 40%;
+  --k-radius: 0.5rem;
+}
+
+/* Auto dark — scholarly ink field, sunny sky and leaf accents. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 220 25% 8%;
+    --k-foreground: 45 25% 92%;
+    --k-card: 220 20% 10%;
+    --k-card-foreground: 45 25% 92%;
+    --k-popover: 220 20% 11%;
+    --k-popover-foreground: 45 25% 92%;
+    --k-sidebar: 220 30% 6%;
+    --k-primary: 205 85% 62%;
+    --k-primary-foreground: 220 25% 8%;
+    --k-primary-hover: 205 85% 68%;
+    --k-primary-soft: 205 55% 18%;
+    --k-secondary: 120 40% 55%;
+    --k-secondary-foreground: 220 25% 8%;
+    --k-secondary-hover: 120 40% 62%;
+    --k-muted: 220 18% 15%;
+    --k-muted-foreground: 45 15% 62%;
+    --k-accent: 10 70% 60%;
+    --k-accent-foreground: 220 25% 8%;
+    --k-destructive: 0 60% 55%;
+    --k-destructive-foreground: 220 25% 8%;
+    --k-destructive-hover: 0 60% 62%;
+    --k-border: 220 18% 20%;
+    --k-input: 220 18% 20%;
+    --k-ring: 205 85% 68%;
+    --k-info: 205 55% 18%;
+    --k-info-foreground: 205 85% 75%;
+  --k-radius: 0.5rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 220 25% 8%;
+  --k-foreground: 45 25% 92%;
+  --k-card: 220 20% 10%;
+  --k-card-foreground: 45 25% 92%;
+  --k-popover: 220 20% 11%;
+  --k-popover-foreground: 45 25% 92%;
+  --k-sidebar: 220 30% 6%;
+  --k-primary: 205 85% 62%;
+  --k-primary-foreground: 220 25% 8%;
+  --k-primary-hover: 205 85% 68%;
+  --k-primary-soft: 205 55% 18%;
+  --k-secondary: 120 40% 55%;
+  --k-secondary-foreground: 220 25% 8%;
+  --k-secondary-hover: 120 40% 62%;
+  --k-muted: 220 18% 15%;
+  --k-muted-foreground: 45 15% 62%;
+  --k-accent: 10 70% 60%;
+  --k-accent-foreground: 220 25% 8%;
+  --k-destructive: 0 60% 55%;
+  --k-destructive-foreground: 220 25% 8%;
+  --k-destructive-hover: 0 60% 62%;
+  --k-border: 220 18% 20%;
+  --k-input: 220 18% 20%;
+  --k-ring: 205 85% 68%;
+  --k-info: 205 55% 18%;
+  --k-info-foreground: 205 85% 75%;
+  --k-radius: 0.5rem;
+}
+
+/* Typography — classical book serif for reading, clean labeling sans for controls. */
+:root:root {
+  font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  font-size: 0.8125rem;
+}
+[k=button]:hover {
+  background: hsl(var(--k-secondary));
+  color: hsl(var(--k-secondary-foreground));
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 1px solid hsl(var(--k-border));
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.75rem;
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: 0 1px 3px hsl(var(--k-border) / 0.5);
+}
+[k=badge] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 1px solid hsl(var(--k-border));
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 0 2px hsl(var(--k-ring) / 0.3);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  font-size: 0.8125rem;
+}
+[k=tab][aria-selected=true] {
+  box-shadow: inset 0 -2px 0 hsl(var(--k-primary));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-popover));
+  box-shadow: 0 4px 16px hsl(var(--k-border) / 0.5);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

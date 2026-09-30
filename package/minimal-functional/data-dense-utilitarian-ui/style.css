@@ -1,0 +1,243 @@
+/* kinu-styles: data-dense-utilitarian-ui — Data-Dense Utilitarian UI
+   Design rules: compact spacing, dense tables, aligned numerals, visible gridlines, restrained palette, utilitarian controls, mono for values
+   Source trend: https://trends.daisyui.com/trend/data-dense-utilitarian-ui/ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* Light — cool white, blue-gray and gray surfaces, subdued analytical blue. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 210 25% 98%;
+  --k-foreground: 215 25% 15%;
+  --k-card: 0 0% 100%;
+  --k-card-foreground: 215 25% 15%;
+  --k-popover: 0 0% 100%;
+  --k-popover-foreground: 215 25% 15%;
+  --k-sidebar: 210 20% 96%;
+  --k-primary: 215 60% 42%;
+  --k-primary-foreground: 0 0% 100%;
+  --k-primary-hover: 215 60% 36%;
+  --k-primary-soft: 215 55% 92%;
+  --k-secondary: 190 30% 90%;
+  --k-secondary-foreground: 190 35% 25%;
+  --k-secondary-hover: 190 30% 85%;
+  --k-muted: 210 20% 95%;
+  --k-muted-foreground: 215 15% 45%;
+  --k-accent: 210 25% 90%;
+  --k-accent-foreground: 215 25% 30%;
+  --k-destructive: 0 70% 50%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 70% 44%;
+  --k-border: 214 20% 84%;
+  --k-input: 214 20% 84%;
+  --k-ring: 215 60% 50%;
+  --k-info: 215 60% 94%;
+  --k-info-foreground: 215 70% 40%;
+  --k-radius: 0.125rem;
+}
+
+/* Auto dark — cool dark grays, lighter analytical blue. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 215 30% 9%;
+    --k-foreground: 210 25% 93%;
+    --k-card: 215 30% 11%;
+    --k-card-foreground: 210 25% 93%;
+    --k-popover: 215 30% 12%;
+    --k-popover-foreground: 210 25% 93%;
+    --k-sidebar: 215 32% 8%;
+    --k-primary: 215 60% 62%;
+    --k-primary-foreground: 215 40% 10%;
+    --k-primary-hover: 215 60% 68%;
+    --k-primary-soft: 215 45% 22%;
+    --k-secondary: 190 25% 22%;
+    --k-secondary-foreground: 190 30% 88%;
+    --k-secondary-hover: 190 25% 28%;
+    --k-muted: 215 22% 17%;
+    --k-muted-foreground: 215 18% 65%;
+    --k-accent: 215 25% 22%;
+    --k-accent-foreground: 210 25% 90%;
+    --k-destructive: 0 65% 55%;
+    --k-destructive-foreground: 0 0% 100%;
+    --k-destructive-hover: 0 65% 62%;
+    --k-border: 215 22% 24%;
+    --k-input: 215 22% 24%;
+    --k-ring: 215 55% 60%;
+    --k-info: 215 40% 22%;
+    --k-info-foreground: 215 60% 75%;
+  --k-radius: 0.125rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 215 30% 9%;
+  --k-foreground: 210 25% 93%;
+  --k-card: 215 30% 11%;
+  --k-card-foreground: 210 25% 93%;
+  --k-popover: 215 30% 12%;
+  --k-popover-foreground: 210 25% 93%;
+  --k-sidebar: 215 32% 8%;
+  --k-primary: 215 60% 62%;
+  --k-primary-foreground: 215 40% 10%;
+  --k-primary-hover: 215 60% 68%;
+  --k-primary-soft: 215 45% 22%;
+  --k-secondary: 190 25% 22%;
+  --k-secondary-foreground: 190 30% 88%;
+  --k-secondary-hover: 190 25% 28%;
+  --k-muted: 215 22% 17%;
+  --k-muted-foreground: 215 18% 65%;
+  --k-accent: 215 25% 22%;
+  --k-accent-foreground: 210 25% 90%;
+  --k-destructive: 0 65% 55%;
+  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-hover: 0 65% 62%;
+  --k-border: 215 22% 24%;
+  --k-input: 215 22% 24%;
+  --k-ring: 215 55% 60%;
+  --k-info: 215 40% 22%;
+  --k-info-foreground: 215 60% 75%;
+  --k-radius: 0.125rem;
+}
+
+/* Typography — condensed-feel sans for labels, mono for values. */
+:root:root {
+  font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* surface: actions */
+/* compact, flat, no elevation. */
+[k=button] {
+  border-radius: var(--k-radius);
+  font-size: 0.875em;
+  font-weight: 500;
+  transition: background-color 100ms ease;
+  box-shadow: none;
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=item][aria-selected=true] {
+  background: hsl(var(--k-primary-soft));
+  color: hsl(var(--k-primary));
+  font-weight: 500;
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+  font-size: 0.8em;
+}
+
+/* surface: data display */
+/* visible gridlines, aligned numerals. */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: none;
+  background: hsl(var(--k-card));
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.75em;
+  letter-spacing: 0.04em;
+  border: 1px solid hsl(var(--k-border));
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.875em;
+  font-variant-numeric: tabular-nums;
+}
+[k=table] th, [k=table] td {
+  border: 1px solid hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-muted));
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: none;
+  font-variant-numeric: tabular-nums;
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: none;
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.8125em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+  border-radius: var(--k-radius);
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  font-size: 0.875em;
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.75em;
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+  border-bottom: 1px solid hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: 0;
+  font-size: 0.875em;
+}
+[k=tab][aria-selected=true] {
+  box-shadow: inset 0 -2px 0 hsl(var(--k-primary));
+  color: hsl(var(--k-primary));
+  font-weight: 500;
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: none;
+  background: hsl(var(--k-popover));
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+}

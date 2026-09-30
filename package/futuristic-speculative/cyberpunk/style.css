@@ -1,0 +1,264 @@
+/* kinu-styles: cyberpunk — Cyberpunk
+   Design rules: dense dark interfaces, dirty blue-gray base, neon cyan/magenta/acid-green signals, glitch accents, scanlines, clipped panels and angular brackets, terminal typography
+   Source trend: https://trends.daisyui.com/trend/cyberpunk/ */
+
+/* Fonts — the @import MUST stay the first rule (R6, KTD4). */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Share+Tech+Mono&display=swap');
+
+/* Light — daytime sector: pale blue-gray, hard cyan and magenta signals. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 220 30% 96%;
+  --k-foreground: 220 60% 12%;
+  --k-card: 220 30% 98%;
+  --k-card-foreground: 220 60% 12%;
+  --k-popover: 220 30% 99%;
+  --k-popover-foreground: 220 60% 12%;
+  --k-sidebar: 220 25% 92%;
+  --k-primary: 190 95% 45%;
+  --k-primary-foreground: 190 60% 8%;
+  --k-primary-hover: 190 95% 38%;
+  --k-primary-soft: 190 80% 90%;
+  --k-secondary: 300 80% 50%;
+  --k-secondary-foreground: 300 50% 97%;
+  --k-secondary-hover: 300 80% 44%;
+  --k-muted: 220 25% 90%;
+  --k-muted-foreground: 220 20% 45%;
+  --k-accent: 90 90% 40%;
+  --k-accent-foreground: 90 50% 96%;
+  --k-destructive: 0 75% 50%;
+  --k-destructive-foreground: 0 40% 98%;
+  --k-destructive-hover: 0 75% 44%;
+  --k-border: 220 20% 80%;
+  --k-input: 220 20% 80%;
+  --k-ring: 190 95% 50%;
+  --k-info: 220 50% 90%;
+  --k-info-foreground: 220 60% 35%;
+  --k-radius: 0rem;
+}
+
+/* Auto dark — dirty blue-gray to black, neon cyan primary, magenta secondary. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 220 35% 5%;
+    --k-foreground: 200 40% 92%;
+    --k-card: 220 30% 8%;
+    --k-card-foreground: 200 40% 92%;
+    --k-popover: 220 30% 9%;
+    --k-popover-foreground: 200 40% 92%;
+    --k-sidebar: 220 40% 4%;
+    --k-primary: 190 100% 50%;
+    --k-primary-foreground: 190 70% 6%;
+    --k-primary-hover: 190 100% 44%;
+    --k-primary-soft: 190 60% 15%;
+    --k-secondary: 300 90% 60%;
+    --k-secondary-foreground: 300 50% 6%;
+    --k-secondary-hover: 300 90% 54%;
+    --k-muted: 220 30% 13%;
+    --k-muted-foreground: 220 20% 58%;
+    --k-accent: 90 95% 50%;
+    --k-accent-foreground: 90 70% 6%;
+    --k-destructive: 0 85% 55%;
+    --k-destructive-foreground: 0 40% 98%;
+    --k-destructive-hover: 0 85% 48%;
+    --k-border: 220 30% 18%;
+    --k-input: 220 30% 18%;
+    --k-ring: 190 100% 55%;
+    --k-info: 220 40% 14%;
+    --k-info-foreground: 200 80% 70%;
+  --k-radius: 0rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 220 35% 5%;
+  --k-foreground: 200 40% 92%;
+  --k-card: 220 30% 8%;
+  --k-card-foreground: 200 40% 92%;
+  --k-popover: 220 30% 9%;
+  --k-popover-foreground: 200 40% 92%;
+  --k-sidebar: 220 40% 4%;
+  --k-primary: 190 100% 50%;
+  --k-primary-foreground: 190 70% 6%;
+  --k-primary-hover: 190 100% 44%;
+  --k-primary-soft: 190 60% 15%;
+  --k-secondary: 300 90% 60%;
+  --k-secondary-foreground: 300 50% 6%;
+  --k-secondary-hover: 300 90% 54%;
+  --k-muted: 220 30% 13%;
+  --k-muted-foreground: 220 20% 58%;
+  --k-accent: 90 95% 50%;
+  --k-accent-foreground: 90 70% 6%;
+  --k-destructive: 0 85% 55%;
+  --k-destructive-foreground: 0 40% 98%;
+  --k-destructive-hover: 0 85% 48%;
+  --k-border: 220 30% 18%;
+  --k-input: 220 30% 18%;
+  --k-ring: 190 100% 55%;
+  --k-info: 220 40% 14%;
+  --k-info-foreground: 200 80% 70%;
+  --k-radius: 0rem;
+}
+
+/* Typography — condensed technical heads, monospace data body. */
+:root:root {
+  font-family: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Rajdhani, 'Share Tech Mono', ui-sans-serif, system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: var(--k-radius);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.5rem), calc(100% - 0.5rem) 100%, 0 100%);
+  font-family: 'Share Tech Mono', ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: box-shadow 150ms ease, text-shadow 150ms ease, background-color 150ms ease;
+}
+[k=button]:hover {
+  box-shadow: 0 0 10px hsl(var(--k-primary) / 0.6), 0 0 24px hsl(var(--k-primary) / 0.3);
+  text-shadow: 1px 0 hsl(var(--k-secondary) / 0.7), -1px 0 hsl(var(--k-accent) / 0.7);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+  font-family: 'Share Tech Mono', ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  clip-path: polygon(0.5rem 0, 100% 0, 100% calc(100% - 0.5rem), calc(100% - 0.5rem) 100%, 0 100%);
+  background: hsl(var(--k-card) / 0.88);
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 0 0 1px hsl(var(--k-border) / 0.4);
+}
+[k=badge] {
+  border-radius: var(--k-radius);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75em;
+  border: 1px solid hsl(var(--k-border));
+  box-shadow: 0 0 6px hsl(var(--k-secondary) / 0.35);
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: linear-gradient(90deg, hsl(var(--k-muted)) 25%, hsl(var(--k-primary) / 0.18) 50%, hsl(var(--k-muted)) 75%);
+  background-size: 200% 100%;
+  animation: k-cyber-glitch 1.4s linear infinite;
+}
+@keyframes k-cyber-glitch {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-background));
+  box-shadow: inset 0 0 0 1px hsl(0 0% 0% / 0.3), inset 0 2px 6px hsl(0 0% 0% / 0.4);
+  font-family: 'Share Tech Mono', ui-monospace, monospace;
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: inset 0 0 0 1px hsl(var(--k-ring) / 0.5), 0 0 12px hsl(var(--k-ring) / 0.4);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+  font-family: 'Share Tech Mono', ui-monospace, monospace;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+  border-radius: 0.125rem;
+}
+[k=checkbox]:checked, [k=radio]:checked {
+  box-shadow: 0 0 8px hsl(var(--k-primary) / 0.5);
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  border-left: 3px solid hsl(var(--k-info-foreground));
+  background: hsl(var(--k-card));
+}
+[k=alert][data-variant=destructive] {
+  border-left-color: hsl(var(--k-destructive));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+  font-family: 'Share Tech Mono', ui-monospace, monospace;
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: var(--k-radius);
+  font-family: 'Share Tech Mono', ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 0 -2px 0 hsl(var(--k-primary)), 0 0 12px hsl(var(--k-primary) / 0.3);
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-popover) / 0.92);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px hsl(0 0% 0% / 0.5), 0 0 16px hsl(var(--k-primary) / 0.15);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Clip-paths release on focus so the neon ring stays visible. */
+[k=button]:focus-visible, [k=chip-button]:focus-visible, [k=tab]:focus-visible {
+  clip-path: none;
+}
+
+/* Focus ring — hard neon signal. */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 0 0 12px hsl(var(--k-ring) / 0.5);
+}

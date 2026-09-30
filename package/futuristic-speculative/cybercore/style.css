@@ -1,0 +1,238 @@
+/* kinu-styles: cybercore — Cybercore
+   Design rules: 2020s nostalgia remix of late-90s/early-00s digital culture — saturated cobalt and electric blue, chrome silver, deep violet, harsh white, pastel pink; legacy window frames, orbital rings, translucent discs, retro-anime edits
+   Source trend: https://trends.daisyui.com/trend/cybercore/ */
+
+/* Fonts — the @import MUST stay the first rule (R6, KTD4). */
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Oxanium:wght@600;700&display=swap');
+
+/* Light — canonical cybercore: harsh white and ice gray, electric cobalt, pastel pink. */
+:root:root:not([data-color-scheme=dark]),
+[data-color-scheme=light] {
+  color-scheme: light;
+  --k-background: 220 30% 98%;
+  --k-foreground: 225 50% 12%;
+  --k-card: 220 35% 100%;
+  --k-card-foreground: 225 50% 12%;
+  --k-popover: 220 35% 100%;
+  --k-popover-foreground: 225 50% 12%;
+  --k-sidebar: 220 25% 94%;
+  --k-primary: 225 95% 55%;
+  --k-primary-foreground: 225 60% 98%;
+  --k-primary-hover: 225 95% 48%;
+  --k-primary-soft: 225 70% 92%;
+  --k-secondary: 300 55% 75%;
+  --k-secondary-foreground: 300 50% 25%;
+  --k-secondary-hover: 300 55% 68%;
+  --k-muted: 220 20% 92%;
+  --k-muted-foreground: 225 15% 48%;
+  --k-accent: 265 60% 60%;
+  --k-accent-foreground: 265 40% 97%;
+  --k-destructive: 0 65% 50%;
+  --k-destructive-foreground: 0 40% 98%;
+  --k-destructive-hover: 0 65% 44%;
+  --k-border: 220 25% 85%;
+  --k-input: 220 25% 85%;
+  --k-ring: 225 95% 60%;
+  --k-info: 225 60% 94%;
+  --k-info-foreground: 225 80% 40%;
+  --k-radius: 1rem;
+}
+
+/* Auto dark — deep violet night mode, electric blue glow. */
+@media (prefers-color-scheme: dark) {
+  :root:root:not([data-color-scheme]) {
+    color-scheme: dark;
+    --k-background: 235 40% 8%;
+    --k-foreground: 220 40% 94%;
+    --k-card: 235 35% 11%;
+    --k-card-foreground: 220 40% 94%;
+    --k-popover: 235 35% 12%;
+    --k-popover-foreground: 220 40% 94%;
+    --k-sidebar: 235 45% 6%;
+    --k-primary: 225 100% 60%;
+    --k-primary-foreground: 225 70% 6%;
+    --k-primary-hover: 225 100% 54%;
+    --k-primary-soft: 225 60% 20%;
+    --k-secondary: 300 60% 70%;
+    --k-secondary-foreground: 300 60% 15%;
+    --k-secondary-hover: 300 60% 64%;
+    --k-muted: 235 30% 16%;
+    --k-muted-foreground: 225 20% 60%;
+    --k-accent: 265 70% 70%;
+    --k-accent-foreground: 265 50% 10%;
+    --k-destructive: 0 70% 55%;
+    --k-destructive-foreground: 0 40% 96%;
+    --k-destructive-hover: 0 70% 48%;
+    --k-border: 235 30% 22%;
+    --k-input: 235 30% 22%;
+    --k-ring: 225 100% 65%;
+    --k-info: 235 40% 18%;
+    --k-info-foreground: 220 90% 75%;
+  --k-radius: 1rem;
+  }
+}
+
+/* Explicit dark */
+[data-color-scheme=dark] {
+  color-scheme: dark;
+  --k-background: 235 40% 8%;
+  --k-foreground: 220 40% 94%;
+  --k-card: 235 35% 11%;
+  --k-card-foreground: 220 40% 94%;
+  --k-popover: 235 35% 12%;
+  --k-popover-foreground: 220 40% 94%;
+  --k-sidebar: 235 45% 6%;
+  --k-primary: 225 100% 60%;
+  --k-primary-foreground: 225 70% 6%;
+  --k-primary-hover: 225 100% 54%;
+  --k-primary-soft: 225 60% 20%;
+  --k-secondary: 300 60% 70%;
+  --k-secondary-foreground: 300 60% 15%;
+  --k-secondary-hover: 300 60% 64%;
+  --k-muted: 235 30% 16%;
+  --k-muted-foreground: 225 20% 60%;
+  --k-accent: 265 70% 70%;
+  --k-accent-foreground: 265 50% 10%;
+  --k-destructive: 0 70% 55%;
+  --k-destructive-foreground: 0 40% 96%;
+  --k-destructive-hover: 0 70% 48%;
+  --k-border: 235 30% 22%;
+  --k-input: 235 30% 22%;
+  --k-ring: 225 100% 65%;
+  --k-info: 235 40% 18%;
+  --k-info-foreground: 220 90% 75%;
+  --k-radius: 1rem;
+}
+
+/* Typography — narrow techno heads, pixel accent labels, clean sans body. */
+:root:root {
+  font-family: 'Oxanium', ui-sans-serif, system-ui, sans-serif;
+}
+:where(h1, h2, h3, h4) {
+  font-family: Oxanium, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* surface: actions */
+[k=button] {
+  border-radius: calc(var(--k-radius) * 0.8);
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.6), 0 1px 3px hsl(var(--k-border) / 0.6);
+  transition: box-shadow 200ms ease, background-color 200ms ease;
+}
+[k=button]:hover {
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.6), 0 0 12px hsl(var(--k-primary) / 0.45);
+}
+[k=item] {
+  border-radius: var(--k-radius);
+}
+[k=chip], [k=chip-button] {
+  border-radius: calc(var(--k-radius) * 2);
+  border: 1px solid hsl(var(--k-border));
+  background: hsl(var(--k-card));
+  font-family: 'DotGothic16', 'Oxanium', monospace;
+  letter-spacing: 0.04em;
+}
+
+/* surface: data display */
+[k=card] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.65), 0 2px 10px hsl(var(--k-primary) / 0.12);
+}
+[k=badge] {
+  border-radius: calc(var(--k-radius) * 2);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1px solid hsl(var(--k-border));
+  font-family: 'DotGothic16', 'Oxanium', monospace;
+}
+[k=table] {
+  border-color: hsl(var(--k-border));
+}
+[k=skeleton] {
+  border-radius: var(--k-radius);
+  background: linear-gradient(90deg, hsl(var(--k-muted)) 25%, hsl(0 0% 100% / 0.7) 50%, hsl(var(--k-muted)) 75%);
+  background-size: 200% 100%;
+  animation: k-core-shimmer 2.4s ease-in-out infinite;
+}
+@keyframes k-core-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* surface: data input */
+[k=input], [k=textarea], [k=select], [k=combobox-input], [k=listbox-input] {
+  border: 1px solid hsl(var(--k-input));
+  border-radius: var(--k-radius);
+  background: hsl(var(--k-card));
+  box-shadow: inset 0 1px 2px hsl(0 0% 0% / 0.06);
+}
+[k=input]:focus, [k=textarea]:focus, [k=select]:focus {
+  border-color: hsl(var(--k-ring));
+  box-shadow: 0 0 0 1px hsl(var(--k-ring) / 0.3), 0 0 10px hsl(var(--k-ring) / 0.25);
+}
+[k=field-description] {
+  color: hsl(var(--k-muted-foreground));
+  font-size: 0.875em;
+}
+[k=checkbox], [k=radio], [k=switch] {
+  border-color: hsl(var(--k-input));
+}
+
+/* surface: feedback */
+[k=alert] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  border-top: 3px solid hsl(var(--k-primary));
+  background: hsl(var(--k-card));
+}
+[k=alert][data-variant=destructive] {
+  border-top-color: hsl(var(--k-destructive));
+}
+[k=tooltip] {
+  background: hsl(var(--k-foreground));
+  color: hsl(var(--k-background));
+  border-radius: var(--k-radius);
+  border: 1px solid hsl(var(--k-border));
+}
+
+/* surface: navigation */
+[k=tablist] {
+  border-color: hsl(var(--k-border));
+}
+[k=tab] {
+  border-radius: calc(var(--k-radius) * 0.8);
+}
+[k=tab][aria-selected=true] {
+  background: hsl(var(--k-muted));
+  box-shadow: inset 0 -2px 0 hsl(var(--k-primary));
+}
+[k=breadcrumb-link] {
+  color: hsl(var(--k-muted-foreground));
+}
+[k=sidebar] {
+  border-color: hsl(var(--k-border));
+  background: hsl(var(--k-sidebar));
+}
+
+/* surface: layout */
+[k=separator] {
+  background: hsl(var(--k-border));
+}
+[k=popover] {
+  border: 1px solid hsl(var(--k-border));
+  border-radius: var(--k-radius);
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.6), 0 6px 20px hsl(var(--k-primary) / 0.18);
+}
+[k=scroll-area] {
+  border-radius: var(--k-radius);
+}
+
+/* Focus ring — electric cobalt. */
+[k]:focus-visible {
+  outline: 2px solid hsl(var(--k-ring));
+  outline-offset: 2px;
+  box-shadow: 0 0 8px hsl(var(--k-ring) / 0.4);
+}
