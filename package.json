@@ -11,11 +11,11 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "dev": "(bun -e \"const fs=require('node:fs'),p='package';const t={};for(const c of fs.readdirSync(p))for(const s of fs.readdirSync(p+'/'+c)){const d=p+'/'+c+'/'+s;if(fs.existsSync(d+'/style.css'))t[s]={category:c,css:fs.readFileSync(d+'/style.css','utf8'),spec:fs.readFileSync(d+'/spec.md','utf8')}};fs.writeFileSync('portal/src/themes.json',JSON.stringify(t))\" && bun build --watch portal/index.html --outdir dist) & bun --hot serve.ts",
-    "build:lib": "rm -rf lib && mkdir lib && for f in package/*/*/style.css; do cp \"$f\" \"lib/$(basename \"$(dirname \"$f\")\").css\"; done && bun -e \"const fs=require('node:fs'),p='package';const t={};for(const c of fs.readdirSync(p))for(const s of fs.readdirSync(p+'/'+c)){const d=p+'/'+c+'/'+s;if(fs.existsSync(d+'/style.css'))t[s]={category:c,css:fs.readFileSync(d+'/style.css','utf8'),spec:fs.readFileSync(d+'/spec.md','utf8')}};fs.writeFileSync('portal/src/themes.json',JSON.stringify(t))\"",
+    "dev": "(bun run gen && bun build --watch portal/index.html --outdir dist) & bun --hot serve.ts",
+    "gen": "for f in package/*/*/style.css;do d=${f%/*};c=${d%/*};c=${c##*/};jq -n --arg s \"${d##*/}\" --arg c \"$c\" --rawfile css \"$f\" --rawfile sp \"$d/spec.md\" '{($s):{category:$c,css:$css,spec:$sp}}';done|jq -s add > portal/src/themes.json",
+    "build:lib": "rm -rf lib && mkdir lib && for f in package/*/*/style.css;do d=${f%/*};cp \"$f\" \"lib/${d##*/}.css\";done && bun run gen",
     "build:portal": "rm -rf dist && bun build portal/index.html --outdir dist",
-    "build": "bun run build:lib && bun run build:portal",
-    "preview": "bun serve.ts"
+    "build": "bun run build:lib && bun run build:portal"
   },
   "keywords": [
     "kinu",

@@ -6,3 +6,5 @@ dist/
 lib/
 *.tgz
 .DS_Storeportal/src/themes.json
+
+portal/src/themes.json
