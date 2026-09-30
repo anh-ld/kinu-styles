@@ -1,0 +1,22 @@
+/* kinu-styles compat fixes — appended to every theme at build time.
+   Corrects kinu 0.1.x rendering bugs that affect any consumer. */
+
+/* kinu's side=left/right tooltips set --k-to: 0 (unitless); the hover
+   transform calc(var(--k-tt) + var(--k-to)) then computes to calc(-50% + 0),
+   which Chrome rejects, so the bubble overlaps its trigger. Reapply the
+   intended transform with valid values. */
+[k=tooltip][side="left"][title]:hover::after,
+[k=tooltip][side="left"][title]:focus::after {
+  transform: translate(-100%, -50%);
+}
+[k=tooltip][side="right"][title]:hover::after,
+[k=tooltip][side="right"][title]:focus::after {
+  transform: translate(0, -50%);
+}
+
+/* kinu paints the selected tab via an anchored ::before pill; every
+   kinu-styles theme paints [k=tab][aria-selected=true] itself, so the pill
+   behind it reads as a double box. Hide it. */
+[k=tablist]:has([k=tab][aria-selected=true]):before {
+  display: none;
+}

@@ -12,8 +12,8 @@
   },
   "scripts": {
     "dev": "(bun run gen && bun build --watch portal/index.html --outdir dist) & bun --hot serve.ts",
-    "gen": "for f in package/*/*/style.css;do d=${f%/*};c=${d%/*};c=${c##*/};jq -n --arg s \"${d##*/}\" --arg c \"$c\" --rawfile css \"$f\" --rawfile sp \"$d/spec.md\" '{($s):{category:$c,css:$css,spec:$sp}}';done|jq -s add > portal/src/themes.json",
-    "build:lib": "rm -rf lib && mkdir lib && for f in package/*/*/style.css;do d=${f%/*};cp \"$f\" \"lib/${d##*/}.css\";done && bun run gen",
+    "gen": "for f in package/*/*/style.css;do d=${f%/*};c=${d%/*};c=${c##*/};css=\"$(cat \"$f\" package/_compat.css)\";jq -n --arg s \"${d##*/}\" --arg c \"$c\" --arg css \"$css\" --rawfile sp \"$d/spec.md\" '{($s):{category:$c,css:$css,spec:$sp}}';done|jq -s add > portal/src/themes.json",
+    "build:lib": "rm -rf lib && mkdir lib && for f in package/*/*/style.css;do d=${f%/*};cat \"$f\" package/_compat.css > \"lib/${d##*/}.css\";done && bun run gen",
     "build:portal": "rm -rf dist && bun build portal/index.html --outdir dist",
     "build": "bun run build:lib && bun run build:portal"
   },
