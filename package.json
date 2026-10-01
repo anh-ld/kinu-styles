@@ -31,6 +31,9 @@
   "engines": {
     "bun": ">=1"
   },
+  "peerDependencies": {
+    "kinu": "^0.1.4"
+  },
   "devDependencies": {
     "kinu": "0.1.4",
     "preact": "10.29.8"
