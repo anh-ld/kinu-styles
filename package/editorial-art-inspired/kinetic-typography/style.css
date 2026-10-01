@@ -63,8 +63,8 @@
     --k-ring: 320 95% 68%;
     --k-info: 190 45% 22%;
     --k-info-foreground: 190 90% 75%;
-  --k-radius: 0rem;
-  }
+    --k-radius: 0rem;
+    }
 }
 
 /* Explicit dark */

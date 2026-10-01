@@ -54,7 +54,7 @@
     --k-muted: 30 20% 17%;
     --k-muted-foreground: 40 12% 60%;
     --k-accent: 45 25% 55%;
-    --k-accent-foreground: 45 30% 85%;
+    --k-accent-foreground: 45 35% 12%;
     --k-destructive: 10 40% 45%;
     --k-destructive-foreground: 40 35% 96%;
     --k-destructive-hover: 10 40% 52%;
@@ -63,8 +63,8 @@
     --k-ring: 40 30% 60%;
     --k-info: 30 25% 18%;
     --k-info-foreground: 40 30% 75%;
-  --k-radius: 0.125rem;
-  }
+    --k-radius: 0.125rem;
+    }
 }
 
 /* Explicit dark */
@@ -87,7 +87,7 @@
   --k-muted: 30 20% 17%;
   --k-muted-foreground: 40 12% 60%;
   --k-accent: 45 25% 55%;
-  --k-accent-foreground: 45 30% 85%;
+  --k-accent-foreground: 45 35% 12%;
   --k-destructive: 10 40% 45%;
   --k-destructive-foreground: 40 35% 96%;
   --k-destructive-hover: 10 40% 52%;

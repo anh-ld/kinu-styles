@@ -63,8 +63,8 @@
     --k-ring: 38 90% 60%;
     --k-info: 185 40% 20%;
     --k-info-foreground: 185 50% 75%;
-  --k-radius: 0.5rem;
-  }
+    --k-radius: 0.5rem;
+    }
 }
 
 /* Explicit dark */
@@ -187,7 +187,7 @@
 }
 [k=tab][aria-selected=true] {
   background: hsl(var(--k-primary-soft));
-  color: hsl(var(--k-primary-foreground));
+  color: hsl(var(--k-foreground));
 }
 [k=breadcrumb-link] {
   color: hsl(var(--k-muted-foreground));

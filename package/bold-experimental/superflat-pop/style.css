@@ -16,7 +16,7 @@
   --k-primary-hover: 340 85% 48%;
   --k-primary-soft: 340 80% 92%;
   --k-secondary: 190 95% 48%;
-  --k-secondary-foreground: 0 0% 100%;
+  --k-secondary-foreground: 190 60% 8%;
   --k-secondary-hover: 190 95% 42%;
   --k-muted: 200 20% 94%;
   --k-muted-foreground: 260 15% 45%;
@@ -63,8 +63,8 @@
     --k-ring: 340 90% 65%;
     --k-info: 190 80% 22%;
     --k-info-foreground: 190 95% 72%;
-  --k-radius: 1rem;
-  }
+    --k-radius: 1rem;
+    }
 }
 
 /* Explicit dark */
@@ -114,6 +114,7 @@
   border-radius: var(--k-radius);
   border: 2px solid hsl(var(--k-foreground));
   background: hsl(var(--k-card));
+  color: hsl(var(--k-foreground));
   transition: background-color 150ms ease, color 150ms ease;
 }
 [k=button]:hover {

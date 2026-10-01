@@ -13,7 +13,7 @@
   --k-popover-foreground: 280 60% 15%;
   --k-sidebar: 280 30% 93%;
   --k-primary: 85 90% 40%;
-  --k-primary-foreground: 85 50% 97%;
+  --k-primary-foreground: 85 50% 8%;
   --k-primary-hover: 85 90% 34%;
   --k-primary-soft: 85 70% 90%;
   --k-secondary: 190 95% 45%;
@@ -64,8 +64,8 @@
     --k-ring: 85 100% 60%;
     --k-info: 270 40% 16%;
     --k-info-foreground: 285 80% 75%;
-  --k-radius: 1.5rem;
-  }
+    --k-radius: 1.5rem;
+    }
 }
 
 /* Explicit dark */

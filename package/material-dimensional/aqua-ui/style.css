@@ -16,7 +16,7 @@
   --k-primary-hover: 205 85% 45%;
   --k-primary-soft: 205 60% 90%;
   --k-secondary: 185 75% 45%;
-  --k-secondary-foreground: 190 60% 95%;
+  --k-secondary-foreground: 190 60% 10%;
   --k-secondary-hover: 185 75% 38%;
   --k-muted: 210 30% 92%;
   --k-muted-foreground: 220 15% 45%;
@@ -49,7 +49,7 @@
     --k-primary-hover: 205 90% 48%;
     --k-primary-soft: 205 60% 28%;
     --k-secondary: 185 80% 50%;
-    --k-secondary-foreground: 190 60% 95%;
+    --k-secondary-foreground: 190 60% 8%;
     --k-secondary-hover: 185 80% 43%;
     --k-muted: 220 25% 26%;
     --k-muted-foreground: 215 15% 62%;
@@ -63,8 +63,8 @@
     --k-ring: 205 90% 60%;
     --k-info: 200 50% 28%;
     --k-info-foreground: 200 85% 70%;
-  --k-radius: 1rem;
-  }
+    --k-radius: 1rem;
+    }
 }
 
 /* Explicit dark */
@@ -82,7 +82,7 @@
   --k-primary-hover: 205 90% 48%;
   --k-primary-soft: 205 60% 28%;
   --k-secondary: 185 80% 50%;
-  --k-secondary-foreground: 190 60% 95%;
+  --k-secondary-foreground: 190 60% 8%;
   --k-secondary-hover: 185 80% 43%;
   --k-muted: 220 25% 26%;
   --k-muted-foreground: 215 15% 62%;

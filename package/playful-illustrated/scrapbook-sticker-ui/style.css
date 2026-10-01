@@ -63,8 +63,8 @@
     --k-ring: 345 60% 66%;
     --k-info: 200 45% 22%;
     --k-info-foreground: 200 70% 72%;
-  --k-radius: 1rem;
-  }
+    --k-radius: 1rem;
+    }
 }
 
 /* Explicit dark */
@@ -126,7 +126,7 @@
   background: hsl(var(--k-primary-soft));
 }
 [k=chip], [k=chip-button] {
-  border-radius: calc(var(--k-radius) * 2);
+  border-radius: calc(var(--k-radius) * 1.5);
   border: 2px dashed hsl(var(--k-border));
   font-family: 'Patrick Hand', cursive;
 }
@@ -139,7 +139,7 @@
   box-shadow: 3px 3px 0 hsl(var(--k-foreground) / 0.9);
 }
 [k=badge] {
-  border-radius: calc(var(--k-radius) * 2);
+  border-radius: calc(var(--k-radius) * 1.5);
   border: 2px solid hsl(var(--k-foreground));
   font-family: 'Patrick Hand', cursive;
   font-size: 0.875em;

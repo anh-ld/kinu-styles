@@ -63,8 +63,8 @@
     --k-ring: 152 55% 60%;
     --k-info: 170 45% 20%;
     --k-info-foreground: 170 55% 75%;
-  --k-radius: 1.5rem;
-  }
+    --k-radius: 1.5rem;
+    }
 }
 
 /* Explicit dark */
@@ -159,7 +159,12 @@
 }
 [k=checkbox], [k=radio], [k=switch] {
   border-color: hsl(var(--k-input));
-  border-radius: 0.375rem;
+}
+[k=checkbox] {
+  border-radius: var(--k-radius);
+}
+[k=radio], [k=switch] {
+  border-radius: 9999px;
 }
 
 /* surface: feedback */

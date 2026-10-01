@@ -21,7 +21,7 @@
   --k-muted: 230 15% 91%;
   --k-muted-foreground: 240 15% 48%;
   --k-accent: 90 70% 50%;
-  --k-accent-foreground: 90 60% 96%;
+  --k-accent-foreground: 90 60% 10%;
   --k-destructive: 0 70% 52%;
   --k-destructive-foreground: 0 45% 97%;
   --k-destructive-hover: 0 70% 45%;
@@ -63,8 +63,8 @@
     --k-ring: 300 75% 72%;
     --k-info: 250 30% 16%;
     --k-info-foreground: 280 85% 80%;
-  --k-radius: 0.75rem;
-  }
+    --k-radius: 0.75rem;
+    }
 }
 
 /* Explicit dark */

@@ -63,8 +63,8 @@
     --k-ring: 222 90% 62%;
     --k-info: 200 50% 22%;
     --k-info-foreground: 200 70% 72%;
-  --k-radius: 1rem;
-  }
+    --k-radius: 1rem;
+    }
 }
 
 /* Explicit dark */
@@ -125,7 +125,7 @@
   background: hsl(var(--k-secondary) / 0.5);
 }
 [k=chip], [k=chip-button] {
-  border-radius: calc(var(--k-radius) * 2);
+  border-radius: calc(var(--k-radius) * 1.5);
   background: hsl(var(--k-secondary) / 0.45);
 }
 
@@ -137,7 +137,7 @@
   box-shadow: 0 2px 8px hsl(var(--k-border) / 0.5);
 }
 [k=badge] {
-  border-radius: calc(var(--k-radius) * 2);
+  border-radius: calc(var(--k-radius) * 1.5);
   font-weight: 600;
   font-size: 0.75em;
 }

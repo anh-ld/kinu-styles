@@ -63,8 +63,8 @@
     --k-ring: 262 80% 72%;
     --k-info: 228 35% 16%;
     --k-info-foreground: 262 75% 80%;
-  --k-radius: 1rem;
-  }
+    --k-radius: 1rem;
+    }
 }
 
 /* Explicit dark */
@@ -113,6 +113,7 @@
 [k=button] {
   border-radius: var(--k-radius);
   background: hsl(var(--k-card) / 0.45);
+  color: hsl(var(--k-foreground));
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid hsl(var(--k-border) / 0.5);

@@ -63,8 +63,8 @@
     --k-ring: 0 90% 55%;
     --k-info: 215 60% 20%;
     --k-info-foreground: 215 90% 70%;
-  --k-radius: 0.25rem;
-  }
+    --k-radius: 0.25rem;
+    }
 }
 
 /* Explicit dark */
@@ -190,7 +190,7 @@
 [k=tooltip] {
   background: hsl(var(--k-secondary));
   color: hsl(var(--k-secondary-foreground));
-  border-radius: 1rem;
+  border-radius: var(--k-radius);
   border: 2px solid hsl(var(--k-border));
 }
 

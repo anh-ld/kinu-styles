@@ -63,8 +63,8 @@
     --k-ring: 220 75% 65%;
     --k-info: 210 40% 22%;
     --k-info-foreground: 210 60% 72%;
-  --k-radius: 0.375rem;
-  }
+    --k-radius: 0.375rem;
+    }
 }
 
 /* Explicit dark */
@@ -126,19 +126,19 @@
   background: hsl(var(--k-accent) / 0.35);
 }
 [k=chip], [k=chip-button] {
-  border-radius: 1rem 0.625rem 1.25rem 0.75rem;
+  border-radius: 1rem 0.625rem 1rem 0.75rem;
   border: 2px solid hsl(var(--k-border));
 }
 
 /* surface: data display */
 [k=card] {
   border: 2px solid hsl(var(--k-foreground) / 0.9);
-  border-radius: 1rem 0.5rem 1.25rem 0.625rem;
+  border-radius: 1rem 0.5rem 1rem 0.625rem;
   background: hsl(var(--k-background));
   box-shadow: 3px 3px 0 hsl(var(--k-foreground) / 0.25);
 }
 [k=badge] {
-  border-radius: 0.5rem 1rem 0.625rem 1.25rem;
+  border-radius: 0.5rem 1rem 0.625rem 1rem;
   border: 2px solid hsl(var(--k-foreground) / 0.7);
   font-family: 'Patrick Hand', cursive;
   font-size: 0.875em;

@@ -16,7 +16,7 @@
   --k-primary-hover: 210 90% 45%;
   --k-primary-soft: 210 70% 90%;
   --k-secondary: 170 70% 45%;
-  --k-secondary-foreground: 170 70% 98%;
+  --k-secondary-foreground: 170 70% 10%;
   --k-secondary-hover: 170 70% 39%;
   --k-muted: 195 30% 92%;
   --k-muted-foreground: 210 20% 42%;
@@ -63,8 +63,8 @@
     --k-ring: 210 90% 68%;
     --k-info: 170 60% 20%;
     --k-info-foreground: 170 75% 78%;
-  --k-radius: 1.5rem;
-  }
+    --k-radius: 1.5rem;
+    }
 }
 
 /* Explicit dark */
