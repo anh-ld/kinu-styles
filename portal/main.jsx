@@ -415,111 +415,217 @@ function DashboardDemo() {
       </div>
 
       <div class="demo-main">
-        <div k="card" class="table-card">
-          <div class="table-toolbar">
-            <div class="row">
-              <select k="select" name="demo-dash-period" aria-label="Period">
-                <option>All time</option>
-                <option>Last 30 days</option>
-              </select>
-              <input k="input" class="table-filter" placeholder="Filter customers…" name="demo-dash-filter" aria-label="Filter customers" />
+        <div class="left-stack">
+          <div k="card" class="table-card">
+            <div class="table-toolbar">
+              <div class="row">
+                <select k="select" name="demo-dash-period" aria-label="Period">
+                  <option>All time</option>
+                  <option>Last 30 days</option>
+                </select>
+                <input k="input" class="table-filter" placeholder="Filter customers…" name="demo-dash-filter" aria-label="Filter customers" />
+              </div>
+              <button k="button" variant="outline" size="sm">Export</button>
             </div>
-            <button k="button" variant="outline" size="sm">Export</button>
+            <table k="table">
+              <thead>
+                <tr>
+                  <th style={{ width: '36px' }}>
+                    <input k="checkbox" type="checkbox" name="demo-dash-select-all" aria-label="Select all rows" />
+                  </th>
+                  <th>Customer</th>
+                  <th>Plan</th>
+                  <th>Status</th>
+                  <th>Usage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input k="checkbox" type="checkbox" checked name="demo-dash-row1" aria-label="Select row 1" />
+                  </td>
+                  <td>Acme Corp</td>
+                  <td>
+                    <span k="badge" variant="secondary">Pro</span>
+                  </td>
+                  <td>
+                    <span k="badge">Active</span>
+                  </td>
+                  <td>
+                    <progress k="progress" max="100" value="82" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input k="checkbox" type="checkbox" name="demo-dash-row2" aria-label="Select row 2" />
+                  </td>
+                  <td>Northwind</td>
+                  <td>
+                    <span k="badge" variant="outline">Starter</span>
+                  </td>
+                  <td>
+                    <span k="badge" variant="secondary">Trial</span>
+                  </td>
+                  <td>
+                    <progress k="progress" max="100" value="40" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input k="checkbox" type="checkbox" name="demo-dash-row3" aria-label="Select row 3" />
+                  </td>
+                  <td>Globex</td>
+                  <td>
+                    <span k="badge" variant="secondary">Pro</span>
+                  </td>
+                  <td>
+                    <span k="badge">Active</span>
+                  </td>
+                  <td>
+                    <progress k="progress" max="100" value="64" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input k="checkbox" type="checkbox" name="demo-dash-row4" aria-label="Select row 4" />
+                  </td>
+                  <td>Initech</td>
+                  <td>
+                    <span k="badge" variant="outline">Free</span>
+                  </td>
+                  <td>
+                    <span k="badge" variant="destructive">Overdue</span>
+                  </td>
+                  <td>
+                    <progress k="progress" max="100" value="12" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input k="checkbox" type="checkbox" name="demo-dash-row5" aria-label="Select row 5" />
+                  </td>
+                  <td>Vertex Labs</td>
+                  <td>
+                    <span k="badge" variant="secondary">Enterprise</span>
+                  </td>
+                  <td>
+                    <span k="badge">Active</span>
+                  </td>
+                  <td>
+                    <progress k="progress" max="100" value="88" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input k="checkbox" type="checkbox" name="demo-dash-row6" aria-label="Select row 6" />
+                  </td>
+                  <td>Summit Co</td>
+                  <td>
+                    <span k="badge" variant="secondary">Pro</span>
+                  </td>
+                  <td>
+                    <span k="badge">Active</span>
+                  </td>
+                  <td>
+                    <progress k="progress" max="100" value="64" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input k="checkbox" type="checkbox" name="demo-dash-row7" aria-label="Select row 7" />
+                  </td>
+                  <td>Briarwood</td>
+                  <td>
+                    <span k="badge" variant="outline">Starter</span>
+                  </td>
+                  <td>
+                    <span k="badge" variant="secondary">Trial</span>
+                  </td>
+                  <td>
+                    <progress k="progress" max="100" value="41" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input k="checkbox" type="checkbox" name="demo-dash-row8" aria-label="Select row 8" />
+                  </td>
+                  <td>Halcyon Inc</td>
+                  <td>
+                    <span k="badge" variant="outline">Free</span>
+                  </td>
+                  <td>
+                    <span k="badge" variant="destructive">Overdue</span>
+                  </td>
+                  <td>
+                    <progress k="progress" max="100" value="9" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <nav class="pagination-demo" aria-label="Pagination">
+              <ul k="pagination-list">
+                <li>
+                  <button k="pagination-link">1</button>
+                </li>
+                <li>
+                  <button k="pagination-link">2</button>
+                </li>
+                <li>
+                  <button k="pagination-link" aria-current="page">3</button>
+                </li>
+                <li>
+                  <button k="pagination-link">4</button>
+                </li>
+                <li>
+                  <button k="pagination-link">…</button>
+                </li>
+              </ul>
+            </nav>
           </div>
-          <table k="table">
-            <thead>
-              <tr>
-                <th style={{ width: '36px' }}>
-                  <input k="checkbox" type="checkbox" name="demo-dash-select-all" aria-label="Select all rows" />
-                </th>
-                <th>Customer</th>
-                <th>Plan</th>
-                <th>Status</th>
-                <th>Usage</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <input k="checkbox" type="checkbox" checked name="demo-dash-row1" aria-label="Select row 1" />
-                </td>
-                <td>Acme Corp</td>
-                <td>
-                  <span k="badge" variant="secondary">Pro</span>
-                </td>
-                <td>
-                  <span k="badge">Active</span>
-                </td>
-                <td>
-                  <progress k="progress" max="100" value="82" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input k="checkbox" type="checkbox" name="demo-dash-row2" aria-label="Select row 2" />
-                </td>
-                <td>Northwind</td>
-                <td>
-                  <span k="badge" variant="outline">Starter</span>
-                </td>
-                <td>
-                  <span k="badge" variant="secondary">Trial</span>
-                </td>
-                <td>
-                  <progress k="progress" max="100" value="40" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input k="checkbox" type="checkbox" name="demo-dash-row3" aria-label="Select row 3" />
-                </td>
-                <td>Globex</td>
-                <td>
-                  <span k="badge" variant="secondary">Pro</span>
-                </td>
-                <td>
-                  <span k="badge">Active</span>
-                </td>
-                <td>
-                  <progress k="progress" max="100" value="64" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input k="checkbox" type="checkbox" name="demo-dash-row4" aria-label="Select row 4" />
-                </td>
-                <td>Initech</td>
-                <td>
-                  <span k="badge" variant="outline">Free</span>
-                </td>
-                <td>
-                  <span k="badge" variant="destructive">Overdue</span>
-                </td>
-                <td>
-                  <progress k="progress" max="100" value="12" />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <nav class="pagination-demo" aria-label="Pagination">
-            <ul k="pagination-list">
-              <li>
-                <button k="pagination-link">1</button>
-              </li>
-              <li>
-                <button k="pagination-link">2</button>
-              </li>
-              <li>
-                <button k="pagination-link" aria-current="page">3</button>
-              </li>
-              <li>
-                <button k="pagination-link">4</button>
-              </li>
-              <li>
-                <button k="pagination-link">…</button>
-              </li>
-            </ul>
-          </nav>
+
+          <div k="card">
+            <h3 class="demo-card-title">Team</h3>
+            <div class="team-row">
+              <div k="avatar" alt="AL" style={{ width: '28px', height: '28px' }} />
+              <span class="team-name">Anh L.</span>
+              <span k="badge" variant="secondary">Admin</span>
+            </div>
+            <div class="team-row">
+              <div k="avatar" alt="MK" style={{ width: '28px', height: '28px' }} />
+              <span class="team-name">Maya K.</span>
+              <span k="badge" variant="outline">Editor</span>
+            </div>
+            <div class="team-row">
+              <div k="avatar" alt="RS" style={{ width: '28px', height: '28px' }} />
+              <span class="team-name">Ravi S.</span>
+              <span k="badge" variant="outline">Member</span>
+            </div>
+            <div class="team-row">
+              <div k="avatar" alt="JT" style={{ width: '28px', height: '28px' }} />
+              <span class="team-name">Jen T.</span>
+              <span k="badge" variant="outline">Member</span>
+            </div>
+          </div>
+
+          <div k="card">
+            <h3 class="demo-card-title">Recent deployments</h3>
+            <div class="deploy-row">
+              <span k="badge" variant="outline">api</span>
+              <span class="deploy-text">v2.4.1 shipped</span>
+              <span class="deploy-time">2 min ago</span>
+            </div>
+            <div class="deploy-row">
+              <span k="badge" variant="outline">web</span>
+              <span class="deploy-text">v2.4.0 rolled back</span>
+              <span class="deploy-time">1 hr ago</span>
+            </div>
+            <div class="deploy-row">
+              <span k="badge" variant="outline">worker</span>
+              <span class="deploy-text">v2.3.9 shipped</span>
+              <span class="deploy-time">3 hrs ago</span>
+            </div>
+            <button k="button" variant="outline" size="sm" class="deploy-more">View all</button>
+          </div>
         </div>
 
         <div class="side-stack">
