@@ -72,14 +72,14 @@ Import the chosen theme's CSS (section 1, step 4), then adapt it (section 5).
 
 | Category | Vibe | Typical fits |
 | --- | --- | --- |
-| bold-experimental | | |
-| editorial-art-inspired | | |
-| futuristic-speculative | | |
-| material-dimensional | | |
-| minimal-functional | | |
-| organic-atmospheric | | |
-| playful-illustrated | | |
-| retro-nostalgic | | |
+| bold-experimental | Loud, energetic, experimental visuals — type-led statements | Music, fashion, streetwear, sports, startups, campaigns, artist portfolios, cultural and countercultural brands |
+| editorial-art-inspired | Art-movement print aesthetics — editorial, luxurious, cultural | Publishing, fashion, portfolios, cultural institutions, premium e-commerce, luxury products, hospitality, education and literary brands |
+| futuristic-speculative | Sci-fi and speculative tech — futuristic, cinematic | Games, security tools, crypto products, nightlife, science-fiction experiences, tech campaigns, entertainment, exhibitions |
+| material-dimensional | Dimensional materials — two poles: systematic UI kits, and skeuomorphic surfaces | Dashboards, finance apps, media players, wellness apps, smart-home controls, AI products, SaaS landing pages, Android-style products; or music tools, simulations, games, creative software built around physical metaphors |
+| minimal-functional | Restraint and utility — the safe default pick | Dashboards, admin panels, enterprise software, developer tools, data products, focused tools, landing pages, portfolios, premium commerce, reading experiences, wellness and lifestyle commerce |
+| organic-atmospheric | Nature and warmth — organic, calm, atmospheric | Wellness, sustainability, hospitality, healthcare, lifestyle products, food, craft, community and climate products |
+| playful-illustrated | Hand-crafted playfulness — illustrated, friendly | Education, journaling, creative tools, children's products, games, social apps, stationery, personal brands; or friendly corporate: SaaS onboarding, fintech, HR |
+| retro-nostalgic | Past-era nostalgia — retro, webcore, nostalgic | Music, gaming, digital art, nostalgic campaigns, experimental portfolios, fashion, beauty, social products, personal sites, youth brands |
 
 Preview any theme in the portal: https://anh-ld.github.io/kinu-styles/ (themes open with a `#<slug>` hash).
 
