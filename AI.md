@@ -101,12 +101,12 @@ Shortlist the 3 themes with the strongest "Suited for" fit against the interview
 
 ### Palette
 
-The theme defines its palette as HSL custom properties on the scheme blocks, e.g. `--k-background`, `--k-foreground`, `--k-card`, `--k-primary`, `--k-muted`, `--k-border`. Override any of them after importing the theme CSS — later rules win:
+The theme defines its palette as HSL custom properties on the scheme blocks, e.g. `--k-background`, `--k-foreground`, `--k-card`, `--k-primary`, `--k-muted`, `--k-border`. Override any of them after importing the theme CSS. The theme's blocks use high-specificity selectors like `:root:root:not([data-color-scheme=dark])` that a plain `:root` rule cannot beat — use `!important` so the override wins in every scheme (light, auto-dark, forced dark):
 
 ```css
 :root {
-  --k-background: 210 50% 98%;
-  --k-primary: 220 70% 45%;
+  --k-background: 210 50% 98% !important;
+  --k-primary: 220 70% 45% !important;
 }
 ```
 
@@ -114,11 +114,11 @@ The five signature colors are `--k-background`, `--k-foreground`, `--k-primary`,
 
 ### Radius
 
-Override `--k-radius` after the theme import (each theme sets its own default).
+Override `--k-radius` after the theme import, with `!important` as above (each theme sets its own default).
 
 ### Fonts
 
-Each theme loads its fonts via a Google Fonts `@import` at the top of its CSS and applies them with `font-family` rules — the body font on `:root:root`, the heading font on `:where(h1, h2, h3, h4)`. To change fonts: replace the `@import` URL with the Google Fonts URL for the new families, and override the two `font-family` declarations after the theme import.
+Each theme loads its fonts via a Google Fonts `@import` at the top of its CSS and applies them with `font-family` rules — the body font on `:root:root`, the heading font on `:where(h1, h2, h3, h4)`. To change fonts: replace the `@import` URL with the Google Fonts URL for the new families, and override the two `font-family` declarations after the theme import (use `!important` on the body rule — the theme's `:root:root` selector out-specifies a plain `:root` rule; the heading rule is `:where()`, so a later plain override wins there).
 
 ### Forced dark mode
 
@@ -131,6 +131,7 @@ From the built CSS, confirm all three:
 1. The Google Fonts `@import` is hoisted to the top of the merged CSS.
 2. The theme's five signature tokens are present: `--k-background`, `--k-foreground`, `--k-primary`, `--k-muted`, `--k-border`.
 3. The import order is right: `kinu/style.css` first, then the theme, then any of your overrides.
+4. Your override values actually appear in the built CSS — if an override is missing from the output, it lost the cascade; re-apply it with `!important` and re-check.
 
 If a check fails, re-verify against the actual built output once; if it still fails, report the failing check to the user with the relevant caveat (fonts fall back to system stacks and the page still renders) and ask how to proceed — do not declare the work done.
 
