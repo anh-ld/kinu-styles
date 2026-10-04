@@ -19,12 +19,12 @@
   --k-secondary-foreground: 270 50% 10%;
   --k-secondary-hover: 260 70% 69%;
   --k-muted: 270 35% 20%;
-  --k-muted-foreground: 280 25% 60%;
+  --k-muted-foreground: 280 25% 61.5%;
   --k-accent: 190 95% 60%;
   --k-accent-foreground: 200 60% 8%;
-  --k-destructive: 350 90% 55%;
-  --k-destructive-foreground: 350 30% 97%;
-  --k-destructive-hover: 350 90% 48%;
+  --k-destructive: 350 90% 47%;
+  --k-destructive-foreground: 350 30% 98%;
+  --k-destructive-hover: 350 90% 47%;
   --k-border: 270 35% 25%;
   --k-input: 270 35% 25%;
   --k-ring: 325 90% 70%;
@@ -56,7 +56,7 @@
     --k-accent: 190 100% 62%;
     --k-accent-foreground: 200 60% 7%;
     --k-destructive: 350 95% 60%;
-    --k-destructive-foreground: 350 30% 97%;
+    --k-destructive-foreground: 350 30% 9%;
     --k-destructive-hover: 350 95% 53%;
     --k-border: 265 40% 22%;
     --k-input: 265 40% 22%;
@@ -89,7 +89,7 @@
   --k-accent: 190 100% 62%;
   --k-accent-foreground: 200 60% 7%;
   --k-destructive: 350 95% 60%;
-  --k-destructive-foreground: 350 30% 97%;
+  --k-destructive-foreground: 350 30% 9%;
   --k-destructive-hover: 350 95% 53%;
   --k-border: 265 40% 22%;
   --k-input: 265 40% 22%;
@@ -141,7 +141,7 @@
   border: 1px solid hsl(var(--k-border));
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-size: 0.72em;
+  font-size: 0.75rem;
 }
 [k=table] {
   border-color: hsl(var(--k-border));

@@ -1,5 +1,5 @@
 ```yaml
-font: Allura + system sans
+font: Allura + system-ui
 font_stack: "'Segoe UI', system-ui, sans-serif; headings: Allura, sans-serif"
 radius: 1.25rem
 moodboard: https://trends.daisyui.com/trend/mcbling/

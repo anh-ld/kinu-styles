@@ -1,5 +1,5 @@
 ```yaml
-font: Righteous + system sans
+font: Righteous + system-ui
 font_stack: "'Segoe UI', system-ui, sans-serif; headings: Righteous, sans-serif"
 radius: 1rem
 moodboard: https://trends.daisyui.com/trend/jet-age-optimism/

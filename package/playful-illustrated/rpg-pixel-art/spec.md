@@ -8,7 +8,7 @@ palette:
     background: 210 45% 88%
     foreground: 235 40% 18%
     primary: 0 65% 50%
-    secondary: 175 55% 40%
+    secondary: 175 55% 32%
     border: 235 20% 65%
   dark:
     background: 250 35% 8%

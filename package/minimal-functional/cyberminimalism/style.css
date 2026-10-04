@@ -11,15 +11,15 @@
   --k-popover: 0 0% 100%;
   --k-popover-foreground: 220 15% 12%;
   --k-sidebar: 0 0% 96%;
-  --k-primary: 210 80% 50%;
-  --k-primary-foreground: 0 0% 100%;
+  --k-primary: 210 80% 45%;
+  --k-primary-foreground: 0 0% 98%;
   --k-primary-hover: 210 80% 44%;
   --k-primary-soft: 210 60% 92%;
   --k-secondary: 220 10% 88%;
   --k-secondary-foreground: 220 15% 25%;
   --k-secondary-hover: 220 10% 82%;
   --k-muted: 0 0% 95%;
-  --k-muted-foreground: 220 10% 45%;
+  --k-muted-foreground: 220 10% 44.5%;
   --k-accent: 220 15% 90%;
   --k-accent-foreground: 220 15% 30%;
   --k-destructive: 0 70% 50%;
@@ -56,7 +56,7 @@
     --k-accent: 220 20% 22%;
     --k-accent-foreground: 0 0% 92%;
     --k-destructive: 0 70% 55%;
-    --k-destructive-foreground: 0 0% 100%;
+    --k-destructive-foreground: 0 0% 3%;
     --k-destructive-hover: 0 70% 62%;
     --k-border: 220 15% 24%;
     --k-input: 220 15% 24%;
@@ -89,7 +89,7 @@
   --k-accent: 220 20% 22%;
   --k-accent-foreground: 0 0% 92%;
   --k-destructive: 0 70% 55%;
-  --k-destructive-foreground: 0 0% 100%;
+  --k-destructive-foreground: 0 0% 3%;
   --k-destructive-hover: 0 70% 62%;
   --k-border: 220 15% 24%;
   --k-input: 220 15% 24%;
@@ -143,7 +143,7 @@
   border-radius: 0;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  font-size: 0.7em;
+  font-size: 0.75rem;
   font-weight: 600;
   border: 1px solid hsl(var(--k-border));
 }

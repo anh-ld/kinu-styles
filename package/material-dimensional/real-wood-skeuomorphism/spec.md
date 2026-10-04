@@ -6,7 +6,7 @@ moodboard: https://trends.daisyui.com/trend/real-wood-skeuomorphism/
 palette:
   light:
     background: 35 35% 78%
-    foreground: 25 35% 25%
+    foreground: 25 35% 15%
     primary: 15 45% 35%
     muted: 30 30% 66%
     border: 28 30% 55%

@@ -15,9 +15,9 @@
   --k-primary-foreground: 0 0% 100%;
   --k-primary-hover: 220 90% 38%;
   --k-primary-soft: 220 65% 92%;
-  --k-secondary: 130 60% 40%;
-  --k-secondary-foreground: 0 0% 100%;
-  --k-secondary-hover: 130 60% 34%;
+  --k-secondary: 130 60% 32%;
+  --k-secondary-foreground: 0 0% 98%;
+  --k-secondary-hover: 130 60% 32%;
   --k-muted: 0 0% 94%;
   --k-muted-foreground: 0 0% 42%;
   --k-accent: 45 100% 55%;
@@ -29,7 +29,7 @@
   --k-input: 0 0% 88%;
   --k-ring: 220 90% 45%;
   --k-info: 130 65% 94%;
-  --k-info-foreground: 130 65% 34%;
+  --k-info-foreground: 130 65% 30.5%;
   --k-radius: 0.25rem;
 }
 
@@ -44,10 +44,11 @@
     --k-popover: 220 13% 10%;
     --k-popover-foreground: 0 0% 96%;
     --k-sidebar: 220 17% 4%;
-    --k-primary: 220 90% 55%;
-    --k-primary-foreground: 0 0% 10%;
+    --k-primary: 220 90% 59.5%;
+    --k-primary-foreground: 0 0% 8%;
     --k-primary-hover: 220 90% 61%;
     --k-primary-soft: 220 60% 20%;
+    --k-link: 220 90% 60%;
     --k-secondary: 130 60% 55%;
     --k-secondary-foreground: 0 0% 10%;
     --k-secondary-hover: 130 60% 61%;
@@ -56,7 +57,7 @@
     --k-accent: 45 100% 60%;
     --k-accent-foreground: 0 0% 10%;
     --k-destructive: 0 85% 55%;
-    --k-destructive-foreground: 0 0% 10%;
+    --k-destructive-foreground: 0 0% 6%;
     --k-destructive-hover: 0 85% 61%;
     --k-border: 220 12% 24%;
     --k-input: 220 12% 24%;
@@ -77,10 +78,11 @@
   --k-popover: 220 13% 10%;
   --k-popover-foreground: 0 0% 96%;
   --k-sidebar: 220 17% 4%;
-  --k-primary: 220 90% 55%;
-  --k-primary-foreground: 0 0% 10%;
+  --k-primary: 220 90% 59.5%;
+  --k-primary-foreground: 0 0% 8%;
   --k-primary-hover: 220 90% 61%;
   --k-primary-soft: 220 60% 20%;
+  --k-link: 220 90% 60%;
   --k-secondary: 130 60% 55%;
   --k-secondary-foreground: 0 0% 10%;
   --k-secondary-hover: 130 60% 61%;
@@ -89,7 +91,7 @@
   --k-accent: 45 100% 60%;
   --k-accent-foreground: 0 0% 10%;
   --k-destructive: 0 85% 55%;
-  --k-destructive-foreground: 0 0% 10%;
+  --k-destructive-foreground: 0 0% 6%;
   --k-destructive-hover: 0 85% 61%;
   --k-border: 220 12% 24%;
   --k-input: 220 12% 24%;

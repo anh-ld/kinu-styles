@@ -1,5 +1,5 @@
 ```yaml
-font: Tinos (Times substitute)
+font: Tinos
 font_stack: "Tinos, 'Times New Roman', system-ui, sans-serif"
 radius: 0.25rem
 moodboard: https://trends.daisyui.com/trend/web-1-0-webcore/

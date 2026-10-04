@@ -1,5 +1,5 @@
 ```yaml
-font: Anton + system sans
+font: Anton + system-ui
 font_stack: "'Segoe UI', system-ui, sans-serif; headings: Anton, sans-serif"
 radius: 0.5rem
 moodboard: https://trends.daisyui.com/trend/2k1/

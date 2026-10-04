@@ -19,15 +19,15 @@
   --k-secondary-foreground: 235 25% 12%;
   --k-secondary-hover: 40 70% 40%;
   --k-muted: 45 20% 88%;
-  --k-muted-foreground: 235 15% 45%;
+  --k-muted-foreground: 235 15% 44%;
   --k-accent: 218 80% 45%;
   --k-accent-foreground: 45 30% 97%;
-  --k-destructive: 0 70% 40%;
+  --k-destructive: 0 70% 34%;
   --k-destructive-foreground: 45 30% 97%;
-  --k-destructive-hover: 0 70% 34%;
+  --k-destructive-hover: 0 70% 28%;
   --k-border: 45 18% 80%;
   --k-input: 45 18% 80%;
-  --k-ring: 40 70% 50%;
+  --k-ring: 40 70% 42%;
   --k-info: 218 60% 93%;
   --k-info-foreground: 218 80% 40%;
   --k-radius: 0rem;
@@ -55,9 +55,9 @@
     --k-muted-foreground: 45 20% 62%;
     --k-accent: 218 90% 62%;
     --k-accent-foreground: 235 25% 8%;
-    --k-destructive: 0 75% 52%;
+    --k-destructive: 26 75% 52%;
     --k-destructive-foreground: 235 25% 8%;
-    --k-destructive-hover: 0 75% 60%;
+    --k-destructive-hover: 26 75% 60%;
     --k-border: 235 18% 22%;
     --k-input: 235 18% 22%;
     --k-ring: 40 75% 62%;
@@ -88,9 +88,9 @@
   --k-muted-foreground: 45 20% 62%;
   --k-accent: 218 90% 62%;
   --k-accent-foreground: 235 25% 8%;
-  --k-destructive: 0 75% 52%;
+  --k-destructive: 26 75% 52%;
   --k-destructive-foreground: 235 25% 8%;
-  --k-destructive-hover: 0 75% 60%;
+  --k-destructive-hover: 26 75% 60%;
   --k-border: 235 18% 22%;
   --k-input: 235 18% 22%;
   --k-ring: 40 75% 62%;
@@ -131,7 +131,7 @@
   border: 1px solid hsl(var(--k-border));
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
 }
 
 /* surface: data display */

@@ -14,9 +14,9 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "dev": "(bun run gen && bun build --watch portal/index.html --outdir dist) & bun --hot serve.ts",
-    "gen": "bun build.ts --gen",
-    "build:lib": "bun build.ts",
+    "dev": "(bun run gen && bun build --watch portal/index.html --outdir dist) & bun --hot scripts/serve.ts",
+    "gen": "bun scripts/build.ts --gen",
+    "build:lib": "bun scripts/build.ts",
     "build:portal": "rm -rf dist && bun build portal/index.html --outdir dist",
     "build": "bun run build:lib && bun run build:portal"
   },

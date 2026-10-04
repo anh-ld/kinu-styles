@@ -7,7 +7,7 @@ palette:
   light:
     background: 50 30% 98%
     foreground: 130 25% 15%
-    primary: 120 40% 38%
+    primary: 120 40% 36.5%
     secondary: 25 45% 55%
     border: 45 20% 83%
   dark:

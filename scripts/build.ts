@@ -1,4 +1,5 @@
 import { rm, mkdir } from 'node:fs/promises';
+import { audit } from './contrast.ts';
 
 const genOnly = process.argv.includes('--gen');
 const libOnly = process.argv.includes('--lib');
@@ -13,6 +14,16 @@ if (buildLib) {
 const compat = await Bun.file('package/_compat.css').text();
 const glob = new Bun.Glob('package/*/*/style.css');
 const files = Array.from(glob.scanSync('.')).sort();
+
+const failures = (
+  await Promise.all(
+    files.map(async (file) => audit(await Bun.file(file).text()).map((v) => `${file.split('/')[2]} ${v}`))
+  )
+).flat();
+if (failures.length) {
+  console.error(`✗ ${failures.length} contrast failures:\n  ${failures.join('\n  ')}`);
+  process.exit(1);
+}
 
 const themes: Record<string, { category: string; css: string; spec: string }> = {};
 

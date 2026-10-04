@@ -22,14 +22,14 @@
   --k-muted-foreground: 0 0% 38%;
   --k-accent: 300 80% 42%;
   --k-accent-foreground: 45 22% 96%;
-  --k-destructive: 0 85% 45%;
+  --k-destructive: 0 85% 36%;
   --k-destructive-foreground: 45 22% 96%;
-  --k-destructive-hover: 0 85% 39%;
+  --k-destructive-hover: 0 85% 30%;
   --k-border: 0 0% 22%;
   --k-input: 0 0% 22%;
   --k-ring: 0 85% 45%;
   --k-info: 80 70% 90%;
-  --k-info-foreground: 80 80% 28%;
+  --k-info-foreground: 80 80% 26%;
   --k-radius: 0.25rem;
 }
 
@@ -45,9 +45,10 @@
     --k-popover-foreground: 45 20% 92%;
     --k-sidebar: 0 0% 5%;
     --k-primary: 0 90% 55%;
-    --k-primary-foreground: 0 0% 8%;
+    --k-primary-foreground: 0 0% 7%;
     --k-primary-hover: 0 90% 61%;
     --k-primary-soft: 0 80% 22%;
+    --k-link: 0 90% 57.5%;
     --k-secondary: 80 95% 55%;
     --k-secondary-foreground: 0 0% 8%;
     --k-secondary-hover: 80 95% 61%;
@@ -55,9 +56,9 @@
     --k-muted-foreground: 0 0% 60%;
     --k-accent: 300 85% 58%;
     --k-accent-foreground: 0 0% 8%;
-    --k-destructive: 0 90% 55%;
+    --k-destructive: 18 90% 55%;
     --k-destructive-foreground: 0 0% 8%;
-    --k-destructive-hover: 0 90% 61%;
+    --k-destructive-hover: 18 90% 61%;
     --k-border: 45 15% 80%;
     --k-input: 45 15% 80%;
     --k-ring: 0 90% 55%;
@@ -78,9 +79,10 @@
   --k-popover-foreground: 45 20% 92%;
   --k-sidebar: 0 0% 5%;
   --k-primary: 0 90% 55%;
-  --k-primary-foreground: 0 0% 8%;
+  --k-primary-foreground: 0 0% 7%;
   --k-primary-hover: 0 90% 61%;
   --k-primary-soft: 0 80% 22%;
+  --k-link: 0 90% 57.5%;
   --k-secondary: 80 95% 55%;
   --k-secondary-foreground: 0 0% 8%;
   --k-secondary-hover: 80 95% 61%;
@@ -88,9 +90,9 @@
   --k-muted-foreground: 0 0% 60%;
   --k-accent: 300 85% 58%;
   --k-accent-foreground: 0 0% 8%;
-  --k-destructive: 0 90% 55%;
+  --k-destructive: 18 90% 55%;
   --k-destructive-foreground: 0 0% 8%;
-  --k-destructive-hover: 0 90% 61%;
+  --k-destructive-hover: 18 90% 61%;
   --k-border: 45 15% 80%;
   --k-input: 45 15% 80%;
   --k-ring: 0 90% 55%;

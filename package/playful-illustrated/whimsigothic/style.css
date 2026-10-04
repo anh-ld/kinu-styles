@@ -20,14 +20,14 @@
   --k-secondary-hover: 40 70% 44%;
   --k-muted: 45 30% 90%;
   --k-muted-foreground: 270 20% 45%;
-  --k-accent: 155 45% 40%;
-  --k-accent-foreground: 155 40% 95%;
+  --k-accent: 155 45% 34.5%;
+  --k-accent-foreground: 155 40% 98%;
   --k-destructive: 0 55% 45%;
   --k-destructive-foreground: 0 40% 95%;
   --k-destructive-hover: 0 55% 39%;
   --k-border: 270 25% 78%;
   --k-input: 270 25% 78%;
-  --k-ring: 40 65% 55%;
+  --k-ring: 40 65% 42.5%;
   --k-info: 290 30% 90%;
   --k-info-foreground: 290 40% 40%;
   --k-radius: 1rem;

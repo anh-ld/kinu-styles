@@ -1,5 +1,5 @@
 ```yaml
-font: Audiowide + system sans
+font: Audiowide + system-ui
 font_stack: "'Segoe UI', system-ui, sans-serif; headings: Audiowide, sans-serif"
 radius: 1.5rem
 moodboard: https://trends.daisyui.com/trend/y2k/

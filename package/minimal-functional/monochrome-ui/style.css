@@ -22,9 +22,9 @@
   --k-muted-foreground: 0 0% 42%;
   --k-accent: 0 0% 90%;
   --k-accent-foreground: 0 0% 25%;
-  --k-destructive: 0 0% 10%;
+  --k-destructive: 0 0% 18%;
   --k-destructive-foreground: 0 0% 100%;
-  --k-destructive-hover: 0 0% 30%;
+  --k-destructive-hover: 0 0% 38%;
   --k-border: 0 0% 85%;
   --k-input: 0 0% 85%;
   --k-ring: 0 0% 15%;
@@ -148,7 +148,7 @@
   color: hsl(var(--k-background));
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  font-size: 0.7em;
+  font-size: 0.75rem;
   font-weight: 700;
 }
 [k=table] {

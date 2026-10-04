@@ -1,4 +1,4 @@
-// Static server for the built portal. Dev: bun --hot serve.ts
+// Static server for the built portal. Dev: bun --hot scripts/serve.ts
 const port = Number(process.env.PORT || 5173);
 
 Bun.serve({

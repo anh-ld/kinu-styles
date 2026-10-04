@@ -78,6 +78,8 @@ Theme scheme blocks use selectors like `:root:root:not([data-color-scheme=dark])
 }
 ```
 
+Keep text pairs at 4.5:1 or better (`--k-foreground` on `--k-background`, each `-foreground` on its fill). Link buttons use `--k-link`, falling back to `--k-primary`: after changing primary, set `--k-link` if primary is too light or dark to read as text on the background.
+
 **Radius.** `--k-radius`, same rule.
 
 **Fonts.** Each theme starts with a Google Fonts `@import`, sets the body font on `:root:root`, and heading fonts on `:where(h1, …)`. To swap: replace the `@import` URL, override the body `font-family` with `!important`, override headings with a plain later rule.

@@ -7,7 +7,7 @@ palette:
   light:
     background: 0 0% 100%
     foreground: 0 0% 10%
-    primary: 0 85% 50%
+    primary: 0 85% 48%
     muted: 0 0% 96%
     border: 0 0% 88%
   dark:

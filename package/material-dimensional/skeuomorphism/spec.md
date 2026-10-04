@@ -5,11 +5,11 @@ radius: 0.375rem
 moodboard: https://trends.daisyui.com/trend/skeuomorphism/
 palette:
   light:
-    background: 32 38% 44%
+    background: 32 38% 33%
     foreground: 40 45% 88%
     primary: 350 45% 35%
-    muted: 30 30% 48%
-    border: 30 30% 32%
+    muted: 30 30% 35%
+    border: 30 30% 22%
   dark:
     background: 220 15% 18%
     foreground: 210 20% 90%

@@ -1,5 +1,5 @@
 ```yaml
-font: Fredoka + system sans
+font: Fredoka + system-ui
 font_stack: "'Segoe UI', system-ui, sans-serif; headings: Fredoka, sans-serif"
 radius: 1rem
 moodboard: https://trends.daisyui.com/trend/vectordelia-frutiger-metro/
@@ -7,7 +7,7 @@ palette:
   light:
     background: 0 0% 100%
     foreground: 260 30% 15%
-    primary: 200 95% 42%
+    primary: 200 95% 36%
     muted: 220 15% 93%
     border: 220 18% 86%
   dark:

@@ -1,5 +1,5 @@
 ```yaml
-font: Syncopate + system sans
+font: Syncopate + system-ui
 font_stack: "'Segoe UI', system-ui, sans-serif; headings: Syncopate, sans-serif"
 radius: 0.25rem
 moodboard: https://trends.daisyui.com/trend/vaporwave/
