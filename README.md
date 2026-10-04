@@ -4,12 +4,16 @@ CSS themes for [kinu](https://github.com/developit/kinu).
 
 Browse all themes in the [preview portal](https://anh-ld.github.io/kinu-styles/).
 
+Styling your app with an AI agent? Hand it [this file](AI.md).
+
 ## Install
 
 ```bash
 echo '@anh-ld:registry=https://npm.pkg.github.com' >> .npmrc
 npm install @anh-ld/kinu-styles
 ```
+
+The GitHub registry requires a token: add `//npm.pkg.github.com/:_authToken=<token>` to `.npmrc` (a token with `read:packages` scope).
 
 ## Usage
 
